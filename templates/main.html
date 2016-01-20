@@ -1,0 +1,639 @@
+<!-- Ads Top | Portada -->
+<div class="container">
+    <div class="mainAds">
+            <div class="row">
+                <div class="col-md-7">
+                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/560x100&text=1')"></div>
+                </div>
+                <div class="col-md-5">
+                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/400x100&text=2')"></div>
+                </div>
+            </div>    
+    </div>
+    <div class="mainAds-mobile">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
+                </div>
+            </div>    
+    </div>
+</div>    
+<!-- Ads Top | Portada -->
+<!-- Header -->
+<div class="container">
+    <!-- Date/Search Section -->
+    <div data-ng-include data-src="'templates/socialsearch.html?i=1'"></div>
+    <!-- Date/Search Section -->
+    <!-- Logo Section -->
+    <div class="row">
+        <div class="logo-center">
+            <a href=""><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" class="logo"></a>
+            <h4>Lunes, 24 Noviembre del 2015</h4>    
+        </div>
+    </div>
+    <!-- Logo Section -->
+    <div class="top-line"></div>
+    <!-- Menu Section -->
+    <!-- Menu Responsive -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#/">Portada</a></li>
+            <li><a href="#/opinion">Opinión</a></li>
+            <li><a href="#">Nacionales</a></li>
+            <li><a href="#">Mundo</a></li>
+            <li><a href="#">Sociedad</a></li>
+            <li><a href="#">Economía</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Deportes</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Menu Responsive -->
+    <div data-ng-include data-src="'templates/menu.html?i=0'"></div>
+    <!-- Menu Section -->
+</div>
+<!-- Header -->
+<!-- Body -->
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Columna 1 -->
+                <div class="columna1">   
+                    <div class="col-md-5">
+                        <!-- Titulo Seccion Portada -->
+                        <div class="titulo-up">Actualidad
+                            <img class="line-titulo-up"/>
+        </div>
+                        <!-- Titulo Seccion Portada -->
+
+                        <!-- Articulo -->
+                        <div class="articulo" ng-repeat="actualidad in actualidades | limitTo:5" ng-if="actualidad != control[0]">
+                            <div ng-if="actualidad == actualidades[0]">
+                                <h1 style="margin-top:0px; font-size:36px;"><a>{{actualidad.titulo}}</a></h1>
+                                <h4>{{actualidad.autor | uppercase}} | {{actualidad.fecha | date}}</h4>
+                                <h3>{{actualidad.subseccion}}</h3>
+                                <p>{{actualidad.preview}}</p>
+                                <div style="background-image: url({{actualidad.foto}});" class="img-articulo"></div>
+                                <p class="foto-autor-main">Foto: {{actualidad.fotografo}}</p>
+                            </div>
+                            <div ng-if="actualidad != actualidades[0]">
+                                <div style="background-image: url({{actualidad.foto}});" class="img-articulo"></div>
+                               <p class="foto-autor">Foto: {{actualidad.fotografo}}</p>
+                               <h1><a>{{actualidad.titulo}}</a></h1>
+                               <h4>{{actualidad.autor | uppercase}} | {{actualidad.fecha}}</h4>
+                               <h3>{{actualidad.subseccion}}</h3>
+                               <p>{{actualidad.preview}}</p>
+                            </div>
+                        </div>
+                        <!-- Articulo -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/400x100);" class="adsTwelve">
+                            </div>
+                        </div>
+                        <!-- Publicidad -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/400x260);" class="adsSquare260"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                    </div>
+                </div>    
+                <!-- Columna 1 -->
+                <!-- Columna 2 -->
+                <div class="columna2">
+                    <div class="col-md-5">
+                        <!-- Titulo Seccion Portada -->
+                        <div class="titulo-up">Agenda CP<img class="line-titulo-up"/>
+        </div>
+                        <!-- Titulo Seccion Portada -->
+
+                        <!-- Articulo -->
+                        <div class="articulo">
+                            <!-- Video 
+                            <div><iframe class="img-articulo" src="https://www.youtube.com/embed/eH9gLvxin_4" frameborder="0" allowfullscreen></iframe></div>
+                            Video -->
+                            <div style="background-image: url({{especiales[0].foto}});" class="img-articulo"></div>
+                            <p class="foto-autor">Foto: {{especiales[0].fotografo}}</p>
+                            <h1><a>{{especiales[0].titulo}}</a></h1>
+                            <h4>{{especiales[0].autor | uppercase}} | Especiales Semanales</h4>
+                            <p>{{especiales[0].preview}}</p>
+                        </div>
+                        <!-- Articulo -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!-- Articulo -->
+                        <div class="articulo" ng-repeat="especial in especiales | limitTo: 3" ng-if="especial != especiales[0]">
+                            <div style="background-image: url({{especial.foto}});" class="img-articulo"></div>
+                            <p class="foto-autor">Foto: {{especial.fotografo}}</p>
+                            <h1><a>{{especial.titulo}}</a></h1>
+                            <h4>{{especial.autor | uppercase}} | Especiales Semanales</h4>
+                            <p>{{especial.preview}}</p>
+                        </div>
+                        <!-- Articulo -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/400x280);" class="adsSquare"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!-- Ilustración -->
+                        <div class="caricatura">
+                            <div class="titulo-up">Caricaturas »<img class="line-titulo-up">
+        </div>
+                            <div style="background-image: url({{caricaturas[0].foto}});" class="caricatura-imagen"></div>
+                        </div>
+                        <!-- Ilustración -->
+                        <!-- Sondeo -->
+                        <div class="sondeo">
+                            <div class="header">
+                                <h1>¡Tu opinión vale!</h1>
+                            </div>
+                            <div class="body">
+                                <h4>¿Está usted de acuerdo con que se instaure el Socialismo en El Salvador?</h4>
+                                <form>
+                                    <input type="radio" name="respuesta" value="si"> Si, estoy de acuerdo</br>
+                                    <input type="radio" name="respuesta" value="no"> No, estoy de acuerdo</br>
+                            <button>votar</button>
+                                </form>   
+                            <!--<img class="line-votar"/><i class="total-votos">44 votos en total</i><img class="line-votar"/>
+                                <div class="body-estadisticas">
+                                    <span>Si - 56.8% | 25 votos</span>
+                                    <div style="width: 56.8%;
+    " class="estadistica"></div>
+                                    <span>No - 43.2% | 19 votos</span>
+                                    <div style="width: 43.2%;
+    " class="estadistica"></div>
+                                </div>-->
+                            </div>
+                        </div>
+                        <!-- Sondeo -->
+                    </div>
+                </div>     
+                <!-- Columna 2 -->
+                <!-- Columna 3 - 1 -->
+                <div class="columna3">   
+                    <div class="col-md-2">
+                        <!-- Titulo Seccion Portada -->
+                        <div class="titulo-up">Editorial
+                            <img class="line-titulo-up"/>
+                        </div>
+                        <!-- Titulo Seccion Portada -->
+                        <!-- Editorial -->
+                        <div class="editorial-articulo">
+                            <h3>{{editoriales[0].titulo}}</h3>
+                            <p>{{editoriales[0].preview}}</p>
+                        </div>
+                        <!-- Editorial -->
+                        <!-- El clima -->
+                        <div class="el-clima">
+                            <h4>El Clima</h4>
+                            <div data-ng-include data-src="'templates/widgets/clima_widget.html'"></div>
+                        </div>    
+                        <!-- El clima -->
+                        <!-- El País -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x250);" class="adsCol31"></div>
+                        </div>    
+                        <!-- El País -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x500);" class="adsCol33"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!-- Columnistas -->
+                        <div class="columnistas-portada">
+                            <h3>Columnistas</h3>
+                            <!-- Columnista -->
+                            <div class="columnista" ng-repeat="columnista in columnistas">
+                                <div class="foto" style="background-image:url({{columnista.foto}});"></div>
+                                <p>{{columnista.nombre}}</p>
+                                <h4>{{columnista.titulo}}</h4>
+                            </div>
+                            <!-- Columnista -->       
+                        </div>
+                        <!-- Columnistas -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x250);" class="adsCol35"></div>
+                        </div>    
+                        <!-- Publicidad -->         
+                    </div>  
+                </div>
+                <!-- Columna 3 - 1 -->   
+                <!-- Economía y negocios -->
+                <div class="economia-negocios-portada">     
+                    <div class="col-md-10">
+                        <div class="economia-negocios">
+                            <div class="header">
+                                <h1>Económia y negocios</h1>
+                            </div>
+                            <div class="row" style="margin-top:20px; margin-left:3px;margin-right:3px;padding-bottom:10px;">
+                                <div class="col-sm-4">
+                                    <div class="body-header">
+                                        <h2>Negocios</h2>
+                                    </div>
+                                    <div class="body">
+                                        <div class="row" style="margin-bottom:10px;" ng-repeat="negocio in negocios">
+                                            <div class="economia-col-1">
+                                                <div class="col-md-3">
+                                                    <div style="background-image:url({{negocio.foto}});" class="foto-1">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <h4>{{negocio.titulo}}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="body-header">
+                                        <h2>Análisis económico</h2>
+                                    </div>
+                                    <div class="body">
+                                        <div class="row" style="margin-bottom:10px;" ng-repeat="analisis in analisiss">
+                                            <div class="economia-col-1">
+                                                <div class="col-md-4">
+                                                    <div style="background-image:url({{analisis.foto}});" class="foto-2">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h4>{{analisis.titulo}}</h4>
+                                                    <h2>{{analisis.autor}}</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-4">
+                                    <div class="body-header">
+                                        <h2>Coyuntura económica</h2>
+                                    </div>
+                                    <div class="body">
+                                        <div class="row" style="margin-bottom:10px;" ng-repeat="coyuntura in coyunturas">
+                                            <div class="economia-col-1">
+                                                <div class="col-md-3">
+                                                    <div style="background-image:url({{coyuntura.foto}});" class="foto-1">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <h4>{{coyuntura.titulo}}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="leer-mas-economia">Leer más en economía <i style="padding-top:1px;" class="ion-ios-arrow-forward"></i></a>
+                                    </div>
+                                </div>
+                                <!-- Publicidad -->
+                                <div class="col-md-12">
+                                    <div class="ads">
+                                        <div style="background-image: url(http://www.placehold.it/800x100);" class="adsEconomia">
+                                        </div>
+                                    </div>   
+                                </div>
+                                <!-- Publicidad -->
+                            </div>
+                        </div>   
+                    </div>
+                </div>       
+                <!-- Economía y negocios -->        
+                <!-- Columna 3 - 2 -->
+                <div class="columna3-2">     
+                <div class="col-md-2">
+                        <!-- Tribuna Libre -->
+                        <div class="tribuna-portada">
+                            <h3>Tribuna Libre</h3>
+                            <!-- Tribuna Item -->
+                            <div class="tribuna-item" ng-repeat="tribuna in tribunas">
+                                <h2>{{tribuna.titulo}}</h2>
+                                <h4>{{tribuna.autor}}</h4>
+                            </div>
+                            <!-- Tribuna Item -->
+                        </div>    
+                        <!-- Tribuna Libre -->
+                        <!-- Libertad de expresión -->
+                        <div class="libertad-expresion">
+                            <h3>Libertad de expresión</h3>
+                            <!-- LE Item -->
+                            <div class="libertad-item">
+                                <div class="foto" style="background-image:url({{libertades[0].foto}});"></div>
+                                <h2>{{libertades[0].titulo}}</h2>
+                                <h4>{{libertades[0].autor}}</h4>
+                            </div>
+                            <!-- Tribuna Item -->
+                        </div>
+                        <!-- Libertad de expresión -->
+                </div> 
+                </div>    
+                <!-- Columna 3 - 2 -->        
+                <!-- Columna 1 - 2 -->
+                <div class="columna1-2">   
+                    <div class="col-md-5">
+                        <!-- Titulo Seccion Portada -->
+                        <div class="titulo-up"><img class="line-titulo-up"/>
+SOCIEDAD</div>
+                        <!-- Titulo Seccion Portada -->
+
+                        <!-- Articulo -->
+                        <div class="articulo">
+                            <div style="background-image: url({{sociedades[0].foto}});" class="img-articulo"></div>
+                            <p class="foto-autor">Foto: {{sociedades[0].fotografo}}</p>
+                            <h1><a>{{sociedades[0].titulo}}</a></h1>
+                            <h4>{{sociedades[0].autor | uppercase}} | {{sociedades[0].fecha}}</h4>
+                            <h3>{{sociedades[0].subseccion}}</h3>
+                            <p>{{sociedades[0].preview}}</p>
+                            
+                        </div>
+                        <!-- Articulo -->
+
+                        <!-- Últimos
+                        <div class="ultimos">
+                            <div class="row">
+                                <h1>
+                                    <div class="col-md-1">
+                                        <img class="red-flag" src="img/120.svg">
+                                    </div>
+                                    <div class="col-md-11">
+                                    Periodistas reconocidas por CONASIDA
+                                    </div>
+                                </h1>
+                                    <div class="col-md-11 col-md-offset-1">
+                                   <h4>REDACCIÓN CONTRAPUNTO | Sociedad</h4>
+
+                                    <p>Dos periodistas de ContraPunto  recibieron reconocimiento por su labor informativa sobre el VIH </p>
+                                    </div>
+
+                            </div> 
+                        </div>        
+                        <!-- Últimos -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!-- Articulo -->
+                        <div class="prensa-ciudadana">PRENSA CIUDADANA</div>
+                        <!-- Articulo -->
+                        <div class="articulo">
+                            <div style="background-image: url({{periodismos[0].foto}});" class="img-articulo"></div>
+                            <p class="foto-autor">Foto: {{periodismos[0].fotografo}}</p>
+                            <h1><a>{{periodismos[0].titulo}}</a></h1>
+                            <h4>{{periodismos[0].autor}} | {{periodismos[0].fecha}}</h4>
+                            <h3>{{periodismos[0].subseccion}}</h3>
+                            <p>{{periodismos[0].preview}}</p>
+                            
+                        </div>
+                        <!-- Articulo -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                         <!-- Titulo Seccion Portada -->
+                        <div class="titulo-up"><img class="line-titulo-up"/>INTERNACIONALES</div>
+                        <!-- Articulo -->
+                        <div class="articulo">
+                            <div style="background-image: url({{internacionales[0].foto}});" class="img-articulo"></div>
+                            <p class="foto-autor">Foto: {{internacionales[0].fotografo}}</p>
+                            <h1><a>{{internacionales[0].titulo}}</a></h1>
+                            <h4>{{internacionales[0].autor | uppercase}} | {{internacionales[0].fecha}}</h4>
+                            <h3>{{internacionales[0].subseccion}}</h3>
+                            <p>{{internacionales[0].preview}}</p>                          
+                        </div>
+                        <!-- Publicidad -->
+                            <div class="ads">
+                                <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
+                            </div>    
+                        <!-- Publicidad -->  
+                    </div>
+                </div>    
+                <!-- Columna 1 - 2 -->
+                <!-- Columna 2 - 2 -->
+                <div class="columna1-2">   
+                    <div class="col-md-5">
+                        <!-- El País Deportes -->
+                        <div class="el-pais-deportes">
+                            <!-- Titulo Seccion Portada -->
+                            <div class="titulo-up"><img class="line-titulo-up"/>DEPORTES</div>
+                            <!-- Titulo Seccion Portada -->
+                            <div class="tabla">
+                                <div data-ng-include data-src="'templates/widgets/champions_league_widget.html'"></div>
+                            </div>    
+                        </div>
+                        <!-- Articulo -->
+                        <div class="articulo">
+                            <div style="background-image: url({{deportes[0].foto}});" class="img-articulo"></div>
+                            <p class="foto-autor">{{deportes[0].fotografo}}</p>
+                            <h1><a>{{deportes[0].titulo}}</a></h1>
+                            <h4>{{deportes[0].autor | uppercase}} | {{deportes[0].fecha}}</h4>
+                            <h3>{{deportes[0].subseccion}}</h3>
+                            <p>{{deportes[0].preview}}</p>
+                            
+                        </div>
+                        <!-- Articulo -->
+                        <!-- El País Deportes -->
+                        
+                        <!-- Titulo Seccion Portada -->
+                        <div class="titulo-up"><img class="line-titulo-up"/>
+POLÍTICA</div>
+                        <!-- Titulo Seccion Portada -->
+
+                        <!-- Articulo -->
+                        <div class="articulo">
+                            <div style="background-image: url({{politicas[0].foto}});" class="img-articulo"></div>
+                            <p class="foto-autor">Foto: {{politicas[0].fotografo}}</p>
+                            <h1><a>{{politicas[0].titulo}}</a></h1>
+                            <h4>{{politicas[0].autor | uppercase}} | {{politicas[0].fecha}}</h4>
+                            <h3>{{politicas[0].subseccion}}</h3>
+                            <p>{{politicas[0].preview}}</p>
+                            
+                        </div>
+                        <!-- Articulo -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <div class="cultura">
+                            <!-- Titulo Seccion Portada -->
+                            <div class="titulo">Cultura</div>
+                            <!-- Articulo -->
+                            <div class="articulo">
+                                <div style="background-image: url({{culturas[0].foto}});" class="img-articulo"></div>
+                                <p class="foto-autor">Foto: {{culturas[0].fotografo}}</p>
+                                <h1><a>{{culturas[0].titulo}}</a></h1>
+                                <h4>{{culturas[0].autor | uppercase}} | {{culturas[0].fecha}}</h4>
+                                <h3>{{culturas[0].subseccion}}</h3>
+                                <p>{{culturas[0].preview}}</p>
+                                <!-- Publicidad -->
+                                <div class="ads">
+                                    <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
+                                </div>    
+                                <!-- Publicidad -->
+                            </div>
+                            <!-- Articulo -->
+                        </div>    
+                    </div>
+                </div>    
+                <!-- Columna 2 - 2 -->        
+                <!-- Columna 3 - 3 -->
+                <div class="columna3-3">   
+                    <div class="col-md-2">  
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x250);" class="adsCol35"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!-- Academia -->
+                            <div class="academia-portada">
+                                <h3>La academía</h3>  
+                                <!-- Reseña -->
+                                <div style="background-image:url({{academias[0].foto}});" class="academia-img"></div>
+                                <h4>{{academias[0].autor}}</h4>
+                                <!-- Reseña -->
+                                <h1>{{academias[0].titulo}}</h1>
+                                <p>{{academias[0].preview}}</p>
+                            </div>
+                        <!-- Academia -->
+                        <!-- Reseñas -->
+                            <div class="resenas-portada">
+                                <h3>Reseñas</h3>  
+                                <!-- Reseña -->
+                                <div style="background-image:url({{resenas[0].foto}});" class="resena-img"></div>
+                                <h4>{{resenas[0].autor}}</h4>
+                                <!-- Reseña -->
+                                <h1>{{resenas[0].titulo}}</h1>
+                                <p>{{resenas[0].preview}}</p>
+                            </div>
+                        <!-- Reseñas -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x250);" class="ads adsCol35"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x250);" class="ads adsCol35"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x250);" class="ads adsCol35"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x250);" class="ads adsCol35"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        
+                    </div>  
+                </div>
+                <!-- Columna 3 - 3 -->      
+            </div>    
+        </div>   
+        <div class="row">
+            <div class="blocks">
+                <!-- Blocks -->
+                <div class="col-md-4">
+                    <!-- La anecdota -->
+                    <div class="la-anecdota">
+                        <h1 class="titulo"><img src="http://www.contrapunto.com.sv/modules/mod_k2_cultural/tmpl/imgs/LaAnecdota.jpg">La anécdota</h1>
+                        <div style="background-image:url({{anecdotas[0].foto}});" class="foto"></div>
+                        <h1>{{anecdotas[0].titulo}}</h1>
+                        <h4>{{anecdotas[0].autor}} | {{anecdotas[0].fecha}}</h4>
+                        <p>{{anecdotas[0].preview}}</p>
+                    </div>
+                    <!-- La anecdota -->
+                </div> 
+                <div class="col-md-4">
+                    <!-- Entrevistas en off -->
+                    <div class="entrevistas-off">
+                        <h1 class="titulo"><img ng-src="{{entrevistas[0].fotoautor}}">Entrevistas en off</h1>
+                        <div style="background-image:url({{entrevistas[0].foto}});" class="foto"></div>
+                        <h1>{{entrevistas[0].titulo}}</h1>
+                        <h4>{{entrevistas[0].autor}} | {{entrevistas[0].fecha}}</h4>
+                        <p>{{entrevistas[0].preview}} </p>
+                    </div>
+                    <!-- Entrevistas en off -->
+                </div> 
+                <div class="col-md-4">
+                    <!-- Rompiendo tabúes -->
+                    <div class="entrevistas-off">
+                        <h1 class="titulo"><img ng-src="{{rompiendos[0].fotoautor}}">Rompiendo Tabúes</h1>
+                        <div style="background-image:url({{rompiendos[0].foto}});" class="foto"></div>
+                        <h1>{{rompiendos[0].titulo}}</h1>
+                        <h4>{{rompiendos[0].autor}} | {{rompiendos[0].fecha}}</h4>
+                        <p>{{rompiendos[0].preview}}</p>
+                    </div>
+                    <!-- Rompiendo tabúes -->
+                </div>  
+                <!-- Blocks -->
+            </div>    
+        </div> 
+        <div class="row">
+            <!-- Fotogalería -->
+            <div class="col-md-7">
+                <div class="blocks-two">
+                    <div class="fotogaleria">
+                        <h1>Fotogalería</h1>
+                        <a ng-href="{{fotogalerias[0].link}}">
+                        <div style="background-image:url({{fotogalerias[0].foto}});" class="foto">
+                            <div class="trans">
+                                <div class="texto">
+                                    <h3>{{fotogalerias[0].titulo}}</h3>
+                                    <p>Fotos: {{fotogalerias[0].fotografo}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        </a>    
+                    </div>    
+                </div> 
+            </div>
+            <!-- Fotogalería -->
+            <!-- Fotogalería -->
+            <div class="col-md-5">
+                <div class="blocks-two">
+                    <div class="contratabu">
+                        <h1>Contratabú</h1>
+                        <div style="background-image:url({{contratabues[0].foto}});" class="foto">
+                            <div class="trans">
+                                <div class="texto">
+                                    <h3>{{contratabues[0].titulo}}</h3>
+                                    <p>{{contratabues[0].preview}}</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>    
+                </div> 
+            </div>
+            <!-- Fotogalería -->
+        </div> 
+        <div data-ng-include data-src="'templates/footer.html'"></div>        
+        </div>
+    </div>
+</div>
+<!-- Body -->

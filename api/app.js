@@ -1,0 +1,48 @@
+angular.module("contrapunto", ['contrapunto.controllers','angular.filter','ngRoute','ngProgress'])
+    .config(function($routeProvider){
+        $routeProvider
+            .when("/", {
+                controller: "MainController",
+                templateUrl: "templates/main.html"
+            })
+            .when("/opinion", {
+                controller: "OpinionController",
+                templateUrl: "templates/opinion/main.html"
+            })
+            .when("/politica", {
+                controller: "PoliticaController",
+                templateUrl: "templates/politica/main.html"
+            })
+            .when("/internacionales", {
+                controller: "InternacionalesController",
+                templateUrl: "templates/internacionales/main.html"
+            })
+            .when("/sociedad", {
+                    controller: "SociedadController",
+                    templateUrl: "templates/sociedad/main.html"
+            })
+            .when("/economia", {
+                    controller: "EconomiaController",
+                    templateUrl: "templates/economia/main.html"
+            })
+            .when("/cultura", {
+                    controller: "CulturaController",
+                    templateUrl: "templates/cultura/main.html"
+            })
+            .when("/deportes", {
+                    controller: "DeportesController",
+                    templateUrl: "templates/deportes/main.html"
+            })
+            .when("/:seccion/:subseccion", {
+                    controller: "SubseccionController",
+                    templateUrl: "templates/subseccion/main.html"
+            })
+            .when("/:seccion/:subseccion/:id", {
+                controller: "PostController",
+                templateUrl: "templates/politica/post.html"
+            })
+            .otherwise({
+                redirectTo: "/"
+        });
+    })
+

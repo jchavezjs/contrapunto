@@ -1,0 +1,463 @@
+<!-- Ads Top | Portada -->
+<div class="container">
+    <div class="mainAds">
+            <div class="row">
+                <div class="col-md-7">
+                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/560x100')"></div>
+                </div>
+                <div class="col-md-5">
+                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/400x100')"></div>
+                </div>
+            </div>    
+    </div>
+    <div class="mainAds-mobile">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
+                </div>
+            </div>    
+    </div>
+</div>    
+<!-- Ads Top | Portada -->
+<!-- Header -->
+<div class="container">
+    <!-- Date/Search Section -->
+    <div data-ng-include data-src="'templates/socialsearch.html?i=1'"></div>
+    <!-- Date/Search Section -->
+    <!-- Menu -->
+    <div data-ng-include data-src="'templates/menu.html?i=2'"></div>
+    <!-- Menu -->    
+    <!-- Logo Section -->
+    <div class="row">
+        <div class="logo-center">
+            <img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></br>
+            <a class="sociedad-logo-title" alt="cambiar a 60px" href="">
+                Sociedad
+            </a>
+            <h4>Lunes, 24 Noviembre del 2015</h4>    
+        </div>
+    </div>
+    <!-- Logo Section -->
+    <div class="top-line"></div>
+    <!-- Menu Section -->
+    <!-- Menu Responsive -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#/">Portada</a></li>
+            <li><a href="#/opinion">Opinión</a></li>
+            <li><a href="#">Nacionales</a></li>
+            <li><a href="#">Mundo</a></li>
+            <li><a href="#/sociedad">Sociedad</a></li>
+            <li><a href="#">Economía</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Deportes</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Menu Responsive -->
+    <!-- Menu -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="menu">
+                <a href="#/">Ambiente</a>
+                <a href="#/">Violencia</a>
+                <a href="#/">Salud</a>
+                <a href="#/">DD.HH</a>
+                <a href="#/">Educación</a>
+                <a href="#/">Migración</a>
+                <a href="#/">Género</a>
+                <a href="#/">Periodismo Ciudadano</a>
+                <a href="#/">Rompiendo Tabúes</a> 
+                <a href="#/">Judicial</a>  
+            </div>
+        </div>
+    </div> 
+    <!-- Menu -->    
+    <!-- Menu Section -->
+</div>
+<!-- Header -->
+<!-- Body -->
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div id="main" class="col-md-12">
+                <!-- Columna 1 -->  
+                    <div class="col-md-5 m-politica-1">
+                        <!--Seccion Política-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>AMBIENTE</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                           <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{ambientes[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{ambientes[0].autor | uppercase}} | {{ambientes[0].fecha}}</h4>
+                                    <p>{{ambientes[0].preview}}</p>
+                                    <div style="background-image: url({{ambientes[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{ambientes[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="ambiente in ambientes | limitTo: 3" ng-if="ambiente != ambientes[0]">
+                                    <div style="background-image: url({{ambiente.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{ambiente.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{ambiente.autor | uppercase}} | {{ambiente.fecha}}</span></p>
+                                        <p>{{ambiente.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Política-->
+                        <!--Seccion Partidos-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>SALUD</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{saludes[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{saludes[0].autor | uppercase}} | {{saludes[0].fecha}}</h4>
+                                    <p>{{saludes[0].preview}}</p>
+                                    <div style="background-image: url({{saludes[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{saludes[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="salud in saludes | limitTo: 3" ng-if="salud != saludes[0]">
+                                    <div style="background-image: url({{salud.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{salud.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{salud.autor | uppercase}} | {{salud.fecha}}</span></p>
+                                        <p>{{salud.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Partidos-->
+                         <!--Seccion Partidos-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>EDUCACIÓN</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{educaciones[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{educaciones[0].autor | uppercase}} | {{educaciones[0].fecha}}</h4>
+                                    <p>{{educaciones[0].preview}}</p>
+                                    <div style="background-image: url({{educaciones[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{educaciones[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="educacion in educaciones | limitTo: 3" ng-if="educacion != educaciones[0]">
+                                    <div style="background-image: url({{educacion.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{educacion.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{educacion.autor | uppercase}} | {{educacion.fecha}}</span></p>
+                                        <p>{{educacion.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Partidos-->
+                         <!--Seccion Partidos-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>GÉNERO</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{generos[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{generos[0].autor | uppercase}} | {{generos[0].fecha}}</h4>
+                                    <p>{{generos[0].preview}}</p>
+                                    <div style="background-image: url({{generos[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{generos[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="genero in generos | limitTo: 3" ng-if="genero != generos[0]">
+                                    <div style="background-image: url({{genero.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{genero.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{genero.autor | uppercase}} | {{genero.fecha}}</span></p>
+                                        <p>{{genero.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Partidos-->
+                        <!--Seccion Partidos-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>ROMPIENDO TABÚES</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{tabues[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{tabues[0].autor | uppercase}} | {{tabues[0].fecha}}</h4>
+                                    <p>{{tabues[0].preview}}</p>
+                                    <div style="background-image: url({{tabues[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{tabues[0].fotografo}}</p>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Partidos-->
+                         <!--Seccion Partidos-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>JUDICIAL</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{judiciales[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{judiciales[0].autor | uppercase}} | {{judiciales[0].fecha}}</h4>
+                                    <p>{{judiciales[0].preview}}</p>
+                                    <div style="background-image: url({{judiciales[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{judiciales[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="judicial in judiciales | limitTo: 3" ng-if="judicial != judiciales[0]">
+                                    <div style="background-image: url({{judicial.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{judicial.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{judicial.autor | uppercase}} | {{judicial.fecha}}</span></p>
+                                        <p>{{judicial.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Partidos-->
+                        
+                    </div>
+                   
+                <!-- Columna 1 -->
+                <!-- Columna 2 -->
+                    <div id="side" class="col-md-5 m-politica-2">
+                        <!--Seccion Política-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>VIOLENCIA</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <div class="col2bordes">
+                                <!-- Preview seccion politica -->
+                                <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{violencias[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{violencias[0].autor | uppercase}} | {{violencias[0].fecha}}</h4>
+                                    <p>{{violencias[0].preview}}</p>
+                                    <div style="background-image: url({{violencias[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{violencias[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="violencia in violencias | limitTo: 3" ng-if="violencia != violencias[0]">
+                                    <div style="background-image: url({{violencia.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{violencia.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{violencia.autor | uppercase}} | {{violencia.fecha}}</span></p>
+                                        <p>{{violencia.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                                <!-- Preview seccion politica -->
+                                <!--Seccion Política-->
+                                <!-- Publicidad -->
+                                <div class="ads ad-politica">
+                                    <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
+                                </div>    
+                                <!-- Publicidad -->
+                                 <!--Seccion Partidos-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>DD.HH</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{dds[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{dds[0].autor | uppercase}} | {{dds[0].fecha}}</h4>
+                                    <p>{{dds[0].preview}}</p>
+                                    <div style="background-image: url({{dds[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{dds[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="dd in dds | limitTo: 3" ng-if="dd != dds[0]">
+                                    <div style="background-image: url({{dd.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{dd.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{dd.autor | uppercase}} | {{dd.fecha}}</span></p>
+                                        <p>{{dd.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Partidos-->
+                         <!--Seccion Partidos-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>MIGRACIÓN</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                           <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{migraciones[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{migraciones[0].autor | uppercase}} | {{migraciones[0].fecha}}</h4>
+                                    <p>{{migraciones[0].preview}}</p>
+                                    <div style="background-image: url({{migraciones[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{migraciones[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="migracion in migraciones | limitTo: 3" ng-if="migracion != migraciones[0]">
+                                    <div style="background-image: url({{migracion.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{migracion.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{migracion.autor | uppercase}} | {{migracion.fecha}}</span></p>
+                                        <p>{{migracion.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Partidos-->
+                         <!--Seccion Partidos-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>PERIODISMO CIUDADANO</h2>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{periodismos[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{periodismos[0].autor | uppercase}} | {{periodismos[0].fecha}}</h4>
+                                    <p>{{periodismos[0].preview}}</p>
+                                    <div style="background-image: url({{periodismos[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{periodismos[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="periodismo in periodismos | limitTo: 3" ng-if="periodismo != periodismos[0]">
+                                    <div style="background-image: url({{periodismo.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{periodismo.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{periodismo.autor | uppercase}} | {{periodismo.fecha}}</span></p>
+                                        <p>{{periodismo.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Partidos-->
+                            </div>
+                        </div>
+                    </div>   
+                <!-- Columna 2 -->
+                <!-- Columna 3 - 1 -->
+                  
+                    <div class="col-md-2 m-politica-3">
+                         <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!--Lo mas leido-->
+                        <div class="columnistas-portada">
+                            <h3>LO MÁS LEÍDO</h3>
+                            <!--Lo mas leido-TABS-->
+                            <div role="tabpanel">
+                              <!-- Nav tabs -->
+                              <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada">Portada</a></li>
+                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica">Sociedad</a></li>
+                              </ul>
+
+                              <!-- Tab panes -->
+                              <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="lmlportada">
+                                    <ul class="leido">
+                                        <li><a href="#" class="leido-item"><span>1</span>Un centenar de mexicanos a las urnas</a></li>
+                                        <li><a href="#" class="leido-item"><span>2</span>Ataques en París, oriente ataca</a></li>
+                                        <li><a href="#" class="leido-item"><span>3</span>Un centenar de mexicanos a las urnas</a></li>
+                                        <li><a href="#" class="leido-item"><span>4</span>Ataques en París, oriente ataca</a></li>  
+                                    </ul>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="lmlpolitica">
+                                    <ul class="leido">
+                                        <li><a href="#" class="leido-item"><span>1</span>La pupusa salvadoreña</a></li>
+                                        <li><a href="#" class="leido-item"><span>2</span>Se estrena Star Wars</a></li>
+                                        <li><a href="#" class="leido-item"><span>3</span>La ética social</a></li>
+                                        <li><a href="#" class="leido-item"><span>4</span>La actualización humana</a></li>  
+                                    </ul>
+                                </div>
+                              </div>
+                            <!--Lo mas leido-TABS-->
+                            </div>
+                        </div>
+                        <!--Lo mas leido-->   
+                    </div>  
+                       
+            </div>    
+        </div>    
+        <div data-ng-include data-src="'templates/footer.html'"></div>        
+        </div>
+    </div>
+</div>
+<!-- Body -->
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#side").height( $("#main").height() );
+    });
+</script>
+

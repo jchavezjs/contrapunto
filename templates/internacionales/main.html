@@ -1,0 +1,252 @@
+<!-- Ads Top | Portada -->
+<div class="container">
+    <div class="mainAds">
+            <div class="row">
+                <div class="col-md-7">
+                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/560x100')"></div>
+                </div>
+                <div class="col-md-5">
+                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/400x100')"></div>
+                </div>
+            </div>    
+    </div>
+    <div class="mainAds-mobile">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
+                </div>
+            </div>    
+    </div>
+</div>    
+<!-- Ads Top | Portada -->
+<!-- Header -->
+<div class="container">
+<!-- Date/Search Section -->
+    <div data-ng-include data-src="'templates/socialsearch.html?i=1'"></div>
+    <!-- Date/Search Section -->
+    <!-- Menu -->
+    <div data-ng-include data-src="'templates/menu.html?i=2'"></div>
+    <!-- Menu -->    
+    <!-- Logo Section -->
+    <div class="row">
+        <div class="logo-center">
+            <img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></br>
+            <a class="mundo-logo-title" alt="cambiar a 60px" href="">
+                Internacionales
+            </a>
+            <h4>Lunes, 24 Noviembre del 2015</h4>    
+        </div>
+    </div>
+    <!-- Logo Section -->
+    <div class="top-line"></div>
+    <!-- Menu Section -->
+    <!-- Menu Responsive -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#/">Portada</a></li>
+            <li><a href="#/opinion">Opinión</a></li>
+            <li><a href="#">Nacionales</a></li>
+            <li><a href="#/mundo">Mundo</a></li>
+            <li><a href="#">Sociedad</a></li>
+            <li><a href="#">Economía</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Deportes</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Menu Responsive -->
+    <!-- Menu -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="menu">
+                <a href="#/">Centroamérica</a>
+                <a href="#/">Latinoamérica</a>
+                <a href="#/">Global</a>
+</a>
+            </div>
+        </div>
+    </div> 
+    <!-- Menu -->    
+    <!-- Menu Section -->
+</div>
+<!-- Header -->
+<!-- Body -->
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div id="main" class="col-md-12">
+                <!-- Columna 1 -->  
+                    <div class="col-md-5 m-politica-1">
+                        <!--Seccion Política-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-mundo">
+                                <img src="img/centroamerica.png" class="img-titulo-mundo" width="40px" height="30px">
+                                <h2>CENTROAMÉRICA</h2>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{centroamericas[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{centroamericas[0].autor | uppercase}} | {{centroamericas[0].fecha}}</h4>
+                                    <p>{{centroamericas[0].preview}}</p>
+                                    <div style="background-image: url({{centroamericas[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{centroamericas[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="centroamerica in centroamericas | limitTo: 3" ng-if="centroamerica != centroamericas[0]">
+                                    <div style="background-image: url({{centroamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{centroamerica.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{centroamerica.autor | uppercase}} | {{centroamerica.fecha}}</span></p>
+                                        <p>{{centroamerica.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Política-->
+                        <!--Seccion Partidos-->
+                        <div class="sec-politica">
+                            <!-- Titulo politica -->
+                            <div class="row titulo-mundo">
+                                <img src="img/global.png" class="img-titulo-mundo" width="30px" height="30px">
+                                <h2>GLOBAL</h2>
+                            </div>
+                            <!-- Titulo politica -->
+                            <!-- Preview seccion politica -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{globales[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{globales[0].autor | uppercase}} | {{globales[0].fecha}}</h4>
+                                    <p>{{globales[0].preview}}</p>
+                                    <div style="background-image: url({{globales[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{globales[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="global in globales | limitTo: 3" ng-if="global != globales[0]">
+                                    <div style="background-image: url({{global.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{global.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{global.autor | uppercase}} | {{global.fecha}}</span></p>
+                                        <p>{{global.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Preview seccion politica -->
+                        </div>
+                        <!--Seccion Partidos-->
+                    </div>
+                   
+                <!-- Columna 1 -->
+                <!-- Columna 2 -->
+                    <div id="side" class="col-md-5 m-politica-2">
+                        <!--Seccion Política-->
+                        <div class="col2bordes">
+                        <div class="sec-politica">
+                            
+                                <!-- Preview seccion politica -->
+                                 <!-- Titulo politica -->
+                            <div class="row titulo-mundo">
+                                <img src="img/america.png" class="img-titulo-mundo" width="30px" height="30px">
+                                <h2>LATINOAMÉRICA</h2>
+                            </div>
+                            <!-- Titulo politica -->
+                                 <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{latinoamericas[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{latinoamericas[0].autor | uppercase}} | {{latinoamericas[0].fecha}}</h4>
+                                    <p>{{latinoamericas[0].preview}}</p>
+                                    <div style="background-image: url({{latinoamericas[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{latinoamericas[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="latinoamerica in latinoamericas | limitTo: 3" ng-if="latinoamerica != latinoamericas[0]">
+                                    <div style="background-image: url({{latinoamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{latinoamerica.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{latinoamerica.autor | uppercase}} | {{latinoamerica.fecha}}</span></p>
+                                        <p>{{latinoamerica.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                                <!-- Preview seccion politica -->
+                                <!--Seccion Política-->
+                                <!-- Publicidad -->
+                                <div class="ads ad-politica">
+                                    <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
+                                </div>    
+                                <!-- Publicidad -->
+                            </div>
+                        </div>
+                    </div>   
+                <!-- Columna 2 -->
+                <!-- Columna 3 - 1 -->
+                  
+                    <div class="col-md-2 m-politica-3">
+                         <!-- Publicidad -->
+                        <div class="ads">
+                            <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
+                        </div>    
+                        <!-- Publicidad -->
+                        <!--Lo mas leido-->
+                        <div class="columnistas-portada">
+                            <h3>LO MÁS LEÍDO</h3>
+                            <!--Lo mas leido-TABS-->
+                            <div role="tabpanel">
+                              <!-- Nav tabs -->
+                              <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada">Portada</a></li>
+                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica">Mundo</a></li>
+                              </ul>
+
+                              <!-- Tab panes -->
+                              <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="lmlportada">
+                                    <ul class="leido">
+                                        <li><a href="#" class="leido-item"><span>1</span>Un centenar de mexicanos a las urnas</a></li>
+                                        <li><a href="#" class="leido-item"><span>2</span>Ataques en París, oriente ataca</a></li>
+                                        <li><a href="#" class="leido-item"><span>3</span>Un centenar de mexicanos a las urnas</a></li>
+                                        <li><a href="#" class="leido-item"><span>4</span>Ataques en París, oriente ataca</a></li>  
+                                    </ul>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="lmlpolitica">
+                                    <ul class="leido">
+                                        <li><a href="#" class="leido-item"><span>1</span>La pupusa salvadoreña</a></li>
+                                        <li><a href="#" class="leido-item"><span>2</span>Se estrena Star Wars</a></li>
+                                        <li><a href="#" class="leido-item"><span>3</span>La ética social</a></li>
+                                        <li><a href="#" class="leido-item"><span>4</span>La actualización humana</a></li>  
+                                    </ul>
+                                </div>
+                              </div>
+                            <!--Lo mas leido-TABS-->
+                            </div>
+                        </div>
+                        <!--Lo mas leido-->   
+                    </div>  
+                       
+            </div>    
+        </div>    
+        <div data-ng-include data-src="'templates/footer.html'"></div>        
+        </div>
+    </div>
+</div>
+<!-- Body -->
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#side").height( $("#main").height() );
+    });
+</script>
+

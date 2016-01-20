@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="13px" viewBox="0 0 20 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 135</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-132.000000, -813.000000)" fill="#CA0000">
+            <g id="Actualidad" sketch:type="MSLayerGroup" transform="translate(132.000000, 333.000000)">
+                <g transform="translate(0.000000, 18.000000)" id="Recomendación" sketch:type="MSShapeGroup">
+                    <g transform="translate(0.000000, 455.000000)">
+                        <path d="M0,7.99850233 C0,7.44704472 0.439401627,7 0.999333308,7 L14.2314359,7 C14.7833525,7 15.5008486,7.368092 15.8251526,7.81008699 L19.4056166,12.689913 C19.7338855,13.1373117 19.7299207,13.868092 19.4056166,14.310087 L15.8251526,19.189913 C15.4968837,19.6373117 14.7913676,20 14.2314359,20 L0.999333308,20 C0.447416762,20 0,19.5525106 0,19.0014977 L0,7.99850233 Z" id="Rectangle-135"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
