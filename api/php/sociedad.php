@@ -16,6 +16,7 @@ echo json_encode(array(
 				'periodismos' => articulo(34),
 				'tabues' => articulo(35),
 				'judiciales' => articulo(36),
+				'subsecciones' => subseccion(4)
 				));
 
 ?>

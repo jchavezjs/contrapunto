@@ -51,9 +51,9 @@
     <div class="row">
         <div class="logo-center">
             <img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></br>
-            <h4 class="seccion">Cultura</h4>
+            <h4 class="seccion">{{secinfo.nombre}}</h4>
             <a class="opinion-logo-title" alt="cambiar a 60px" href="">
-                Artes
+                {{nombresub}}
             </a>   
         </div>
     </div>
@@ -93,11 +93,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a href="#/">La Anécdota</a>
-                <a href="#/">Artes</a>
-                <a href="#/">Literatura</a>
-                <a href="#/">Reseñas</a>
-                <a href="#/">Contratabú</a> 
+                <a ng-repeat="subseccion in subsecciones" ng-href="#/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div> 
@@ -111,60 +107,26 @@
         <div class="row">
             <div id="main" class="col-md-12">
                 <!-- Columna 1 -->  
-                    <div class="col-md-9 sec-subseccion">
+                    <div class="col-md-10 sec-subseccion">
                         <!--preview subseccion-->
-                        <div class="row preview-subseccion">
-                            <div style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6yWMIhqL2qnT2jd1x0h-OPNjDNy5Cc92dcl1msDqAokVbBdxu);" class="col-md-3 img-subseccion"></div>
+                        <div class="row preview-subseccion" ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo: pageSize">
+                            <div style="background-image: url({{contenido.foto}});" class="col-md-3 img-subseccion"></div>
                             <div class="col-md-9 info-subseccion">
-                                <a class="titulo-subseccion"><h1>Francisco Flores</h1></a>
-                                <h4 class="info-autor-politica">DORA REYES | Jueves, 10 Diciembre 2015</h4>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. </p>
+                                <a class="titulo-subseccion"><h1>{{contenido.titulo}}</h1></a>
+                                <h4 class="info-autor-politica">{{contenido.autor}} | {{contenido.fecha}}</h4>
+                                <p class="">{{contenido.preview}} </p>
                                 <a href="" class="leer-subseccion">Leer más</a>
                             </div>
                         </div>
                         <!--preview subseccion-->
-                         <!--preview subseccion-->
-                        <div class="row preview-subseccion">
-                            <div style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6yWMIhqL2qnT2jd1x0h-OPNjDNy5Cc92dcl1msDqAokVbBdxu);" class="col-md-3 img-subseccion"></div>
-                            <div class="col-md-9 info-subseccion">
-                                <a class="titulo-subseccion"><h1>Francisco Flores</h1></a>
-                                <h4 class="info-autor-politica">DORA REYES | Jueves, 10 Diciembre 2015</h4>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <a href="" class="leer-subseccion">Leer más</a>
-                            </div>
-                        </div>
-                        <!--preview subseccion-->
-                         <!--preview subseccion-->
-                        <div class="row preview-subseccion">
-                            <div style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6yWMIhqL2qnT2jd1x0h-OPNjDNy5Cc92dcl1msDqAokVbBdxu);" class="col-md-3 img-subseccion"></div>
-                            <div class="col-md-9 info-subseccion">
-                                <a class="titulo-subseccion"><h1>Francisco Flores</h1></a>
-                                <h4 class="info-autor-politica">DORA REYES | Jueves, 10 Diciembre 2015</h4>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <a href="" class="leer-subseccion">Leer más</a>
-                            </div>
-                        </div>
-                        <!--preview subseccion-->
-                         <!--preview subseccion-->
-                        <div class="row preview-subseccion">
-                            <div style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6yWMIhqL2qnT2jd1x0h-OPNjDNy5Cc92dcl1msDqAokVbBdxu);" class="col-md-3 img-subseccion"></div>
-                            <div class="col-md-9 info-subseccion">
-                                <a class="titulo-subseccion"><h1>Francisco Flores</h1></a>
-                                <h4 class="info-autor-politica">DORA REYES | Jueves, 10 Diciembre 2015</h4>
-                                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <a href="" class="leer-subseccion">Leer más</a>
-                            </div>
-                        </div>
-                        <!--preview subseccion-->
+                        <!--paginator-->
+                        <uib-pagination total-items="contenidos.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true"></uib-pagination>
+                        <!--paginator-->
                     </div>   
                 <!-- Columna 1 -->
                 <!-- Columna 2 - 1 -->
                   
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                          <!-- Publicidad -->
                         <div class="ads">
                             <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
@@ -202,66 +164,6 @@
                               </div>
                             <!--Lo mas leido-TABS-->
                             </div>
-                             <!--Lo mas leido-TABS-->
-                            <div role="tabpanel">
-                              <!-- Nav tabs -->
-                              <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada2">Portada</a></li>
-                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica2">Política</a></li>
-                              </ul>
-
-                              <!-- Tab panes -->
-                              <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="lmlportada2">
-                                    <ul class="leido leido-tab2">
-                                        <li><a href="#">
-                                            <div class="row tab2-item">
-                                                <div style="background-image: url(http://cdn.revistagq.com/uploads/images/thumbs/201315/concierto_7995_645x.jpg);" class="col-xs-4 img-tab2"></div>
-                                                <div class=" col-xs-8 info-tab2">
-                                                    <h4>Una experiencia fuera de este mundo</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li><a href="#">
-                                            <div class="row tab2-item">
-                                                <div style="background-image: url(http://cdn.revistagq.com/uploads/images/thumbs/201315/concierto_7995_645x.jpg);" class="col-xs-4 img-tab2"></div>
-                                                <div class=" col-xs-8 info-tab2">
-                                                    <h4>Una experiencia fuera de este mundo</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li><a href="#">
-                                            <div class="row tab2-item">
-                                                <div style="background-image: url(http://cdn.revistagq.com/uploads/images/thumbs/201315/concierto_7995_645x.jpg);" class="col-xs-4 img-tab2"></div>
-                                                <div class=" col-xs-8 info-tab2">
-                                                    <h4>Una experiencia fuera de este mundo</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li><a href="#">
-                                            <div class="row tab2-item">
-                                                <div style="background-image: url(http://cdn.revistagq.com/uploads/images/thumbs/201315/concierto_7995_645x.jpg);" class="col-xs-4 img-tab2"></div>
-                                                <div class=" col-xs-8 info-tab2">
-                                                    <h4>Una experiencia fuera de este mundo</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="lmlpolitica2">
-                                    <ul class="leido">
-                                        <li><a href="#" class="leido-item"><span>1</span>La pupusa salvadoreña</a></li>
-                                        <li><a href="#" class="leido-item"><span>2</span>Se estrena Star Wars</a></li>
-                                        <li><a href="#" class="leido-item"><span>3</span>La ética social</a></li>
-                                        <li><a href="#" class="leido-item"><span>4</span>La actualización humana</a></li>  
-                                    </ul>
-                                </div>
-                              </div>
-                            <!--Lo mas leido-TABS-->
                             </div>
                         </div>
                         <!--Lo mas leido-->    

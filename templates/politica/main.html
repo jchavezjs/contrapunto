@@ -73,10 +73,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a href="#/">Política</a>
-                <a href="#/">Gobierno</a>
-                <a href="#/">Partidos</a>
-</a>
+                <a ng-repeat="subseccion in subsecciones" ng-href="#/politica/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div> 

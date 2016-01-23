@@ -73,11 +73,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a href="#/">Negocios</a>
-                <a href="#/">Coyuntura Económica</a>
-                <a href="#/">Mundo Económico</a>
-                <a href="#/">Mercado Laboral</a>
-                <a href="#/">Análisis Económico</a> 
+                <a ng-repeat="subseccion in subsecciones" ng-href="#/economia/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div> 

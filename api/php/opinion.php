@@ -1,5 +1,6 @@
 <?php
 include('connection.php');
+include('funciones.php');
 
 date_default_timezone_set('America/El_Salvador');
 
@@ -22,10 +23,6 @@ $acainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, '
 						from articulo as a, personal as c
 						where a.idSubseccion = 6 and a.idPersonal=c.idPersonal
 						ORDER BY a.fecha desc, a.hora desc ");
-$colinfo = mysql_query("SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as NombreCompleto, c.rutaFoto, a.titulo, a.fecha 
-						from personal as c, columna as a 
-						where c.idPersonal = a.idPersonal
-						ORDER BY a.fecha desc, a.hora desc");
 
 while($edipreview = mysql_fetch_array($ediinfo)){
 	$editorial[]=array(
@@ -65,40 +62,21 @@ while($acapreview = mysql_fetch_array($acainfo)){
 				'fecha' => $fecha = date("d/m/Y", strtotime($acapreview['fecha'])),);
 }
 
-while($colpreview = mysql_fetch_array($colinfo)){
-	$columnista[] = array(
-				'id' => $id = $colpreview['id'],
-				'nombre' => $nombre = $colpreview['NombreCompleto'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($colpreview['fecha'])),
-				'foto' => $foto = $colpreview['rutaFoto'],
-				'titulo' => $titulo = $colpreview['titulo'],);
-}
 
 echo json_encode(array(
 				'editoriales' => $editorial,
 				'caricaturas' => $caricatura,
 				'tribunas' => $tribuna,
 				'libertades' => $libertad,
-				'columnistas' => $columnista,
+				'columnistas' => columna(),
 				'academias' => $academia,
 				'politicas' => dropdown(2),
 				'economias' => dropdown(5),
 				'sociedades' => dropdown(4),
 				'internacionales' => dropdown(3),
+				'subsecciones' => subseccion(1),
 				'culturas' => dropdown(6)));
 
-function dropdown($seccion){
-	$str = "SELECT idSubseccion as id, nombre
-			from subseccion
-			where idSeccion = $seccion";
-	$query = mysql_query($str);
-	while($result = mysql_fetch_array($query)){
-		$resultado[] = array(
-					'id' => $id = $result['id'],
-					'nombre' => $nombre = $result['nombre']);
-	}
-	return $resultado;
-}
 
 /*function formatoFecha($nfecha){
 	$day = date('l');

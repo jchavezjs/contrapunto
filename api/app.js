@@ -1,5 +1,5 @@
-angular.module("contrapunto", ['contrapunto.controllers','angular.filter','ngRoute','ngProgress'])
-    .config(function($routeProvider){
+angular.module("contrapunto", ['contrapunto.controllers','angular.filter','ngRoute','ngProgress','ui.bootstrap'])
+    .config(function($routeProvider, $locationProvider){
         $routeProvider
             .when("/", {
                 controller: "MainController",
@@ -43,6 +43,13 @@ angular.module("contrapunto", ['contrapunto.controllers','angular.filter','ngRou
             })
             .otherwise({
                 redirectTo: "/"
-        });
+            });
+
+        /*$locationProvider.html5Mode(true);*/
+    })
+    .filter('startFrom', function(){
+        return function(data, start){
+            return data.slice(start);
+        }
     })
 

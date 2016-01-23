@@ -93,11 +93,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a href="#/">La Anécdota</a>
-                <a href="#/">Artes</a>
-                <a href="#/">Literatura</a>
-                <a href="#/">Reseñas</a>
-                <a href="#/">COntratabú</a> 
+                <a ng-repeat="subseccion in subsecciones" ng-href="#/cultura/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div> 

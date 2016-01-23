@@ -11,6 +11,7 @@ echo json_encode(array(
 				'artes' => articulo(55),
 				'literaturas' => articulo(56),
 				'anecdotas' => articulo(54),
+				'subsecciones' => subseccion(6)
 				));
 
 ?>

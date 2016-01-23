@@ -47,7 +47,8 @@ echo json_encode(array(
 				'bolsas' => $bolsa,
 				'intereses' => $interes,
 				'divisas' => $divisa,
-				'datos' => $dato
+				'datos' => $dato,
+				'subsecciones' => subseccion(5)
 				));
 
 ?>

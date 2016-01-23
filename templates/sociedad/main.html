@@ -73,16 +73,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a href="#/">Ambiente</a>
-                <a href="#/">Violencia</a>
-                <a href="#/">Salud</a>
-                <a href="#/">DD.HH</a>
-                <a href="#/">Educación</a>
-                <a href="#/">Migración</a>
-                <a href="#/">Género</a>
-                <a href="#/">Periodismo Ciudadano</a>
-                <a href="#/">Rompiendo Tabúes</a> 
-                <a href="#/">Judicial</a>  
+                <a ng-repeat="subseccion in subsecciones" ng-href="#/sociedad/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div> 

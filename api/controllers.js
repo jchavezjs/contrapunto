@@ -61,6 +61,7 @@ angular.module('contrapunto.controllers', [])
             $scope.culturas = response.culturas;
             $scope.sociedades = response.sociedades;
             $scope.economias = response.economias;
+            $scope.subsecciones = response.subsecciones;
         });
     })
 
@@ -77,6 +78,7 @@ angular.module('contrapunto.controllers', [])
             $scope.politicas = response.politicas;
             $scope.gobiernos = response.gobiernos;
             $scope.partidos = response.partidos;
+            $scope.subsecciones = response.subsecciones;
         });
     })
 
@@ -93,6 +95,7 @@ angular.module('contrapunto.controllers', [])
             $scope.centroamericas = response.centroamericas;
             $scope.latinoamericas = response.latinoamericas;
             $scope.globales = response.globales;
+            $scope.subsecciones = response.subsecciones;
         });
     })
 
@@ -116,6 +119,7 @@ angular.module('contrapunto.controllers', [])
             $scope.periodismos = response.periodismos;
             $scope.tabues = response.tabues;
             $scope.judiciales = response.judiciales;
+            $scope.subsecciones = response.subsecciones;
         });
     })
 
@@ -138,6 +142,7 @@ angular.module('contrapunto.controllers', [])
             $scope.intereses = response.intereses;
             $scope.divisas = response.divisas;
             $scope.datos = response.datos;
+            $scope.subsecciones = response.subsecciones;
         });
     })
 
@@ -156,6 +161,7 @@ angular.module('contrapunto.controllers', [])
             $scope.artes = response.artes;
             $scope.literaturas = response.literaturas;
             $scope.anecdotas = response.anecdotas;
+            $scope.subsecciones = response.subsecciones;
         });
     })
 
@@ -171,7 +177,37 @@ angular.module('contrapunto.controllers', [])
         $http.get("api/php/deportes.php").success(function (response){
             $scope.cronicas = response.cronicas;
             $scope.aconteceres = response.aconteceres;
+            $scope.subsecciones = response.subsecciones;
         });
+    })
+
+    .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory){
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        $scope.progressbar.setColor('#35A7FF');
+        $timeout(function(){
+            $scope.progressbar.complete();
+            $scope.show = true;
+        }, 300);
+
+       var seccion = $routeParams.seccion;
+       var subseccion = $routeParams.subseccion;
+       $scope.currentPage = 1;
+       $scope.pageSize = 4;
+       $scope.maxSize = 15;
+
+       $http.post("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
+
+                $http.get("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion).success(function(response){
+
+                    $scope.contenidos = response.contenidos;
+                    $scope.error = response.error;
+                    $scope.secinfo = response.secinfo;
+                    $scope.nombresub = response.nombresub;
+                    $scope.subsecciones = response.subsecciones;
+                });
+
+       });
     })
 
     .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory){
