@@ -91,24 +91,17 @@
             <div id="main" class="col-md-12">
                 
                     <div class="col-md-9">
-                        <h1 class="post-title">Afinan detalles en caso Flores</h1>
-                        <h3 class="post-author"><span>laura bernal</span> | Miércoles, 06 Enero 2016</h3>
+                        <h1 class="post-title">{{contenido.titulo}}</h1>
+                        <h3 class="post-author"><span>{{contenido.autor}}</span> | {{contenido.fecha}}</h3>
                         <center><div class="post-divisor"></div></center>
-                        <div style="background-image:url(http://www.contrapunto.com.sv/images/Dic2015/Floresjuicio.jpg);" class="post-img">
+                        <div class="post-img"> 
+                            <img ng-src="{{contenido.foto}}" alt="foto de articulo" class="post-img">
                         </div>
-                        <span class="post-foto-autor">Foto: Jessica Orellana</span>    
+                        <span class="post-foto-autor">Foto: {{contenido.fotografo}}</span>    
                         <center><div class="post-divisor"></div></center>
                         <div class="post-body">
-<p>El juzgado Quinto de Sentencia ha convocado para este jueves a la defensa, Fiscalía y querella en el proceso judicial contra el expresidente Francisco Flores para determinar la mecánica de traslado para&nbsp; testigos que están fuera del país y que participarán en la etapa de sentencia.</p>
-<p>Las entrevistas testimoniales han sido desarrolladas desde hace algunos meses por la Fiscalía General e incluso este miércoles fue citado el expresidente del Consejo Ejecutivo Nacionalista de ARENA Antonio Salaverría, para incorporarlo en el expediente que se presentará ante el juez el próximo 18 de enero.</p>
-<p>Oscar Campos, uno de los querellantes por la Iniciativa Social para la Democracia (ISD) detalló que precisamente este jueves acordarán con las partes en el proceso el método de traslado y las fechas exactas en las que, por ejemplo, se convocará a exempleados del banco CITI que participaron en la apertura de cuentas bancarias para Flores y ARENA, en Costa Rica y en algunos países de Europa.</p>
-<p>En el desfile de pruebas testimoniales para la etapa de sentencia también se verá a reconocidos rostros como el de la diputada por ARENA, Ana Vilma de Escobar, los expresidentes salvadoreños (por ARENA) Elías Antonio Saca, (por el FMLN) Mauricio Funes, diputados de la Comisión Especial que investigó el caso en la Asamblea Legislativa y actuales funcionarios como el Ministro de Justicia y Seguridad Benito Lara, entre muchos otros.</p>
-<p>Según las previsiones de Campos, la etapa de sentencia o vista pública duraría aproximadamente una semana, dependiendo el tiempo en que se presentará la tesis fiscal y de la defensa, además de todos los alegatos y la gran cantidad de documentación y testimonios que abogados defensores también han ofertado.</p>
-<p>“Todo dependerá de cómo se logre hacer el desfile probatorio testimonial que es el más grande, recordemos que habrá también de la defensa y querella y eso puede tornarse bastante largo. Será una vista pública mayor a los siete días”, acotó el querellante.</p>
-<p>En diciembre pasado, la Cámara Primero de lo Penal regresó a cada al expresidente Francisco, luego de permanecer en prisión por orden del juzgado Séptimo de Instrucción y pese a estar vinculados a delitos de corrupción, por lo que el procesado permanecerá bajo arresto domiciliar toda la etapa de sentencia.</p>
-<p>Entre los aspectos novedosos, Campos también afirmó que esperan la incorporación del Reporte de Operaciones Sospechosas (ROSS) en la documentación que presentará la Fiscalía General durante la vista pública.</p>
-<p>Recientemente, el Instituto de Acceso a la Información Pública (IAIP) le ordenó a la Fiscalía General levantar la reserva sobre la supuesta sanción que Estados Unidos impuso al Estado salvadoreño por revelar detalles del ROSS.</p>
-<p>“Esperamos que con esta medida, el documento sea incorporado y que el nuevo Fiscal Douglas Meléndez tome mayor compromiso en el caso y dirija las investigaciones fiscales de manera más objetiva e imparcial”, sostuvo el abogado.</p></div>
+                        <p>{{contenido.contenido}}</p>
+                        </div>
                         <center><div class="post-divisor"></div></center>
                         <div class="social-posts">
                             <a><i class="ion-social-facebook fb"></i></a>

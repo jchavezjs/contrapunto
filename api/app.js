@@ -37,7 +37,7 @@ angular.module("contrapunto", ['contrapunto.controllers','angular.filter','ngRou
                     controller: "SubseccionController",
                     templateUrl: "templates/subseccion/main.html"
             })
-            .when("/:seccion/:subseccion/:id", {
+            .when("/:seccion/:subseccion/:titulo/:id", {
                 controller: "PostController",
                 templateUrl: "templates/politica/post.html"
             })
@@ -50,6 +50,11 @@ angular.module("contrapunto", ['contrapunto.controllers','angular.filter','ngRou
     .filter('startFrom', function(){
         return function(data, start){
             return data.slice(start);
+        }
+    })
+    .filter('urlEncode', function() {
+        return function(input) {
+            return input.split(" ").join("-"); 
         }
     })
 

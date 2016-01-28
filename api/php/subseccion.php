@@ -8,11 +8,11 @@ $editdata = json_decode(file_get_contents("php://input"));
 $seccion = $_GET['seccion'];
 $subseccion = $_GET['subseccion'];
 
-/*$seccion = 'deporte';
-$subseccion = 'columnistas';*/
+/*$seccion = 'deportes';
+$subseccion = 'acontecerdeportivo';*/
 
 $contenido='';
-$subnombre='';
+$subinfo='';
 $secinfo='';
 $error='';
 $sub='';
@@ -22,20 +22,19 @@ $secvalidate = mysql_query("SELECT idSeccion, nombre, url from seccion where url
 if($secvalidate){
 	$secprev = mysql_fetch_row($secvalidate);
 	$secinfo = array('id' => $secprev[0], 'nombre' => $secprev[1], 'url' => $secprev[2]);
-	$subvalidate = mysql_query("SELECT idSubseccion, nombre from subseccion where url='$subseccion' and idSeccion=".$secinfo['id']);
+	$subvalidate = mysql_query("SELECT idSubseccion, nombre, url from subseccion where url='$subseccion' and idSeccion=".$secinfo['id']);
 	if($subvalidate){
 		$subprev = mysql_fetch_row($subvalidate);
-		$subid = $subprev[0];
-		$subnombre = $subprev[1];
+		$subinfo = array('id' => $subprev[0], 'nombre' => $subprev[1], 'url' => $subprev[2]);
 		$sub = subseccion($secinfo['id']);
 		if($secinfo['id'] == 1){
-			if($subid == 2){
+			if($subinfo['id'] == 2){
 				$contenido = columna();
 			}else{
-				$contenido = opinion($subid);
+				$contenido = opinion($subinfo['id']);
 			}
 		}else{
-			$contenido = articulo($subid);
+			$contenido = articulo($subinfo['id']);
 		}
 	}else{
 		$error = array('description' => 'ERROR 404...la seccion seleccionada no existe');
@@ -48,7 +47,7 @@ echo json_encode(array(
 			'contenidos' => $contenido,
 			'error' => $error,
 			'secinfo' => $secinfo,
-			'nombresub' => $subnombre,
+			'subinfo' => $subinfo,
 			'subsecciones' => $sub
 			));
 ?>

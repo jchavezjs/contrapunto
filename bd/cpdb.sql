@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-01-2016 a las 05:11:34
+-- Tiempo de generación: 28-01-2016 a las 06:21:54
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `articulo` (
   `fecha` date NOT NULL,
   `hora` time NOT NULL,
   `especial` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `articulo`
@@ -74,8 +74,8 @@ INSERT INTO `articulo` (`idArticulo`, `titulo`, `preview`, `contenido`, `idPerso
 (32, 'Plazos traicioneros', 'Una semana antes del viaje mas de cinco mil soldados, policias y guardias realizaban una intensa ofensiva en zonas de presencia rebelde en el departamento de Morazan...', 'hola', 16, 54, '2016-01-10', '06:20:21', 0),
 (33, 'Enrique Alvarez Cordova entrego su vida por los pobres', 'El 27 de noviembre de 1980, Enrique Alvarez Cordova (1930-1980), nacido dentro de las Catorce Familias mas poderosas de El Salvador, tres veces ministro de agricultura, es asesinado junto a dirigentes del FDR. ', 'hola', 17, 59, '2016-01-10', '08:22:22', 0),
 (34, 'Consecuencias del abuso infanto juvenil', 'En general, el nino o adolescente que es abusado por un familiar suele quedar atrapado entre el afecto y la lealtad debidos a esa persona, y la inconveniencia del abuso de que es objeto', 'hola', 18, 35, '2016-01-10', '09:20:09', 0),
-(35, 'El sexo: durante y despues del cancer de seno', 'Al menos el 70 de las personas que sufren esta enfermedad confiesan haber tenido problemas con el sexo', 'hola', 6, 58, '2016-01-10', '07:22:20', 0),
-(36, 'Vigencia Ellacuria', 'El mejor homenaje a nuestros asesinados en las guerras de ayer y de hoy es fortalecer nuestro espiritu critico, nuestras exigencias como sociedad y nuestras propuestas y formulas de solucion', 'hola', 10, 1, '2016-01-11', '08:20:21', 0),
+(35, 'El sexo: durante y despues del cancer de seno', 'Al menos el 70 de las personas que sufren esta enfermedad confiesan haber tenido problemas con el sexo', 'hola', 14, 58, '2016-01-10', '07:22:20', 0),
+(36, 'Vigencia Ellacuria', 'El mejor homenaje a nuestros asesinados en las guerras de ayer y de hoy es fortalecer nuestro espiritu critico, nuestras exigencias como sociedad y nuestras propuestas y formulas de solucion', 'hola', 14, 1, '2016-01-11', '08:20:21', 0),
 (37, 'Estamos con ganas de justicia en Caso Jesuitas', 'La querellante Almudena Berbaneu dijo que existe nueva jurispridencia en El Salvador para arrestar y extraditar a los perseguidos', 'hola', 19, 37, '2016-01-09', '09:22:24', 1),
 (38, 'Corruptos desaciertos en El Salvador', 'La ley de probidad aprobada recientemente por el Legislativo carece de aspectos fundamentales para el combate a la verdadera currupcion, segun analistas', 'hola', 7, 37, '2016-01-10', '07:22:18', 1),
 (39, 'Ficciones: el intelectual y el poder en El Salvador (1928-1932)', 'A la historia en boga segun la cual el general Martinez gobierna solo por terror y opresion, el proyecto ficticio agrega una hipotesis descabellada y engorrosa, a saber: el apoyo ideologico e intelectual a su Presidencia ', 'hola', 19, 37, '2016-01-11', '07:13:07', 1),
@@ -151,7 +151,8 @@ INSERT INTO `articulo` (`idArticulo`, `titulo`, `preview`, `contenido`, `idPerso
 (109, 'Alianza conquista un nuevo titulo de la Liga Mayor', 'Alianza se corono campeon del Apertura \r\n			2015 al vencer a FAS con gol del capitan Ramon Martinez de Paz. ', 'hola', 14, 40, '2016-01-16', '12:12:12', 0),
 (110, 'Alianza conquista un nuevo titulo de la Liga Mayor', 'Alianza se corono campeon del Apertura \r\n			2015 al vencer a FAS con gol del capitan Ramon Martinez de Paz. ', 'hola', 14, 41, '2016-01-16', '12:12:12', 0),
 (111, 'Alianza conquista un nuevo titulo de la Liga Mayor', 'Alianza se corono campeon del Apertura \r\n			2015 al vencer a FAS con gol del capitan Ramon Martinez de Paz. ', 'hola', 14, 41, '2016-01-16', '12:12:12', 0),
-(112, 'Alianza conquista un nuevo titulo de la Liga Mayor', 'Alianza se corono campeon del Apertura \r\n			2015 al vencer a FAS con gol del capitan Ramon Martinez de Paz. ', 'hola', 14, 41, '2016-01-16', '12:12:12', 0);
+(112, 'Alianza conquista un nuevo titulo de la Liga Mayor', 'Alianza se corono campeon del Apertura \r\n			2015 al vencer a FAS con gol del capitan Ramon Martinez de Paz. ', 'hola', 14, 41, '2016-01-16', '12:12:12', 0),
+(113, 'Columa de prueba', 'esta columna es de prueba', 'hola', 2, 2, '2016-01-13', '08:21:21', 0);
 
 -- --------------------------------------------------------
 
@@ -570,22 +571,23 @@ CREATE TABLE IF NOT EXISTS `resultado` (
 
 CREATE TABLE IF NOT EXISTS `seccion` (
   `idSeccion` int(11) NOT NULL,
-  `nombre` varchar(30) COLLATE utf8_bin NOT NULL
+  `nombre` varchar(30) COLLATE utf8_bin NOT NULL,
+  `url` varchar(20) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `seccion`
 --
 
-INSERT INTO `seccion` (`idSeccion`, `nombre`) VALUES
-(1, 'OpiniÃ³n'),
-(2, 'Politica'),
-(3, 'Internacionales'),
-(4, 'Sociedad'),
-(5, 'EconomÃ­a'),
-(6, 'Cultura'),
-(7, 'Deportes'),
-(8, 'Especiales');
+INSERT INTO `seccion` (`idSeccion`, `nombre`, `url`) VALUES
+(1, 'OpiniÃ³n', 'opinion'),
+(2, 'PolÃ­tica', 'politica'),
+(3, 'Internacionales', 'internacionales'),
+(4, 'Sociedad', 'sociedad'),
+(5, 'EconomÃ­a', 'economia'),
+(6, 'Cultura', 'cultura'),
+(7, 'Deportes', 'deportes'),
+(8, 'Especiales', 'especiales');
 
 -- --------------------------------------------------------
 
@@ -609,50 +611,51 @@ CREATE TABLE IF NOT EXISTS `sondeo` (
 CREATE TABLE IF NOT EXISTS `subseccion` (
   `idSubseccion` int(11) NOT NULL,
   `idSeccion` int(11) NOT NULL,
-  `nombre` varchar(30) COLLATE utf8_bin NOT NULL
+  `nombre` varchar(30) COLLATE utf8_bin NOT NULL,
+  `url` varchar(20) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `subseccion`
 --
 
-INSERT INTO `subseccion` (`idSubseccion`, `idSeccion`, `nombre`) VALUES
-(1, 1, 'Editorial'),
-(2, 1, 'Columnistas'),
-(3, 1, 'Tribuna libre'),
-(4, 1, 'Libertad de expresion'),
-(5, 1, 'Sondeo'),
-(6, 1, 'La academia'),
-(27, 4, 'Ambiente'),
-(28, 4, 'Violencia'),
-(29, 4, 'Salud'),
-(30, 4, 'DD.HH'),
-(31, 4, 'EduaciÃ³n'),
-(32, 4, 'MigraciÃ³n'),
-(33, 4, 'GÃ©nero'),
-(34, 4, 'Periodismo Ciudadano'),
-(35, 4, 'Rompiendo TabÃºes'),
-(36, 4, 'Judicial'),
-(37, 2, 'PolÃ­tica'),
-(38, 2, 'Gobierno'),
-(39, 2, 'Partidos'),
-(40, 7, 'CrÃ³nicas Deportivas'),
-(41, 7, 'Acontecer Deportivo'),
-(42, 3, 'CentroamÃ©rica'),
-(43, 3, 'LatinoamÃ©rica'),
-(44, 3, 'Global'),
-(45, 5, 'Negocios'),
-(46, 5, 'Coyuntura EconÃ³mica'),
-(47, 5, 'Mundo EconÃ³mico'),
-(48, 5, 'Mercado Laboral'),
-(49, 5, 'AnalÃ­sis EconÃ³mico'),
-(54, 6, 'La anÃ©cdota'),
-(55, 6, 'Artes'),
-(56, 6, 'Literatura'),
-(57, 6, 'ReseÃ±as'),
-(58, 6, 'ContratabÃº'),
-(59, 6, 'Entrevistas en off'),
-(60, 8, 'Especiales Semanles');
+INSERT INTO `subseccion` (`idSubseccion`, `idSeccion`, `nombre`, `url`) VALUES
+(1, 1, 'Editorial', 'editorial'),
+(2, 1, 'Columnistas', 'columnistas'),
+(3, 1, 'Tribuna libre', 'tribuna'),
+(4, 1, 'Libertad de expresion', 'libertad'),
+(5, 1, 'Sondeo', 'sondeo'),
+(6, 1, 'La academia', 'academia'),
+(27, 4, 'Ambiente', 'ambiente'),
+(28, 4, 'Violencia', 'violencia'),
+(29, 4, 'Salud', 'salud'),
+(30, 4, 'DD.HH', 'ddhh'),
+(31, 4, 'EducaciÃ³n', 'educacion'),
+(32, 4, 'MigraciÃ³n', 'migracion'),
+(33, 4, 'GÃ©nero', 'genero'),
+(34, 4, 'Periodismo Ciudadano', 'periodismociudadano'),
+(35, 4, 'Rompiendo TabÃºes', 'rompiendotabues'),
+(36, 4, 'Judicial', 'judicial'),
+(37, 2, 'PolÃ­tica', 'politica'),
+(38, 2, 'Gobierno', 'gobierno'),
+(39, 2, 'Partidos', 'partidos'),
+(40, 7, 'CrÃ³nicas Deportivas', 'cronicasdeportivas'),
+(41, 7, 'Acontecer Deportivo', 'acontecerdeportivo'),
+(42, 3, 'CentroamÃ©rica', 'centroamerica'),
+(43, 3, 'LatinoamÃ©rica', 'latinoamerica'),
+(44, 3, 'Global', 'global'),
+(45, 5, 'Negocios', 'negocios'),
+(46, 5, 'Coyuntura EconÃ³mica', 'coyunturaeconomica'),
+(47, 5, 'Mundo EconÃ³mico', 'mundoeconomico'),
+(48, 5, 'Mercado Laboral', 'mercadolaboral'),
+(49, 5, 'AnalÃ­sis EconÃ³mico', 'analisiseconomico'),
+(54, 6, 'La anÃ©cdota', 'anecdota'),
+(55, 6, 'Artes', 'artes'),
+(56, 6, 'Literatura', 'literatura'),
+(57, 6, 'ReseÃ±as', 'resenas'),
+(58, 6, 'ContratabÃº', 'contratabu'),
+(59, 6, 'Entrevistas en off', 'entrevistas'),
+(60, 8, 'Especiales Semanles', 'especiales');
 
 -- --------------------------------------------------------
 
@@ -911,7 +914,7 @@ ALTER TABLE `vistasubseccion`
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  MODIFY `idArticulo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=113;
+  MODIFY `idArticulo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=114;
 --
 -- AUTO_INCREMENT de la tabla `banner`
 --

@@ -1529,6 +1529,7 @@ body{
     margin: 0 0 10px 0;
     padding-bottom: 5px;
     border-bottom: 2px solid #dbdbdb;
+    position: relative;
 }
 .img-subseccion{
     height: 150px;
@@ -1540,12 +1541,12 @@ body{
     font-family: Lora;
     color: #000;
     cursor: pointer;
+    font-size: 28px;
 }
 .titulo-subseccion:hover{
     text-decoration: none;
 }
 .info-subseccion{
-    position: relative;
     padding-bottom: 30px;
 }
 .leer-subseccion{
@@ -1555,20 +1556,48 @@ body{
     border-radius: 2px;
     position: absolute;
     right: 5px;
-    bottom: 0;
+    bottom: 5px;
 }
 .leer-subseccion:hover{
     color:#fff;
     text-decoration: none;
+}
+.subseccion-autor{
+    font-size: 12px;
+}
+.seccion-nombre h4{
+    margin-top: 10px;
+}
+.tab-subseccion li a{
+    margin-right: 10px;
+    border: none;
+    color:#000;
+    border-radius: 2px;
+}
+.tab-subseccion .active a{
+    background-color: #DBDBDB;
+    color:#000;
+}
+.pagination li a:hover{
+    background-color: #f1f1f1;
+    color:#000;
+    border: none;
+}
+.pagination .active a:hover{
+    background-color: #f1f1f1;
+    color:#000;
 }
 /*POST*/
 .post-img{
     margin-top: 10px;
     height: 400px;
     background-color: black;
-    background-size: 600px;
-    background-position: center;
-    background-repeat: no-repeat;
+    text-align: center;
+}
+.post-img img{
+    margin: 0 auto;
+    width: 600px;
+    height: 400px;
 }
 .post-title{
     font-family: 'Roboto Slab', serif;
@@ -1773,5 +1802,8 @@ margin: 10px 0 0px 0;
     }
     .alianzas{
         display: none;
+    }
+    .tab-subseccion{
+        text-align: center;
     }
 }

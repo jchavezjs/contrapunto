@@ -203,14 +203,14 @@ angular.module('contrapunto.controllers', [])
                     $scope.contenidos = response.contenidos;
                     $scope.error = response.error;
                     $scope.secinfo = response.secinfo;
-                    $scope.nombresub = response.nombresub;
+                    $scope.subinfo = response.subinfo;
                     $scope.subsecciones = response.subsecciones;
                 });
 
        });
     })
 
-    .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory){
+    .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -218,4 +218,24 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
+
+        var seccion = $routeParams.seccion;
+        var subseccion = $routeParams.subseccion;
+        var titulo = $routeParams.titulo;
+        var id = $routeParams.id;
+
+         $http.post("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&titulo="+titulo+"id="+id,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
+
+                $http.get("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&titulo="+titulo+"id="+id).success(function(response){
+
+                    $scope.contenido = response.contenido;
+                    $scope.error = response.error;
+                    $scope.secinfo = response.secinfo;
+                    $scope.subinfo = response.subinfo;
+                    $scope.subsecciones = response.subsecciones;
+                    console.log($scope.error);
+
+                });
+
+       });
     });
