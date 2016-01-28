@@ -31,10 +31,10 @@
     <div class="row">
         <div class="logo-center">
             <img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></br>
-            <a class="politica-logo-title" alt="cambiar a 60px" href="">
-                Política
+            <a class="politica-logo-title" alt="cambiar a 60px" ng-href="#/{{secinfo.url}}">
+                {{secinfo.nombre}}
             </a>
-            <h4>Lunes, 24 Noviembre del 2015</h4>    
+            <h4>{{fecha}}</h4>    
         </div>
     </div>
     <!-- Logo Section -->
@@ -73,10 +73,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a href="#/">Política</a>
-                <a href="#/">Gobierno</a>
-                <a href="#/">Partidos</a>
-</a>
+                <a ng-repeat="subseccion in subsecciones" ng-href="#/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div> 

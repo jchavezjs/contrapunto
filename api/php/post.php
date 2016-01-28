@@ -7,7 +7,6 @@ $editdata = json_decode(file_get_contents("php://input"));
 
 $seccion = $_GET['seccion'];
 $subseccion = $_GET['subseccion'];
-$titulo = $_GET['titulo'];
 $id = $_GET['id'];
 
 /*$seccion = 'politica';

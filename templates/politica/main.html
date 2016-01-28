@@ -92,26 +92,26 @@
                         <div class="sec-politica">
                             <!-- Titulo politica -->
                             <div class="row titulo-politica">
-                                <div class="col-xs-5 adorno-titulo-politica"></div>
-                                <h2 class="col-xs-2">POLÍTICA</h2>
-                                <div class="col-xs-5 adorno-titulo-politica"></div>
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>SOCIEDAD CIVIL</h2>
+                                <div class="adorno-titulo-politica"></div>
                             </div>
                             <!-- Titulo politica -->
                             <div class="col1bordes">
                             <!-- Preview seccion politica -->
                            <div class="articulo preview-sec-politica">
                                <div class="item-politica-main">
-                                   <h1 ><a>{{politicas[0].titulo}}</a></h1>
-                                   <h4 class="info-autor-politica">{{politicas[0].autor}} | {{politicas[0].fecha}}</h4>
+                                   <h1><a ng-href="#/politica/sociedadcivil/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}">{{politicas[0].titulo}}</a></h1>
+                                   <h4 class="info-autor-politica">{{politicas[0].autor | uppercase}} | {{politicas[0].fecha}}</h4>
                                    <p>{{politicas[0].preview}}</p>
-                                   <div style="background-image: url({{politicas[0].foto}});" class="img-articulo"></div>
+                                   <a ng-href="#/politica/sociedadcivil/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}"><div style="background-image: url({{politicas[0].foto}});" class="img-articulo"></div></a>
                                    <p class="foto-autor-main">Foto: {{politicas[0].fotografo}}</p>
                                </div>
                               <div class="row item-politica" ng-repeat="politica in politicas | limitTo: 3" ng-if="politica != politicas[0]">
-                                  <div style="background-image: url({{politica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                  <a ng-href="#/politica/sociedadcivil/{{politica.titulo | urlEncode}}/{{politica.id}}"><div style="background-image: url({{politica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                   <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                      <h3>{{politica.titulo}}</h3>
-                                      <p><span class="info-autor-politica">{{politica.autor}} </br> {{politica.fecha}}</span></p>
+                                      <a ng-href="#/politica/sociedadcivil/{{politica.titulo | urlEncode}}/{{politica.id}}"><h3>{{politica.titulo}}</h3></a>
+                                      <p><span class="info-autor-politica">{{politica.autor}} | {{politica.fecha}}</span></p>
                                       <p>{{politica.preview}}</p>
                                   </div>
                                </div>
@@ -124,25 +124,25 @@
                         <div class="sec-politica">
                             <!-- Titulo politica -->
                             <div class="row titulo-politica">
-                                <div class="col-xs-5 adorno-titulo-politica"></div>
-                                <h2 class="col-xs-2">PARTIDOS</h2>
-                                <div class="col-xs-5 adorno-titulo-politica"></div>
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>PARTIDOS</h2>
+                                <div class="adorno-titulo-politica"></div>
                             </div>
                             <!-- Titulo politica -->
                             <div class="col1bordes">
                             <!-- Preview seccion politica -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{partidos[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{partidos[0].autor}} | {{partidos[0].fecha}}</h4>
+                                    <h1><a ng-href="#/politica/partidos/{{partidos[0].titulo | urlEncode}}/{{partidos[0].id}}">{{partidos[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{partidos[0].autor | uppercase}} | {{partidos[0].fecha}}</h4>
                                     <p>{{partidos[0].preview}}</p>
-                                    <div style="background-image: url({{partidos[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/politica/partidos/{{partidos[0].titulo | urlEncode}}/{{partidos[0].id}}"><div style="background-image: url({{partidos[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{partidos[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="partido in partidos | limitTo: 3" ng-if="partido != partidos[0]">
-                                    <div style="background-image: url({{partido.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/politica/partidos/{{partido.titulo | urlEncode}}/{{partido.id}}"><div style="background-image: url({{partido.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{partido.titulo}}</h3>
+                                        <a ng-href="#/politica/partidos/{{partido.titulo | urlEncode}}/{{partido.id}}"><h3>{{partido.titulo}}</h3></a>
                                         <p><span class="info-autor-politica">{{partido.autor}} | {{partido.fecha}}</span></p>
                                         <p>{{partido.preview}}</p>
                                     </div>
@@ -161,24 +161,24 @@
                         <div class="sec-politica">
                             <!-- Titulo politica -->
                             <div class="row titulo-politica">
-                                <div class="col-xs-5 adorno-titulo-politica"></div>
-                                <h2 class="col-xs-2">GOBIERNO</h2>
-                                <div class="col-xs-5 adorno-titulo-politica"></div>
+                                <div class="adorno-titulo-politica"></div>
+                                <h2>GOBIERNO</h2>
+                                <div class="adorno-titulo-politica"></div>
                             </div>
                             <!-- Titulo politica -->
                                 <!-- Preview seccion politica -->
                                 <div class="articulo preview-sec-politica">
                                     <div class="item-politica-main">
-                                        <h1 ><a>{{gobiernos[0].titulo}}</a></h1>
-                                        <h4 class="info-autor-politica">{{gobiernos[0].autor}} | {{gobiernos[0].fecha}}</h4>
+                                        <h1><a ng-href="#/politica/gobierno/{{gobiernos[0].titulo | urlEncode}}/{{gobiernos[0].id}}">{{gobiernos[0].titulo}}</a></h1>
+                                        <h4 class="info-autor-politica">{{gobiernos[0].autor | uppercase}} | {{gobiernos[0].fecha}}</h4>
                                         <p>{{gobiernos[0].preview}}</p>
-                                        <div style="background-image: url({{gobiernos[0].foto}});" class="img-articulo"></div>
+                                        <a ng-href="#/politica/gobierno/{{gobiernos[0].titulo | urlEncode}}/{{gobiernos[0].id}}"><div style="background-image: url({{gobiernos[0].foto}});" class="img-articulo"></div></a>
                                         <p class="foto-autor-main">Foto: {{gobiernos[0].fotografo}}</p>
                                     </div>
                                     <div class="row item-politica" ng-repeat="gobierno in gobiernos | limitTo: 3" ng-if="gobierno != gobiernos[0]">
-                                        <div style="background-image: url({{gobierno.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                        <a ng-href="#/politica/gobierno/{{gobierno.titulo | urlEncode}}/{{gobierno.id}}"><div style="background-image: url({{gobierno.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                         <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                            <h3>{{gobierno.titulo}}</h3>
+                                            <a ng-href="#/politica/gobierno/{{gobierno.titulo | urlEncode}}/{{gobierno.id}}"><h3>{{gobierno.titulo}}</h3></a>
                                             <p><span class="info-autor-politica">{{gobierno.autor}} | {{gobierno.fecha}}</span></p>
                                             <p>{{gobierno.preview}}</p>
                                         </div>

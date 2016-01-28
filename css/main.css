@@ -1568,6 +1568,13 @@ body{
 .seccion-nombre h4{
     margin-top: 10px;
 }
+.seccion-nombre a{
+    color: #000;
+}
+.seccion-nombre a:hover{
+    color: #000;
+    text-decoration: none;
+}
 .tab-subseccion li a{
     margin-right: 10px;
     border: none;
@@ -1596,8 +1603,7 @@ body{
 }
 .post-img img{
     margin: 0 auto;
-    width: 600px;
-    height: 400px;
+    width: 80%;
 }
 .post-title{
     font-family: 'Roboto Slab', serif;

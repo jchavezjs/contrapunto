@@ -224,16 +224,20 @@ angular.module('contrapunto.controllers', [])
         var titulo = $routeParams.titulo;
         var id = $routeParams.id;
 
-         $http.post("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&titulo="+titulo+"id="+id,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
+        var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+        var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+        var f=new Date();
+        $scope.fecha = diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear();
 
-                $http.get("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&titulo="+titulo+"id="+id).success(function(response){
+         $http.post("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
+
+                $http.get("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id).success(function(response){
 
                     $scope.contenido = response.contenido;
                     $scope.error = response.error;
                     $scope.secinfo = response.secinfo;
                     $scope.subinfo = response.subinfo;
                     $scope.subsecciones = response.subsecciones;
-                    console.log($scope.error);
 
                 });
 

@@ -51,8 +51,8 @@
     <div class="row">
         <div class="logo-center seccion-nombre">
             <img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></br>
-            <h4>{{secinfo.nombre}}</h4>
-            <a class="opinion-logo-title" alt="cambiar a 60px" href="">
+            <a ng-href="#/{{secinfo.url}}"><h4>{{secinfo.nombre}}</h4></a>
+            <a class="opinion-logo-title" alt="cambiar a 60px" ng-href="#/{{secinfo.url}}/{{subinfo.url}}">
                 {{subinfo.nombre}}
             </a>   
         </div>
@@ -110,13 +110,13 @@
                     <div class="col-md-10 sec-subseccion">
                         <!--preview subseccion-->
                         <div class="row preview-subseccion" ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo: pageSize">
-                            <div style="background-image: url({{contenido.foto}});" class="col-md-3 img-subseccion"></div>
+                            <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><div style="background-image: url({{contenido.foto}});" class="col-md-3 img-subseccion"></div></a>
                             <div class="col-md-9 info-subseccion">
                                 <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
-                                <h4 class="info-autor-politica subseccion-autor">{{contenido.autor}} | {{contenido.fecha}}</h4>
+                                <h4 class="info-autor-politica subseccion-autor">{{contenido.autor | uppercase}} | {{contenido.fecha}}</h4>
                                 <p class="subseccion-prev">{{contenido.preview}} </p>
                             </div>
-                             <a href="#" class="leer-subseccion">Leer más</a>
+                             <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}" class="leer-subseccion">Leer más</a>
                         </div>
                         <!--preview subseccion-->
                         <!--paginator-->
