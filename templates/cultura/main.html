@@ -54,7 +54,7 @@
             <a class="opinion-logo-title" alt="cambiar a 60px" href="">
                 Cultura
             </a>
-            <h4>Lunes, 24 Noviembre del 2015</h4>    
+            <h4>{{fecha}}</h4>    
         </div>
     </div>
     <!-- Logo Section -->
@@ -112,7 +112,7 @@
                         <div class="sec-politica sec-cultura">
                             <h2>Contratabú</h2>
                             <div class="cultura-contratabu">
-                            <a href=""><div style="background:url({{contratabues[0].foto}}) center center;background-size: cover;" class="main-rompiendo-tabues">
+                            <a ng-href="#/cultura/contratabu/{{contratabues[0].titulo | urlEncode}}/{{contratabues[0].id}}"><div style="background:url({{contratabues[0].foto}}) center center;background-size: cover;" class="main-rompiendo-tabues">
                             <div class="trans t-politica">
                                 <h3 class="titulo-preview">{{contratabues[0].titulo}}</h3>
                             </div>
@@ -129,9 +129,9 @@
                             <!-- Preview seccion artes -->
                             <div class="articulo preview-sec-politica preview-sec-cultura">
                                 <div class="item-politica-main">
-                                    <div style="background-image: url({{artes[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/cultura/artes/{{artes[0].titulo | urlEncode}}/{{artes[0].id}}"><div style="background-image: url({{artes[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{artes[0].fotografo}}</p>
-                                    <h1 class="h1-cultura"><a>{{artes[0].titulo}}</a></h1>
+                                    <h1 class="h1-cultura"><a ng-href="#/cultura/artes/{{artes[0].titulo | urlEncode}}/{{artes[0].id}}">{{artes[0].titulo}}</a></h1>
                                     <h4 class="info-autor-politica">{{artes[0].autor | uppercase}} | {{artes[0].fecha}}</h4>
                                     <p>{{artes[0].preview}}</p>
                                 </div>
@@ -147,9 +147,9 @@
                             <!-- Preview seccion anecdota -->
                             <div class="articulo preview-sec-politica preview-sec-cultura">
                                 <div class="item-politica-main">
-                                    <div style="background-image: url({{anecdotas[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}"><div style="background-image: url({{anecdotas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{anecdotas[0].fotografo}}</p>
-                                    <h1 class="h1-cultura"><a>{{anecdotas[0].titulo}}</a></h1>
+                                    <h1 class="h1-cultura"><a ng-href="#/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}">{{anecdotas[0].titulo}}</a></h1>
                                     <h4 class="info-autor-politica">{{anecdotas[0].autor | uppercase}} | {{anecdotas[0].fecha}}</h4>
                                     <p>{{anecdotas[0].preview}}</p>
                                 </div>
@@ -171,9 +171,9 @@
                                     <!-- Preview seccion reseña -->
                                     <div class="articulo preview-sec-politica preview-sec-cultura">
                                         <div class="row item-politica-main resena-cultura">
-                                            <div style="background-image: url({{resenas[0].foto}});" class="col-xs-5 img-articulo-cultura"></div>
+                                            <a ng-href="#/cultura/resena/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}"><div style="background-image: url({{resenas[0].foto}});" class="col-xs-5 img-articulo-cultura"></div></a>
                                             <div class="col-xs-7">
-                                                <h1 class="resena-title"><a>{{resenas[0].titulo}}</a></h1>
+                                                <h1 class="resena-title"><a ng-href="#/cultura/resena/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}">{{resenas[0].titulo}}</a></h1>
                                                 <h4 class="info-autor-politica">{{resenas[0].autor | uppercase}} </br> {{resenas[0].fecha}}</h4>
                                                 <p class="info-resena">{{resenas[0].preview}}</p>
                                             </div>
@@ -195,9 +195,9 @@
                             <!-- Preview seccion literatura -->
                             <div class="articulo preview-sec-politica preview-sec-cultura">
                                 <div class="item-politica-main">
-                                    <div style="background-image: url({{literaturas[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/cultura/literatura/{{literaturas[0].titulo | urlEncode}}/{{literaturas[0].id}}"><div style="background-image: url({{literaturas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{literaturas[0].fotografo}}</p>
-                                    <h1 class="h1-cultura"><a>{{literaturas[0].titulo}}</a></h1>
+                                    <h1 class="h1-cultura"><a ng-href="#/cultura/literatura/{{literaturas[0].titulo | urlEncode}}/{{literaturas[0].id}}">{{literaturas[0].titulo}}</a></h1>
                                     <h4 class="info-autor-politica">{{literaturas[0].autor | uppercase}} | {{literaturas[0].fecha}}</h4>
                                     <p>{{literaturas[0].preview}}</p>
                                 </div>

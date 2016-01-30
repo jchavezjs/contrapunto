@@ -34,7 +34,7 @@
             <a class="mundo-logo-title" alt="cambiar a 60px" href="">
                 Internacionales
             </a>
-            <h4>Lunes, 24 Noviembre del 2015</h4>    
+            <h4>{{fecha}}</h4>    
         </div>
     </div>
     <!-- Logo Section -->
@@ -99,16 +99,16 @@
                             <!-- Preview seccion politica -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{centroamericas[0].titulo}}</a></h1>
+                                    <h1><a ng-href="#/internacionales/centroamerica/{{centroamericas[0].titulo | urlEncode}}/{{centroamericas[0].id}}">{{centroamericas[0].titulo}}</a></h1>
                                     <h4 class="info-autor-politica">{{centroamericas[0].autor | uppercase}} | {{centroamericas[0].fecha}}</h4>
                                     <p>{{centroamericas[0].preview}}</p>
-                                    <div style="background-image: url({{centroamericas[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/internacionales/centroamerica/{{centroamericas[0].titulo | urlEncode}}/{{centroamericas[0].id}}"><div style="background-image: url({{centroamericas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{centroamericas[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="centroamerica in centroamericas | limitTo: 3" ng-if="centroamerica != centroamericas[0]">
-                                    <div style="background-image: url({{centroamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/internacionales/centroamerica/{{centroamerica.titulo | urlEncode}}/{{centroamerica.id}}"><div style="background-image: url({{centroamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{centroamerica.titulo}}</h3>
+                                        <a ng-href="#/internacionales/centroamerica/{{centroamerica.titulo | urlEncode}}/{{centroamerica.id}}"><h3>{{centroamerica.titulo}}</h3></a>
                                         <p><span class="info-autor-politica">{{centroamerica.autor | uppercase}} | {{centroamerica.fecha}}</span></p>
                                         <p>{{centroamerica.preview}}</p>
                                     </div>
@@ -128,16 +128,16 @@
                             <!-- Preview seccion politica -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{globales[0].titulo}}</a></h1>
+                                    <h1><a ng-href="#/internacionales/global/{{globales[0].titulo | urlEncode}}/{{globales[0].id}}">{{globales[0].titulo}}</a></h1>
                                     <h4 class="info-autor-politica">{{globales[0].autor | uppercase}} | {{globales[0].fecha}}</h4>
                                     <p>{{globales[0].preview}}</p>
-                                    <div style="background-image: url({{globales[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/internacionales/global/{{globales[0].titulo | urlEncode}}/{{globales[0].id}}"><div style="background-image: url({{globales[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{globales[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="global in globales | limitTo: 3" ng-if="global != globales[0]">
-                                    <div style="background-image: url({{global.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/internacionales/global/{{global.titulo | urlEncode}}/{{global.id}}"><div style="background-image: url({{global.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{global.titulo}}</h3>
+                                        <a ng-href="#/internacionales/global/{{global.titulo | urlEncode}}/{{global.id}}"><h3>{{global.titulo}}</h3></a>
                                         <p><span class="info-autor-politica">{{global.autor | uppercase}} | {{global.fecha}}</span></p>
                                         <p>{{global.preview}}</p>
                                     </div>
@@ -164,16 +164,16 @@
                             <!-- Titulo politica -->
                                  <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{latinoamericas[0].titulo}}</a></h1>
+                                    <h1><a ng-href="#/internacionales/latinoamerica/{{latinoamericas[0].titulo | urlEncode}}/{{latinoamericas[0].id}}">{{latinoamericas[0].titulo}}</a></h1>
                                     <h4 class="info-autor-politica">{{latinoamericas[0].autor | uppercase}} | {{latinoamericas[0].fecha}}</h4>
                                     <p>{{latinoamericas[0].preview}}</p>
-                                    <div style="background-image: url({{latinoamericas[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/internacionales/latinoamerica/{{latinoamericas[0].titulo | urlEncode}}/{{latinoamericas[0].id}}"><div style="background-image: url({{latinoamericas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{latinoamericas[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="latinoamerica in latinoamericas | limitTo: 3" ng-if="latinoamerica != latinoamericas[0]">
-                                    <div style="background-image: url({{latinoamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/internacionales/latinoamerica/{{latinoamerica.titulo | urlEncode}}/{{latinoamerica.id}}"><div style="background-image: url({{latinoamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{latinoamerica.titulo}}</h3>
+                                        <a ng-href="#/internacionales/latinoamerica/{{latinoamerica.titulo | urlEncode}}/{{latinoamerica.id}}"><h3>{{latinoamerica.titulo}}</h3></a>
                                         <p><span class="info-autor-politica">{{latinoamerica.autor | uppercase}} | {{latinoamerica.fecha}}</span></p>
                                         <p>{{latinoamerica.preview}}</p>
                                     </div>

@@ -1,6 +1,7 @@
 
 <?php
 include('connection.php');
+include('funciones.php');
 
 date_default_timezone_set('America/El_Salvador');
 
@@ -126,7 +127,7 @@ while($actpreview = mysql_fetch_array($actinfo)){
 				'id' => $id = $actpreview['id'],
 				'titulo' => $titulo = $actpreview['titulo'],
 				'autor' => $autor = $actpreview['autor'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($actpreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($actpreview['fecha']),
 				'subseccion' => $subseccion = $actpreview['subseccion'],
 				'preview' => $preview = $actpreview['preview'],
 				'foto' => $foto = $actpreview['foto'],
@@ -178,7 +179,7 @@ while($sospreview = mysql_fetch_array($sosinfo)){
 				'titulo' => $titulo = $sospreview['titulo'],
 				'autor' => $autor = $sospreview['autor'],
 				'preview' => $preview = $sospreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($sospreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($sospreview['fecha']),
 				'subseccion' => $subseccion = $sospreview['subseccion'],
 				'fotografo' => $fotografo = $sospreview['fotografo'],);
 }
@@ -208,7 +209,7 @@ while($deppreview = mysql_fetch_array($depinfo)){
 				'titulo' => $titulo = $deppreview['titulo'],
 				'autor' => $autor = $deppreview['autor'],
 				'preview' => $preview = $deppreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($deppreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($deppreview['fecha']),
 				'subseccion' => $subseccion = $deppreview['subseccion'],
 				'fotografo' => $fotografo = $deppreview['fotografo'],);
 }
@@ -220,7 +221,7 @@ while($perpreview = mysql_fetch_array($perinfo)){
 				'titulo' => $titulo = $perpreview['titulo'],
 				'autor' => $autor = $perpreview['autor'],
 				'preview' => $preview = $perpreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($perpreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($perpreview['fecha']),
 				'subseccion' => $subseccion = $perpreview['subseccion'],
 				'fotografo' => $fotografo = $perpreview['fotografo'],);
 }
@@ -232,7 +233,7 @@ while($intpreview = mysql_fetch_array($intinfo)){
 				'titulo' => $titulo = $intpreview['titulo'],
 				'autor' => $autor = $intpreview['autor'],
 				'preview' => $preview = $intpreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($intpreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($intpreview['fecha']),
 				'subseccion' => $subseccion = $intpreview['subseccion'],
 				'fotografo' => $fotografo = $intpreview['fotografo'],);
 }
@@ -244,7 +245,7 @@ while($culpreview = mysql_fetch_array($culinfo)){
 				'titulo' => $titulo = $culpreview['titulo'],
 				'autor' => $autor = $culpreview['autor'],
 				'preview' => $preview = $culpreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($culpreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($culpreview['fecha']),
 				'subseccion' => $subseccion = $culpreview['subseccion'],
 				'fotografo' => $fotografo = $culpreview['fotografo'],);
 }
@@ -256,7 +257,7 @@ while($polpreview = mysql_fetch_array($polinfo)){
 				'titulo' => $titulo = $polpreview['titulo'],
 				'autor' => $autor = $polpreview['autor'],
 				'preview' => $preview = $polpreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($polpreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($polpreview['fecha']),
 				'subseccion' => $subseccion = $polpreview['subseccion'],
 				'fotografo' => $fotografo = $polpreview['fotografo'],);
 }
@@ -268,7 +269,7 @@ while($anepreview = mysql_fetch_array($aneinfo)){
 				'titulo' => $titulo = $anepreview['titulo'],
 				'autor' => $autor = $anepreview['autor'],
 				'preview' => $preview = $anepreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($anepreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($anepreview['fecha']),
 				'subseccion' => $subseccion = $anepreview['subseccion'],
 				'fotografo' => $fotografo = $anepreview['fotografo'],);
 }
@@ -279,7 +280,7 @@ while($entpreview = mysql_fetch_array($entinfo)){
 				'titulo' => $titulo = $entpreview['titulo'],
 				'autor' => $autor = $entpreview['autor'],
 				'preview' => $preview = $entpreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($entpreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($entpreview['fecha']),
 				'subseccion' => $subseccion = $entpreview['subseccion'],
 				'fotografo' => $fotografo = $entpreview['fotografo'],
 				'fotoautor' => $fotoautor = $entpreview['fotoautor'],);
@@ -292,7 +293,7 @@ while($rompreview = mysql_fetch_array($rominfo)){
 				'titulo' => $titulo = $rompreview['titulo'],
 				'autor' => $autor = $rompreview['autor'],
 				'preview' => $preview = $rompreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($rompreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($rompreview['fecha']),
 				'subseccion' => $subseccion = $rompreview['subseccion'],
 				'fotografo' => $fotografo = $rompreview['fotografo'],
 				'fotoautor' => $fotoautor = $rompreview['fotoautor'],);
@@ -312,7 +313,7 @@ while($conpreview = mysql_fetch_array($coninfo)){
 				'titulo' => $titulo = $conpreview['titulo'],
 				'autor' => $autor = $conpreview['autor'],
 				'preview' => $preview = $conpreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($conpreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($conpreview['fecha']),
 				'subseccion' => $subseccion = $conpreview['subseccion'],
 				'fotografo' => $fotografo = $conpreview['fotografo'],);
 }
@@ -324,7 +325,7 @@ while($esppreview = mysql_fetch_array($espinfo)){
 				'titulo' => $titulo = $esppreview['titulo'],
 				'autor' => $autor = $esppreview['autor'],
 				'preview' => $preview = $esppreview['preview'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($esppreview['fecha'])),
+				'fecha' => $fecha = formatoFecha($esppreview['fecha']),
 				'subseccion' => $subseccion = $esppreview['subseccion'],
 				'fotografo' => $fotografo = $esppreview['fotografo'],);
 }
@@ -333,40 +334,6 @@ while($carpreview = mysql_fetch_array($carinfo)){
 	$caricatura[] = array(
 				'foto' => $foto = $carpreview['foto'],);
 }
-/*function consultaModelo1($tipo,$seccion){
-	if($tipo==1){
-		$str="and a.idSubseccion=".$seccion;
-	}elseif ($tipo==2){
-		$str="and (select se.nombre from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='".$seccion."'";
-	}else{
-		$str="";
-	}
-	$infoq = "SELECT a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha, s.nombre as subseccion, a.preview, i.rutaFoto as foto, f.nombre as fotografo 
-						from articulo a, personal as c, subseccion as s, imagenesarticulo as i, fotografo as f 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' ".$str."
-						ORDER BY a.fecha desc, a.hora desc ";
-	$info=mysql_query($infoq);
-	while($preview = mysql_fetch_array($info)){
-	$result[] = array(
-				'titulo' => $titulo = $preview['titulo'],
-				'autor' => $autor = $preview['autor'],
-				'fecha' => $fecha = date("d-m-Y", strtotime($preview['fecha'])),
-				'subseccion' => $subseccion = $preview['subseccion'],
-				'preview' => $preview = $preview['preview'],
-				'foto' => $foto = $preview['foto']);
-	$result[] = array(
-				'titulo' => $titulo = $preview['titulo'],
-				'autor' => $autor = $preview['autor'],
-				'fecha' => $fecha = date("d-m-Y", strtotime($preview['fecha'])),
-				'subseccion' => $subseccion = $preview['subseccion'],
-				'preview' => $preview = $preview['preview'],
-                if(isset($preview['foto'])){
-				    'foto' => $foto = $preview['foto'];
-                }
-                );
-	}
-	return $result;
-}*/
 
 echo json_encode(array('columnistas' => $columnista, 
 						'actualidades' => $actualidad, 

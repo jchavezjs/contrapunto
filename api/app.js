@@ -1,4 +1,4 @@
-angular.module("contrapunto", ['contrapunto.controllers','angular.filter','ngRoute','ngProgress','ui.bootstrap'])
+angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services','angular.filter','ngRoute','ngProgress','ui.bootstrap'])
     .config(function($routeProvider, $locationProvider){
         $routeProvider
             .when("/", {

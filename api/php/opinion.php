@@ -28,7 +28,7 @@ while($edipreview = mysql_fetch_array($ediinfo)){
 	$editorial[]=array(
 				'id' => $id = $edipreview['id'],
 				'titulo' => $titulo = $edipreview['titulo'],
-				'fecha' => $fecha =  date("d/m/Y", strtotime($edipreview['fecha'])),
+				'fecha' => $fecha =  formatoFecha($edipreview['fecha']),
 				'preview' => $preview = $edipreview['preview']);
 }
 
@@ -41,7 +41,7 @@ while($tripreview = mysql_fetch_array($triinfo)){
 	$tribuna[] = array(
 				'id' => $id = $tripreview['id'],
 				'autor' => $autor = $tripreview['autor'],
-				'fecha' => $fecha =  date("d/m/Y", strtotime($tripreview['fecha'])),
+				'fecha' => $fecha =  formatoFecha($tripreview['fecha']),
 				'titulo' => $titulo = $tripreview['titulo'],);
 }
 
@@ -49,7 +49,7 @@ while($libpreview = mysql_fetch_array($libinfo)){
 	$libertad[] = array(
 				'id' => $id = $libpreview['id'],
 				'foto' => $foto = $libpreview['foto'],
-				'fecha' => $fecha =  date("d/m/Y", strtotime($libpreview['fecha'])),
+				'fecha' => $fecha =  formatoFecha($libpreview['fecha']),
 				'titulo' => $titulo = $libpreview['titulo'],
 				'autor' => $autor = $libpreview['autor'],);
 }
@@ -59,7 +59,8 @@ while($acapreview = mysql_fetch_array($acainfo)){
 				'id' => $id = $acapreview['id'],
 				'titulo' => $titulo = $acapreview['titulo'],
 				'autor' => $autor = $acapreview['autor'],
-				'fecha' => $fecha = date("d/m/Y", strtotime($acapreview['fecha'])),);
+				'fecha' => $fecha = formatoFecha($acapreview['fecha']),
+				);
 }
 
 
@@ -75,34 +76,7 @@ echo json_encode(array(
 				'sociedades' => dropdown(4),
 				'internacionales' => dropdown(3),
 				'subsecciones' => subseccion(1),
-				'culturas' => dropdown(6)));
-
-
-/*function formatoFecha($nfecha){
-	$day = date('l');
-	if($day == 'Monday'){
-    	$dia = 'Lunes';
-    }elseif($day == 'Tuesday'){
-        $dia = 'Martes';
-    }elseif($day == 'Wednesday'){
-        $dia = 'Miércoles'; 
-    }elseif($day == 'Thursday'){
-        $dia = 'Jueves'; 
-    }elseif($day == 'Friday'){
-        $dia = 'Viernes'; 
-    }elseif($day == 'Saturday'){
-        $dia = 'Sábado'; 
-    }elseif($day == 'Sunday'){
-        $dia = 'Domingo'; 
-    }
-    $fecha=date('d')." "; 
-    $mes= array(" ","Enero","Febrero","Marzo","Abril",
-    	"Mayo","Junio","Julio","Agosto","Septiembre",
-    	"Octubre","Noviembre","Diciembre");
-    //$fecha=$mes[date('n')]." ".$fecha." "."/"." ".date('Y'); 
-    $fecha= $dia.", ".$fecha." de ".$mes[date('n')]." "."del"." ".date('Y');
-
-    return $fecha;
-}*/
+				'culturas' => dropdown(6)
+				));
 
 ?>

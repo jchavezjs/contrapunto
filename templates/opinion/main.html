@@ -34,7 +34,7 @@
             <a class="opinion-logo-title" alt="cambiar a 60px" href="">
                 Opinión
             </a>
-            <h4>Lunes, 24 Noviembre del 2015</h4>    
+            <h4>{{fecha}}</h4>    
         </div>
     </div>
     <!-- Logo Section -->
@@ -96,9 +96,9 @@
                                 <div class="separador"></div>
                             </div>
                             <div class="preview-editorial" ng-repeat="editorial in editoriales | limitTo: 3">
-                                <h2 class="titulo-preview-editorial">
+                                <a ng-href="#/opinion/editorial/{{editorial.titulo | urlEncode}}/{{editorial.id}}"><h2 class="titulo-preview-editorial">
                                     {{editorial.titulo}}    
-                                </h2>
+                                </h2></a>
                                 <span class="fecha-preview-editorial">
                                     {{editorial.fecha}}
                                 </span>
@@ -118,9 +118,9 @@
                                 <span class="autor-preview-tribuna">
                                     {{tribuna.autor}}
                                 </span>
-                                <h2 class="titulo-preview-tribuna">
+                                <a ng-href="#/opinion/tribuna/{{tribuna.titulo | urlEncode}}/{{tribuna.id}}"><h2 class="titulo-preview-tribuna">
                                     {{tribuna.titulo}}
-                                </h2>
+                                </h2></a>
                                 <p class="fecha-preview-tribuna">
                                     {{tribuna.fecha}}
                                 </p>
@@ -136,11 +136,11 @@
                             <div class="row" ng-repeat="libertad in libertades | limitTo: 3">
                                 <div class="preview-libertad">
                                     <div class="col-xs-3 image-autor">
-                                        <div class="img-autor" style="background:url('{{libertad.foto}}') center;background-size: cover;"></div>
+                                        <a ng-href="#/opinion/libertad/{{libertad.titulo | urlEncode}}/{{libertad.id}}"><div class="img-autor" style="background:url('{{libertad.foto}}') center;background-size: cover;"></div></a>
                                     </div>
                                     <div class="col-xs-9 libertad-info">
                                         <span class="nombre-autor">{{libertad.autor}}</span>
-                                        <h1 class="titulo-libertad">{{libertad.titulo}}</h1>
+                                        <a ng-href="#/opinion/libertad/{{libertad.titulo | urlEncode}}/{{libertad.id}}"><h1 class="titulo-libertad">{{libertad.titulo}}</h1></a>
                                         <p class="fecha-preview-libertad">{{libertad.fecha}}</p>
                                     </div>
                                 </div>
@@ -150,16 +150,16 @@
                          <!--Preview academia-->
                         <div class="articulo editorial">
                             <div class="titulo-opinion">
-                                <h1>La academia</h1>
+                                <h1>Academia</h1>
                                 <div class="separador"></div>
                             </div>
                             <div class="preview-tribuna" ng-repeat="academia in academias | limitTo: 3">
                                 <span class="autor-preview-tribuna">
                                     {{academia.autor}}
                                 </span>
-                                <h2 class="titulo-preview-tribuna">
+                                <a ng-href="#/opinion/academia/{{academia.titulo | urlEncode}}/{{academia.id}}"><h2 class="titulo-preview-tribuna">
                                     {{academia.titulo}}
-                                </h2>
+                                </h2></a>
                                 <p class="fecha-preview-tribuna">
                                     {{academia.fecha}}
                                 </p>
@@ -211,11 +211,11 @@
                            <div class="row" ng-repeat="columnista in columnistas | limitTo: 3">
                                 <div class="preview-libertad">
                                     <div class="col-xs-3 image-autor">
-                                        <div class="img-autor" style="background:url({{columnista.foto}}) center;background-size: cover;"></div>
+                                        <a ng-href="#/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><div class="img-autor" style="background:url({{columnista.foto}}) center;background-size: cover;"></div></a>
                                     </div>
                                     <div class="col-xs-9 libertad-info">
                                         <span class="nombre-autor">{{columnista.autor}}</span>
-                                        <h1 class="titulo-libertad">{{columnista.titulo}}</h1>
+                                        <a ng-href="#/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><h1 class="titulo-libertad">{{columnista.titulo}}</h1></a>
                                         <p class="fecha-preview-libertad">{{columnista.fecha}}</p>
                                     </div>
                                 </div>

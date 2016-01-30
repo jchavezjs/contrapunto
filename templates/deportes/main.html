@@ -54,7 +54,7 @@
             <a class="opinion-logo-title" alt="cambiar a 60px" href="">
                 Deportes
             </a>
-            <h4>Lunes, 24 Noviembre del 2015</h4>    
+            <h4>{{fecha}}</h4>    
         </div>
     </div>
     <!-- Logo Section -->
@@ -120,16 +120,16 @@
                             <!-- Preview seccion DEPORTE -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{cronicas[0].titulo}}</a></h1>
+                                    <h1><a ng-href="#/deportes/cronicasdeportivas/{{cronicas[0].titulo | urlEncode}}/{{cronicas[0].id}}">{{cronicas[0].titulo}}</a></h1>
                                     <h4 class="info-autor-politica">{{cronicas[0].autor | uppercase}} | {{cronicas[0].fecha}}</h4>
                                     <p>{{cronicas[0].preview}}</p>
-                                    <div style="background-image: url({{cronicas[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/deportes/cronicasdeportivas/{{cronicas[0].titulo | urlEncode}}/{{cronicas[0].id}}"><div style="background-image: url({{cronicas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{cronicas[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="cronica in cronicas | limitTo: 3" ng-if="cronica != cronicas[0]">
-                                    <div style="background-image: url({{cronica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/deportes/cronicasdeportivas/{{cronica.titulo | urlEncode}}/{{cronica.id}}"><div style="background-image: url({{cronica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{cronica.titulo}}</h3>
+                                        <a ng-href="#/deportes/cronicasdeportivas/{{cronica.titulo | urlEncode}}/{{cronica.id}}"><h3>{{cronica.titulo}}</h3></a>
                                         <p><span class="info-autor-politica">{{cronica.autor | uppercase}} | {{cronica.fecha}}</span></p>
                                         <p>{{cronica.preview}}</p>
                                     </div>
@@ -161,16 +161,16 @@
                                 <!-- Preview seccion DEPORTE -->
                                 <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{aconteceres[0].titulo}}</a></h1>
+                                    <h1><a ng-href="#/deportes/acontecerdeportivo/{{aconteceres[0].titulo | urlEncode}}/{{aconteceres[0].id}}">{{aconteceres[0].titulo}}</a></h1>
                                     <h4 class="info-autor-politica">{{aconteceres[0].autor | uppercase}} | {{aconteceres[0].fecha}}</h4>
                                     <p>{{aconteceres[0].preview}}</p>
-                                    <div style="background-image: url({{aconteceres[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/deportes/acontecerdeportivo/{{aconteceres[0].titulo | urlEncode}}/{{aconteceres[0].id}}"><div style="background-image: url({{aconteceres[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{aconteceres[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="acontecer in aconteceres | limitTo: 3" ng-if="acontecer != aconteceres[0]">
-                                    <div style="background-image: url({{acontecer.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/deportes/acontecerdeportivo/{{acontecer.titulo | urlEncode}}/{{acontecer.id}}"><div style="background-image: url({{acontecer.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{acontecer.titulo}}</h3>
+                                        <a ng-href="#/deportes/acontecerdeportivo/{{acontecer.titulo | urlEncode}}/{{acontecer.id}}"><h3>{{acontecer.titulo}}</h3></a>
                                         <p><span class="info-autor-politica">{{acontecer.autor | uppercase}} | {{acontecer.fecha}}</span></p>
                                         <p>{{acontecer.preview}}</p>
                                     </div>

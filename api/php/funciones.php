@@ -15,7 +15,7 @@ function articulo($seccion){
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],
 					'preview' => $preview = $result['preview'],
-					'fecha' => $fecha = date("d/m/Y", strtotime($result['fecha'])),
+					'fecha' => $fecha = formatoFecha($result['fecha']),
 					'fotografo' => $fotografo = $result['fotografo'],);
 	}
 	return $resultado;
@@ -36,7 +36,7 @@ function opinion($seccion){
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],
 					'preview' => $preview = $result['preview'],
-					'fecha' => $fecha = date("d/m/Y", strtotime($result['fecha'])),
+					'fecha' => $fecha = formatoFecha($result['fecha']),
 					);
 	}
 	return $resultado;
@@ -67,7 +67,7 @@ function columna(){
 					'foto' => $foto = $result['foto'],
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],
-					'fecha' => $fecha = date("d/m/Y", strtotime($result['fecha'])),
+					'fecha' => $fecha = formatoFecha($result['fecha']),
 					);
 	}
 	return $resultado;
@@ -85,5 +85,24 @@ function dropdown($seccion){
 	}
 	return $resultado;
 }
-
+function formatoFecha($fecha){
+	list($diaNombre, $dia, $mes, $anio) = explode(" ",date("l, d m Y", strtotime($fecha)));
+	$meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+	if($diaNombre == "Sunday,"){
+		$nombre = "Domingo,";
+	}elseif($diaNombre == "Monday,"){
+		$nombre = "Lunes,";
+	}elseif($diaNombre == "Tuesday,"){
+		$nombre = "Martes,";
+	}elseif($diaNombre == "Wednesday,"){
+		$nombre = "Lunes,";
+	}elseif($diaNombre == "Thursday,"){
+		$nombre = "Jueves,";
+	}elseif($diaNombre == "Friday,"){
+		$nombre = "Lunes,";
+	}elseif($diaNombre == "Saturday,"){
+		$nombre = "Sabado,";
+	}
+	return $nombre." ".$dia." de ".$meses[$mes -1]." del ".$anio;
+}
 ?>

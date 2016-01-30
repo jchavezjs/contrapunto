@@ -1,6 +1,6 @@
 angular.module('contrapunto.controllers', [])
 
-    .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory){
+    .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -8,7 +8,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 2000);
-
+        $scope.fecha = fechaActual;
         $http.get("api/php/portada.php").success(function (response){
             $scope.columnistas = response.columnistas;
             $scope.actualidades = response.actualidades;
@@ -40,7 +40,7 @@ angular.module('contrapunto.controllers', [])
             
 
     })
-    .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory){
+    .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -48,7 +48,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
-
+        $scope.fecha = fechaActual;
         $http.get("api/php/opinion.php").success(function (response){
             $scope.editoriales = response.editoriales;
             $scope.caricaturas = response.caricaturas;
@@ -65,7 +65,7 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory){
+    .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -73,7 +73,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
-
+        $scope.fecha = fechaActual;
         $http.get("api/php/politica.php").success(function (response){
             $scope.politicas = response.politicas;
             $scope.gobiernos = response.gobiernos;
@@ -82,7 +82,7 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('InternacionalesController', function($scope, $http, $location, $timeout, ngProgressFactory){
+    .controller('InternacionalesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -90,7 +90,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
-
+        $scope.fecha = fechaActual;
         $http.get("api/php/internacionales.php").success(function (response){
             $scope.centroamericas = response.centroamericas;
             $scope.latinoamericas = response.latinoamericas;
@@ -99,7 +99,7 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('SociedadController', function($scope, $http, $location, $timeout, ngProgressFactory){
+    .controller('SociedadController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -107,7 +107,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
-
+        $scope.fecha = fechaActual;
         $http.get("api/php/sociedad.php").success(function (response){
             $scope.ambientes = response.ambientes;
             $scope.violencias = response.violencias;
@@ -123,7 +123,7 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory){
+    .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -131,7 +131,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
-
+        $scope.fecha = fechaActual;
         $http.get("api/php/economia.php").success(function (response){
             $scope.negocios = response.negocios;
             $scope.coyunturas = response.coyunturas;
@@ -146,7 +146,7 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('CulturaController', function($scope, $http, $location, $timeout, ngProgressFactory){
+    .controller('CulturaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -154,7 +154,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
-
+        $scope.fecha = fechaActual;
         $http.get("api/php/cultura.php").success(function (response){
             $scope.contratabues = response.contratabues;
             $scope.resenas = response.resenas;
@@ -165,7 +165,7 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('DeportesController', function($scope, $http, $location, $timeout, ngProgressFactory){
+    .controller('DeportesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -173,7 +173,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
-
+        $scope.fecha = fechaActual;
         $http.get("api/php/deportes.php").success(function (response){
             $scope.cronicas = response.cronicas;
             $scope.aconteceres = response.aconteceres;
@@ -210,7 +210,7 @@ angular.module('contrapunto.controllers', [])
        });
     })
 
-    .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams){
+    .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -224,10 +224,7 @@ angular.module('contrapunto.controllers', [])
         var titulo = $routeParams.titulo;
         var id = $routeParams.id;
 
-        var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-        var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-        var f=new Date();
-        $scope.fecha = diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear();
+        $scope.fecha = fechaActual;
 
          $http.post("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
 
