@@ -239,4 +239,14 @@ angular.module('contrapunto.controllers', [])
                 });
 
        });
+    })
+
+    .controller('BuscarController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams){
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        $scope.progressbar.setColor('#35A7FF');
+        $timeout(function(){
+            $scope.progressbar.complete();
+            $scope.show = true;
+        }, 300);
     });

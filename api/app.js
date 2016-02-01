@@ -41,6 +41,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                 controller: "PostController",
                 templateUrl: "templates/politica/post.html"
             })
+            .when("/buscar", {
+                controller: "BuscarController",
+                templateUrl: "templates/search.html"
+            })
             .otherwise({
                 redirectTo: "/"
             });

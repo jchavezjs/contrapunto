@@ -88,34 +88,49 @@
             <div id="main" class="col-md-12">
                 <!-- Columna 1 -->  
                     <div class="col-md-5 m-politica-1">
+                        <div class="bolsas-del-mundo">
+                            <div class="head">Bolsas del mundo <a target="_blank" href="http://money.cnn.com/data/markets/">Fuente: CNN Money</a></div>
+                            <div class="row">
+                                <div ng-repeat="bolsa in bolsas">
+                                    <div class="item">
+                                        <div class="col-md-3">
+                                            <h4>{{bolsa.nombre}}</h4>
+                                            <h2 ng-class="{positive: bolsa.porcentaje>0, negative: bolsa.porcentaje<0}">{{bolsa.porcentaje}}%</h2>
+                                            <h3>15,944.46</h3>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        
                         <!--Seccion Economia-->
                         <div class="sec-politica">
                             <!-- Titulo negocios -->
                             <div class="titulo-politica">
                                 <div class="adorno-titulo-politica"></div>
-                                <div class="titulo-h2"><h2>NEGOCIOS</h2></div>
+                                <div class="titulo-h2"><h2>COYUNTURA</h2></div>
                                 <div class="adorno-titulo-politica"></div>
                             </div>
                             <!-- Titulo negocios -->
-                            <!-- Preview seccion negocios -->
-                            <div class="articulo preview-sec-politica">
+                            <!-- Preview seccion Coyntura -->
+                               <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{negocios[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{negocios[0].autor | uppercase}} | {{negocios[0].fecha}}</h4>
-                                    <p>{{negocios[0].preview}}</p>
-                                    <div style="background-image: url({{negocios[0].foto}});" class="img-articulo"></div>
-                                    <p class="foto-autor-main">Foto: {{negocios[0].fotografo}}</p>
+                                    <h1 ><a>{{coyunturas[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{coyunturas[0].autor | uppercase}} | {{coyunturas[0].fecha}}</h4>
+                                    <p>{{coyunturas[0].preview}}</p>
+                                    <div style="background-image: url({{coyunturas[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{coyunturas[0].fotografo}}</p>
                                 </div>
-                                <div class="row item-politica" ng-repeat="negocio in negocios | limitTo: 3" ng-if="negocio != negocios[0]">
-                                    <div style="background-image: url({{negocio.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                <div class="row item-politica" ng-repeat="coyuntura in coyunturas | limitTo: 3" ng-if="coyuntura != coyunturas[0]">
+                                    <div style="background-image: url({{coyuntura.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{negocio.titulo}}</h3>
-                                        <p><span class="info-autor-politica">{{negocio.autor | uppercase}} | {{negocio.fecha}}</span></p>
-                                        <p>{{negocio.preview}}</p>
+                                        <h3>{{coyuntura.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{coyuntura.autor | uppercase}} | {{coyuntura.fecha}}</span></p>
+                                        <p>{{coyuntura.preview}}</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Preview seccion negocios -->
+                                <!-- Preview seccion COYUNTURA -->
                         </div>
                         <!--Seccion negocios-->
                         <!--Seccion mundo economico-->
@@ -151,7 +166,7 @@
                         <!--Seccion datos economicos-->
                         <div class="sec-politica tab">
                             <div class="titulo-datos-economicos">
-                                <h3>Datos Económicos</h3>
+                                <h3>Cifras Económicas de El Salvador</h3>
                             </div>
                             <div class="datos-economicos">  
                                 <table class="t-datos">
@@ -211,30 +226,30 @@
                             <!-- Titulo Coyntura -->
                             <div class="titulo-politica">
                                 <div class="adorno-titulo-politica"></div>
-                                <div class="titulo-h2"><h2>COYUNTURA</h2></div>
+                                <div class="titulo-h2"><h2>NEGOCIOS</h2></div>
                                 <div class="adorno-titulo-politica"></div>
                             </div>
                             <!-- Titulo Coyntura -->
                             <div class="col2bordes">
-                                <!-- Preview seccion Coyntura -->
-                               <div class="articulo preview-sec-politica">
+                                <!-- Preview seccion negocios -->
+                            <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{coyunturas[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{coyunturas[0].autor | uppercase}} | {{coyunturas[0].fecha}}</h4>
-                                    <p>{{coyunturas[0].preview}}</p>
-                                    <div style="background-image: url({{coyunturas[0].foto}});" class="img-articulo"></div>
-                                    <p class="foto-autor-main">Foto: {{coyunturas[0].fotografo}}</p>
+                                    <h1 ><a>{{negocios[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{negocios[0].autor | uppercase}} | {{negocios[0].fecha}}</h4>
+                                    <p>{{negocios[0].preview}}</p>
+                                    <div style="background-image: url({{negocios[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{negocios[0].fotografo}}</p>
                                 </div>
-                                <div class="row item-politica" ng-repeat="coyuntura in coyunturas | limitTo: 3" ng-if="coyuntura != coyunturas[0]">
-                                    <div style="background-image: url({{coyuntura.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                <div class="row item-politica" ng-repeat="negocio in negocios | limitTo: 3" ng-if="negocio != negocios[0]">
+                                    <div style="background-image: url({{negocio.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{coyuntura.titulo}}</h3>
-                                        <p><span class="info-autor-politica">{{coyuntura.autor | uppercase}} | {{coyuntura.fecha}}</span></p>
-                                        <p>{{coyuntura.preview}}</p>
+                                        <h3>{{negocio.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{negocio.autor | uppercase}} | {{negocio.fecha}}</span></p>
+                                        <p>{{negocio.preview}}</p>
                                     </div>
                                 </div>
                             </div>
-                                <!-- Preview seccion COYUNTURA -->
+                            <!-- Preview seccion negocios -->
                                 <!--Seccion COYUNTURA-->
                                 <!-- Publicidad -->
                                 <div class="ads ad-politica">
@@ -271,73 +286,7 @@
                             <!-- Preview seccion Analisis economicos -->
                         </div>
                         <!--Seccion Analisis economicos-->
-                        <!--Seccion mercados del mundo-->
-                        <div class="sec-politica tab">
-                            <div class="titulo-datos-economicos">
-                                <h3>Mercados del mundo</h3>
-                            </div>
-                            <div class="datos-economicos">  
-                                <table class="t-datos">
-                                    <tr>
-                                        <th>INDICADOR</th>
-                                        <th>PERIODO</th>
-                                        <th>CIFRAS</th>
-                                        <th>DETALLES</th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                        PIB Trimestral
-                                        </td>
-                                        <td>11-2015</td>
-                                        <td>2.4%</td>
-                                        <td><a href="#">Tabla</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Inflación </td>
-                                        <td>11-2015</td>
-                                        <td>2.4%</td>
-                                        <td><a href="#">Tabla</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Inflación Subyacente</td>
-                                        <td>11-2015</td>
-                                        <td>2.4%</td>
-                                        <td><a href="#">Tabla</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Exportaciones</td>
-                                        <td>11-2015</td>
-                                        <td>2.4%</td>
-                                        <td><a href="#">Tabla</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Importaciones</td>
-                                        <td>11-2015</td>
-                                        <td>2.4%</td>
-                                        <td><a href="#">Tabla</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Remesas familiares</td>
-                                        <td>11-2015</td>
-                                        <td>2.4%</td>
-                                        <td><a href="#">Tabla</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tasa Depósitos</td>
-                                        <td>11-2015</td>
-                                        <td>2.4%</td>
-                                        <td><a href="#">Tabla</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tasa Préstamos</td>
-                                        <td>11-2015</td>
-                                        <td>2.4%</td>
-                                        <td><a href="#">Tabla</a></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <!--Seccion mercados del mundo-->
+                        
                             </div>
                         </div>
                     </div>   
@@ -365,18 +314,18 @@
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="lmlportada">
                                     <ul class="leido">
-                                        <li><a href="#" class="leido-item"><span>1</span>Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item"><span>2</span>Ataques en París, oriente ataca</a></li>
-                                        <li><a href="#" class="leido-item"><span>3</span>Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item"><span>4</span>Ataques en París, oriente ataca</a></li>  
+                                        <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
+                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
+                                        <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
+                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>  
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlpolitica">
                                     <ul class="leido">
-                                        <li><a href="#" class="leido-item"><span>1</span>La pupusa salvadoreña</a></li>
-                                        <li><a href="#" class="leido-item"><span>2</span>Se estrena Star Wars</a></li>
-                                        <li><a href="#" class="leido-item"><span>3</span>La ética social</a></li>
-                                        <li><a href="#" class="leido-item"><span>4</span>La actualización humana</a></li>  
+                                        <li><a href="#" class="leido-item">La pupusa salvadoreña</a></li>
+                                        <li><a href="#" class="leido-item">Se estrena Star Wars</a></li>
+                                        <li><a href="#" class="leido-item">La ética social</a></li>
+                                        <li><a href="#" class="leido-item">La actualización humana</a></li>  
                                     </ul>
                                 </div>
                               </div>
@@ -384,22 +333,6 @@
                             </div>
                         </div>
                         <!--Lo mas leido-->
-                        <!--Bolsas del mundo-->
-                        <div class="t-indicadores">
-                            <div class="indicador-titulo">
-                                <h3>BOLSAS DEL MUNDO</h3>
-                                <div class="flecha"></div>
-                            </div>
-                            <div class="bolsas">
-                                <table>
-                                    <tr ng-repeat="bolsa in bolsas">
-                                        <td class="indicador-nombre">{{bolsa.nombre}}</td>
-                                        <td class="indicador" ng-class="{positive: bolsa.porcentaje>0, negative: bolsa.porcentaje<0}">{{bolsa.porcentaje}}%</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <!--Bolsas del mundo-->
                          <!--Tasas de interes-->
                         <div class="t-indicadores">
                             <div class="indicador-titulo">

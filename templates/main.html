@@ -125,10 +125,8 @@
 
                         <!-- Articulo -->
                         <div class="articulo">
-                            <!-- Video 
                             <div><iframe class="img-articulo" src="https://www.youtube.com/embed/eH9gLvxin_4" frameborder="0" allowfullscreen></iframe></div>
-                            Video -->
-                            <div style="background-image: url({{especiales[0].foto}});" class="img-articulo"></div>
+                            <!--<div style="background-image: url({{especiales[0].foto}});" class="img-articulo"></div>-->
                             <p class="foto-autor">Foto: {{especiales[0].fotografo}}</p>
                             <h1><a>{{especiales[0].titulo}}</a></h1>
                             <h4>{{especiales[0].autor | uppercase}} | Especiales Semanales</h4>
@@ -486,7 +484,7 @@ POLÍTICA</div>
                                 <p class="foto-autor">Foto: {{culturas[0].fotografo}}</p>
                                 <h1><a>{{culturas[0].titulo}}</a></h1>
                                 <h4>{{culturas[0].autor | uppercase}} | {{culturas[0].fecha}}</h4>
-                                <h3>{{culturas[0].subseccion}}</h3>
+                                <h3 style="color:#fff;">{{culturas[0].subseccion}}</h3>
                                 <p>{{culturas[0].preview}}</p>
                                 <!-- Publicidad -->
                                 <div class="ads">
