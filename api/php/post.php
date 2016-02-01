@@ -49,7 +49,7 @@ if($secvalidate){
 					);
 				}
 			}else{
-				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, 
+				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, 
 									a.contenido, c.rutaFoto as foto, a.fecha
 									from articulo a, personal as c
 									where a.idPersonal = c.idPersonal
@@ -61,12 +61,13 @@ if($secvalidate){
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],
 					'contenido' => $contenido = $result['contenido'],
+					'preview' => $preview = $result['preview'],
 					'fecha' => $fecha = date("d/m/Y", strtotime($result['fecha'])),
 					);
 				}
 			}
 		}else{
-			$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido,
+			$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido, a.preview,
 								 i.rutaFoto as foto, a.fecha, f.nombre as fotografo  
 									from articulo as a, personal as c, fotografo as f, imagenesarticulo as i
 									where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo 
@@ -77,6 +78,7 @@ if($secvalidate){
 					'foto' => $foto = $result['foto'],
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],
+					'preview' => $preview = $result['preview'],
 					'contenido' => $contenido = $result['contenido'],
 					'fecha' => $fecha = date("d/m/Y", strtotime($result['fecha'])),
 					'fotografo' => $fotografo = $result['fotografo'],);
