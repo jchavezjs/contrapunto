@@ -3,14 +3,14 @@
     border-right: 1px solid #c9c9c9;
 }
 @font-face{
-    font-family: Lora;
+    font-family: 'Lora',Serif;
     src: url(../fonts/Lora/Lora-Bold.ttf);
     src: url(../fonts/Lora/Lora-BoldItalic.ttf);
     src: url(../fonts/Lora/Lora-Italic.ttf);
     src: url(../fonts/Lora/Lora-Regular.ttf);
 }
 @font-face{
-    font-family: Roboto;
+    font-family: 'Roboto';
     src: url(../fonts/Roboto/Roboto-Black.ttf);
     src: url(../fonts/Roboto/Roboto-Light.ttf);
     src: url(../fonts/Roboto/Roboto-Medium.ttf);
@@ -125,7 +125,6 @@ a:hover{
 .opinion-logo-title{
     font-size: 50px;
     font-family: 'Lora', serif;
-    font-style: italic;
     text-align: center;
     color: #000;
 }
@@ -555,8 +554,6 @@ a:hover{
 .blocks .titulo{
     margin-top: 0px;
     border-top:2px solid #222;
-    font-family: 'Lora','Roboto Slab', serif;
-    font-weight: 700;
     font-size: 20px;
     padding-top: 5px;
     margin-bottom: 5px;
@@ -580,7 +577,7 @@ a:hover{
 .blocks h1{
     margin: 0px 0px -5px 0px;
     font-size: 20px;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Lora-bold','Roboto Slab', serif;
     font-weight: 700;
 }
 .blocks h4{
@@ -609,7 +606,7 @@ a:hover{
 }
 .blocks-two h1{
     border-top:2px solid #222;
-    font-family: 'Lora','Roboto Slab', serif;
+    font-family: 'Lora-bold','Roboto Slab', serif;
     font-weight: 700;
     font-size: 20px;
     padding-top: 8px;
@@ -1236,9 +1233,10 @@ a:hover{
 .preview-texto-politica h3{
     text-transform: none;
     line-height: 20px;
-    font-size: 16px;
+    font-size: 18px;
+    color:#000;
     margin-top: 0;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Georgia', serif;
 }
 .preview-texto-politica{
     margin-top: 10px;
@@ -1251,9 +1249,13 @@ a:hover{
 }
 .info-autor-politica{
     font-family: 'Roboto', serif;
-    color: #444 !important;
-    font-size: 10px;
+    color: #222 !important;
+    font-size: 11px;
     margin-top: 10px;
+}
+.item-politica .info-autor-politica{
+    font-family: 'Roboto', serif;
+    color: #222 !important;
 }
 .foto-autor-main{
     margin-bottom: 0px;

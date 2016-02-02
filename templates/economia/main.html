@@ -221,7 +221,35 @@
                 <!-- Columna 1 -->
                 <!-- Columna 2 -->
                     <div id="side" class="col-md-5 m-politica-2">
-                        <div class="padddd">
+                        <!--Seccion Coyntura-->
+                        <div class="sec-politica">
+                            <!-- Titulo Coyntura -->
+                            <div class="titulo-politica">
+                                <div class="adorno-titulo-politica"></div>
+                                <div class="titulo-h2"><h2>NEGOCIOS</h2></div>
+                                <div class="adorno-titulo-politica"></div>
+                            </div>
+                            <!-- Titulo Coyntura -->
+                            <div class="col2bordes">
+                                <!-- Preview seccion negocios -->
+                            <div class="articulo preview-sec-politica">
+                                <div class="item-politica-main">
+                                    <h1 ><a>{{negocios[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica">{{negocios[0].autor | uppercase}} | {{negocios[0].fecha}}</h4>
+                                    <p>{{negocios[0].preview}}</p>
+                                    <div style="background-image: url({{negocios[0].foto}});" class="img-articulo"></div>
+                                    <p class="foto-autor-main">Foto: {{negocios[0].fotografo}}</p>
+                                </div>
+                                <div class="row item-politica" ng-repeat="negocio in negocios | limitTo: 3" ng-if="negocio != negocios[0]">
+                                    <div style="background-image: url({{negocio.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
+                                        <h3>{{negocio.titulo}}</h3>
+                                        <p><span class="info-autor-politica">{{negocio.autor | uppercase}} | {{negocio.fecha}}</span></p>
+                                        <p>{{negocio.preview}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="padddd">
                             <div class="mercados-del-mundo">
                                 <div class="head">Bolsas del mundo <a target="_blank" href="http://money.cnn.com/data/markets/">Fuente: CNN Money</a>
                                 <div class="row" style="margin-top:5px;">
@@ -319,35 +347,7 @@
                                     </div>    
                                 </div>
                             </div>
-                        </div>    
-                        <!--Seccion Coyntura-->
-                        <div class="sec-politica">
-                            <!-- Titulo Coyntura -->
-                            <div class="titulo-politica">
-                                <div class="adorno-titulo-politica"></div>
-                                <div class="titulo-h2"><h2>NEGOCIOS</h2></div>
-                                <div class="adorno-titulo-politica"></div>
-                            </div>
-                            <!-- Titulo Coyntura -->
-                            <div class="col2bordes">
-                                <!-- Preview seccion negocios -->
-                            <div class="articulo preview-sec-politica">
-                                <div class="item-politica-main">
-                                    <h1 ><a>{{negocios[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{negocios[0].autor | uppercase}} | {{negocios[0].fecha}}</h4>
-                                    <p>{{negocios[0].preview}}</p>
-                                    <div style="background-image: url({{negocios[0].foto}});" class="img-articulo"></div>
-                                    <p class="foto-autor-main">Foto: {{negocios[0].fotografo}}</p>
-                                </div>
-                                <div class="row item-politica" ng-repeat="negocio in negocios | limitTo: 3" ng-if="negocio != negocios[0]">
-                                    <div style="background-image: url({{negocio.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
-                                    <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{negocio.titulo}}</h3>
-                                        <p><span class="info-autor-politica">{{negocio.autor | uppercase}} | {{negocio.fecha}}</span></p>
-                                        <p>{{negocio.preview}}</p>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>        
                             <!-- Preview seccion negocios -->
                                 <!--Seccion COYUNTURA-->
                                 <!-- Publicidad -->
