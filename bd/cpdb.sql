@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-01-2016 a las 06:21:54
+-- Tiempo de generación: 02-02-2016 a las 20:12:18
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -625,7 +625,7 @@ INSERT INTO `subseccion` (`idSubseccion`, `idSeccion`, `nombre`, `url`) VALUES
 (3, 1, 'Tribuna libre', 'tribuna'),
 (4, 1, 'Libertad de expresion', 'libertad'),
 (5, 1, 'Sondeo', 'sondeo'),
-(6, 1, 'La academia', 'academia'),
+(6, 1, 'Academia', 'academia'),
 (27, 4, 'Ambiente', 'ambiente'),
 (28, 4, 'Violencia', 'violencia'),
 (29, 4, 'Salud', 'salud'),
@@ -636,7 +636,7 @@ INSERT INTO `subseccion` (`idSubseccion`, `idSeccion`, `nombre`, `url`) VALUES
 (34, 4, 'Periodismo Ciudadano', 'periodismociudadano'),
 (35, 4, 'Rompiendo TabÃºes', 'rompiendotabues'),
 (36, 4, 'Judicial', 'judicial'),
-(37, 2, 'PolÃ­tica', 'politica'),
+(37, 2, 'Sociedad Civil', 'sociedadcivil'),
 (38, 2, 'Gobierno', 'gobierno'),
 (39, 2, 'Partidos', 'partidos'),
 (40, 7, 'CrÃ³nicas Deportivas', 'cronicasdeportivas'),

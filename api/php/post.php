@@ -45,9 +45,13 @@ if($secvalidate){
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],
 					'contenido' => $contenido = $result['contenido'],
-					'fecha' => $fecha = date("d/m/Y", strtotime($result['fecha'])),
+					'fecha' => $fecha = formatoFecha($result['fecha']),
 					);
 				}
+			}elseif($result){
+
+			}elseif($result){
+				
 			}else{
 				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, 
 									a.contenido, c.rutaFoto as foto, a.fecha
@@ -62,7 +66,7 @@ if($secvalidate){
 					'autor' => $autor = $result['autor'],
 					'contenido' => $contenido = $result['contenido'],
 					'preview' => $preview = $result['preview'],
-					'fecha' => $fecha = date("d/m/Y", strtotime($result['fecha'])),
+					'fecha' => $fecha = formatoFecha($result['fecha']),
 					);
 				}
 			}
@@ -80,7 +84,7 @@ if($secvalidate){
 					'autor' => $autor = $result['autor'],
 					'preview' => $preview = $result['preview'],
 					'contenido' => $contenido = $result['contenido'],
-					'fecha' => $fecha = date("d/m/Y", strtotime($result['fecha'])),
+					'fecha' => $fecha = formatoFecha($result['fecha']),
 					'fotografo' => $fotografo = $result['fotografo'],);
 			}
 		}

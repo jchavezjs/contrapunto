@@ -507,23 +507,23 @@ POLÍTICA</div>
                         <!-- Publicidad -->
                         <!-- Academia -->
                             <div class="academia-portada">
-                                <h3>La academía</h3>  
+                                <a href="#/opinion/academia"><h3>Academía</h3></a>
                                 <!-- Reseña -->
-                                <div style="background-image:url({{academias[0].foto}});" class="academia-img"></div>
+                                <a ng-href="#/opinion/academia/{{academias[0].titulo | urlEncode}}/{{academias[0].id}}"><div style="background-image:url({{academias[0].foto}});" class="academia-img"></div></a>
                                 <h4>{{academias[0].autor}}</h4>
                                 <!-- Reseña -->
-                                <h1>{{academias[0].titulo}}</h1>
+                                <a ng-href="#/opinion/academia/{{academias[0].titulo | urlEncode}}/{{academias[0].id}}"><h1>{{academias[0].titulo}}</h1></a>
                                 <p>{{academias[0].preview}}</p>
                             </div>
                         <!-- Academia -->
                         <!-- Reseñas -->
                             <div class="resenas-portada">
-                                <h3>Reseñas</h3>  
+                                <a href="#/cultura/resenas"><h3>Reseñas</h3></a>  
                                 <!-- Reseña -->
-                                <div style="background-image:url({{resenas[0].foto}});" class="resena-img"></div>
+                                <a ng-href="#/cultura/resenas/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}"><div style="background-image:url({{resenas[0].foto}});" class="resena-img"></div></a>
                                 <h4>{{resenas[0].autor}}</h4>
                                 <!-- Reseña -->
-                                <h1>{{resenas[0].titulo}}</h1>
+                                <a ng-href="#/cultura/resenas/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}"><h1>{{resenas[0].titulo}}</h1></a>
                                 <p>{{resenas[0].preview}}</p>
                             </div>
                         <!-- Reseñas -->
@@ -559,9 +559,9 @@ POLÍTICA</div>
                 <div class="col-md-4">
                     <!-- La anecdota -->
                     <div class="la-anecdota">
-                        <h1 class="titulo"><img src="http://www.contrapunto.com.sv/modules/mod_k2_cultural/tmpl/imgs/LaAnecdota.jpg">La anécdota</h1>
-                        <div style="background-image:url({{anecdotas[0].foto}});" class="foto"></div>
-                        <h1>{{anecdotas[0].titulo}}</h1>
+                        <a href="#/cultura/anecdota"><h1 class="titulo"><img src="http://www.contrapunto.com.sv/modules/mod_k2_cultural/tmpl/imgs/LaAnecdota.jpg">La anécdota</h1></a>
+                        <a ng-href="#/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}"><div style="background-image:url({{anecdotas[0].foto}});" class="foto"></div></a>
+                        <a ng-href="#/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}"><h1>{{anecdotas[0].titulo}}</h1></a>
                         <h4>{{anecdotas[0].autor}} | {{anecdotas[0].fecha}}</h4>
                         <p>{{anecdotas[0].preview}}</p>
                     </div>
@@ -570,9 +570,9 @@ POLÍTICA</div>
                 <div class="col-md-4">
                     <!-- Entrevistas en off -->
                     <div class="entrevistas-off">
-                        <h1 class="titulo"><img ng-src="{{entrevistas[0].fotoautor}}">Entrevistas en off</h1>
-                        <div style="background-image:url({{entrevistas[0].foto}});" class="foto"></div>
-                        <h1>{{entrevistas[0].titulo}}</h1>
+                        <h1 class="titulo"><img ng-src="{{entrevistas[0].fotoautor}}"><a href="#/cultura/entrevistas">Entrevistas en off</a></h1>
+                        <a ng-href="#/cultura/entrevistas/{{entrevistas[0].titulo | urlEncode}}/{{entrevistas[0].id}}"><div style="background-image:url({{entrevistas[0].foto}});" class="foto"></div></a>
+                        <a ng-href="#/cultura/entrevistas/{{entrevistas[0].titulo | urlEncode}}/{{entrevistas[0].id}}"><h1>{{entrevistas[0].titulo}}</h1></a>
                         <h4>{{entrevistas[0].autor}} | {{entrevistas[0].fecha}}</h4>
                         <p>{{entrevistas[0].preview}} </p>
                     </div>
@@ -581,9 +581,9 @@ POLÍTICA</div>
                 <div class="col-md-4">
                     <!-- Rompiendo tabúes -->
                     <div class="entrevistas-off">
-                        <h1 class="titulo"><img ng-src="{{rompiendos[0].fotoautor}}">Rompiendo Tabúes</h1>
-                        <div style="background-image:url({{rompiendos[0].foto}});" class="foto"></div>
-                        <h1>{{rompiendos[0].titulo}}</h1>
+                        <h1 class="titulo"><img ng-src="{{rompiendos[0].fotoautor}}"><a href="#/sociedad/rompiendotabues">Rompiendo Tabúes</a></h1>
+                        <a ng-href="#/sociedad/rompiendotabues/{{rompiendos[0].titulo | urlEncode}}/{{rompiendos[0].id}}"><div style="background-image:url({{rompiendos[0].foto}});" class="foto"></div></a>
+                        <h1><a ng-href="#/sociedad/rompiendotabues/{{rompiendos[0].titulo | urlEncode}}/{{rompiendos[0].id}}">{{rompiendos[0].titulo}}</a></h1>
                         <h4>{{rompiendos[0].autor}} | {{rompiendos[0].fecha}}</h4>
                         <p>{{rompiendos[0].preview}}</p>
                     </div>
@@ -597,7 +597,7 @@ POLÍTICA</div>
             <div class="col-md-7">
                 <div class="blocks-two">
                     <div class="fotogaleria">
-                        <h1>Fotogalería</h1>
+                        <a href="{{fotogalerias[0].link}}"><h1>Fotogalería</h1></a>
                         <a ng-href="{{fotogalerias[0].link}}">
                         <div style="background-image:url({{fotogalerias[0].foto}});" class="foto">
                             <div class="trans">
@@ -616,15 +616,15 @@ POLÍTICA</div>
             <div class="col-md-5">
                 <div class="blocks-two">
                     <div class="contratabu">
-                        <h1>Contratabú</h1>
-                        <div style="background-image:url({{contratabues[0].foto}});" class="foto">
+                        <a href="#/cultura/contratabu"><h1>Contratabú</h1></a>
+                        <a ng-href="#/cultura/contratabu/{{contratabues[0].titulo | urlEncode}}/{{contratabues[0].id}}"><div style="background-image:url({{contratabues[0].foto}});" class="foto">
                             <div class="trans">
                                 <div class="texto">
                                     <h3>{{contratabues[0].titulo}}</h3>
                                     <p>{{contratabues[0].preview}}</p>
                                 </div>
                             </div>
-                        </div>    
+                        </div></a>    
                     </div>    
                 </div> 
             </div>

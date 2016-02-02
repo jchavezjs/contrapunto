@@ -18,6 +18,13 @@
 body{
     font-family:Roboto,Helvetica,Arial,sans-serif;    
 }
+a{
+    color: #000;
+}
+a:hover{
+    color: #000;
+    text-decoration: none;
+}
 .mainAds-mobile{
     display: none;
 }

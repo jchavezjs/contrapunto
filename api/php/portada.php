@@ -276,6 +276,7 @@ while($anepreview = mysql_fetch_array($aneinfo)){
 
 while($entpreview = mysql_fetch_array($entinfo)){
 	$entrevista[] = array(
+				'id' => $id = $entpreview['id'],
 				'foto' => $foto = $entpreview['foto'],
 				'titulo' => $titulo = $entpreview['titulo'],
 				'autor' => $autor = $entpreview['autor'],
