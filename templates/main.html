@@ -411,12 +411,12 @@ SOCIEDAD</div>
                         </div>    
                         <!-- Publicidad -->
                          <!-- Titulo Seccion Portada -->
-                        <div class="titulo-up"><img class="line-titulo-up"/>INTERNACIONALES</div>
+                        <a href="#/internacionales"><div class="titulo-up"><img class="line-titulo-up"/>INTERNACIONALES</div></a>
                         <!-- Articulo -->
                         <div class="articulo">
-                            <div style="background-image: url({{internacionales[0].foto}});" class="img-articulo"></div>
+                            <a ng-href="#/internacionales/{{internacionales[0].url}}/{{internacionales[0].titulo | urlEncode}}/{{internacionales[0].id}}"><div style="background-image: url({{internacionales[0].foto}});" class="img-articulo"></div></a>
                             <p class="foto-autor">Foto: {{internacionales[0].fotografo}}</p>
-                            <h1><a>{{internacionales[0].titulo}}</a></h1>
+                            <h1><a ng-href="#/internacionales/{{internacionales[0].url}}/{{internacionales[0].titulo | urlEncode}}/{{internacionales[0].id}}">{{internacionales[0].titulo}}</a></h1>
                             <h4>{{internacionales[0].autor | uppercase}} | {{internacionales[0].fecha}}</h4>
                             <h3>{{internacionales[0].subseccion}}</h3>
                             <p>{{internacionales[0].preview}}</p>                          
@@ -435,7 +435,7 @@ SOCIEDAD</div>
                         <!-- El País Deportes -->
                         <div class="el-pais-deportes">
                             <!-- Titulo Seccion Portada -->
-                            <div class="titulo-up"><img class="line-titulo-up"/>DEPORTES</div>
+                            <a ng-href="#/deportes"><div class="titulo-up"><img class="line-titulo-up"/>DEPORTES</div></a>
                             <!-- Titulo Seccion Portada -->
                             <div class="tabla">
                                 <div data-ng-include data-src="'templates/widgets/champions_league_widget.html'"></div>
@@ -443,27 +443,25 @@ SOCIEDAD</div>
                         </div>
                         <!-- Articulo -->
                         <div class="articulo">
-                            <div style="background-image: url({{deportes[0].foto}});" class="img-articulo"></div>
+                            <a ng-href="#/deportes/{{deportes[0].url}}/{{deportes[0].titulo | urlEncode}}/{{deportes[0].id}}"><div style="background-image: url({{deportes[0].foto}});" class="img-articulo"></div></a>
                             <p class="foto-autor">{{deportes[0].fotografo}}</p>
-                            <h1><a>{{deportes[0].titulo}}</a></h1>
+                            <h1><a ng-href="#/deportes/{{deportes[0].url}}/{{deportes[0].titulo | urlEncode}}/{{deportes[0].id}}">{{deportes[0].titulo}}</a></h1>
                             <h4>{{deportes[0].autor | uppercase}} | {{deportes[0].fecha}}</h4>
                             <h3>{{deportes[0].subseccion}}</h3>
                             <p>{{deportes[0].preview}}</p>
-                            
                         </div>
                         <!-- Articulo -->
                         <!-- El País Deportes -->
                         
                         <!-- Titulo Seccion Portada -->
-                        <div class="titulo-up"><img class="line-titulo-up"/>
-POLÍTICA</div>
+                        <a href="#/politica"><div class="titulo-up"><img class="line-titulo-up"/>POLÍTICA</div></a>
                         <!-- Titulo Seccion Portada -->
 
                         <!-- Articulo -->
                         <div class="articulo">
-                            <div style="background-image: url({{politicas[0].foto}});" class="img-articulo"></div>
+                            <a ng-href="#/politica/{{politicas[0].url}}/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}"><div style="background-image: url({{politicas[0].foto}});" class="img-articulo"></div></a>
                             <p class="foto-autor">Foto: {{politicas[0].fotografo}}</p>
-                            <h1><a>{{politicas[0].titulo}}</a></h1>
+                            <h1><a ng-href="#/politica/{{politicas[0].url}}/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}">{{politicas[0].titulo}}</a></h1>
                             <h4>{{politicas[0].autor | uppercase}} | {{politicas[0].fecha}}</h4>
                             <h3>{{politicas[0].subseccion}}</h3>
                             <p>{{politicas[0].preview}}</p>
@@ -477,14 +475,14 @@ POLÍTICA</div>
                         <!-- Publicidad -->
                         <div class="cultura">
                             <!-- Titulo Seccion Portada -->
-                            <div class="titulo">Cultura</div>
+                            <a href="#/cultura"><div class="titulo">Cultura</div></a>
                             <!-- Articulo -->
                             <div class="articulo">
-                                <div style="background-image: url({{culturas[0].foto}});" class="img-articulo"></div>
+                                <a ng-href="#/cultura/{{culturas[0].url}}/{{culturas[0].titulo | urlEncode}}/{{culturas[0].id}}"><div style="background-image: url({{culturas[0].foto}});" class="img-articulo"></div></a>
                                 <p class="foto-autor">Foto: {{culturas[0].fotografo}}</p>
-                                <h1><a>{{culturas[0].titulo}}</a></h1>
+                                <h1><a ng-href="#/cultura/{{culturas[0].url}}/{{culturas[0].titulo | urlEncode}}/{{culturas[0].id}}">{{culturas[0].titulo}}</a></h1>
                                 <h4>{{culturas[0].autor | uppercase}} | {{culturas[0].fecha}}</h4>
-                                <h3 style="color:#fff;">{{culturas[0].subseccion}}</h3>
+                                <a ng-href="#/cultura/{{culturas[0].url}}"><h3 style="color:#fff;">{{culturas[0].subseccion}}</h3></a>
                                 <p>{{culturas[0].preview}}</p>
                                 <!-- Publicidad -->
                                 <div class="ads">

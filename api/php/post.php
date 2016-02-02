@@ -9,11 +9,10 @@ $seccion = $_GET['seccion'];
 $subseccion = $_GET['subseccion'];
 $id = $_GET['id'];
 
-/*$seccion = 'politica';
-$subseccion = 'politica';
+/*$seccion = 'opinion';
+$subseccion = 'tribuna';
 $titulo = '"Ficciones%3A%20el%20intelectual%20y%20el%20poder%20en%20El%20Salvador%20(1928-1932)';
-$id = 39;*/
-
+$id = 11;*/
 
 $cont='';
 $subinfo='';
@@ -48,10 +47,38 @@ if($secvalidate){
 					'fecha' => $fecha = formatoFecha($result['fecha']),
 					);
 				}
-			}elseif($result){
-
-			}elseif($result){
-				
+			}elseif($subinfo['id'] == 6){
+				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido, a.preview,
+								 i.rutaFoto as foto, a.fecha, f.nombre as fotografo  
+									from articulo as a, personal as c, fotografo as f, imagenesarticulo as i
+									where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo 
+									and i.posicion='principal' and a.idArticulo=$id");
+				while($result = mysql_fetch_array($cont)){
+					$contenido = array(
+						'id' => $id = $result['id'],
+						'foto' => $foto = $result['foto'],
+						'titulo' => $titulo = $result['titulo'],
+						'autor' => $autor = $result['autor'],
+						'preview' => $preview = $result['preview'],
+						'contenido' => $contenido = $result['contenido'],
+						'fecha' => $fecha = formatoFecha($result['fecha']),
+						'fotografo' => $fotografo = $result['fotografo'],);
+				}
+			}elseif($subinfo['id'] == 3){
+				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, 
+									a.contenido, a.fecha
+									from articulo a, personal as c
+									where a.idPersonal = c.idPersonal
+									and a.idArticulo=$id");
+				while($result = mysql_fetch_array($cont)){
+					$contenido = array(
+					'id' => $id = $result['id'],
+					'titulo' => $titulo = $result['titulo'],
+					'autor' => $autor = $result['autor'],
+					'contenido' => $contenido = $result['contenido'],
+					'fecha' => $fecha = formatoFecha($result['fecha']),
+					);
+				}
 			}else{
 				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, 
 									a.contenido, c.rutaFoto as foto, a.fecha

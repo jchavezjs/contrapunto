@@ -181,7 +181,7 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory){
+    .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -189,7 +189,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
-
+        $scope.fecha = fechaActual;
        var seccion = $routeParams.seccion;
        var subseccion = $routeParams.subseccion;
        $scope.currentPage = 1;
