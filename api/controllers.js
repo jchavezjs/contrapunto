@@ -165,7 +165,7 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('DeportesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
+    .controller('DeportesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -174,6 +174,7 @@ angular.module('contrapunto.controllers', [])
             $scope.show = true;
         }, 300);
         $scope.fecha = fechaActual;
+        $anchorScroll();
         $http.get("api/php/deportes.php").success(function (response){
             $scope.cronicas = response.cronicas;
             $scope.aconteceres = response.aconteceres;
@@ -181,7 +182,7 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual){
+    .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -195,7 +196,7 @@ angular.module('contrapunto.controllers', [])
        $scope.currentPage = 1;
        $scope.pageSize = 4;
        $scope.maxSize = 15;
-
+       $anchorScroll();
        $http.post("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
 
                 $http.get("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion).success(function(response){
@@ -210,7 +211,7 @@ angular.module('contrapunto.controllers', [])
        });
     })
 
-    .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual){
+    .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -223,7 +224,7 @@ angular.module('contrapunto.controllers', [])
         var subseccion = $routeParams.subseccion;
         var titulo = $routeParams.titulo;
         var id = $routeParams.id;
-
+        $anchorScroll();
         $scope.fecha = fechaActual;
 
          $http.post("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
