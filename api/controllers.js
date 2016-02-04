@@ -1,6 +1,7 @@
 angular.module('contrapunto.controllers', [])
 
-    .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
+    .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+        $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -40,7 +41,8 @@ angular.module('contrapunto.controllers', [])
 
 
     })
-    .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
+    .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+        $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -65,7 +67,8 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
+    .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+        $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -82,7 +85,8 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('InternacionalesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
+    .controller('InternacionalesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+        $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -99,7 +103,8 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('SociedadController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
+    .controller('SociedadController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+        $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -123,7 +128,8 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
+    .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+        $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -146,7 +152,8 @@ angular.module('contrapunto.controllers', [])
         });
     })
 
-    .controller('CulturaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
+    .controller('CulturaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+        $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -242,7 +249,8 @@ angular.module('contrapunto.controllers', [])
        });
     })
 
-    .controller('BuscarController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams){
+    .controller('BuscarController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll){
+        $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');

@@ -105,6 +105,7 @@
 <!-- Body -->
 <div class="container">
     <div class="row">
+<<<<<<< HEAD
             <div class="col-md-12">
                 <!-- Columna 1 -->
                 <div class="sec-subseccion">
@@ -121,9 +122,21 @@
                                   <div style="background-image: url({{contenido.foto}});" class="img-articulo"></div>
                                 </a>
                                 <!-- <p class="foto-autor-main">Foto: {{contenido.fotografo}}</p> -->
+=======
+                <!-- Columna 1 -->
+                    <div class="col-md-10 sec-subseccion">
+                        <!--preview subseccion-->
+                        <div class="row preview-subseccion" ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo: pageSize">
+                            <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><div style="background-image: url({{contenido.foto}});" class="col-md-3 img-subseccion"></div></a>
+                            <div class="col-md-9 info-subseccion">
+                                <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
+                                <h4 class="info-autor-politica subseccion-autor">Por <a>{{contenido.autor}}</a> | {{contenido.fecha}}</h4>
+                                <p class="subseccion-prev">{{contenido.preview}} </p>
+>>>>>>> origin/master
                             </div>
                           </div>
                         </div>
+<<<<<<< HEAD
                       </div>
                   </div>
                       <!--preview subseccion-->
@@ -141,6 +154,13 @@
                   </div>
                 </div>
 
+=======
+                        <!--preview subseccion-->
+                        <!--paginator-->
+                        <uib-pagination total-items="contenidos.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination>
+                        <!--paginator-->
+                    </div>
+>>>>>>> origin/master
                 <!-- Columna 1 -->
                 <!-- Columna 2 - 1 -->
 
@@ -185,7 +205,10 @@
                             </div>
                         </div>
                         <!--Lo mas leido-->
+<<<<<<< HEAD
                     </div>
+=======
+>>>>>>> origin/master
         </div>
         <div data-ng-include data-src="'templates/footer.html'"></div>
         </div>
