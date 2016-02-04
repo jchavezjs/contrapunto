@@ -8,16 +8,16 @@
                 <div class="col-md-5">
                     <div style="width:100%; height:100px; background-image:url('https://placehold.it/400x100')"></div>
                 </div>
-            </div>    
+            </div>
     </div>
     <div class="mainAds-mobile">
             <div class="row">
                 <div class="col-md-12">
                     <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
                 </div>
-            </div>    
+            </div>
     </div>
-</div>    
+</div>
 <!-- Ads Top | Portada -->
 <!-- Header -->
 <div class="container">
@@ -25,7 +25,7 @@
     <div class="menu-social">
         <div class="row">
             <div class="col-sm-4">
-                <a href="" class="btn-qs">Quiénes somos</a>    
+                <a href="" class="btn-qs">Quiénes somos</a>
             </div>
             <div class="col-sm-4 col-sm-offset-4">
                 <div class="sociales">
@@ -41,12 +41,12 @@
                     <button class="search"><i class="ion-android-search"></i></button>
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
     <!-- Date/Search Section -->
     <!-- Menu -->
     <div data-ng-include data-src="'templates/menu.html'"></div>
-    <!-- Menu -->    
+    <!-- Menu -->
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center seccion-nombre">
@@ -97,41 +97,58 @@
                 <a ng-repeat="subseccion in subsecciones" ng-href="#/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
-    </div> 
-    <!-- Menu -->    
+    </div>
+    <!-- Menu -->
     <!-- Menu Section -->
 </div>
 <!-- Header -->
 <!-- Body -->
 <div class="container">
     <div class="row">
-        <div class="row">
-            <div id="main" class="col-md-12">
-                <!-- Columna 1 -->  
-                    <div class="col-md-10 sec-subseccion">
-                        <!--preview subseccion-->
-                        <div class="row preview-subseccion" ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo: pageSize">
-                            <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><div style="background-image: url({{contenido.foto}});" class="col-md-3 img-subseccion"></div></a>
-                            <div class="col-md-9 info-subseccion">
-                                <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
-                                <h4 class="info-autor-politica subseccion-autor">{{contenido.autor | uppercase}} | {{contenido.fecha}}</h4>
-                                <p class="subseccion-prev">{{contenido.preview}} </p>
+            <div class="col-md-12">
+                <!-- Columna 1 -->
+                <div class="sec-subseccion">
+                  <div class="col-md-10">
+                  <div class="row">
+                    <div ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo: pageSize">
+                        <div class="col-md-6">
+                          <div class="row">
+                            <div class="articulo preview-sec-politica">
+                                <h1><a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}">{{contenido.titulo}}</a></h1>
+                                <h4 class="info-autor-politica">{{contenido.autor | uppercase}} | {{contenido.fecha}}</h4>
+                                <p>{{contenido.preview}}</p>
+                                <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}">
+                                  <div style="background-image: url({{contenido.foto}});" class="img-articulo"></div>
+                                </a>
+                                <!-- <p class="foto-autor-main">Foto: {{contenido.fotografo}}</p> -->
                             </div>
-                             <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}" class="leer-subseccion">Leer más</a>
+                          </div>
                         </div>
-                        <!--preview subseccion-->
-                        <!--paginator-->
-                        <uib-pagination total-items="contenidos.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination>
-                        <!--paginator-->
-                    </div>   
+                      </div>
+                  </div>
+                      <!--preview subseccion-->
+                      <!-- <div class="info-subseccion">
+                          <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
+                          <h4 class="info-autor-politica subseccion-autor">{{contenido.autor | uppercase}} | {{contenido.fecha}}</h4>
+                          <p class="subseccion-prev">{{contenido.preview}} </p>
+                      </div>
+                       <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}" class="leer-subseccion">Leer más</a> -->
+                      <!--preview subseccion-->
+                      <!--paginator-->
+
+                      <uib-pagination total-items="contenidos.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination>
+                      <!--paginator-->
+                  </div>
+                </div>
+
                 <!-- Columna 1 -->
                 <!-- Columna 2 - 1 -->
-                  
+
                     <div class="col-md-2">
                          <!-- Publicidad -->
                         <div class="ads">
                             <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
-                        </div>    
+                        </div>
                         <!-- Publicidad -->
                         <!--Lo mas leido-->
                         <div class="columnistas-portada">
@@ -151,7 +168,7 @@
                                         <li><a href="#" class="leido-item"><span>1</span>Un centenar de mexicanos a las urnas</a></li>
                                         <li><a href="#" class="leido-item"><span>2</span>Ataques en París, oriente ataca</a></li>
                                         <li><a href="#" class="leido-item"><span>3</span>Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item"><span>4</span>Ataques en París, oriente ataca</a></li>  
+                                        <li><a href="#" class="leido-item"><span>4</span>Ataques en París, oriente ataca</a></li>
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlpolitica">
@@ -159,7 +176,7 @@
                                         <li><a href="#" class="leido-item"><span>1</span>La pupusa salvadoreña</a></li>
                                         <li><a href="#" class="leido-item"><span>2</span>Se estrena Star Wars</a></li>
                                         <li><a href="#" class="leido-item"><span>3</span>La ética social</a></li>
-                                        <li><a href="#" class="leido-item"><span>4</span>La actualización humana</a></li>  
+                                        <li><a href="#" class="leido-item"><span>4</span>La actualización humana</a></li>
                                     </ul>
                                 </div>
                               </div>
@@ -167,12 +184,10 @@
                             </div>
                             </div>
                         </div>
-                        <!--Lo mas leido-->    
-                    </div>     
-            </div>    
-        </div>    
-        <div data-ng-include data-src="'templates/footer.html'"></div>        
+                        <!--Lo mas leido-->
+                    </div>
+        </div>
+        <div data-ng-include data-src="'templates/footer.html'"></div>
         </div>
     </div>
 </div>
-

@@ -33,6 +33,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                     controller: "DeportesController",
                     templateUrl: "templates/deportes/main.html"
             })
+            .when("/buscar/:query", {
+                controller: "BuscarController",
+                templateUrl: "templates/search.html"
+            })
             .when("/:seccion/:subseccion", {
                     controller: "SubseccionController",
                     templateUrl: "templates/subseccion/main.html"
@@ -40,10 +44,6 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
             .when("/:seccion/:subseccion/:titulo/:id", {
                 controller: "PostController",
                 templateUrl: "templates/politica/post.html"
-            })
-            .when("/buscar", {
-                controller: "BuscarController",
-                templateUrl: "templates/search.html"
             })
             .otherwise({
                 redirectTo: "/"
@@ -58,7 +58,6 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
     })
     .filter('urlEncode', function() {
         return function(input) {
-            return input.split(" ").join("-"); 
+            return input.split(" ").join("-");
         }
     })
-

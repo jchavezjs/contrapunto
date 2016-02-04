@@ -37,7 +37,7 @@ angular.module('contrapunto.controllers', [])
 
         });
 
-            
+
 
     })
     .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual){
@@ -250,4 +250,18 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
+        var query = $routeParams.query;
+        $http.post("api/php/buscar.php?query="+query,{'selectSeccion':query}).success(function(data,status,headers,config,response){
+
+               $http.get("api/php/buscar.php?query="+query).success(function(response){
+
+                   $scope.resultados = response.resultado;
+
+               });
+
+
+      });
+       $scope.buscar = function(busqueda){
+        $location.path('/buscar/' + busqueda);
+      }
     });
