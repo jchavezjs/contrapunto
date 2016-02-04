@@ -8,16 +8,16 @@
                 <div class="col-md-5">
                     <div style="width:100%; height:100px; background-image:url('https://placehold.it/400x100')"></div>
                 </div>
-            </div>    
+            </div>
     </div>
     <div class="mainAds-mobile">
             <div class="row">
                 <div class="col-md-12">
                     <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
                 </div>
-            </div>    
+            </div>
     </div>
-</div>    
+</div>
 <!-- Ads Top | Portada -->
 <!-- Header -->
 <div class="container">
@@ -26,7 +26,7 @@
     <!-- Date/Search Section -->
     <!-- Menu -->
     <div data-ng-include data-src="'templates/menu.html?i=2'"></div>
-    <!-- Menu -->    
+    <!-- Menu -->
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center">
@@ -34,7 +34,7 @@
             <a class="opinion-logo-title" alt="cambiar a 60px" href="">
                 Opinión
             </a>
-            <h4>{{fecha}}</h4>    
+            <h4>{{fecha}}</h4>
         </div>
     </div>
     <!-- Logo Section -->
@@ -76,8 +76,8 @@
                 <a ng-repeat="subseccion in subsecciones" ng-href="#/opinion/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
-    </div> 
-    <!-- Menu -->    
+    </div>
+    <!-- Menu -->
     <!-- Menu Section -->
 </div>
 <!-- Header -->
@@ -87,7 +87,7 @@
         <div class="row">
             <div class="col-md-12">
                 <!-- Columna 1 -->
-                <div class="columna1">   
+                <div class="columna1">
                     <div class="col-md-5">
                         <!-- Preview editorial -->
                         <div class="articulo editorial">
@@ -97,7 +97,7 @@
                             </div>
                             <div class="preview-editorial" ng-repeat="editorial in editoriales | limitTo: 3">
                                 <a ng-href="#/opinion/editorial/{{editorial.titulo | urlEncode}}/{{editorial.id}}"><h2 class="titulo-preview-editorial">
-                                    {{editorial.titulo}}    
+                                    {{editorial.titulo}}
                                 </h2></a>
                                 <span class="fecha-preview-editorial">
                                     {{editorial.fecha}}
@@ -167,7 +167,7 @@
                         </div>
                         <!--Preview academia-->
                     </div>
-                </div>    
+                </div>
                 <!-- Columna 1 -->
                 <!-- Columna 2 -->
                 <div class="columna2">
@@ -185,7 +185,7 @@
                                     <input type="radio" name="respuesta" value="si"> Si, estoy de acuerdo</br>
                                     <input type="radio" name="respuesta" value="no"> No, estoy de acuerdo</br>
                             <button>votar</button>
-                                </form>   
+                                </form>
                             <!--<img class="line-votar"/><i class="total-votos">44 votos en total</i><img class="line-votar"/>
                                 <div class="body-estadisticas">
                                     <span>Si - 56.8% | 25 votos</span>
@@ -225,26 +225,26 @@
                         <!-- Publicidad -->
                         <div class="ads">
                             <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
-                        </div>    
+                        </div>
                         <!-- Publicidad -->
                         <!-- Articulo -->
                     </div>
-                </div>     
+                </div>
                 <!-- Columna 2 -->
                 <!-- Columna 3 - 1 -->
-                <div class="columna3">   
+                <div class="columna3">
                     <div class="col-md-2">
                          <!-- Publicidad -->
                         <div class="ads">
                             <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
-                        </div>    
+                        </div>
                         <!-- Publicidad -->
                         <!-- OPINION POR TEMAS -->
                         <div class="filtro-opinion">
                             <h3>OPINIÓN POR TEMAS</h3>
                             <!--filtro-->
                                 <div class="dropdown">
-                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">POLITICA</span> 
+                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">POLITICA</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
                                     <li ng-repeat="politica in politicas"><a ng-href="#/opinion?id={{politica.id}}">{{politica.nombre}}</a></li>
@@ -253,7 +253,7 @@
                             <!--filtro-->
                              <!--filtro-->
                                 <div class="dropdown">
-                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">ECONOMÍA</span> 
+                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">ECONOMÍA</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
                                     <li ng-repeat="economia in economias"><a ng-href="#/opinion?id={{economia.id}}">{{economia.nombre}}</a></li>
@@ -262,7 +262,7 @@
                             <!--filtro-->
                              <!--filtro-->
                                 <div class="dropdown">
-                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">INTERNACIONAL</span> 
+                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">INTERNACIONAL</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
                                     <li ng-repeat="internacional in internacionales"><a ng-href="#/opinion?id={{internacional.id}}">{{internacional.nombre}}</a></li>
@@ -271,7 +271,7 @@
                             <!--filtro-->
                              <!--filtro-->
                                 <div class="dropdown">
-                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">CULTURA</span> 
+                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">CULTURA</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
                                     <li ng-repeat="cultura in culturas"><a ng-href="#/opinion?id={{cultura.id}}">{{cultura.nombre}}</a></li>
@@ -280,7 +280,7 @@
                             <!--filtro-->
                              <!--filtro-->
                                 <div class="dropdown">
-                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">SOCIEDAD</span> 
+                                  <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">SOCIEDAD</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
                                     <li ng-repeat="sociedad in sociedades"><a ng-href="#/opinion?id={{sociedad.id}}">{{sociedad.nombre}}</a></li>
@@ -288,7 +288,7 @@
                                 </div>
                             <!--filtro-->
                         </div>
-                        <!-- OPINIÓN POR TEMAS --> 
+                        <!-- OPINIÓN POR TEMAS -->
                         <!--Lo mas leido-->
                         <div class="columnistas-portada">
                             <h3>LO MÁS LEÍDO</h3>
@@ -307,7 +307,7 @@
                                         <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
                                         <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
                                         <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>  
+                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlopinion">
@@ -315,21 +315,33 @@
                                         <li><a href="#" class="leido-item">La pupusa salvadoreña</a></li>
                                         <li><a href="#" class="leido-item">Se estrena Star Wars</a></li>
                                         <li><a href="#" class="leido-item">La ética social</a></li>
-                                        <li><a href="#" class="leido-item">La actualización humana</a></li>  
+                                        <li><a href="#" class="leido-item">La actualización humana</a></li>
                                     </ul>
                                 </div>
                               </div>
                             <!--Lo mas leido-TABS-->
                             </div>
                         </div>
-                        <!--Lo mas leido-->   
-                    </div>  
-                </div>        
-            </div>    
-        </div>    
-        <div data-ng-include data-src="'templates/footer.html'"></div>        
+                        <!--Lo mas leido-->
+                        <div class="dropdown">
+                          <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="drop-title">COLUMNISTAS</span>
+                          <span class="caret drop-arrow"></span></button>
+                          <ul class="dropdown-menu option" aria-labellebdy="drop1">
+                            <li><a>Mario Morales</a></li>
+                            <li><a>Mario Morales</a></li>
+                            <li><a>Mario Morales</a></li>
+                            <li><a>Mario Morales</a></li>
+                            <li><a>Mario Morales</a></li>
+                            <li><a>Mario Morales</a></li>
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-ng-include data-src="'templates/footer.html'"></div>
         </div>
     </div>
 </div>
 <!-- Body -->
-
