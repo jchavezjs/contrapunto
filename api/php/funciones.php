@@ -43,7 +43,11 @@ function opinion($seccion){
 }
 
 function subseccion($seccion){
+	if($seccion == 2){
+	$str = "SELECT idSubseccion as id, nombre, url from subseccion where idSeccion = $seccion ORDER BY nombre";
+	}else{
 	$str = "SELECT idSubseccion as id, nombre, url from subseccion where idSeccion = $seccion";
+	}
 	$query = mysql_query($str);
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
