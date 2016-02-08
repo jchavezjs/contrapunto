@@ -23,6 +23,7 @@ $acainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, '
 						from articulo as a, personal as c
 						where a.idSubseccion = 6 and a.idPersonal=c.idPersonal and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc ");
+$colinfo = mysql_query("SELECT CONCAT(nombres, ' ', apellidos) as nombre, idPersonal as id from personal where cargo='columnista'");
 
 while($edipreview = mysql_fetch_array($ediinfo)){
 	$editorial[]=array(
@@ -35,6 +36,12 @@ while($edipreview = mysql_fetch_array($ediinfo)){
 while($carpreview = mysql_fetch_array($carinfo)){
 	$caricatura[] = array(
 				'foto' => $foto = $carpreview['foto'],);
+}
+
+while($colpreview = mysql_fetch_array($colinfo)){
+	$columnista[] = array(
+		'id' => $id = $colpreview['id'],
+		'nombre' => $nombre = $colpreview['nombre'],);
 }
 
 while($tripreview = mysql_fetch_array($triinfo)){
@@ -76,7 +83,8 @@ echo json_encode(array(
 				'sociedades' => dropdown(4),
 				'internacionales' => dropdown(3),
 				'subsecciones' => subseccion(1),
-				'culturas' => dropdown(6)
+				'culturas' => dropdown(6),
+				'autores' => $columnista
 				));
 
 ?>

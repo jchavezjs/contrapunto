@@ -78,13 +78,14 @@
     <div class="row">
         <div class="col-md-8">
             <div class="search-results">
-                <div class="item" ng-repeat = "resultado in resultados">
+                <div class="item" ng-repeat = "resultado in resultados | startFrom:(currentPage - 1)*pageSize | limitTo:pageSize">
                     <span class="category">{{resultado.subseccion}}</span>
                     <h1>{{resultado.titulo}}</h1>
                     <h6>Por <a class="autor">{{resultado.autor}}</a> {{resultado.fecha}}</h6>
                     <p>{{resultado.preview}}</p>
                 </div>
             </div>
+            <uib-pagination total-items="resultados.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination>
         </div>
         <div class="col-md-4">
             <div class="row">

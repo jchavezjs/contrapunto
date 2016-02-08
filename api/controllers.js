@@ -64,6 +64,7 @@ angular.module('contrapunto.controllers', [])
             $scope.sociedades = response.sociedades;
             $scope.economias = response.economias;
             $scope.subsecciones = response.subsecciones;
+            $scope.autores = response.autores;
         });
     })
 
@@ -258,6 +259,9 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
+        $scope.currentPage = 1;
+        $scope.pageSize = 4;
+        $scope.maxSize = 4;
         var query = $routeParams.query;
         $http.post("api/php/buscar.php?query="+query,{'selectSeccion':query}).success(function(data,status,headers,config,response){
 

@@ -8,45 +8,25 @@
                 <div class="col-md-5">
                     <div style="width:100%; height:100px; background-image:url('https://placehold.it/400x100')"></div>
                 </div>
-            </div>    
+            </div>
     </div>
     <div class="mainAds-mobile">
             <div class="row">
                 <div class="col-md-12">
                     <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
                 </div>
-            </div>    
+            </div>
     </div>
-</div>    
+</div>
 <!-- Ads Top | Portada -->
 <!-- Header -->
 <div class="container">
     <!-- Date/Search Section -->
-    <div class="menu-social">
-        <div class="row">
-            <div class="col-sm-4">
-                <a href="" class="btn-qs">Quiénes somos</a>    
-            </div>
-            <div class="col-sm-4 col-sm-offset-4">
-                <div class="sociales">
-                    <a class="social-btn facebook"><span class="ion-social-facebook"></span></a>
-                    <a class="social-btn twitter"><span class="ion-social-twitter"></span></a>
-                    <a class="social-btn googleplus"><span class="ion-social-googleplus"></span></a>
-                    <a class="social-btn instagram"><span class="ion-social-instagram"></span></a>
-                </div>
-                <div class="right">
-                    <a class="suscribete">
-                        Suscríbete
-                    </a>
-                    <button class="search"><i class="ion-android-search"></i></button>
-                </div>
-            </div>
-        </div>    
-    </div>
+    <div data-ng-include data-src="'templates/socialsearch.html?i=1'"></div>
     <!-- Date/Search Section -->
     <!-- Menu -->
     <div data-ng-include data-src="'templates/menu.html'"></div>
-    <!-- Menu -->    
+    <!-- Menu -->
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center">
@@ -54,7 +34,7 @@
             <a class="opinion-logo-title" alt="cambiar a 60px" href="">
                 Cultura
             </a>
-            <h4>{{fecha}}</h4>    
+            <h4>{{fecha}}</h4>
         </div>
     </div>
     <!-- Logo Section -->
@@ -96,8 +76,8 @@
                 <a ng-repeat="subseccion in subsecciones" ng-href="#/cultura/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
-    </div> 
-    <!-- Menu -->    
+    </div>
+    <!-- Menu -->
     <!-- Menu Section -->
 </div>
 <!-- Header -->
@@ -106,7 +86,7 @@
     <div class="row">
         <div class="row">
             <div id="main" class="col-md-12">
-                <!-- Columna 1 -->  
+                <!-- Columna 1 -->
                     <div class="col-md-5 m1-cultura">
                         <!--Seccion CONTRATABU-->
                         <div class="sec-politica sec-cultura">
@@ -158,7 +138,7 @@
                         </div>
                         <!--Seccion ANECDOTA-->
                     </div>
-                   
+
                 <!-- Columna 1 -->
                 <!-- Columna 2 -->
                     <div class="col-md-5">
@@ -185,7 +165,7 @@
                                 <!-- Publicidad -->
                                 <div class="ads ad-politica">
                                     <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
-                                </div>    
+                                </div>
                                 <!-- Publicidad -->
                          <!--Seccion LITERATURA-->
                         <div class="sec-politica sec-cultura">
@@ -206,15 +186,15 @@
                         </div>
                         <!--Seccion LITERATURA-->
                         </div>
-                    </div>   
+                    </div>
                 <!-- Columna 2 -->
                 <!-- Columna 3 - 1 -->
-                  
+
                     <div class="col-md-2">
                          <!-- Publicidad -->
                         <div class="ads">
                             <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
-                        </div>    
+                        </div>
                         <!-- Publicidad -->
                         <!--Lo mas leido-->
                         <div class="columnistas-portada">
@@ -234,7 +214,7 @@
                                         <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
                                         <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
                                         <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>  
+                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlpolitica">
@@ -242,19 +222,18 @@
                                         <li><a href="#" class="leido-item">La pupusa salvadoreña</a></li>
                                         <li><a href="#" class="leido-item">Se estrena Star Wars</a></li>
                                         <li><a href="#" class="leido-item">La ética social</a></li>
-                                        <li><a href="#" class="leido-item">La actualización humana</a></li>  
+                                        <li><a href="#" class="leido-item">La actualización humana</a></li>
                                     </ul>
                                 </div>
                               </div>
                             <!--Lo mas leido-TABS-->
                             </div>
                         </div>
-                        <!--Lo mas leido-->    
-                    </div>     
-            </div>    
-        </div>    
-        <div data-ng-include data-src="'templates/footer.html'"></div>        
+                        <!--Lo mas leido-->
+                    </div>
+            </div>
+        </div>
+        <div data-ng-include data-src="'templates/footer.html'"></div>
         </div>
     </div>
 </div>
-

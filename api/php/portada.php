@@ -17,7 +17,7 @@ $actinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, '
 						ORDER BY a.fecha desc, a.hora desc
 						limit 5");
 $triinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor
-						from personal as c, articulo as a 
+						from personal as c, articulo as a
 						where c.idPersonal = a.idPersonal and a.idSubseccion = 3 and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc
 						LIMIT 4");
@@ -40,7 +40,7 @@ $libinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto,
 						from articulo as a, personal as c
 						where a.idSubseccion = 4 and a.idPersonal=c.idPersonal and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc ");
-$sosinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
+$sosinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and a.especial=0 and
 						i.posicion='principal' and a.idSubseccion not in (34, 35) and  (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='sociedad'
@@ -175,6 +175,7 @@ while($libpreview = mysql_fetch_array($libinfo)){
 while($sospreview = mysql_fetch_array($sosinfo)){
 	$sociedad[] = array(
 				'id' => $id = $sospreview['id'],
+				'url' => $url = $sospreview['url'],
 				'foto' => $foto = $sospreview['foto'],
 				'titulo' => $titulo = $sospreview['titulo'],
 				'autor' => $autor = $sospreview['autor'],

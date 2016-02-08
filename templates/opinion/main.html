@@ -328,12 +328,7 @@
                           <span class="drop-title">COLUMNISTAS</span>
                           <span class="caret drop-arrow"></span></button>
                           <ul class="dropdown-menu option" aria-labellebdy="drop1">
-                            <li><a>Mario Morales</a></li>
-                            <li><a>Mario Morales</a></li>
-                            <li><a>Mario Morales</a></li>
-                            <li><a>Mario Morales</a></li>
-                            <li><a>Mario Morales</a></li>
-                            <li><a>Mario Morales</a></li>
+                            <li ng-repeat="autor in autores"><a ng-href="#/autor/{{autor.nombre | urlEncode}}/{{autor.id}}">{{autor.nombre}}</a></li>
                           </ul>
                         </div>
                     </div>

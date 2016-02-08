@@ -141,7 +141,7 @@
                         <!-- Publicidad -->
                         <!-- Articulo -->
                         <div class="articulo" ng-repeat="especial in especiales | limitTo: 3" ng-if="especial != especiales[0]">
-                            <div style="background-image: url({{especial.foto}});" class="img-articulo"></div>
+                            <a ng-href="#/"><div style="background-image: url({{especial.foto}});" class="img-articulo"></div></a>
                             <p class="foto-autor">Foto: {{especial.fotografo}}</p>
                             <h1><a>{{especial.titulo}}</a></h1>
                             <h4>{{especial.autor | uppercase}} | Especiales Semanales</h4>
@@ -191,13 +191,13 @@
                 <div class="columna3">
                     <div class="col-md-2">
                         <!-- Titulo Seccion Portada -->
-                        <div class="titulo-up">Editorial
+                        <a href="#opinion/editorial"><div class="titulo-up">Editorial
                             <img class="line-titulo-up"/>
-                        </div>
+                        </div></a>
                         <!-- Titulo Seccion Portada -->
                         <!-- Editorial -->
                         <div class="editorial-articulo">
-                            <h3>{{editoriales[0].titulo}}</h3>
+                            <a ng-href="#/opinion/editorial/{{editoriales[0].titulo | urlEncode}}/{{editoriales[0].id}}"><h3>{{editoriales[0].titulo}}</h3></a>
                             <p>{{editoriales[0].preview}}</p>
                         </div>
                         <!-- Editorial -->
@@ -224,12 +224,12 @@
                         <!-- Publicidad -->
                         <!-- Columnistas -->
                         <div class="columnistas-portada">
-                            <h3>Columnistas</h3>
+                            <a href="#/opinion/columnistas"><h3>Columnistas</h3></a>
                             <!-- Columnista -->
                             <div class="columnista" ng-repeat="columnista in columnistas">
-                                <div class="foto" style="background-image:url({{columnista.foto}});"></div>
+                                <a ng-href="#/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><div class="foto" style="background-image:url({{columnista.foto}});"></div></a>
                                 <p>{{columnista.nombre}}</p>
-                                <h4>{{columnista.titulo}}</h4>
+                                <a ng-href="#/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><h4>{{columnista.titulo}}</h4></a>
                             </div>
                             <!-- Columnista -->
                         </div>
@@ -247,22 +247,22 @@
                     <div class="col-md-10">
                         <div class="economia-negocios">
                             <div class="header">
-                                <h1>Económia y negocios</h1>
+                                <a href="#/economia"><h1>Económia y negocios</h1></a>
                             </div>
                             <div class="row" style="margin-top:20px; margin-left:3px;margin-right:3px;padding-bottom:10px;">
                                 <div class="col-sm-4">
                                     <div class="body-header">
-                                        <h2>Negocios</h2>
+                                        <a href="#/economia/negocios"><h2>Negocios</h2></a>
                                     </div>
                                     <div class="body">
                                         <div class="row" style="margin-bottom:10px;" ng-repeat="negocio in negocios">
                                             <div class="economia-col-1">
                                                 <div class="col-md-3">
-                                                    <div style="background-image:url({{negocio.foto}});" class="foto-1">
+                                                    <a ng-href="#/economia/negocios/{{negocio.titulo | urlEncode}}/{{negocio.id}}"><div style="background-image:url({{negocio.foto}});" class="foto-1"></a>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <h4>{{negocio.titulo}}</h4>
+                                                    <a ng-href="#/economia/negocios/{{negocio.titulo | urlEncode}}/{{negocio.id}}"><h4>{{negocio.titulo}}</h4></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -270,17 +270,17 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="body-header">
-                                        <h2>Análisis económico</h2>
+                                        <a href="#/economia/analisiseconomico"><h2>Análisis económico</h2></a>
                                     </div>
                                     <div class="body">
                                         <div class="row" style="margin-bottom:10px;" ng-repeat="analisis in analisiss">
                                             <div class="economia-col-1">
                                                 <div class="col-md-4">
-                                                    <div style="background-image:url({{analisis.foto}});" class="foto-2">
-                                                    </div>
+                                                    <a ng-href="#/economia/analisiseconomico/{{analisis.titulo | urlEncode}}/{{analisis.id}}"><div style="background-image:url({{analisis.foto}});" class="foto-2">
+                                                    </div></a>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <h4>{{analisis.titulo}}</h4>
+                                                    <a ng-href="#/economia/analisiseconomico/{{analisis.titulo | urlEncode}}/{{analisis.id}}"><h4>{{analisis.titulo}}</h4></a>
                                                     <h2>{{analisis.autor}}</h2>
                                                 </div>
                                             </div>
@@ -289,21 +289,21 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="body-header">
-                                        <h2>Coyuntura económica</h2>
+                                        <a href="#/economia/coyunturaeconomica"><h2>Coyuntura económica</h2></a>
                                     </div>
                                     <div class="body">
                                         <div class="row" style="margin-bottom:10px;" ng-repeat="coyuntura in coyunturas">
                                             <div class="economia-col-1">
                                                 <div class="col-md-3">
-                                                    <div style="background-image:url({{coyuntura.foto}});" class="foto-1">
-                                                    </div>
+                                                    <a ng-href="#/economia/coyunturaeconomica/{{coyuntura.titulo | urlEncode}}/{{coyuntura.id}}"><div style="background-image:url({{coyuntura.foto}});" class="foto-1">
+                                                    </div></a>
                                                 </div>
                                                 <div class="col-md-9">
-                                                    <h4>{{coyuntura.titulo}}</h4>
+                                                    <a ng-href="#/economia/coyunturaeconomica/{{coyuntura.titulo | urlEncode}}/{{coyuntura.id}}"><h4>{{coyuntura.titulo}}</h4></a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <a class="leer-mas-economia">Leer más en economía <i style="padding-top:1px;" class="ion-ios-arrow-forward"></i></a>
+                                        <a class="leer-mas-economia" href="#/economia">Leer más en economía <i style="padding-top:1px;" class="ion-ios-arrow-forward"></i></a>
                                     </div>
                                 </div>
                                 <!-- Publicidad -->
@@ -324,10 +324,10 @@
                 <div class="col-md-2">
                         <!-- Tribuna Libre -->
                         <div class="tribuna-portada">
-                            <h3>Tribuna Libre</h3>
+                            <a href="#/opinion/tribuna"><h3>Tribuna Libre</h3></a>
                             <!-- Tribuna Item -->
                             <div class="tribuna-item" ng-repeat="tribuna in tribunas">
-                                <h2>{{tribuna.titulo}}</h2>
+                                <a ng-href="#/opinion/tribuna/{{tribuna.titulo | urlEncode}}/{{tribuna.id}}"><h2>{{tribuna.titulo}}</h2></a>
                                 <h4>{{tribuna.autor}}</h4>
                             </div>
                             <!-- Tribuna Item -->
@@ -335,11 +335,11 @@
                         <!-- Tribuna Libre -->
                         <!-- Libertad de expresión -->
                         <div class="libertad-expresion">
-                            <h3>Libertad de expresión</h3>
+                            <a href="#/opinion/libertad"><h3>Libertad de expresión</h3></a>
                             <!-- LE Item -->
                             <div class="libertad-item">
-                                <div class="foto" style="background-image:url({{libertades[0].foto}});"></div>
-                                <h2>{{libertades[0].titulo}}</h2>
+                                <a ng-href="#/opinion/libertad/{{libertades[0].titulo | urlEncode}}/{{libertades[0].id}}"><div class="foto" style="background-image:url({{libertades[0].foto}});"></div></a>
+                                <a ng-href="#/opinion/libertad/{{libertades[0].titulo | urlEncode}}/{{libertades[0].id}}"><h2>{{libertades[0].titulo}}</h2></a>
                                 <h4>{{libertades[0].autor}}</h4>
                             </div>
                             <!-- Tribuna Item -->
@@ -352,17 +352,16 @@
                 <div class="columna1-2">
                     <div class="col-md-5">
                         <!-- Titulo Seccion Portada -->
-                        <div class="titulo-up"><img class="line-titulo-up"/>
-SOCIEDAD</div>
+                        <a href="#/sociedad"><div class="titulo-up"><img class="line-titulo-up"/>SOCIEDAD</div></a>
                         <!-- Titulo Seccion Portada -->
 
                         <!-- Articulo -->
                         <div class="articulo">
-                            <div style="background-image: url({{sociedades[0].foto}});" class="img-articulo"></div>
+                            <a ng-href="#/sociedad/{{sociedades[0].url}}/{{sociedades[0].titulo | urlEncode}}/{{sociedades[0].id}}"><div style="background-image: url({{sociedades[0].foto}});" class="img-articulo"></div></a>
                             <p class="foto-autor">Foto: {{sociedades[0].fotografo}}</p>
-                            <h1><a>{{sociedades[0].titulo}}</a></h1>
+                            <h1><a  ng-href="#/sociedad/{{sociedades[0].url}}/{{sociedades[0].titulo | urlEncode}}/{{sociedades[0].id}}">{{sociedades[0].titulo}}</a></h1>
                             <h4>{{sociedades[0].autor | uppercase}} | {{sociedades[0].fecha}}</h4>
-                            <h3>{{sociedades[0].subseccion}}</h3>
+                            <a  ng-href="#/sociedad/{{sociedades[0].url}}"><h3>{{sociedades[0].subseccion}}</h3></a>
                             <p>{{sociedades[0].preview}}</p>
 
                         </div>
@@ -394,14 +393,14 @@ SOCIEDAD</div>
                         </div>
                         <!-- Publicidad -->
                         <!-- Articulo -->
-                        <div class="prensa-ciudadana">PRENSA CIUDADANA</div>
+                        <a href="#/sociedad/periodismociudadano"><div class="prensa-ciudadana">PRENSA CIUDADANA</div></a>
                         <!-- Articulo -->
                         <div class="articulo">
-                            <div style="background-image: url({{periodismos[0].foto}});" class="img-articulo"></div>
+                            <a ng-href="#/sociedad/periodismociudadano/{{periodismos[0].titulo | urlEncode}}/{{periodismos[0].id}}"><div style="background-image: url({{periodismos[0].foto}});" class="img-articulo"></div></a>
                             <p class="foto-autor">Foto: {{periodismos[0].fotografo}}</p>
-                            <h1><a>{{periodismos[0].titulo}}</a></h1>
+                            <h1><a ng-href="#/sociedad/periodismociudadano/{{periodismos[0].titulo | urlEncode}}/{{periodismos[0].id}}">{{periodismos[0].titulo}}</a></h1>
                             <h4>{{periodismos[0].autor}} | {{periodismos[0].fecha}}</h4>
-                            <h3>{{periodismos[0].subseccion}}</h3>
+                            <a ng-href="#/sociedad/periodismociudadano"><h3>{{periodismos[0].subseccion}}</h3></a>
                             <p>{{periodismos[0].preview}}</p>
 
                         </div>
@@ -419,7 +418,7 @@ SOCIEDAD</div>
                             <p class="foto-autor">Foto: {{internacionales[0].fotografo}}</p>
                             <h1><a ng-href="#/internacionales/{{internacionales[0].url}}/{{internacionales[0].titulo | urlEncode}}/{{internacionales[0].id}}">{{internacionales[0].titulo}}</a></h1>
                             <h4>{{internacionales[0].autor | uppercase}} | {{internacionales[0].fecha}}</h4>
-                            <h3>{{internacionales[0].subseccion}}</h3>
+                            <a ng-href="#/internacionales/{{internacionales[0].url}}"><h3>{{internacionales[0].subseccion}}</h3></a>
                             <p>{{internacionales[0].preview}}</p>
                         </div>
                         <!-- Publicidad -->
@@ -448,7 +447,7 @@ SOCIEDAD</div>
                             <p class="foto-autor">{{deportes[0].fotografo}}</p>
                             <h1><a ng-href="#/deportes/{{deportes[0].url}}/{{deportes[0].titulo | urlEncode}}/{{deportes[0].id}}">{{deportes[0].titulo}}</a></h1>
                             <h4>{{deportes[0].autor | uppercase}} | {{deportes[0].fecha}}</h4>
-                            <h3>{{deportes[0].subseccion}}</h3>
+                            <a ng-href="#/deportes/{{deportes[0].url}}"><h3>{{deportes[0].subseccion}}</h3></a>
                             <p>{{deportes[0].preview}}</p>
                         </div>
                         <!-- Articulo -->
@@ -464,7 +463,7 @@ SOCIEDAD</div>
                             <p class="foto-autor">Foto: {{politicas[0].fotografo}}</p>
                             <h1><a ng-href="#/politica/{{politicas[0].url}}/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}">{{politicas[0].titulo}}</a></h1>
                             <h4>{{politicas[0].autor | uppercase}} | {{politicas[0].fecha}}</h4>
-                            <h3>{{politicas[0].subseccion}}</h3>
+                            <a ng-href="#/politica/{{politicas[0].url}}"><h3>{{politicas[0].subseccion}}</h3></a>
                             <p>{{politicas[0].preview}}</p>
 
                         </div>
