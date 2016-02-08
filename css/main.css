@@ -250,11 +250,12 @@ a:hover{
     padding:5px 5px 0px 5px;
 }
 .articulo a{
-    color: #222;
+    color: #000;
 }
 .articulo a:hover{
-    color: #222;
+    color: #555;
     text-decoration: none;
+    cursor: pointer;
 }
 .articulo a:focus{
     color: #222;
@@ -1950,7 +1951,9 @@ margin: 10px 0 0px 0;
 }
 .bolsas-del-mundo .head{
     padding:16px 10px 15px 10px;
-    background-image: linear-gradient(90deg, #0666A7 0%, #0390C0 100%);
+    background-image: url(../img/bolsas-head.png);
+    background-size: cover;
+    background-position: center;
     font-size:14px;
     color:#fff;
     font-family:'Helvetica Neue', Arial, Sans-serif;
@@ -1958,13 +1961,16 @@ margin: 10px 0 0px 0;
     text-transform:uppercase;
     letter-spacing:1px;
     border-radius:2px 2px 0px 0px;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.40);
 }
-.bolsas-del-mundo .head a{
+.del-mundo-a{
     float:right;
-    color:#fff;
+    color:#888;
+    font-weight:400;
     margin-top:3px;
     font-size:12px;
     text-transform:Capitalize;
+    font-family:'Helvetica Neue', Arial, Sans-serif;
 }
 .bolsas-del-mundo .item{
     margin-top:5px;
@@ -1996,12 +2002,16 @@ margin: 10px 0 0px 0;
     margin-top:15px;
     border-radius:2px;
 }
+.minus-top{
+  margin-top: -32px;
+  font-size: 10px !important;
+}
 .padddd{
     padding: 0px 0px 0px 5px;
 }
 .mercados-del-mundo .head{
     padding:16px 10px 15px 10px;
-    background-image: linear-gradient(90deg, #0666A7 0%, #0390C0 100%);
+    background-image: url(../img/mercados-head.png);
     font-size:14px;
     color:#fff;
     font-family:'Helvetica Neue', Arial, Sans-serif;
