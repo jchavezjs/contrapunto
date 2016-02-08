@@ -69,20 +69,51 @@
 <!-- Header -->
 <!-- Body -->
 <div class="container">
-        <div class="search-inputs">
-          <form ng-submit="buscar(busqueda)">
-            <input placeholder="Buscar..." ng-model="busqueda" type="text">
-            <button><i class="ion-android-search"></i></button>
-          </form>
-        </div>
     <div class="row">
         <div class="col-md-8">
+            <div class="autor-area">
+              <div class="row">
+                <div class="col-md-2">
+                  <div style="background-image:url(http://www.contrapunto.com.sv/media/k2/users/3.jpg);" class="autor-photo"></div>
+                </div>
+                <div class="col-md-10">
+                  <div class="autor-info">
+                    <h1> Laura Bernal</h1>
+                    <p>Uuummmm, this is a tasty burger! Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic</p>
+                    <a class="fb" href=""><i class="ion-social-facebook"></i></a>
+                    <a class="tw" href=""><i class="ion-social-twitter"></i></a>
+                    <a class="gg" href=""><i class="ion-social-googleplus"></i></a>
+                    <a class="ln" href=""><i class="ion-social-linkedin"></i></a>
+                    <a class="em" href=""><i class="ion-email"></i></a>
+                    <div class="divisor"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="search-results">
-                <div class="item" ng-repeat = "resultado in resultados | startFrom:(currentPage - 1)*pageSize | limitTo:pageSize">
-                    <span class="category">{{resultado.subseccion}}</span>
-                    <h1>{{resultado.titulo}}</h1>
-                    <h6>Por <a class="autor">{{resultado.autor}}</a> {{resultado.fecha}}</h6>
-                    <p>{{resultado.preview}}</p>
+                <div class="item">
+                    <span class="category">Política</span>
+                    <h1>Comida gratis en Papa Johns</h1>
+                    <h6>Por <a class="autor">Laura Bernal</a> 28 de Febrero del 2016</h6>
+                    <p>Uuummmm, this is a tasty burger! Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic.</p>
+                </div>
+                <div class="item">
+                    <span class="category">Política</span>
+                    <h1>Comida gratis en Papa Johns</h1>
+                    <h6>Por <a class="autor">Laura Bernal</a> 28 de Febrero del 2016</h6>
+                    <p>Uuummmm, this is a tasty burger! Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic.</p>
+                </div>
+                <div class="item">
+                    <span class="category">Política</span>
+                    <h1>Comida gratis en Papa Johns</h1>
+                    <h6>Por <a class="autor">Laura Bernal</a> 28 de Febrero del 2016</h6>
+                    <p>Uuummmm, this is a tasty burger! Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic.</p>
+                </div>
+                <div class="item">
+                    <span class="category">Política</span>
+                    <h1>Comida gratis en Papa Johns</h1>
+                    <h6>Por <a class="autor">Laura Bernal</a> 28 de Febrero del 2016</h6>
+                    <p>Uuummmm, this is a tasty burger! Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic.</p>
                 </div>
             </div>
             <div class="center"><uib-pagination ng-click="top()" total-items="resultados.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination></div>
@@ -112,9 +143,14 @@
                     </a>
               </div>
             </div>
-            <div class="search-caricatura" style="background-image:url(http://www.contrapunto.com.sv/documentosite/contrapunta/images/awa1.jpg);">
-
-            </div>
+            <a href="" target="_blank"><div class="autor-fotogaleria" style="background-image:url(http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2016/02/JOV7476-copy.jpg);">
+              <div class="trans">
+                <img class="foto-imagen-autor" src="http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2015/04/LOGO345X76.png" alt="cptv" />
+                <div class="text">
+                  <h3>El final menos esperado del expresidente</h3>
+                </div>
+              </div>
+            </div></a>
             <div class="lml-search">
                 <div class="row">
                     <div class="col-md-12">
@@ -160,10 +196,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-    <div class="row"><div data-ng-include data-src="'templates/footer.html'"></div></div>
+<div class="row"><div data-ng-include data-src="'templates/footer.html'"></div></div>
 </div>
 <!-- Body -->

@@ -33,6 +33,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                     controller: "DeportesController",
                     templateUrl: "templates/deportes/main.html"
             })
+            .when("/autor", {
+                controller: "AutorController",
+                templateUrl: "templates/author.html"
+            })
             .when("/buscar/:query", {
                 controller: "BuscarController",
                 templateUrl: "templates/search.html"

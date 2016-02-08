@@ -191,6 +191,10 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+        $scope.top = function(){
+          $anchorScroll();
+        }
+
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -252,6 +256,9 @@ angular.module('contrapunto.controllers', [])
 
     .controller('BuscarController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll){
         $anchorScroll();
+        $scope.top = function(){
+          $anchorScroll();
+        }
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -276,4 +283,13 @@ angular.module('contrapunto.controllers', [])
        $scope.buscar = function(busqueda){
         $location.path('/buscar/' + busqueda);
       }
+    })
+    .controller('AutorController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll){
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        $scope.progressbar.setColor('#35A7FF');
+        $timeout(function(){
+            $scope.progressbar.complete();
+            $scope.show = true;
+        }, 300);
     });

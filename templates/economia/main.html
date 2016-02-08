@@ -180,11 +180,12 @@
                                         <td>{{dato.indicador}}</td>
                                         <td>{{dato.periodo}}</td>
                                         <td>{{dato.cifras}}%</td>
-                                        <td><a ng-href="{{dato.enlace}}">Tabla</a></td>
+                                        <td><a target="_blank" ng-href="{{dato.enlace}}">Tabla</a></td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
+                        <a style="margin-right:10px;" class="del-mundo-a" target="_blank" href="http://www.bcr.gob.sv/esp/">Fuente: BCR</a>
                         <!--Seccion datos economicos-->
                          <!--Seccion mercado laboral-->
                         <div class="sec-politica">
@@ -447,13 +448,15 @@
                             </div>
                             <div class="bolsas">
                                 <table>
-                                    <tr ng-repeat="interes in intereses">
+                                    <tr ng-repeat="interes in intereses" ng-class="{negrita: interes.nombre == 'TASA FED'}">
                                         <td class="indicador-nombre">{{interes.nombre}}</td>
                                         <td class="indicador">{{interes.porcentaje}}%</td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
+                        <a class="del-mundo-b" target="_blank" href="http://money.cnn.com/data/markets/">Fuente: CNN Money</a>
+
                         <!--Tasas de interes-->
                         <!--DIVISAS-->
                         <div class="t-indicadores">
@@ -470,6 +473,7 @@
                                 </table>
                             </div>
                         </div>
+                        <a class="del-mundo-b" target="_blank" href="http://money.cnn.com/data/markets/">Fuente: CNN Money</a>
                         <!--DIVISAS-->
                     </div>
 

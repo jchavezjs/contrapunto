@@ -56,7 +56,7 @@ a:hover{
 .sociales{
     margin-top: 3px;
     position: absolute;
-    left: 65px;
+    left: 90px;
 }
 .social-btn{
     font-size: 22px;
@@ -1432,6 +1432,7 @@ a:hover{
     color: #fff;
     height: 40px;
     padding:5px;
+    margin-top: 25px;
     text-align: center;
 }
 .indicador-titulo h3{
@@ -1459,6 +1460,7 @@ a:hover{
     position: absolute;
     right:5px;
     top:4px;
+    color: #45a0f5;
 }
 
 .positive{
@@ -1549,6 +1551,10 @@ a:hover{
     padding-bottom: 5px;
 }
 /*SUBSECCION*/
+.center{
+  margin: 0 auto;
+  text-align: center;
+}
 .sec-subseccion{
     padding: 10px !important;
 }
@@ -1646,7 +1652,7 @@ a:hover{
 /*POST*/
 .post-img{
     margin-top: 10px;
-    height: 400px;
+    height: auto;
     background-color: black;
     text-align: center;
 }
@@ -1903,10 +1909,10 @@ margin: 10px 0 0px 0;
 .se-fb{
     margin-top:20px;
     width:100%;
-    height:90px;
+    height:70px;
     background-color:#f5f5f5;
     text-align:center;
-    padding-top:32%;
+    padding-top:28%;
     font-size:24px;
     color:#888;
 }
@@ -1917,10 +1923,10 @@ margin: 10px 0 0px 0;
 .se-tw{
     margin-top:20px;
     width:100%;
-    height:90px;
+    height:70px;
     background-color:#f5f5f5;
     text-align:center;
-    padding-top:32%;
+    padding-top:28%;
     font-size:24px;
     color:#888;
 }
@@ -1931,10 +1937,10 @@ margin: 10px 0 0px 0;
 .se-gg{
     margin-top:20px;
     width:100%;
-    height:90px;
+    height:70px;
     background-color:#f5f5f5;
     text-align:center;
-    padding-top:32%;
+    padding-top:28%;
     font-size:24px;
     color:#888;
 }
@@ -1968,6 +1974,16 @@ margin: 10px 0 0px 0;
     font-weight:400;
     margin-top:3px;
     font-size:12px;
+    text-transform:Capitalize;
+    font-family:'Helvetica Neue', Arial, Sans-serif;
+}
+.del-mundo-b{
+    float:right;
+    color:#888;
+    font-weight:400;
+    margin-top:-5px;
+    margin-bottom: 20px;
+    font-size:10px;
     text-transform:Capitalize;
     font-family:'Helvetica Neue', Arial, Sans-serif;
 }
@@ -2090,12 +2106,130 @@ margin: 10px 0 0px 0;
     color: #999;
     margin-top:-3px;
 }
+.foto-imagen{
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  max-width: 140px;
+}
+.foto-imagen-autor{
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  max-width: 80px;
+}
 /*searching*/
 .input-search-main{
   border-radius: 3px;
   border: 1px solid #000;
   width: 200px;
   margin-left:10px;
+}
+.negrita{
+  background-color: #c9c9c9 !important;
+}
+.blacky{
+  font-weight: bold;
+}
+.cc-banner{
+  min-height: 495px;
+  width: 100%;
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.autor-area{
+  margin-top:20px;
+}
+.autor-photo{
+  background-color: #f1f1f1;
+  width: 80%;
+  height: 78px;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.autor-info{
+  margin-left: -15px !important;
+}
+.autor-info h1{
+  margin-top:0px;
+  font-size: 22px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  color:#000;
+  font-family: 'Roboto Slab',Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.autor-info p{
+  font-family: 'Roboto',Helvetica, Arial, sans-serif;
+}
+.autor-info .fb{
+  background-color:#3b5998;
+  color:#fff;
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+.autor-info .tw{
+  background-color:#55acee;
+  color:#fff;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+.autor-info .gg{
+  background-color:#dc4e41;
+  color:#fff;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+.autor-info .ln{
+  background-color:#00a0dc;
+  color:#fff;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.autor-info .em{
+  background-color:#333;
+  color:#fff;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+.autor-info .divisor{
+  margin-top: 20px;
+  border-bottom:2px dotted #a1a1a1;
+  width: 200px;
+}
+.autor-fotogaleria{
+  border-radius: 2px;
+  margin-top: 15px;
+  height: 200px;
+  background-color: #f1f1f1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.autor-fotogaleria .trans{
+  border-radius: 2px;
+  background-image: linear-gradient(224deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.40) 100%);
+  height: 200px;
+  width: 100%;
+}
+.autor-fotogaleria .trans .text{
+  position: absolute;
+  vertical-align: bottom;
+  bottom: 0;
+  padding-right:10px;
+  padding-left: 10px;
+}
+.autor-fotogaleria .trans .text h3{
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 18px;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.40);
+  font-weight: 200;
+  font-family:"helvetica neue",Helvetica,Arial,sans-serif;
+  line-height: 22px;
 }
 @media (max-width: 400px){
     .logo-center img{
@@ -2125,7 +2259,7 @@ margin: 10px 0 0px 0;
         display: none;
     }
     .sociales{
-        right: 0px;
+      float: right;
     }
     .menu-social h4{
         margin-bottom: -28px;
