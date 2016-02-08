@@ -13,7 +13,7 @@
     $resultado[] = array(
                     'id' => $id = $result['id'],
                     'titulo' => $titulo = $result['titulo'],
-                    'fecha' => $fecha = $result['fecha'],
+                    'fecha' => $fecha = formatoFecha($result['fecha']),
                     'subseccion' => $subseccion = $result['nombre'],
                     'url' => $url = $result['url'],
                     'autor' => $id = $result['autor'],

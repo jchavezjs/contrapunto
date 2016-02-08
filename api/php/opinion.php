@@ -6,22 +6,22 @@ date_default_timezone_set('America/El_Salvador');
 
 $ediinfo = mysql_query("SELECT idArticulo as id,titulo, fecha, preview
 						FROM articulo
-						WHERE idSubseccion = 1
+						WHERE idSubseccion = 1 and activo = 1
 						ORDER BY fecha desc, hora desc");
 $carinfo = mysql_query("SELECT a.rutaFoto as foto
-						from caricatura a 
+						from caricatura a
 						ORDER BY a.fecha desc, a.hora desc");
 $triinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha
-						from personal as c, articulo as a 
-						where c.idPersonal = a.idPersonal and a.idSubseccion = 3 
+						from personal as c, articulo as a
+						where c.idPersonal = a.idPersonal and a.idSubseccion = 3 and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc");
 $libinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha
 						from articulo as a, personal as c
-						where a.idSubseccion = 4 and a.idPersonal=c.idPersonal
+						where a.idSubseccion = 4 and a.idPersonal=c.idPersonal and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc ");
 $acainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha
 						from articulo as a, personal as c
-						where a.idSubseccion = 6 and a.idPersonal=c.idPersonal
+						where a.idSubseccion = 6 and a.idPersonal=c.idPersonal and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc ");
 
 while($edipreview = mysql_fetch_array($ediinfo)){

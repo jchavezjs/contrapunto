@@ -32,10 +32,10 @@ if($secvalidate){
 		$sub = subseccion($secinfo['id']);
 		if($secinfo['id'] == 1){
 			if($subinfo['id'] == 2){
-				$cont = mysql_query("SELECT a.idColumna as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, 
+				$cont = mysql_query("SELECT a.idColumna as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor,
 									a.contenido, c.rutaFoto as foto, a.fecha
 									from columna a, personal as c
-									where a.idPersonal = c.idPersonal
+									where a.idPersonal = c.idPersonal and a.activo = 1
 									and a.idColumna=$id");
 				while($result = mysql_fetch_array($cont)){
 					$contenido = array(
@@ -49,9 +49,9 @@ if($secvalidate){
 				}
 			}elseif($subinfo['id'] == 6){
 				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido, a.preview,
-								 i.rutaFoto as foto, a.fecha, f.nombre as fotografo  
+								 i.rutaFoto as foto, a.fecha, f.nombre as fotografo
 									from articulo as a, personal as c, fotografo as f, imagenesarticulo as i
-									where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo 
+									where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo and a.activo = 1
 									and i.posicion='principal' and a.idArticulo=$id");
 				while($result = mysql_fetch_array($cont)){
 					$contenido = array(
@@ -65,10 +65,10 @@ if($secvalidate){
 						'fotografo' => $fotografo = $result['fotografo'],);
 				}
 			}elseif($subinfo['id'] == 3){
-				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, 
+				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor,
 									a.contenido, a.fecha
 									from articulo a, personal as c
-									where a.idPersonal = c.idPersonal
+									where a.idPersonal = c.idPersonal and a.activo = 1
 									and a.idArticulo=$id");
 				while($result = mysql_fetch_array($cont)){
 					$contenido = array(
@@ -80,10 +80,10 @@ if($secvalidate){
 					);
 				}
 			}else{
-				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, 
+				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview,
 									a.contenido, c.rutaFoto as foto, a.fecha
 									from articulo a, personal as c
-									where a.idPersonal = c.idPersonal
+									where a.idPersonal = c.idPersonal and a.activo = 1
 									and a.idArticulo=$id");
 				while($result = mysql_fetch_array($cont)){
 					$contenido = array(
@@ -99,9 +99,9 @@ if($secvalidate){
 			}
 		}else{
 			$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido, a.preview,
-								 i.rutaFoto as foto, a.fecha, f.nombre as fotografo  
+								 i.rutaFoto as foto, a.fecha, f.nombre as fotografo
 									from articulo as a, personal as c, fotografo as f, imagenesarticulo as i
-									where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo 
+									where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo  and a.activo = 1
 									and i.posicion='principal' and a.idArticulo=$id");
 			while($result = mysql_fetch_array($cont)){
 				$contenido = array(

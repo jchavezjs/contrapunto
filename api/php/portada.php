@@ -5,105 +5,105 @@ include('funciones.php');
 
 date_default_timezone_set('America/El_Salvador');
 
-$colinfo = mysql_query("SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as NombreCompleto, c.rutaFoto, a.titulo 
-						from personal as c, columna as a 
-						where c.idPersonal = a.idPersonal
-						ORDER BY a.fecha desc, a.hora desc 
+$colinfo = mysql_query("SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as NombreCompleto, c.rutaFoto, a.titulo
+						from personal as c, columna as a
+						where c.idPersonal = a.idPersonal and a.activo = 1
+						ORDER BY a.fecha desc, a.hora desc
 						limit 5");
-$actinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha, s.nombre as subseccion, a.preview, i.rutaFoto as foto, f.nombre as fotografo 
-						from articulo a, personal as c, subseccion as s, imagenesarticulo as i, fotografo as f 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo 
+$actinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha, s.nombre as subseccion, a.preview, i.rutaFoto as foto, f.nombre as fotografo
+						from articulo a, personal as c, subseccion as s, imagenesarticulo as i, fotografo as f
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and a.activo = 1
 						and c.cargo='periodista' and i.posicion='principal' and a.especial = 0 and a.idSubseccion not in (1,2,3,4,5,6,35,45,46,49,54,57,58,59,60)
 						ORDER BY a.fecha desc, a.hora desc
 						limit 5");
-$triinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor 
+$triinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor
 						from personal as c, articulo as a 
-						where c.idPersonal = a.idPersonal and a.idSubseccion = 3 
-						ORDER BY a.fecha desc, a.hora desc 
+						where c.idPersonal = a.idPersonal and a.idSubseccion = 3 and a.activo = 1
+						ORDER BY a.fecha desc, a.hora desc
 						LIMIT 4");
-$neginfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto 
+$neginfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto
 						from articulo as a, imagenesarticulo as i
-						where a.idArticulo = i.idArticulo and a.idSubseccion = 45 and i.posicion = 'principal'
-						ORDER BY a.fecha desc, a.hora desc 
+						where a.idArticulo = i.idArticulo and a.idSubseccion = 45 and i.posicion = 'principal' and a.activo = 1
+						ORDER BY a.fecha desc, a.hora desc
 						LIMIT 3");
 $anainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor
 						from articulo as a, personal as c
-						where a.idPersonal = c.idPersonal and a.idSubseccion = 49
-						ORDER BY a.fecha desc, a.hora desc 
+						where a.idPersonal = c.idPersonal and a.idSubseccion = 49 and a.activo = 1
+						ORDER BY a.fecha desc, a.hora desc
 						LIMIT 2");
-$coyinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto 
+$coyinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto
 						from articulo as a, imagenesarticulo as i
-						where a.idArticulo = i.idArticulo and a.idSubseccion = 46 and i.posicion = 'principal'
-						ORDER BY a.fecha desc, a.hora desc 
+						where a.idArticulo = i.idArticulo and a.idSubseccion = 46 and i.posicion = 'principal' and a.activo = 1
+						ORDER BY a.fecha desc, a.hora desc
 						LIMIT 3");
-$libinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor 
+$libinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor
 						from articulo as a, personal as c
-						where a.idSubseccion = 4 and a.idPersonal=c.idPersonal
+						where a.idSubseccion = 4 and a.idPersonal=c.idPersonal and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc ");
-$sosinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and a.especial=0 and 
+$sosinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and a.especial=0 and
 						i.posicion='principal' and a.idSubseccion not in (34, 35) and  (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='sociedad'
 						ORDER BY a.fecha desc, a.hora desc");
 $resinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview
 						from articulo as a, imagenesarticulo as i, personal as c
-						where a.idArticulo = i.idArticulo and a.idSubseccion = 57 and i.posicion = 'principal' and a.idPersonal=c.idPersonal
+						where a.idArticulo = i.idArticulo and a.idSubseccion = 57 and a.activo = 1 and i.posicion = 'principal' and a.idPersonal=c.idPersonal
 						ORDER BY a.fecha desc, a.hora desc ");
-$acainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview 
+$acainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview
 						from articulo as a, imagenesarticulo as i, personal as c
-						where a.idArticulo = i.idArticulo and a.idSubseccion = 6 and i.posicion = 'principal' and a.idPersonal=c.idPersonal
+						where a.idArticulo = i.idArticulo and a.idSubseccion = 6 and i.posicion = 'principal' and a.idPersonal=c.idPersonal and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc ");
-$depinfo = mysql_query("SELECT a.idArticulo as id, a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion,s.url, f.nombre as fotografo 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='deportes'
+$depinfo = mysql_query("SELECT a.idArticulo as id, a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion,s.url, f.nombre as fotografo
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='deportes'
 						ORDER BY a.fecha desc, a.hora desc");
-$perinfo = mysql_query("SELECT a.idArticulo as id, a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and a.idSubseccion=34
+$perinfo = mysql_query("SELECT a.idArticulo as id, a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and  a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and a.idSubseccion=34
 						ORDER BY a.fecha desc, a.hora desc");
-$intinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion,s.url, f.nombre as fotografo 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='internacionales'
+$intinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion,s.url, f.nombre as fotografo
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='internacionales'
 						ORDER BY a.fecha desc, a.hora desc");
-$culinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' 
+$culinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal'
 						and a.especial=0 and a.idSubseccion in (55,56) and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='cultura'
 						ORDER BY a.fecha desc, a.hora desc");
-$polinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='politica'
+$polinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and  a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='politica'
 						ORDER BY a.fecha desc, a.hora desc");
-$aneinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.idSubseccion=54 and a.especial=0
+$aneinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.idSubseccion=54 and a.especial=0
 						ORDER BY a.fecha desc, a.hora desc");
-$entinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, c.rutaFoto as fotoautor 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.idSubseccion=59 and a.especial=0
+$entinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, c.rutaFoto as fotoautor
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.idSubseccion=59 and a.especial=0
 						ORDER BY a.fecha desc, a.hora desc");
-$rominfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, c.rutaFoto as fotoautor 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.idSubseccion=35 and a.especial=0
+$rominfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, c.rutaFoto as fotoautor
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.idSubseccion=35 and a.especial=0
 						ORDER BY a.fecha desc, a.hora desc");
-$ediinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, a.preview 
-						from personal as c, articulo as a 
-						where c.idPersonal = a.idPersonal  and a.idSubseccion = 1 
+$ediinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, a.preview
+						from personal as c, articulo as a
+						where c.idPersonal = a.idPersonal  and a.idSubseccion = 1  and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc ");
-$coninfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.idSubseccion=58 and a.especial=0
+$coninfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.activo = 1 and  a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.idSubseccion=58 and a.especial=0
 						ORDER BY a.fecha desc, a.hora desc");
-$espinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo 
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s 
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.especial = 1
+$espinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
+						where a.idArticulo = i.idArticulo and a.activo = 1 and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.especial = 1
 						ORDER BY a.fecha desc, a.hora desc");
 $fotinfo = mysql_query("SELECT a.titulo, a.rutaFoto as foto, f.nombre as fotografo, a.link
-						from fotogaleria a, fotografo as f 
+						from fotogaleria a, fotografo as f
 						where a.idFotografo = f.idFotografo
 						ORDER BY a.fecha desc, a.hora desc");
 $carinfo = mysql_query("SELECT a.rutaFoto as foto
-						from caricatura a 
+						from caricatura a
 						ORDER BY a.fecha desc, a.hora desc");
 
 while($colpreview = mysql_fetch_array($colinfo)){
@@ -340,10 +340,10 @@ while($carpreview = mysql_fetch_array($carinfo)){
 				'foto' => $foto = $carpreview['foto'],);
 }
 
-echo json_encode(array('columnistas' => $columnista, 
-						'actualidades' => $actualidad, 
-						'tribunas' => $tribuna, 
-						'negocios' => $negocio, 
+echo json_encode(array('columnistas' => $columnista,
+						'actualidades' => $actualidad,
+						'tribunas' => $tribuna,
+						'negocios' => $negocio,
 						'coyunturas' => $coyuntura,
 						'analisiss' => $analisis,
 						'libertades' => $libertad,
