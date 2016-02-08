@@ -51,8 +51,8 @@
     <div class="row">
         <div class="logo-center seccion-nombre">
             <img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></br>
-            <a ng-href="#/{{secinfo.url}}"><h4>{{secinfo.nombre}}</h4></a>
-            <a class="opinion-logo-title" alt="cambiar a 60px" ng-href="#/{{secinfo.url}}/{{subinfo.url}}">
+            <a ng-href="#/{{secinfo.url}}"><h3>{{secinfo.nombre}}</h3></a>
+            <a class="opinion-logo-title sub" ng-href="#/{{secinfo.url}}/{{subinfo.url}}">
                 {{subinfo.nombre}}
             </a>
             <h4>{{fecha}}</h4>
@@ -105,112 +105,68 @@
 <!-- Body -->
 <div class="container">
     <div class="row">
-<<<<<<< HEAD
-            <div class="col-md-12">
-                <!-- Columna 1 -->
-                <div class="sec-subseccion">
-                  <div class="col-md-10">
-                  <div class="row">
-                    <div ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo: pageSize">
-                        <div class="col-md-6">
-                          <div class="row">
-                            <div class="articulo preview-sec-politica">
-                                <h1><a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}">{{contenido.titulo}}</a></h1>
-                                <h4 class="info-autor-politica">{{contenido.autor | uppercase}} | {{contenido.fecha}}</h4>
-                                <p>{{contenido.preview}}</p>
-                                <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}">
-                                  <div style="background-image: url({{contenido.foto}});" class="img-articulo"></div>
-                                </a>
-                                <!-- <p class="foto-autor-main">Foto: {{contenido.fotografo}}</p> -->
-=======
-                <!-- Columna 1 -->
-                    <div class="col-md-10 sec-subseccion">
-                        <!--preview subseccion-->
-                        <div class="row preview-subseccion" ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo: pageSize">
-                            <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><div style="background-image: url({{contenido.foto}});" class="col-md-3 img-subseccion"></div></a>
-                            <div class="col-md-9 info-subseccion">
-                                <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
-                                <h4 class="info-autor-politica subseccion-autor">Por <a>{{contenido.autor}}</a> | {{contenido.fecha}}</h4>
-                                <p class="subseccion-prev">{{contenido.preview}} </p>
->>>>>>> origin/master
-                            </div>
-                          </div>
-                        </div>
-<<<<<<< HEAD
-                      </div>
-                  </div>
-                      <!--preview subseccion-->
-                      <!-- <div class="info-subseccion">
-                          <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
-                          <h4 class="info-autor-politica subseccion-autor">{{contenido.autor | uppercase}} | {{contenido.fecha}}</h4>
-                          <p class="subseccion-prev">{{contenido.preview}} </p>
-                      </div>
-                       <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}" class="leer-subseccion">Leer más</a> -->
-                      <!--preview subseccion-->
-                      <!--paginator-->
-
-                      <uib-pagination total-items="contenidos.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination>
-                      <!--paginator-->
+      <div class="col-md-10">
+          <div ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo:pageSize">
+            <div class="preview-subseccion">
+              <div class="row">
+                <div class="col-md-4">
+                  <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}">
+                    <div style="background-image: url({{contenido.foto}});" class="img-subseccion"></div>
+                  </a>
+                </div>
+                <div class="col-md-8">
+                   <div class="info-subseccion">
+                      <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
+                      <h4 class="info-autor-politica subseccion-autor">
+                        Por <a>{{contenido.autor}}</a> | {{contenido.fecha}}</h4>
+                      <p class="subseccion-prev">{{contenido.preview | limitTo: 150}}... </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-2 m-politica-3">
+           <!-- Publicidad -->
+          <div class="ads">
+              <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
+          </div>
+          <!-- Publicidad -->
+          <!--Lo mas leido-->
+          <div class="columnistas-portada">
+              <h3>LO MÁS LEÍDO</h3>
+              <!--Lo mas leido-TABS-->
+              <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada">Portada</a></li>
+                  <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica">Política</a></li>
+                </ul>
 
-=======
-                        <!--preview subseccion-->
-                        <!--paginator-->
-                        <uib-pagination total-items="contenidos.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination>
-                        <!--paginator-->
-                    </div>
->>>>>>> origin/master
-                <!-- Columna 1 -->
-                <!-- Columna 2 - 1 -->
-
-                    <div class="col-md-2">
-                         <!-- Publicidad -->
-                        <div class="ads">
-                            <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
-                        </div>
-                        <!-- Publicidad -->
-                        <!--Lo mas leido-->
-                        <div class="columnistas-portada">
-                            <h3>LO MÁS LEÍDO</h3>
-                            <!--Lo mas leido-TABS-->
-                            <div role="tabpanel">
-                              <!-- Nav tabs -->
-                              <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada">Portada</a></li>
-                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica">Política</a></li>
-                              </ul>
-
-                              <!-- Tab panes -->
-                              <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="lmlportada">
-                                    <ul class="leido">
-                                        <li><a href="#" class="leido-item"><span>1</span>Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item"><span>2</span>Ataques en París, oriente ataca</a></li>
-                                        <li><a href="#" class="leido-item"><span>3</span>Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item"><span>4</span>Ataques en París, oriente ataca</a></li>
-                                    </ul>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="lmlpolitica">
-                                    <ul class="leido">
-                                        <li><a href="#" class="leido-item"><span>1</span>La pupusa salvadoreña</a></li>
-                                        <li><a href="#" class="leido-item"><span>2</span>Se estrena Star Wars</a></li>
-                                        <li><a href="#" class="leido-item"><span>3</span>La ética social</a></li>
-                                        <li><a href="#" class="leido-item"><span>4</span>La actualización humana</a></li>
-                                    </ul>
-                                </div>
-                              </div>
-                            <!--Lo mas leido-TABS-->
-                            </div>
-                            </div>
-                        </div>
-                        <!--Lo mas leido-->
-<<<<<<< HEAD
-                    </div>
-=======
->>>>>>> origin/master
-        </div>
-        <div data-ng-include data-src="'templates/footer.html'"></div>
-        </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="lmlportada">
+                      <ul class="leido">
+                          <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
+                          <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
+                          <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
+                          <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
+                      </ul>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="lmlpolitica">
+                      <ul class="leido">
+                          <li><a href="#" class="leido-item">La pupusa salvadoreña</a></li>
+                          <li><a href="#" class="leido-item">Se estrena Star Wars</a></li>
+                          <li><a href="#" class="leido-item">La ética social</a></li>
+                          <li><a href="#" class="leido-item">La actualización humana</a></li>
+                      </ul>
+                  </div>
+                </div>
+              <!--Lo mas leido-TABS-->
+              </div>
+          </div>
+          <!--Lo mas leido-->
+      </div>
     </div>
+    <div data-ng-include data-src="'templates/footer.html'"></div>
 </div>
