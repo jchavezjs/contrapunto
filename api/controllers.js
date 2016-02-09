@@ -292,4 +292,18 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
+        var id = $routeParams.id;
+        $scope.currentPage = 1;
+        $scope.pageSize = 4;
+        $scope.maxSize = 4;
+        $http.post("api/php/autor.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){
+
+               $http.get("api/php/autor.php?id="+id).success(function(response){
+
+                   $scope.autor = response.autor;
+                   $scope.articulos = response.articulos;
+               });
+
+
+      });
     });

@@ -33,7 +33,7 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                     controller: "DeportesController",
                     templateUrl: "templates/deportes/main.html"
             })
-            .when("/autor", {
+            .when("/autor/:id", {
                 controller: "AutorController",
                 templateUrl: "templates/author.html"
             })
