@@ -21,6 +21,20 @@
                     'preview' => $preview = $result['preview'],
                   );
   }
+  $colinfo =  mysql_query("SELECT a.idColumna as id, a.titulo, a.fecha, CONCAT(c.nombres, ' ', c.apellidos) as autor
+                      FROM columna a, personal c
+                      where (LOWER(a.titulo) like '%$busqueda%' or  LOWER(CONCAT(c.nombres, ' ', c.apellidos)) like '%$busqueda%') and a.idPersonal = c.idPersonal
+                      ORDER BY a.fecha desc, a.hora desc");
+while($colpreview = mysql_fetch_array($colinfo)){
+    $resultado[] = array(
+      'id' => $id = $colpreview['id'],
+      'titulo' => $titulo = $colpreview['titulo'],
+      'fecha' => $fecha = formatoFecha($colpreview['fecha']),
+      'subseccion' => "Columnistas",
+      'url' => "columnistas",
+      'autor' => $id = $colpreview['autor'],
+    );
+  }
   echo json_encode(array(
                     'resultado' => $resultado
                   ));

@@ -80,7 +80,7 @@
             <div class="search-results">
                 <div class="item" ng-repeat = "resultado in resultados | startFrom:(currentPage - 1)*pageSize | limitTo:pageSize">
                     <span class="category">{{resultado.subseccion}}</span>
-                    <h1>{{resultado.titulo}}</h1>
+                    <a ng-href="{{resultado.id}}"><h1>{{resultado.titulo}}</h1></a>
                     <h6>Por <a class="autor">{{resultado.autor}}</a> {{resultado.fecha}}</h6>
                     <p>{{resultado.preview}}</p>
                 </div>
