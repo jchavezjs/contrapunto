@@ -96,10 +96,11 @@
                 </div>
                 <div class="col-md-8">
                    <div class="info-subseccion">
-                      <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
+                      <a class="autor" href="#/autor">{{contenido.autor}}</a>
                       <h4 class="info-autor-politica subseccion-autor">
-                        Por <a>{{contenido.autor}}</a> | {{contenido.fecha}}</h4>
-                      <p class="subseccion-prev">{{contenido.preview | limitTo: 150}}... </p>
+                      {{contenido.fecha}}</h4>
+                      <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
+                      <p ng-if="contenido.preview != 'null'" class="subseccion-prev">{{contenido.preview | limitTo: 150}}... </p>
                   </div>
                 </div>
               </div>
