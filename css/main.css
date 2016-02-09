@@ -1571,7 +1571,7 @@ a:hover{
     font-family: Georgia, serif;
     color: #000;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 22px;
 }
 .preview-subseccion h1:hover{
     color: #555;
@@ -1652,7 +1652,7 @@ a:hover{
 }
 .subseccion-prev{
   font-family: Georgia,Helvetica, Arial, sans-serif;
-  font-size: 17px;
+  font-size: 15px;
   color: #333;
   margin-top: -5px;
   margin-bottom: 0px;
