@@ -224,6 +224,7 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
+
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -250,7 +251,6 @@ angular.module('contrapunto.controllers', [])
                     $scope.subsecciones = response.subsecciones;
 
                 });
-
        });
     })
 

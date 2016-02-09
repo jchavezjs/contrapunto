@@ -1669,8 +1669,8 @@ a:hover{
     width: 80%;
 }
 .post-title{
-    font-family: 'Roboto Slab', serif;
-    font-size: 3.5rem;
+    font-family: 'Lora', Helvetica, Arial, sans-serif;
+    font-size: 30px;
     text-align: center;
     color: #000;
     font-weight: bold;
@@ -1685,12 +1685,25 @@ a:hover{
 .post-author span{
     text-transform: uppercase;
 }
+/*entradilla*/
+.blacky{
+  font-family: 'Roboto Slab','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px !important;
+  color: #000;
+  margin-bottom: 20px;
+}
+/*entradilla*/
 .post-body{
-    font-family: 'Georgia', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
-    text-align: left;
-    color: #000;
+    text-align: justify;
+    color: #353535;
     margin-top: 0px;
+    line-height: 24px;
+    font-weight: normal;
+}
+.post-body p{
+  margin-bottom: 30px;
 }
 .post-divisor{
     text-align: center;
@@ -2147,9 +2160,7 @@ margin: 10px 0 0px 0;
 .negrita{
   background-color: #c9c9c9 !important;
 }
-.blacky{
-  font-weight: bold;
-}
+
 .cc-banner{
   min-height: 495px;
   width: 100%;
