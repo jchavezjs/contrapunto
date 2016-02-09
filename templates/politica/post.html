@@ -98,7 +98,7 @@
                         <center><div class="post-divisor" ng-if="subinfo.id != 3"></div></center>
                         <div class="post-body">
                         <p class="blacky">{{contenido.preview}}</p>
-                        <p>{{contenido.contenido}}</p>
+                        <div ng-bind-html="contenido.contenido"></div>
                         </div>
                         <center><div class="post-divisor"></div></center>
                         <div class="social-posts">

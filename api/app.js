@@ -1,4 +1,4 @@
-angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services','angular.filter','ngRoute','ngProgress','ui.bootstrap'])
+angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services','angular.filter','ngRoute','ngProgress','ui.bootstrap','ngSanitize'])
     .config(function($routeProvider, $locationProvider){
         $routeProvider
             .when("/", {
@@ -65,3 +65,8 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
             return input.split(" ").join("-");
         }
     })
+    .filter("sanitize", ['$sce', function($sce) {
+      return function(htmlCode){
+      return $sce.trustAsHtml(htmlCode);
+      }
+    }])

@@ -9,10 +9,10 @@ $seccion = $_GET['seccion'];
 $subseccion = $_GET['subseccion'];
 $id = $_GET['id'];
 
-/*$seccion = 'opinion';
-$subseccion = 'tribuna';
-$titulo = '"Ficciones%3A%20el%20intelectual%20y%20el%20poder%20en%20El%20Salvador%20(1928-1932)';
-$id = 11;*/
+// $seccion = 'politica';
+// $subseccion = 'sociedadcivil';
+// $titulo = '"Ficciones%3A%20el%20intelectual%20y%20el%20poder%20en%20El%20Salvador%20(1928-1932)';
+// $id = 39;
 
 $cont='';
 $subinfo='';
@@ -43,7 +43,7 @@ if($secvalidate){
 					'foto' => $foto = $result['foto'],
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],
-					'contenido' => $contenido = $result['contenido'],
+					'contenido' => $contenido = htmlspecialchars_decode(stripslashes($result['contenido'])),
 					'fecha' => $fecha = formatoFecha($result['fecha']),
 					);
 				}
