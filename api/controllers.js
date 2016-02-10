@@ -223,6 +223,39 @@ angular.module('contrapunto.controllers', [])
        });
     })
 
+    .controller('SondeoController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+        $scope.top = function(){
+          $anchorScroll();
+        }
+
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        $scope.progressbar.setColor('#35A7FF');
+        $timeout(function(){
+            $scope.progressbar.complete();
+            $scope.show = true;
+        }, 300);
+        $scope.fecha = fechaActual;
+       var seccion = $routeParams.seccion;
+       var subseccion = $routeParams.subseccion;
+       $scope.currentPage = 1;
+       $scope.pageSize = 4;
+       $scope.maxSize = 15;
+       $anchorScroll();
+       $http.post("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
+
+                $http.get("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion).success(function(response){
+
+                    $scope.contenidos = response.contenidos;
+                    $scope.error = response.error;
+                    $scope.secinfo = response.secinfo;
+                    $scope.subinfo = response.subinfo;
+                    $scope.subsecciones = response.subsecciones;
+                });
+
+       });
+    })
+
     .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
 
         $scope.progressbar = ngProgressFactory.createInstance();

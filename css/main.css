@@ -749,8 +749,14 @@ a:hover{
 }
 .line-votar{
     width:30%;
-    height: 2px;
-    background-color: #c9c9c9;
+    height: 1px;
+    background-color: #fff;
+    border-radius: 100px;
+}
+.line-votar-2{
+    width:15%;
+    height: 1px;
+    background-color: #fff;
     border-radius: 100px;
 }
 .total-votos{
@@ -947,7 +953,148 @@ a:hover{
 }
 
 /*OPINION*/
+.sondeos-area{
+  margin-top: 10px;
+}
+.area-pregunta{
+  padding: 20px;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.40);
+}
+.area-pregunta .pregunta h4{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+.area-pregunta li{
+  list-style-type:none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 200;
+}
+.area-pregunta ul{
+  padding: 0;
+  margin: 25px 0px 0px 0px;
+}
+.area-pregunta li input{
+  margin-right: 14px;
+  margin-top: 12px;
+}
+.votos{
+  text-align: center;
+  margin-top: 10px;
+}
+.votos span{
+  padding: 0px 10px;
+  font-weight: 200;
+  font-size: 16px;
+}
+.respuesta{
+  position: relative;
+  margin-top: 15px;
+  font-size: 15px;
+  border-radius: 3px;
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  color:#fff;
+  font-weight: 200;
+  z-index: 0;
+}
+.respuesta .text{
+  z-index: 2;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+.full{
+  z-index: 0;
+  border-radius: 2px;
+  position: absolute;
+  margin: -29px 0px 0px -8px;
+  height: 37px;
+}
+.new-color-back{
+  background-color: #0070D4;
+}
+.old-color-back{
+  background-color: #C27F10;
+}
+.respuesta span{
+  float: right;
+}
+.sondeo-background{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+  width: 100%;
+  border-radius:4px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.botonparavotar{
+  text-align: center;
+  margin-top: 40px;
+}
+.botonparavotar button{
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color:#fff;
+  padding: 10px 25px 8px 25px;
+  border: 0px;
+  border-radius: 3px;
+}
+.botonparavotar button:focus{
+  outline: none;
+}
+.sondeo-imagen{
+  margin: -15px -20px -20px -15px;
+  position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+  background-position: center;
+	background-size:cover;
+	z-index:0;
+	-webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+.sondeo-header{
+  position: relative;
+  z-index: 2;
+  background-position: top;
+  background-size: cover;
+  height: 80px;
+  border-radius: 4px 4px 0px 0px;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding-top: 5px;
+}
+.header-new{
+    background-image: url(../img/sondeo/sondeoNew.png);
+}
 
+.header-old{
+    background-image: url(../img/sondeo/sondeoOld.png);
+}
+.botonparavotar{
+  position: relative;
+}
+.sondeo-header h1{
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  color: #fff;
+  font-style: italic;
+}
 .editorial h1{
     width: 98%;
     margin: 0 auto 1px auto;
