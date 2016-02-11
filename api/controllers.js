@@ -332,11 +332,12 @@ angular.module('contrapunto.controllers', [])
         $http.post("api/php/autor.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){
 
                $http.get("api/php/autor.php?id="+id).success(function(response){
-
+                  $scope.fotogalerias = response.fotogalerias;
                    $scope.autor = response.autor;
                    $scope.articulos = response.articulos;
                });
 
 
       });
+      console.log($scope.autor);
     });

@@ -98,10 +98,6 @@ $espinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, '
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.activo = 1 and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.especial = 1
 						ORDER BY a.fecha desc, a.hora desc");
-$fotinfo = mysql_query("SELECT a.titulo, a.rutaFoto as foto, f.nombre as fotografo, a.link
-						from fotogaleria a, fotografo as f
-						where a.idFotografo = f.idFotografo
-						ORDER BY a.fecha desc, a.hora desc");
 $carinfo = mysql_query("SELECT a.rutaFoto as foto
 						from caricatura a
 						ORDER BY a.fecha desc, a.hora desc");
@@ -112,14 +108,6 @@ while($colpreview = mysql_fetch_array($colinfo)){
 				'nombre' => $nombre = $colpreview['NombreCompleto'],
 				'foto' => $foto = $colpreview['rutaFoto'],
 				'titulo' => $titulo = $colpreview['titulo'],);
-}
-
-while($fotpreview = mysql_fetch_array($fotinfo)){
-	$fotogaleria[] = array(
-				'fotografo' => $fotografo = $fotpreview['fotografo'],
-				'foto' => $foto = $fotpreview['foto'],
-				'link' => $link = $fotpreview['link'],
-				'titulo' => $titulo = $fotpreview['titulo'],);
 }
 
 while($actpreview = mysql_fetch_array($actinfo)){
@@ -362,7 +350,7 @@ echo json_encode(array('columnistas' => $columnista,
 						'editoriales' => $editorial,
 						'contratabues' => $contratabu,
 						'especiales' => $especial,
-						'fotogalerias' => $fotogaleria,
+						'fotogalerias' => fotogaleria(),
 						'caricaturas' => $caricatura,
 						'controles' => $control));
 

@@ -112,4 +112,19 @@ function formatoFecha($fecha){
 	}
 	return $nombre." ".$dia." de ".$meses[$mes -1]." del ".$anio;
 }
+
+function fotogaleria(){
+	$fotinfo = mysql_query("SELECT a.titulo, a.rutaFoto as foto, f.nombre as fotografo, a.link
+							from fotogaleria a, fotografo as f
+							where a.idFotografo = f.idFotografo
+							ORDER BY a.fecha desc, a.hora desc");
+	while($fotpreview = mysql_fetch_array($fotinfo)){
+		$fotogaleria[] = array(
+					'fotografo' => $fotografo = $fotpreview['fotografo'],
+					'foto' => $foto = $fotpreview['foto'],
+					'link' => $link = $fotpreview['link'],
+					'titulo' => $titulo = $fotpreview['titulo'],);
+	}
+	return $fotogaleria;
+}
 ?>
