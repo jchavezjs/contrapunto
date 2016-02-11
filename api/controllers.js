@@ -339,5 +339,4 @@ angular.module('contrapunto.controllers', [])
 
 
       });
-      console.log($scope.autor);
     });

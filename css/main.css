@@ -1062,11 +1062,11 @@ a:hover{
   background-position: center;
 	background-size:cover;
 	z-index:0;
-	-webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
+	-webkit-filter: blur(20px);
+  -moz-filter: blur(20px);
+  -o-filter: blur(20px);
+  -ms-filter: blur(20px);
+  filter: blur(20px);
 }
 .sondeo-header{
   position: relative;
@@ -2407,6 +2407,105 @@ margin: 10px 0 0px 0;
   font-family:"helvetica neue",Helvetica,Arial,sans-serif;
   line-height: 22px;
 }
+/*CARICATURAS*/
+@keyframes move {
+    25%{
+        background-position: right;
+    }
+    50%{
+        background-position: bottom;
+    }
+    100%{
+        background-position: top;
+    }
+}
+#move{
+    animation: move 20s infinite;
+}
+.main-draw{
+  margin-top: 10px;
+  height:280px;
+  background-color: #f1f1f1;
+  border-radius:4px;
+  background-position: top;
+  background-size: 900;
+}
+.main-draw .trans{
+  border-radius:4px;
+  background-image: linear-gradient(218deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.65) 100%);
+  border-radius: 3px;
+  position: relative;
+}
+.main-draw .texto{
+  position: absolute;
+  bottom:0;
+  padding: 0px 10px 10px 10px;
+}
+.main-draw .trans .texto h1{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0px 0px 5px 0px;
+  color:#fff;
+  font-size:22px;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.40);
+  font-weight: 200;
+}
+.main-draw .trans .texto h3{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0px;
+  color:#fff;
+  font-size:14px;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.40);
+  font-weight: 200;
+}
+.draws{
+  opacity: 0.5;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  height:280px;
+  background-color: #f1f1f1;
+  border-radius:4px;
+  background-position: center;
+  background-size: cover;
+  transition:0.5s;
+}
+.draws:hover{
+  opacity: 1;
+}
+.draws .trans:hover{
+  opacity: 1;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.draws .trans{
+  transition: 0.5s;
+  border-radius:4px;
+  background-image: linear-gradient(218deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.65) 100%);
+  border-radius: 3px;
+  position: relative;
+  opacity: 0;
+}
+.draws .texto{
+  position: absolute;
+  bottom:0;
+  padding: 0px 10px 10px 10px;
+}
+.draws .trans .texto h1{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0px 0px 5px 0px;
+  color:#fff;
+  font-size:18px;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.40);
+  font-weight: 200;
+}
+.draws .trans .texto h3{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0px;
+  color:#fff;
+  font-size:12px;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.40);
+  font-weight: 200;
+}
+/*CARICATURAS*/
 @media (max-width: 400px){
     .logo-center img{
         max-width: 300px;
