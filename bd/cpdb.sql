@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-02-2016 a las 23:22:52
+-- Tiempo de generación: 11-02-2016 a las 07:15:54
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -518,7 +518,6 @@ CREATE TABLE IF NOT EXISTS `personal` (
   `nombres` varchar(25) COLLATE utf8_bin NOT NULL,
   `apellidos` varchar(25) COLLATE utf8_bin NOT NULL,
   `descripcion` varchar(300) COLLATE utf8_bin DEFAULT NULL,
-  `twitter` varchar(10) COLLATE utf8_bin DEFAULT NULL,
   `cargo` varchar(15) COLLATE utf8_bin NOT NULL,
   `rutaFoto` varchar(25) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -527,26 +526,72 @@ CREATE TABLE IF NOT EXISTS `personal` (
 -- Volcado de datos para la tabla `personal`
 --
 
-INSERT INTO `personal` (`idPersonal`, `nombres`, `apellidos`, `descripcion`, `twitter`, `cargo`, `rutaFoto`) VALUES
-(1, 'JosÃ© Luis', 'Escamilla', NULL, NULL, 'columnista', 'img/columnista1.jpg'),
-(2, 'Mario', 'Morales', NULL, NULL, 'columnista', 'img/columnista2.jpg'),
-(3, 'RubÃ©n', 'Aguilar', NULL, NULL, 'columnista', 'img/columnista3.jpg'),
-(4, 'BenjamÃ­n', 'Cuellar', NULL, NULL, 'columnista', 'img/columnista4.png'),
-(5, 'Carlos', 'Molina', NULL, NULL, 'columnista', 'img/columnista5.jpg'),
-(6, 'RedacciÃ³n', 'Contrapunto', NULL, NULL, 'periodista', 'img/redaccion.jpg'),
-(7, 'Laura', 'Bernal', NULL, NULL, 'periodista', 'img/laura.jpg'),
-(8, 'AngÃ©lica MarÃ­a', 'Rivas', NULL, NULL, 'columnista', 'img/angelica.jpg'),
-(9, 'Heinz', 'Dieterich', NULL, NULL, 'columnista', 'img/heinz.jpg'),
-(10, 'Fidelina', 'MartÃ­nez Castro', NULL, NULL, 'columnista', 'img/fidelina.jpg'),
-(11, 'Donald Salvador', 'Donato', NULL, NULL, 'columnista', 'img/donald.jpg'),
-(12, 'Ricardo', 'Hausmann', NULL, NULL, 'columnista', 'img/columnista6.jpg'),
-(13, 'Leonel', 'Herrera', NULL, NULL, 'columnista', 'img/columnista1.jpg'),
-(14, 'Dora', 'Reyes', 'The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men.', NULL, 'periodista', 'img/dora.jpg'),
-(15, 'Katia', 'Aguilar', NULL, NULL, 'periodista', 'img/katia.jpg'),
-(16, 'Alberto', 'Barrera', NULL, NULL, 'periodista', 'img/alberto.jpg'),
-(17, 'Tania', 'Primavera', NULL, NULL, 'periodista', 'img/tania.jpg'),
-(18, 'Dra. Margarita', 'Mendoza Burgos', NULL, NULL, 'periodista', 'img/margarita.jpg'),
-(19, 'Juan Jose', 'Dalton', NULL, NULL, 'periodista', 'img/jjd.jpg');
+INSERT INTO `personal` (`idPersonal`, `nombres`, `apellidos`, `descripcion`, `cargo`, `rutaFoto`) VALUES
+(1, 'JosÃ© Luis', 'Escamilla', NULL, 'columnista', 'img/columnista1.jpg'),
+(2, 'Mario', 'Morales', NULL, 'columnista', 'img/columnista2.jpg'),
+(3, 'RubÃ©n', 'Aguilar', NULL, 'columnista', 'img/columnista3.jpg'),
+(4, 'BenjamÃ­n', 'Cuellar', NULL, 'columnista', 'img/columnista4.png'),
+(5, 'Carlos', 'Molina', NULL, 'columnista', 'img/columnista5.jpg'),
+(6, 'RedacciÃ³n', 'Contrapunto', NULL, 'periodista', 'img/redaccion.jpg'),
+(7, 'Laura', 'Bernal', NULL, 'periodista', 'img/laura.jpg'),
+(8, 'AngÃ©lica MarÃ­a', 'Rivas', NULL, 'columnista', 'img/angelica.jpg'),
+(9, 'Heinz', 'Dieterich', NULL, 'columnista', 'img/heinz.jpg'),
+(10, 'Fidelina', 'MartÃ­nez Castro', NULL, 'columnista', 'img/fidelina.jpg'),
+(11, 'Donald Salvador', 'Donato', NULL, 'columnista', 'img/donald.jpg'),
+(12, 'Ricardo', 'Hausmann', NULL, 'columnista', 'img/columnista6.jpg'),
+(13, 'Leonel', 'Herrera', NULL, 'columnista', 'img/columnista1.jpg'),
+(14, 'Dora', 'Reyes', 'The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men.', 'periodista', 'img/dora.jpg'),
+(15, 'Katia', 'Aguilar', NULL, 'periodista', 'img/katia.jpg'),
+(16, 'Alberto', 'Barrera', NULL, 'periodista', 'img/alberto.jpg'),
+(17, 'Tania', 'Primavera', NULL, 'periodista', 'img/tania.jpg'),
+(18, 'Dra. Margarita', 'Mendoza Burgos', NULL, 'periodista', 'img/margarita.jpg'),
+(19, 'Juan Jose', 'Dalton', NULL, 'periodista', 'img/jjd.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `redespersonal`
+--
+
+CREATE TABLE IF NOT EXISTS `redespersonal` (
+  `idRedPersonal` int(11) NOT NULL,
+  `idPersonal` int(11) NOT NULL,
+  `idRed` int(11) NOT NULL,
+  `link` varchar(50) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `redespersonal`
+--
+
+INSERT INTO `redespersonal` (`idRedPersonal`, `idPersonal`, `idRed`, `link`) VALUES
+(1, 14, 1, 'https://www.facebook.com/JaimeMcr'),
+(2, 14, 2, 'https://twitter.com/jchavez_js'),
+(3, 14, 3, 'https://plus.google.com/117961058833296954910'),
+(4, 14, 4, 'https://www.linkedin.com/in/camila-oro-a54a033a'),
+(5, 14, 5, 'jchavezlorenzana@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `redessociales`
+--
+
+CREATE TABLE IF NOT EXISTS `redessociales` (
+  `idRed` int(11) NOT NULL,
+  `nombre` varchar(15) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `redessociales`
+--
+
+INSERT INTO `redessociales` (`idRed`, `nombre`) VALUES
+(1, 'facebook'),
+(2, 'twitter'),
+(3, 'googleplus'),
+(4, 'linkedin'),
+(5, 'mail');
 
 -- --------------------------------------------------------
 
@@ -847,6 +892,20 @@ ALTER TABLE `personal`
   ADD PRIMARY KEY (`idPersonal`);
 
 --
+-- Indices de la tabla `redespersonal`
+--
+ALTER TABLE `redespersonal`
+  ADD PRIMARY KEY (`idRedPersonal`),
+  ADD KEY `idPeronal` (`idPersonal`),
+  ADD KEY `idRed` (`idRed`);
+
+--
+-- Indices de la tabla `redessociales`
+--
+ALTER TABLE `redessociales`
+  ADD PRIMARY KEY (`idRed`);
+
+--
 -- Indices de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
@@ -985,6 +1044,16 @@ ALTER TABLE `mercado`
 ALTER TABLE `personal`
   MODIFY `idPersonal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
+-- AUTO_INCREMENT de la tabla `redespersonal`
+--
+ALTER TABLE `redespersonal`
+  MODIFY `idRedPersonal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT de la tabla `redessociales`
+--
+ALTER TABLE `redessociales`
+  MODIFY `idRed` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
@@ -1051,6 +1120,13 @@ ALTER TABLE `imagenesarticulo`
 --
 ALTER TABLE `logusuario`
   ADD CONSTRAINT `logusuario_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `redespersonal`
+--
+ALTER TABLE `redespersonal`
+  ADD CONSTRAINT `redespersonal_ibfk_1` FOREIGN KEY (`idRed`) REFERENCES `redessociales` (`idRed`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `redespersonal_ibfk_2` FOREIGN KEY (`idPersonal`) REFERENCES `personal` (`idPersonal`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `respuesta`
