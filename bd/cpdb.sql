@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-02-2016 a las 07:15:54
+-- Tiempo de generación: 12-02-2016 a las 09:42:33
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -183,22 +183,23 @@ CREATE TABLE IF NOT EXISTS `banner` (
 CREATE TABLE IF NOT EXISTS `bolsa` (
   `idBolsa` int(11) NOT NULL,
   `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
-  `porcentaje` float NOT NULL
+  `porcentaje` float NOT NULL,
+  `valor` float DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `bolsa`
 --
 
-INSERT INTO `bolsa` (`idBolsa`, `nombre`, `porcentaje`) VALUES
-(1, 'Dow Jones', 2.39),
-(2, 'Nasdaq', -2.74),
-(3, 'FTSE 100', -1.93),
-(4, 'DAX', 2.54),
-(5, 'CAC-40', -2.38),
-(6, 'Nikkei', -0.54),
-(7, 'IPC', -1.22),
-(8, 'BOVESPA', -2.36);
+INSERT INTO `bolsa` (`idBolsa`, `nombre`, `porcentaje`, `valor`) VALUES
+(1, 'Dow Jones', 2.39, 15944.5),
+(2, 'Nasdaq', -2.74, 15944.5),
+(3, 'FTSE 100', -1.93, 15944.5),
+(4, 'DAX', 2.54, 15944.5),
+(5, 'CAC-40', -2.38, 15944.5),
+(6, 'Nikkei', -0.54, 15944.5),
+(7, 'IPC', -1.22, 15944.5),
+(8, 'BOVESPA', -2.36, 15944.5);
 
 -- --------------------------------------------------------
 
@@ -374,7 +375,7 @@ CREATE TABLE IF NOT EXISTS `imagenesarticulo` (
   `idArticulo` int(11) NOT NULL,
   `posicion` varchar(10) COLLATE utf8_bin NOT NULL,
   `idFotografo` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `imagenesarticulo`
@@ -475,7 +476,9 @@ INSERT INTO `imagenesarticulo` (`idImagen`, `rutaFoto`, `idArticulo`, `posicion`
 (92, 'img/deporte1.jpg', 110, 'principal', 6),
 (93, 'img/deporte1.jpg', 111, 'principal', 6),
 (94, 'img/deporte1.jpg', 112, 'principal', 6),
-(95, 'https://i.ytimg.com/vi/SJ6nkDebHuA/hqdefault.jpg', 114, 'principal', 6);
+(95, 'https://i.ytimg.com/vi/SJ6nkDebHuA/hqdefault.jpg', 114, 'principal', 6),
+(96, 'img/academia1.jpg', 44, 'principal', 2),
+(97, 'img/academia1.jpg', 45, 'principal', 2);
 
 -- --------------------------------------------------------
 
@@ -503,9 +506,17 @@ CREATE TABLE IF NOT EXISTS `mercado` (
   `porcentaje` float NOT NULL,
   `menor` float NOT NULL,
   `masAlto` float NOT NULL,
-  `ultimo` float NOT NULL,
-  `fecha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `ultimo` float NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `mercado`
+--
+
+INSERT INTO `mercado` (`idMercado`, `nombre`, `descripcion`, `cambio`, `porcentaje`, `menor`, `masAlto`, `ultimo`) VALUES
+(1, 'PETROLEO', 'contrato  Nov 2015  $ / barril', 0.54, 2.06, 37.75, 77.83, 26.75),
+(2, 'CAFE', 'contrato  Dic 2015  Centavos de dolar por libra', -0.65, -0.57, 114.95, 197.15, 114.1),
+(3, 'AZUCAR', 'contrato  Jul. 2016  Centavos de dolar por libra', -0.6, -4.43, 11.28, 16.7, 12.94);
 
 -- --------------------------------------------------------
 
@@ -558,7 +569,7 @@ CREATE TABLE IF NOT EXISTS `redespersonal` (
   `idPersonal` int(11) NOT NULL,
   `idRed` int(11) NOT NULL,
   `link` varchar(50) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `redespersonal`
@@ -667,7 +678,7 @@ CREATE TABLE IF NOT EXISTS `subseccion` (
   `idSeccion` int(11) NOT NULL,
   `nombre` varchar(30) COLLATE utf8_bin NOT NULL,
   `url` varchar(20) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `subseccion`
@@ -709,7 +720,8 @@ INSERT INTO `subseccion` (`idSubseccion`, `idSeccion`, `nombre`, `url`) VALUES
 (57, 6, 'ReseÃ±as', 'resenas'),
 (58, 6, 'ContratabÃº', 'contratabu'),
 (59, 6, 'Entrevistas en off', 'entrevistas'),
-(60, 8, 'Especiales Semanles', 'especiales');
+(60, 8, 'Especiales Semanles', 'especiales'),
+(61, 1, 'Caricaturas', 'caricaturas');
 
 -- --------------------------------------------------------
 
@@ -1032,12 +1044,12 @@ ALTER TABLE `fotografo`
 -- AUTO_INCREMENT de la tabla `imagenesarticulo`
 --
 ALTER TABLE `imagenesarticulo`
-  MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=96;
+  MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=98;
 --
 -- AUTO_INCREMENT de la tabla `mercado`
 --
 ALTER TABLE `mercado`
-  MODIFY `idMercado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMercado` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `personal`
 --
@@ -1047,7 +1059,7 @@ ALTER TABLE `personal`
 -- AUTO_INCREMENT de la tabla `redespersonal`
 --
 ALTER TABLE `redespersonal`
-  MODIFY `idRedPersonal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `idRedPersonal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `redessociales`
 --
@@ -1072,7 +1084,7 @@ ALTER TABLE `sondeo`
 -- AUTO_INCREMENT de la tabla `subseccion`
 --
 ALTER TABLE `subseccion`
-  MODIFY `idSubseccion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
+  MODIFY `idSubseccion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=62;
 --
 -- AUTO_INCREMENT de la tabla `tasainteres`
 --

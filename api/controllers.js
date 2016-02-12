@@ -139,6 +139,8 @@ angular.module('contrapunto.controllers', [])
             $scope.show = true;
         }, 300);
         $scope.fecha = fechaActual;
+        var f=new Date();
+        $scope.mercadofecha =  f.getDate() + "/" + (f.getMonth()+1) + "/" + f.getFullYear();
         $http.get("api/php/economia.php").success(function (response){
             $scope.negocios = response.negocios;
             $scope.coyunturas = response.coyunturas;
@@ -150,6 +152,7 @@ angular.module('contrapunto.controllers', [])
             $scope.divisas = response.divisas;
             $scope.datos = response.datos;
             $scope.subsecciones = response.subsecciones;
+            $scope.mercas = response.mercas;
         });
     })
 
@@ -282,12 +285,12 @@ angular.module('contrapunto.controllers', [])
                     $scope.secinfo = response.secinfo;
                     $scope.subinfo = response.subinfo;
                     $scope.subsecciones = response.subsecciones;
-
+                    $scope.fotogaleria = response.fotogaleria;
                 });
        });
     })
 
-    .controller('BuscarController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll){
+    .controller('BuscarController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
         $anchorScroll();
         $scope.top = function(){
           $anchorScroll();
@@ -299,6 +302,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
+        $scope.fecha = fechaActual;
         $scope.currentPage = 1;
         $scope.pageSize = 4;
         $scope.maxSize = 4;
@@ -308,6 +312,8 @@ angular.module('contrapunto.controllers', [])
                $http.get("api/php/buscar.php?query="+query).success(function(response){
 
                    $scope.resultados = response.resultado;
+                   $scope.actualidades = response.actualidades;
+                   $scope.caricatura = response.caricatura;
 
                });
 
@@ -317,7 +323,7 @@ angular.module('contrapunto.controllers', [])
         $location.path('/buscar/' + busqueda);
       }
     })
-    .controller('AutorController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll){
+    .controller('AutorController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -325,6 +331,7 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
+        $scope.fecha = fechaActual;
         var id = $routeParams.id;
         $scope.currentPage = 1;
         $scope.pageSize = 4;
@@ -335,6 +342,7 @@ angular.module('contrapunto.controllers', [])
                   $scope.fotogalerias = response.fotogalerias;
                    $scope.autor = response.autor;
                    $scope.articulos = response.articulos;
+                   $scope.actualidades = response.actualidades;
                });
 
 

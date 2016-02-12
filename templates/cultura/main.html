@@ -112,7 +112,7 @@
                                     <a ng-href="#/cultura/artes/{{artes[0].titulo | urlEncode}}/{{artes[0].id}}"><div style="background-image: url({{artes[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{artes[0].fotografo}}</p>
                                     <h1 class="h1-cultura"><a ng-href="#/cultura/artes/{{artes[0].titulo | urlEncode}}/{{artes[0].id}}">{{artes[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{artes[0].autor | uppercase}} | {{artes[0].fecha}}</h4>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{artes[0].idPersonal}}">{{artes[0].autor | uppercase}}</a> | {{artes[0].fecha}}</h4>
                                     <p>{{artes[0].preview}}</p>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                                     <a ng-href="#/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}"><div style="background-image: url({{anecdotas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{anecdotas[0].fotografo}}</p>
                                     <h1 class="h1-cultura"><a ng-href="#/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}">{{anecdotas[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{anecdotas[0].autor | uppercase}} | {{anecdotas[0].fecha}}</h4>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{anecdotas[0].idPersonal}}">{{anecdotas[0].autor | uppercase}}</a> | {{anecdotas[0].fecha}}</h4>
                                     <p>{{anecdotas[0].preview}}</p>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@
                                             <a ng-href="#/cultura/resena/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}"><div style="background-image: url({{resenas[0].foto}});" class="col-xs-5 img-articulo-cultura"></div></a>
                                             <div class="col-xs-7">
                                                 <h1 class="resena-title"><a ng-href="#/cultura/resena/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}">{{resenas[0].titulo}}</a></h1>
-                                                <h4 class="info-autor-politica">{{resenas[0].autor | uppercase}} </br> {{resenas[0].fecha}}</h4>
+                                                <h4 class="info-autor-politica"><a ng-href="#/autor/{{resenas[0].idPersonal}}">{{resenas[0].autor | uppercase}}</a> </br> {{resenas[0].fecha}}</h4>
                                                 <p class="info-resena">{{resenas[0].preview}}</p>
                                             </div>
                                         </div>
@@ -178,7 +178,7 @@
                                     <a ng-href="#/cultura/literatura/{{literaturas[0].titulo | urlEncode}}/{{literaturas[0].id}}"><div style="background-image: url({{literaturas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{literaturas[0].fotografo}}</p>
                                     <h1 class="h1-cultura"><a ng-href="#/cultura/literatura/{{literaturas[0].titulo | urlEncode}}/{{literaturas[0].id}}">{{literaturas[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{literaturas[0].autor | uppercase}} | {{literaturas[0].fecha}}</h4>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{literaturas[0].idPersonal}}">{{literaturas[0].autor | uppercase}}</a> | {{literaturas[0].fecha}}</h4>
                                     <p>{{literaturas[0].preview}}</p>
                                 </div>
                             </div>

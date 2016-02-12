@@ -30,6 +30,8 @@ if($secvalidate){
 		if($secinfo['id'] == 1){
 			if($subinfo['id'] == 2){
 				$contenido = columna();
+			}elseif($subinfo['id'] == 6){
+				$contenido = articulo($subinfo['id']);
 			}else{
 				$contenido = opinion($subinfo['id']);
 			}

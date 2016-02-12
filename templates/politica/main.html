@@ -8,16 +8,16 @@
                 <div class="col-md-5">
                     <div style="width:100%; height:100px; background-image:url('https://placehold.it/400x100')"></div>
                 </div>
-            </div>    
+            </div>
     </div>
     <div class="mainAds-mobile">
             <div class="row">
                 <div class="col-md-12">
                     <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
                 </div>
-            </div>    
+            </div>
     </div>
-</div>    
+</div>
 <!-- Ads Top | Portada -->
 <!-- Header -->
 <div class="container">
@@ -26,7 +26,7 @@
     <!-- Date/Search Section -->
     <!-- Menu -->
     <div data-ng-include data-src="'templates/menu.html?i=2'"></div>
-    <!-- Menu -->    
+    <!-- Menu -->
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center">
@@ -34,7 +34,7 @@
             <a class="politica-logo-title" alt="cambiar a 60px" href="">
                 Política
             </a>
-            <h4>{{fecha}}</h4>    
+            <h4>{{fecha}}</h4>
         </div>
     </div>
     <!-- Logo Section -->
@@ -76,8 +76,8 @@
                 <a ng-repeat="subseccion in subsecciones" ng-href="#/politica/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
-    </div> 
-    <!-- Menu -->    
+    </div>
+    <!-- Menu -->
     <!-- Menu Section -->
 </div>
 <!-- Header -->
@@ -86,7 +86,7 @@
     <div class="row">
         <div class="row">
             <div id="main" class="col-md-12">
-                <!-- Columna 1 -->  
+                <!-- Columna 1 -->
                     <div class="col-md-5 m-politica-1">
                         <!--Seccion Política-->
                         <div class="sec-politica">
@@ -102,7 +102,7 @@
                            <div class="articulo preview-sec-politica">
                                <div class="item-politica-main">
                                    <h1><a ng-href="#/politica/sociedadcivil/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}">{{politicas[0].titulo}}</a></h1>
-                                   <h4 class="info-autor-politica">{{politicas[0].autor | uppercase}} | {{politicas[0].fecha}}</h4>
+                                   <h4 class="info-autor-politica"><a ng-href="#/autor/{{politicas[0].idPersonal}}">{{politicas[0].autor | uppercase}}</a> | {{politicas[0].fecha}}</h4>
                                    <p>{{politicas[0].preview}}</p>
                                    <a ng-href="#/politica/sociedadcivil/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}"><div style="background-image: url({{politicas[0].foto}});" class="img-articulo"></div></a>
                                    <p class="foto-autor-main">Foto: {{politicas[0].fotografo}}</p>
@@ -111,7 +111,7 @@
                                   <a ng-href="#/politica/sociedadcivil/{{politica.titulo | urlEncode}}/{{politica.id}}"><div style="background-image: url({{politica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                   <div class="col-xs-8 col-md-7 preview-texto-politica">
                                       <a ng-href="#/politica/sociedadcivil/{{politica.titulo | urlEncode}}/{{politica.id}}"><h3>{{politica.titulo}}</h3></a>
-                                      <p><span class="info-autor-politica">{{politica.autor}} | {{politica.fecha}}</span></p>
+                                      <p><span class="info-autor-politica"><a ng-href="#/autor/{{politica.idPersonal}}">{{politica.autor}}</a> | {{politica.fecha}}</span></p>
                                       <p>{{politica.preview}}</p>
                                   </div>
                                </div>
@@ -134,7 +134,7 @@
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
                                     <h1><a ng-href="#/politica/partidos/{{partidos[0].titulo | urlEncode}}/{{partidos[0].id}}">{{partidos[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{partidos[0].autor | uppercase}} | {{partidos[0].fecha}}</h4>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{partidos[0].idPersonal}}">{{partidos[0].autor | uppercase}}</a> | {{partidos[0].fecha}}</h4>
                                     <p>{{partidos[0].preview}}</p>
                                     <a ng-href="#/politica/partidos/{{partidos[0].titulo | urlEncode}}/{{partidos[0].id}}"><div style="background-image: url({{partidos[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{partidos[0].fotografo}}</p>
@@ -143,17 +143,17 @@
                                     <a ng-href="#/politica/partidos/{{partido.titulo | urlEncode}}/{{partido.id}}"><div style="background-image: url({{partido.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
                                         <a ng-href="#/politica/partidos/{{partido.titulo | urlEncode}}/{{partido.id}}"><h3>{{partido.titulo}}</h3></a>
-                                        <p><span class="info-autor-politica">{{partido.autor}} | {{partido.fecha}}</span></p>
+                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{partido.idPersonal}}">{{partido.autor}}</a> | {{partido.fecha}}</span></p>
                                         <p>{{partido.preview}}</p>
                                     </div>
                                 </div>
                             </div>
                             <!-- Preview seccion politica -->
-                            </div>    
+                            </div>
                         </div>
                         <!--Seccion Partidos-->
                     </div>
-                   
+
                 <!-- Columna 1 -->
                 <!-- Columna 2 -->
                     <div id="side" class="col-md-5 m-politica-2">
@@ -170,7 +170,7 @@
                                 <div class="articulo preview-sec-politica">
                                     <div class="item-politica-main">
                                         <h1><a ng-href="#/politica/gobierno/{{gobiernos[0].titulo | urlEncode}}/{{gobiernos[0].id}}">{{gobiernos[0].titulo}}</a></h1>
-                                        <h4 class="info-autor-politica">{{gobiernos[0].autor | uppercase}} | {{gobiernos[0].fecha}}</h4>
+                                        <h4 class="info-autor-politica"><a ng-href="#/autor/{{gobiernos[0].idPersonal}}">{{gobiernos[0].autor | uppercase}}</a> | {{gobiernos[0].fecha}}</h4>
                                         <p>{{gobiernos[0].preview}}</p>
                                         <a ng-href="#/politica/gobierno/{{gobiernos[0].titulo | urlEncode}}/{{gobiernos[0].id}}"><div style="background-image: url({{gobiernos[0].foto}});" class="img-articulo"></div></a>
                                         <p class="foto-autor-main">Foto: {{gobiernos[0].fotografo}}</p>
@@ -179,7 +179,7 @@
                                         <a ng-href="#/politica/gobierno/{{gobierno.titulo | urlEncode}}/{{gobierno.id}}"><div style="background-image: url({{gobierno.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                         <div class="col-xs-8 col-md-7 preview-texto-politica">
                                             <a ng-href="#/politica/gobierno/{{gobierno.titulo | urlEncode}}/{{gobierno.id}}"><h3>{{gobierno.titulo}}</h3></a>
-                                            <p><span class="info-autor-politica">{{gobierno.autor}} | {{gobierno.fecha}}</span></p>
+                                            <p><span class="info-autor-politica"><a ng-href="#/autor/{{gobierno.idPersonal}}">{{gobierno.autor}}</a> | {{gobierno.fecha}}</span></p>
                                             <p>{{gobierno.preview}}</p>
                                         </div>
                                     </div>
@@ -189,19 +189,19 @@
                                 <!-- Publicidad -->
                                 <div class="ads ad-politica">
                                     <div style="background-image: url(http://www.placehold.it/400x280);" class="ads adsSquare"></div>
-                                </div>    
+                                </div>
                                 <!-- Publicidad -->
-                            
+
                         </div>
-                    </div>   
+                    </div>
                 <!-- Columna 2 -->
                 <!-- Columna 3 - 1 -->
-                  
+
                     <div class="col-md-2 m-politica-3">
                          <!-- Publicidad -->
                         <div class="ads">
                             <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
-                        </div>    
+                        </div>
                         <!-- Publicidad -->
                         <!--Lo mas leido-->
                         <div class="columnistas-portada">
@@ -221,7 +221,7 @@
                                         <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
                                         <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
                                         <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>  
+                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlpolitica">
@@ -229,7 +229,7 @@
                                         <li><a href="#" class="leido-item">La pupusa salvadoreña</a></li>
                                         <li><a href="#" class="leido-item">Se estrena Star Wars</a></li>
                                         <li><a href="#" class="leido-item">La ética social</a></li>
-                                        <li><a href="#" class="leido-item">La actualización humana</a></li>  
+                                        <li><a href="#" class="leido-item">La actualización humana</a></li>
                                     </ul>
                                 </div>
                               </div>
@@ -237,14 +237,12 @@
                             </div>
                         </div>
                         <!--Lo mas leido-->
-                    </div>  
-                       
-            </div>    
-        </div>    
-        <div data-ng-include data-src="'templates/footer.html'"></div>        
+                    </div>
+
+            </div>
+        </div>
+        <div data-ng-include data-src="'templates/footer.html'"></div>
         </div>
     </div>
 </div>
 <!-- Body -->
-
-

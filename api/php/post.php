@@ -127,7 +127,8 @@ echo json_encode(array(
 			'error' => $error,
 			'secinfo' => $secinfo,
 			'subinfo' => $subinfo,
-			'subsecciones' => $sub
+			'subsecciones' => $sub,
+			'fotogaleria' => fotogaleria()
 			));
 
 ?>

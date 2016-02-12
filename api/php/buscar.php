@@ -40,6 +40,8 @@ while($colpreview = mysql_fetch_array($colinfo)){
     );
   }
   echo json_encode(array(
-                    'resultado' => $resultado
+                    'resultado' => $resultado,
+                    'actualidades' => actualidad(),
+                    'caricatura' => caricatura()
                   ));
 ?>

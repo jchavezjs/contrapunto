@@ -142,11 +142,11 @@
                         </div>
                         <!-- Publicidad -->
                         <h2 class="fotogaleriah2">FOTOGALERÍA</h2>
-                        <a href="" target="_blank"><div class="autor-fotogaleria" style="background-image:url(http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2016/02/JOV7476-copy.jpg);">
+                        <a ng-href="{{fotogaleria[0].link}}" target="_blank"><div class="autor-fotogaleria" style="background-image:url({{fotogaleria[0].foto}});">
                           <div class="trans">
                             <img class="foto-imagen-autor" src="http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2015/04/LOGO345X76.png" alt="cptv" />
                             <div class="text">
-                              <h3>El final menos esperado del expresidente</h3>
+                              <h3>{{fotogaleria[0].titulo}}</h3>
                             </div>
                           </div>
                         </div></a>

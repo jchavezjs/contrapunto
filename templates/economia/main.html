@@ -96,7 +96,7 @@
                                         <div class="col-md-3">
                                             <h4>{{bolsa.nombre}}</h4>
                                             <h2 ng-class="{positive: bolsa.porcentaje>0, negative: bolsa.porcentaje<0}">{{bolsa.porcentaje}}%</h2>
-                                            <h3>15,944.46</h3>
+                                            <h3>{{bolsa.valor | number}}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -115,17 +115,17 @@
                             <!-- Preview seccion Coyntura -->
                                <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{coyunturas[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{coyunturas[0].autor | uppercase}} | {{coyunturas[0].fecha}}</h4>
+                                    <h1><a ng-href="#/economia/coyunturaeconomica/{{coyunturas[0].titulo | urlEncode}}/{{coyunturas[0].id}}">{{coyunturas[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{coyunturas[0].idPersonal}}">{{coyunturas[0].autor | uppercase}}</a> | {{coyunturas[0].fecha}}</h4>
                                     <p>{{coyunturas[0].preview}}</p>
-                                    <div style="background-image: url({{coyunturas[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/economia/coyunturaeconomica/{{coyunturas[0].titulo | urlEncode}}/{{coyunturas[0].id}}"><div style="background-image: url({{coyunturas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{coyunturas[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="coyuntura in coyunturas | limitTo: 3" ng-if="coyuntura != coyunturas[0]">
-                                    <div style="background-image: url({{coyuntura.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/economia/coyunturaeconomica/{{coyuntura.titulo | urlEncode}}/{{coyuntura.id}}"><div style="background-image: url({{coyuntura.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{coyuntura.titulo}}</h3>
-                                        <p><span class="info-autor-politica">{{coyuntura.autor | uppercase}} | {{coyuntura.fecha}}</span></p>
+                                        <a ng-href="#/economia/coyunturaeconomica/{{coyuntura.titulo | urlEncode}}/{{coyuntura.id}}"><h3>{{coyuntura.titulo}}</h3></a>
+                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{coyuntura.idPersonal}}">{{coyuntura.autor | uppercase}}</a> | {{coyuntura.fecha}}</span></p>
                                         <p>{{coyuntura.preview}}</p>
                                     </div>
                                 </div>
@@ -145,17 +145,17 @@
                             <!-- Preview seccion mundo economico -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{mundos[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{mundos[0].autor | uppercase}} | {{mundos[0].fecha}}</h4>
+                                    <h1><a ng-href="#/economia/mundoeconomico/{{mundos[0].titulo | urlEncode}}/{{mundos[0].id}}">{{mundos[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{mundos[0].idPersonal}}">{{mundos[0].autor | uppercase}}</a> | {{mundos[0].fecha}}</h4>
                                     <p>{{mundos[0].preview}}</p>
-                                    <div style="background-image: url({{mundos[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/economia/mundoeconomico/{{mundos[0].titulo | urlEncode}}/{{mundos[0].id}}"><div style="background-image: url({{mundos[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{mundos[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="mundo in mundos | limitTo: 3" ng-if="mundo != mundos[0]">
-                                    <div style="background-image: url({{mundo.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/economia/mundoeconomico/{{mundo.titulo | urlEncode}}/{{mundo.id}}"><div style="background-image: url({{mundo.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{mundo.titulo}}</h3>
-                                        <p><span class="info-autor-politica">{{mundo.autor | uppercase}} | {{mundo.fecha}}</span></p>
+                                        <a ng-href="#/economia/mundoeconomico/{{mundo.titulo | urlEncode}}/{{mundo.id}}"><h3>{{mundo.titulo}}</h3></a>
+                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{mundo.idPersonal}}">{{mundo.autor | uppercase}}</a> | {{mundo.fecha}}</span></p>
                                         <p>{{mundo.preview}}</p>
                                     </div>
                                 </div>
@@ -199,17 +199,17 @@
                             <!-- Preview seccion mercado laboral -->
                            <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{mercados[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{mercados[0].autor | uppercase}} | {{mercados[0].fecha}}</h4>
+                                    <h1><a ng-href="#/economia/mercadolaboral/{{mercados[0].titulo | urlEncode}}/{{mercados[0].id}}">{{mercados[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{mercados[0].idPersonal}}">{{mercados[0].autor | uppercase}}</a> | {{mercados[0].fecha}}</h4>
                                     <p>{{mercados[0].preview}}</p>
-                                    <div style="background-image: url({{mercados[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/economia/mercadolaboral/{{mercados[0].titulo | urlEncode}}/{{mercados[0].id}}"><div style="background-image: url({{mercados[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{mercados[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="mercado in mercados | limitTo: 3" ng-if="mercado != mercados[0]">
-                                    <div style="background-image: url({{mercado.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/economia/mercadolaboral/{{mercado.titulo | urlEncode}}/{{mercado.id}}"><div style="background-image: url({{mercado.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{mercado.titulo}}</h3>
-                                        <p><span class="info-autor-politica">{{mercado.autor | uppercase}} | {{mercado.fecha}}</span></p>
+                                        <a ng-href="#/economia/mercadolaboral/{{mercado.titulo | urlEncode}}/{{mercado.id}}"><h3>{{mercado.titulo}}</h3></a>
+                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{mercado.idPersonal}}">{{mercado.autor | uppercase}}</a> | {{mercado.fecha}}</span></p>
                                         <p>{{mercado.preview}}</p>
                                     </div>
                                 </div>
@@ -235,17 +235,17 @@
                                 <!-- Preview seccion negocios -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{negocios[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{negocios[0].autor | uppercase}} | {{negocios[0].fecha}}</h4>
+                                    <h1><a ng-href="#/economia/negocios/{{negocios[0].titulo | urlEncode}}/{{negocios[0].id}}">{{negocios[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{negocios[0].idPersonal}}">{{negocios[0].autor | uppercase}}</a> | {{negocios[0].fecha}}</h4>
                                     <p>{{negocios[0].preview}}</p>
-                                    <div style="background-image: url({{negocios[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/economia/negocios/{{negocios[0].titulo | urlEncode}}/{{negocios[0].id}}"><div style="background-image: url({{negocios[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{negocios[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="negocio in negocios | limitTo: 3" ng-if="negocio != negocios[0]">
-                                    <div style="background-image: url({{negocio.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/economia/negocios/{{negocio.titulo | urlEncode}}/{{negocio.id}}"><div style="background-image: url({{negocio.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{negocio.titulo}}</h3>
-                                        <p><span class="info-autor-politica">{{negocio.autor | uppercase}} | {{negocio.fecha}}</span></p>
+                                        <a ng-href="#/economia/negocios/{{negocio.titulo | urlEncode}}/{{negocio.id}}"><h3>{{negocio.titulo}}</h3></a>
+                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{negocio.idPersonal}}">{{negocio.autor | uppercase}}</a> | {{negocio.fecha}}</span></p>
                                         <p>{{negocio.preview}}</p>
                                     </div>
                                 </div>
@@ -256,7 +256,7 @@
                                 <div class="row" style="margin-top:5px;">
                                     <div class="col-md-2 col-md-offset-3">
                                         <h6 class="titulo">último</h6>
-                                        <span>27/02/2016</span>
+                                        <span>{{mercadofecha}}</span>
                                     </div>
                                     <div class="col-md-2">
                                         <h6 class="titulo" style="padding-top:5px;">cambios</h6>
@@ -278,76 +278,26 @@
                                     </div>
                                 </div>
                                 </div>
-                                <div class="row">
+                                <div class="row" ng-repeat="merca in mercas">
                                     <div>
                                         <div class="item">
                                             <div class="col-md-3">
-                                                <h4>Petroleo</h4>
-                                                <h6>contrato Nov </br>2015 $ / barril</h6>
+                                                <h4>{{merca.nombre}}</h4>
+                                                <h6>{{merca.descripcion}}</h6>
                                             </div>
                                             <div class="col-md-2" style="padding-top:15px;">
-                                                <h4 class="numb">32.16</h4>
+                                                <h4 class="numb">{{merca.ultimo}}</h4>
                                             </div>
                                             <div class="col-md-2" style="padding-top:15px;">
-                                                <h4 class="numb negative">-0.14</h4>
+                                                <h4 ng-class="{positive: merca.cambio>0, negative: merca.cambio<0}" class="numb">{{merca.cambio}}</h4>
                                             </div>
                                             <div class="col-md-2" style="padding-top:15px;">
-                                                <h4 class="numb negative">-0.43%</h4>
+                                                <h4 class="numb" ng-class="{positive: merca.porcentaje>0, negative: merca.porcentaje<0}">{{merca.porcentaje}}%</h4>
                                             </div>
                                             <div class="col-md-3" style="padding-top:15px;">
                                                 <div class="row">
-                                                    <div class="col-md-6"><h4 class="numb">37.75</h4></div>
-                                                    <div class="col-md-6"><h4 class="numb">37.75</h4></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div>
-                                        <div class="item">
-                                            <div class="col-md-3">
-                                                <h4>Petroleo</h4>
-                                                <h6>contrato Nov </br>2015 $ / barril</h6>
-                                            </div>
-                                            <div class="col-md-2" style="padding-top:15px;">
-                                                <h4 class="numb">32.16</h4>
-                                            </div>
-                                            <div class="col-md-2" style="padding-top:15px;">
-                                                <h4 class="numb negative">-0.14</h4>
-                                            </div>
-                                            <div class="col-md-2" style="padding-top:15px;">
-                                                <h4 class="numb negative">-0.43%</h4>
-                                            </div>
-                                            <div class="col-md-3" style="padding-top:15px;">
-                                                <div class="row">
-                                                    <div class="col-md-6"><h4 class="numb">37.75</h4></div>
-                                                    <div class="col-md-6"><h4 class="numb">37.75</h4></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div>
-                                        <div class="item">
-                                            <div class="col-md-3">
-                                                <h4>Petroleo</h4>
-                                                <h6>contrato Nov </br>2015 $ / barril</h6>
-                                            </div>
-                                            <div class="col-md-2" style="padding-top:15px;">
-                                                <h4 class="numb">32.16</h4>
-                                            </div>
-                                            <div class="col-md-2" style="padding-top:15px;">
-                                                <h4 class="numb negative">-0.14</h4>
-                                            </div>
-                                            <div class="col-md-2" style="padding-top:15px;">
-                                                <h4 class="numb negative">-0.43%</h4>
-                                            </div>
-                                            <div class="col-md-3" style="padding-top:15px;">
-                                                <div class="row">
-                                                    <div class="col-md-6"><h4 class="numb">37.75</h4></div>
-                                                    <div class="col-md-6"><h4 class="numb">37.75</h4></div>
+                                                    <div class="col-md-6"><h4 class="numb">{{merca.menor}}</h4></div>
+                                                    <div class="col-md-6"><h4 class="numb">{{merca.masAlto}}</h4></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -375,17 +325,17 @@
                             <!-- Preview seccion Analisis economico -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1 ><a>{{analisiss[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{analisiss[0].autor | uppercase}} | {{analisiss[0].fecha}}</h4>
+                                    <h1><a ng-href="#/economia/analisiseconomico/{{analisiss[0].titulo | urlEncode}}/{{analisiss[0].id}}">{{analisiss[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{analisiss[0].idPersonal}}">{{analisiss[0].autor | uppercase}}</a> | {{analisiss[0].fecha}}</h4>
                                     <p>{{analisiss[0].preview}}</p>
-                                    <div style="background-image: url({{analisiss[0].foto}});" class="img-articulo"></div>
+                                    <a ng-href="#/economia/analisiseconomico/{{analisiss[0].titulo | urlEncode}}/{{analisiss[0].id}}"><div style="background-image: url({{analisiss[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{analisiss[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="analisis in analisiss | limitTo: 3" ng-if="analisis != analisiss[0]">
-                                    <div style="background-image: url({{analisis.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div>
+                                    <a ng-href="#/economia/analisiseconomico/{{analisis.titulo | urlEncode}}/{{analisis.id}}"><div style="background-image: url({{analisis.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <h3>{{analisis.titulo}}</h3>
-                                        <p><span class="info-autor-politica">{{analisis.autor | uppercase}} | {{analisis.fecha}}</span></p>
+                                        <a ng-href="#/economia/analisiseconomico/{{analisis.titulo | urlEncode}}/{{analisis.id}}"><h3>{{analisis.titulo}}</h3></a>
+                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{analisis.idPersonal}}">{{analisis.autor | uppercase}}</a> | {{analisis.fecha}}</span></p>
                                         <p>{{analisis.preview}}</p>
                                     </div>
                                 </div>

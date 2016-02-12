@@ -1,7 +1,7 @@
 <?php
 
 function articulo($seccion){
-	$str = "SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal as idautor,
+	$str = "SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal as idPersonal,
 			a.preview, i.rutaFoto as foto, a.fecha, f.nombre as fotografo
 			from articulo a, personal as c, imagenesarticulo as i, fotografo as f
 			where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo and a.activo = 1
@@ -11,7 +11,7 @@ function articulo($seccion){
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
 					'id' => $id = $result['id'],
-					'idautor' => $idautor = $result['idautor'],
+					'idPersonal' => $idPersonal = $result['idPersonal'],
 					'foto' => $foto = $result['foto'],
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],
@@ -126,5 +126,40 @@ function fotogaleria(){
 					'titulo' => $titulo = $fotpreview['titulo'],);
 	}
 	return $fotogaleria;
+}
+
+function actualidad(){
+	$actinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha, s.nombre as subseccion, s.url as urlSubseccion, a.preview, i.rutaFoto as foto, f.nombre as fotografo, se.url as urlSeccion, c.idPersonal
+							from articulo a, personal as c, subseccion as s, imagenesarticulo as i, fotografo as f, seccion se
+							where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and a.activo = 1 and s.idSeccion = se.idSeccion
+							and c.cargo='periodista' and i.posicion='principal' and a.especial = 0 and a.idSubseccion not in (1,2,3,4,5,6,35,45,46,49,54,57,58,59,60)
+							ORDER BY a.fecha desc, a.hora desc");
+	while($actpreview = mysql_fetch_array($actinfo)){
+		$actualidad[] = array(
+					'id' => $id = $actpreview['id'],
+					'idPersonal' => $idPersonal = $actpreview['idPersonal'],
+					'titulo' => $titulo = $actpreview['titulo'],
+					'autor' => $autor = $actpreview['autor'],
+					'fecha' => $fecha = formatoFecha($actpreview['fecha']),
+					'subseccion' => $subseccion = $actpreview['subseccion'],
+					'preview' => $preview = $actpreview['preview'],
+					'urlSeccion' => $urlSeccion = $actpreview['urlSeccion'],
+					'urlSubseccion' => $urlSubseccion = $actpreview['urlSubseccion'],
+					'foto' => $foto = $actpreview['foto'],
+					'fotografo' => $fotografo = $actpreview['fotografo'],);
+	}
+
+	return $actualidad;
+}
+
+function caricatura(){
+	$carinfo = mysql_query("SELECT a.rutaFoto as foto
+							from caricatura a
+							ORDER BY a.fecha desc, a.hora desc");
+	while($carpreview = mysql_fetch_array($carinfo)){
+		$caricatura[] = array(
+					'foto' => $foto = $carpreview['foto'],);
+	}
+	return $caricatura;
 }
 ?>

@@ -4,7 +4,7 @@ include('funciones.php');
 
 date_default_timezone_set('America/El_Salvador');
 
-$bolinfo = mysql_query("SELECT nombre, porcentaje from bolsa");
+$bolinfo = mysql_query("SELECT nombre, porcentaje, valor from bolsa");
 
 $intinfo = mysql_query("SELECT nombre, porcentaje from tasainteres");
 
@@ -12,9 +12,12 @@ $divinfo = mysql_query("SELECT nombre, cambio from divisa");
 
 $datinfo = mysql_query("SELECT indicador, periodo, cifras, enlaceDetalles as enlace from datoseconomicos");
 
+$merinfo = mysql_query("SELECT nombre, descripcion, cambio, porcentaje, menor, masAlto, ultimo from mercado");
+
 while($bolpreview = mysql_fetch_array($bolinfo)){
 	$bolsa[]=array(
 			'nombre' => $nombre = $bolpreview['nombre'],
+			'valor' => $valor = $bolpreview['valor'],
 			'porcentaje' => $porcentaje = $bolpreview['porcentaje']);
 }
 
@@ -38,6 +41,17 @@ while($datpreview = mysql_fetch_array($datinfo)){
 			'enlace' => $enlace = $datpreview['enlace'],);
 }
 
+while($merpreview = mysql_fetch_array($merinfo)){
+	$mercado[]=array(
+			'nombre' => $nombre = $merpreview['nombre'],
+			'descripcion' => $descripcion = $merpreview['descripcion'],
+			'cambio' => $cambio = $merpreview['cambio'],
+			'porcentaje' => $porcentaje = $merpreview['porcentaje'],
+			'menor' => $menor = $merpreview['menor'],
+			'masAlto' => $masAlto = $merpreview['masAlto'],
+			'ultimo' => $ultimo = $merpreview['ultimo'],);
+}
+
 echo json_encode(array(
 				'negocios' => articulo(45),
 				'coyunturas' => articulo(46),
@@ -48,7 +62,8 @@ echo json_encode(array(
 				'intereses' => $interes,
 				'divisas' => $divisa,
 				'datos' => $dato,
-				'subsecciones' => subseccion(5)
+				'subsecciones' => subseccion(5),
+				'mercas' => $mercado
 				));
 
 ?>

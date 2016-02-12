@@ -28,7 +28,7 @@
     <div class="row">
         <div class="logo-center">
             <a href=""><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" class="logo"></a>
-            <h4>Lunes, 24 Noviembre del 2015</h4>
+            <h4>{{fecha}}</h4>
         </div>
     </div>
     <!-- Logo Section -->
@@ -84,7 +84,7 @@
                     <a class="tw" ng-href="{{autor.twitter}}" target="_blank" ng-if="autor.twitter"><i class="ion-social-twitter"></i></a>
                     <a class="gg" ng-href="{{autor.googleplus}}" target="_blank" ng-if="autor.googleplus"><i class="ion-social-googleplus"></i></a>
                     <a class="ln" ng-href="{{autor.linkedin}}" target="_blank" ng-if="autor.linkedin"><i class="ion-social-linkedin"></i></a>
-                    <a class="em" ng-href="mailto:{{autor.mail}}" ng-if="autor.mail"><i class="ion-email"></i></a>
+                    <a class="em" ng-href="mailto:{{autor.mail}}" target="_blank" ng-if="autor.mail"><i class="ion-email"></i></a>
                     <div class="divisor"></div>
                   </div>
                 </div>
@@ -140,39 +140,15 @@
                         <h2>ACTUALIDAD</h2>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" ng-repeat="actualidad in actualidades | limitTo: 3">
                     <div class="row">
                         <div class="col-md-4">
-                        <div class="imagen" style="background-image:url(http://www.contrapunto.com.sv/images/Noviembre14/presidente-preso.jpg);"></div>
-                        </div>
-                        <div class="col-md-8">
-                            <span>Política</span>
-                            <h1>Nuevo desvío judicial para Flores</h1>
-                            <a>Leer más »</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-md-4">
-                        <div class="imagen" style="background-image:url(http://www.contrapunto.com.sv/images/cubanostrasladodos.jpg);"></div>
-                        </div>
-                        <div class="col-md-8">
-                            <span>MIGRACIÓN</span>
-                            <h1>Más traslados de migrantes cubanos en febrero</h1>
-                            <a>Leer más »</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-md-4">
-                        <div class="imagen" style="background-image:url(http://www.contrapunto.com.sv/images/Agosto15/CadaverCrimenViolenciaMasacre.jpg);"></div>
-                        </div>
-                        <div class="col-md-8">
-                            <span>Política</span>
-                            <h1>Medicina Legal continúa acéfala</h1>
-                            <a>Leer más »</a>
+                        <a ng-href="#/{{actualidad.urlSeccion}}/{{actualidad.urlSubseccion}}/{{actualidad.titulo | urlEncode}}/{{actualidad.id}}"><div class="imagen" style="background-image:url({{actualidad.foto}});"></div></a>
+                        </div></a>
+                        <div class="col-md-8 info-it">
+                            <a class="sub" ng-href="#/{{actualidad.urlSeccion}}/{{actualidad.urlSubseccion}}"><span>{{actualidad.subseccion}}</span></a>
+                            <a ng-href="#/{{actualidad.urlSeccion}}/{{actualidad.urlSubseccion}}/{{actualidad.titulo | urlEncode}}/{{actualidad.id}}"><h1>{{actualidad.titulo}}</h1></a>
+                            <a ng-href="#/{{actualidad.urlSeccion}}/{{actualidad.urlSubseccion}}/{{actualidad.titulo | urlEncode}}/{{actualidad.id}}">Leer más »</a>
                         </div>
                     </div>
                 </div>

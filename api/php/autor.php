@@ -53,6 +53,7 @@ if($autorinfo){
 echo json_encode(array(
                 'autor'=>$autor,
                 'articulos' => $articulos,
-                'fotogalerias' => fotogaleria()
+                'fotogalerias' => fotogaleria(),
+                'actualidades' => actualidad()
                 ));
 ?>

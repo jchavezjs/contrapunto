@@ -101,7 +101,7 @@
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
                                     <h1><a ng-href="#/deportes/cronicasdeportivas/{{cronicas[0].titulo | urlEncode}}/{{cronicas[0].id}}">{{cronicas[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{cronicas[0].autor | uppercase}} | {{cronicas[0].fecha}}</h4>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{cronicas[0].idPersonal}}">{{cronicas[0].autor | uppercase}}</a> | {{cronicas[0].fecha}}</h4>
                                     <p>{{cronicas[0].preview}}</p>
                                     <a ng-href="#/deportes/cronicasdeportivas/{{cronicas[0].titulo | urlEncode}}/{{cronicas[0].id}}"><div style="background-image: url({{cronicas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{cronicas[0].fotografo}}</p>
@@ -110,7 +110,7 @@
                                     <a ng-href="#/deportes/cronicasdeportivas/{{cronica.titulo | urlEncode}}/{{cronica.id}}"><div style="background-image: url({{cronica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
                                         <a ng-href="#/deportes/cronicasdeportivas/{{cronica.titulo | urlEncode}}/{{cronica.id}}"><h3>{{cronica.titulo}}</h3></a>
-                                        <p><span class="info-autor-politica">{{cronica.autor | uppercase}} | {{cronica.fecha}}</span></p>
+                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{cronica.idPersonal}}">{{cronica.autor | uppercase}}</a> | {{cronica.fecha}}</span></p>
                                         <p>{{cronica.preview}}</p>
                                     </div>
                                 </div>
@@ -142,7 +142,7 @@
                                 <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
                                     <h1><a ng-href="#/deportes/acontecerdeportivo/{{aconteceres[0].titulo | urlEncode}}/{{aconteceres[0].id}}">{{aconteceres[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica">{{aconteceres[0].autor | uppercase}} | {{aconteceres[0].fecha}}</h4>
+                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{aconteceres[0].idPersonal}}">{{aconteceres[0].autor | uppercase}}</a> | {{aconteceres[0].fecha}}</h4>
                                     <p>{{aconteceres[0].preview}}</p>
                                     <a ng-href="#/deportes/acontecerdeportivo/{{aconteceres[0].titulo | urlEncode}}/{{aconteceres[0].id}}"><div style="background-image: url({{aconteceres[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{aconteceres[0].fotografo}}</p>
@@ -151,7 +151,7 @@
                                     <a ng-href="#/deportes/acontecerdeportivo/{{acontecer.titulo | urlEncode}}/{{acontecer.id}}"><div style="background-image: url({{acontecer.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
                                         <a ng-href="#/deportes/acontecerdeportivo/{{acontecer.titulo | urlEncode}}/{{acontecer.id}}"><h3>{{acontecer.titulo}}</h3></a>
-                                        <p><span class="info-autor-politica">{{acontecer.autor | uppercase}} | {{acontecer.fecha}}</span></p>
+                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{acontecer.idPersonal}}">{{acontecer.autor | uppercase}}</a> | {{acontecer.fecha}}</span></p>
                                         <p>{{acontecer.preview}}</p>
                                     </div>
                                 </div>

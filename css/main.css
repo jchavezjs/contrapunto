@@ -1610,10 +1610,10 @@ a:hover{
 }
 
 .positive{
-    color:#2dae25;
+    color:#2dae25 !important;
 }
 .negative{
-    color:#fa4444;
+    color:#fa4444 !important;
 }
 .divisas .indicador{
     color:#45a0f5;
@@ -2053,24 +2053,29 @@ margin: 10px 0 0px 0;
 }
 .lml-search span{
     position:absolute;
+    top:0;
     padding:4px 4px;
     background-color:#494e58;
     color:#fff;
     text-transform:uppercase;
     letter-spacing:0.5px;
     font-size:9px;
-    margin-left:-10px;
+}
+.lml-search .sub{
+  margin: 0;
+  padding: 0;
+  font-size:9px;
+  color: #fff;
 }
 .lml-search .item{
     margin-bottom:10px;
+    overflow: hidden;
+}
+.info-it{
+  padding-top: 10px;
 }
 .lml-search{
     margin-top:10px;
-}
-.lml-search a{
-    color:#333;
-    font-size:12px;
-    margin-left:-10px;
 }
 .lml-search .imagen{
     height:95px;
@@ -2082,8 +2087,6 @@ margin: 10px 0 0px 0;
     margin-bottom:5px;
     font-family:'Roboto Slab';
     font-size:16px;
-    margin-top:28px;
-    margin-left:-10px;
 }
 .se-fb{
     margin-top:20px;
@@ -2588,5 +2591,11 @@ margin: 10px 0 0px 0;
     }
     .tab-subseccion{
         text-align: center;
+    }
+    .info-it{
+      padding-top: 20px;
+    }
+    .lml-search span{
+      top: 10px;
     }
 }

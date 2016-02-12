@@ -5,18 +5,11 @@ include('funciones.php');
 
 date_default_timezone_set('America/El_Salvador');
 
-$colinfo = mysql_query("SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as NombreCompleto, c.rutaFoto, a.titulo
+$colinfo = mysql_query("SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as NombreCompleto, c.rutaFoto, a.titulo, c.idPersonal
 						from personal as c, columna as a
 						where c.idPersonal = a.idPersonal and a.activo = 1
-						ORDER BY a.fecha desc, a.hora desc
-						limit 5");
-$actinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha, s.nombre as subseccion, a.preview, i.rutaFoto as foto, f.nombre as fotografo
-						from articulo a, personal as c, subseccion as s, imagenesarticulo as i, fotografo as f
-						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and a.activo = 1
-						and c.cargo='periodista' and i.posicion='principal' and a.especial = 0 and a.idSubseccion not in (1,2,3,4,5,6,35,45,46,49,54,57,58,59,60)
-						ORDER BY a.fecha desc, a.hora desc
-						limit 5");
-$triinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor
+						ORDER BY a.fecha desc, a.hora desc");
+$triinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal
 						from personal as c, articulo as a
 						where c.idPersonal = a.idPersonal and a.idSubseccion = 3 and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc
@@ -26,7 +19,7 @@ $neginfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto
 						where a.idArticulo = i.idArticulo and a.idSubseccion = 45 and i.posicion = 'principal' and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc
 						LIMIT 3");
-$anainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor
+$anainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal
 						from articulo as a, personal as c
 						where a.idPersonal = c.idPersonal and a.idSubseccion = 49 and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc
@@ -36,53 +29,53 @@ $coyinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto
 						where a.idArticulo = i.idArticulo and a.idSubseccion = 46 and i.posicion = 'principal' and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc
 						LIMIT 3");
-$libinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor
+$libinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal
 						from articulo as a, personal as c
 						where a.idSubseccion = 4 and a.idPersonal=c.idPersonal and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc ");
-$sosinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo
+$sosinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto,c.idPersonal, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and a.especial=0 and
 						i.posicion='principal' and a.idSubseccion not in (34, 35) and  (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='sociedad'
 						ORDER BY a.fecha desc, a.hora desc");
-$resinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview
+$resinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, c.idPersonal
 						from articulo as a, imagenesarticulo as i, personal as c
 						where a.idArticulo = i.idArticulo and a.idSubseccion = 57 and a.activo = 1 and i.posicion = 'principal' and a.idPersonal=c.idPersonal
 						ORDER BY a.fecha desc, a.hora desc ");
-$acainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview
+$acainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, i.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, c.idPersonal
 						from articulo as a, imagenesarticulo as i, personal as c
 						where a.idArticulo = i.idArticulo and a.idSubseccion = 6 and i.posicion = 'principal' and a.idPersonal=c.idPersonal and a.activo = 1
 						ORDER BY a.fecha desc, a.hora desc ");
-$depinfo = mysql_query("SELECT a.idArticulo as id, a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion,s.url, f.nombre as fotografo
+$depinfo = mysql_query("SELECT a.idArticulo as id, a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion,s.url, f.nombre as fotografo
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='deportes'
 						ORDER BY a.fecha desc, a.hora desc");
-$perinfo = mysql_query("SELECT a.idArticulo as id, a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
+$perinfo = mysql_query("SELECT a.idArticulo as id, a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview,c.idPersonal, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and  a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and a.idSubseccion=34
 						ORDER BY a.fecha desc, a.hora desc");
-$intinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion,s.url, f.nombre as fotografo
+$intinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto,c.idPersonal, a.fecha, s.nombre as subseccion,s.url, f.nombre as fotografo
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='internacionales'
 						ORDER BY a.fecha desc, a.hora desc");
-$culinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo
+$culinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto,c.idPersonal, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal'
 						and a.especial=0 and a.idSubseccion in (55,56) and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='cultura'
 						ORDER BY a.fecha desc, a.hora desc");
-$polinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, s.url, f.nombre as fotografo
+$polinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha,c.idPersonal, s.nombre as subseccion, s.url, f.nombre as fotografo
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and  a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial=0 and (select se.url from seccion as se where se.idSeccion=(select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion))='politica'
 						ORDER BY a.fecha desc, a.hora desc");
-$aneinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
+$aneinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, c.idPersonal, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.idSubseccion=54 and a.especial=0
 						ORDER BY a.fecha desc, a.hora desc");
-$entinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, c.rutaFoto as fotoautor
+$entinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, c.idPersonal, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, c.rutaFoto as fotoautor
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.idSubseccion=59 and a.especial=0
 						ORDER BY a.fecha desc, a.hora desc");
-$rominfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, c.rutaFoto as fotoautor
+$rominfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, c.idPersonal, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, c.rutaFoto as fotoautor
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.activo = 1 and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.idSubseccion=35 and a.especial=0
 						ORDER BY a.fecha desc, a.hora desc");
@@ -94,38 +87,25 @@ $coninfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, '
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
 						where a.idArticulo = i.idArticulo and a.activo = 1 and  a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.idSubseccion=58 and a.especial=0
 						ORDER BY a.fecha desc, a.hora desc");
-$espinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo
-						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s
-						where a.idArticulo = i.idArticulo and a.activo = 1 and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.especial = 1
+$espinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, s.url as urlSubseccion, se.url as urlSeccion, c.idPersonal
+						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s, seccion se
+						where a.idArticulo = i.idArticulo and a.activo = 1 and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.especial = 1 and s.idSeccion = se.idSeccion
 						ORDER BY a.fecha desc, a.hora desc");
-$carinfo = mysql_query("SELECT a.rutaFoto as foto
-						from caricatura a
-						ORDER BY a.fecha desc, a.hora desc");
+
 
 while($colpreview = mysql_fetch_array($colinfo)){
 	$columnista[] = array(
 				'id' => $id = $colpreview['id'],
+				'idPersonal' => $idPersonal = $colpreview['idPersonal'],
 				'nombre' => $nombre = $colpreview['NombreCompleto'],
 				'foto' => $foto = $colpreview['rutaFoto'],
 				'titulo' => $titulo = $colpreview['titulo'],);
 }
 
-while($actpreview = mysql_fetch_array($actinfo)){
-	$actualidad[] = array(
-				'id' => $id = $actpreview['id'],
-				'titulo' => $titulo = $actpreview['titulo'],
-				'autor' => $autor = $actpreview['autor'],
-				'fecha' => $fecha = formatoFecha($actpreview['fecha']),
-				'subseccion' => $subseccion = $actpreview['subseccion'],
-				'preview' => $preview = $actpreview['preview'],
-				'foto' => $foto = $actpreview['foto'],
-				'fotografo' => $fotografo = $actpreview['fotografo'],);
-	$control[] = array('id' => $id = $actpreview['id'],);
-}
-
 while($tripreview = mysql_fetch_array($triinfo)){
 	$tribuna[] = array(
 				'id' => $id = $tripreview['id'],
+				'idPersonal' => $idPersonal = $tripreview['idPersonal'],
 				'autor' => $autor = $tripreview['autor'],
 				'titulo' => $titulo = $tripreview['titulo'],);
 }
@@ -147,6 +127,7 @@ while($coypreview = mysql_fetch_array($coyinfo)){
 while($anapreview = mysql_fetch_array($anainfo)){
 	$analisis[] = array(
 				'id' => $id = $anapreview['id'],
+				'idPersonal' => $idPersonal = $anapreview['idPersonal'],
 				'foto' => $foto = $anapreview['foto'],
 				'titulo' => $titulo = $anapreview['titulo'],
 				'autor' => $autor = $anapreview['autor'],);
@@ -155,6 +136,7 @@ while($anapreview = mysql_fetch_array($anainfo)){
 while($libpreview = mysql_fetch_array($libinfo)){
 	$libertad[] = array(
 				'id' => $id = $libpreview['id'],
+				'idPersonal' => $idPersonal = $libpreview['idPersonal'],
 				'foto' => $foto = $libpreview['foto'],
 				'titulo' => $titulo = $libpreview['titulo'],
 				'autor' => $autor = $libpreview['autor'],);
@@ -163,6 +145,7 @@ while($libpreview = mysql_fetch_array($libinfo)){
 while($sospreview = mysql_fetch_array($sosinfo)){
 	$sociedad[] = array(
 				'id' => $id = $sospreview['id'],
+				'idPersonal' => $idPersonal = $sospreview['idPersonal'],
 				'url' => $url = $sospreview['url'],
 				'foto' => $foto = $sospreview['foto'],
 				'titulo' => $titulo = $sospreview['titulo'],
@@ -176,6 +159,7 @@ while($sospreview = mysql_fetch_array($sosinfo)){
 while($respreview = mysql_fetch_array($resinfo)){
 	$resena[] = array(
 				'id' => $id = $respreview['id'],
+				'idPersonal' => $idPersonal = $respreview['idPersonal'],
 				'foto' => $foto = $respreview['foto'],
 				'titulo' => $titulo = $respreview['titulo'],
 				'autor' => $autor = $respreview['autor'],
@@ -185,6 +169,7 @@ while($respreview = mysql_fetch_array($resinfo)){
 while($acapreview = mysql_fetch_array($acainfo)){
 	$academia[] = array(
 				'id' => $id = $acapreview['id'],
+				'idPersonal' => $idPersonal = $acapreview['idPersonal'],
 				'foto' => $foto = $acapreview['foto'],
 				'titulo' => $titulo = $acapreview['titulo'],
 				'autor' => $autor = $acapreview['autor'],
@@ -194,6 +179,7 @@ while($acapreview = mysql_fetch_array($acainfo)){
 while($deppreview = mysql_fetch_array($depinfo)){
 	$deporte[] = array(
 				'id' => $id = $deppreview['id'],
+				'idPersonal' => $idPersonal = $deppreview['idPersonal'],
 				'url' => $url = $deppreview['url'],
 				'foto' => $foto = $deppreview['foto'],
 				'titulo' => $titulo = $deppreview['titulo'],
@@ -207,6 +193,7 @@ while($deppreview = mysql_fetch_array($depinfo)){
 while($perpreview = mysql_fetch_array($perinfo)){
 	$periodismo[] = array(
 				'id' => $id = $perpreview['id'],
+				'idPersonal' => $idPersonal = $perpreview['idPersonal'],
 				'foto' => $foto = $perpreview['foto'],
 				'titulo' => $titulo = $perpreview['titulo'],
 				'autor' => $autor = $perpreview['autor'],
@@ -219,6 +206,7 @@ while($perpreview = mysql_fetch_array($perinfo)){
 while($intpreview = mysql_fetch_array($intinfo)){
 	$internacional[] = array(
 				'id' => $id = $intpreview['id'],
+				'idPersonal' => $idPersonal = $intpreview['idPersonal'],
 				'url' => $url = $intpreview['url'],
 				'foto' => $foto = $intpreview['foto'],
 				'titulo' => $titulo = $intpreview['titulo'],
@@ -232,6 +220,7 @@ while($intpreview = mysql_fetch_array($intinfo)){
 while($culpreview = mysql_fetch_array($culinfo)){
 	$cultura[] = array(
 				'id' => $id = $culpreview['id'],
+				'idPersonal' => $idPersonal = $culpreview['idPersonal'],
 				'url' => $url = $culpreview['url'],
 				'foto' => $foto = $culpreview['foto'],
 				'titulo' => $titulo = $culpreview['titulo'],
@@ -245,6 +234,7 @@ while($culpreview = mysql_fetch_array($culinfo)){
 while($polpreview = mysql_fetch_array($polinfo)){
 	$politica[] = array(
 				'id' => $id = $polpreview['id'],
+				'idPersonal' => $idPersonal = $polpreview['idPersonal'],
 				'url' => $url = $polpreview['url'],
 				'foto' => $foto = $polpreview['foto'],
 				'titulo' => $titulo = $polpreview['titulo'],
@@ -258,6 +248,7 @@ while($polpreview = mysql_fetch_array($polinfo)){
 while($anepreview = mysql_fetch_array($aneinfo)){
 	$anecdota[] = array(
 				'id' => $id = $anepreview['id'],
+				'idPersonal' => $idPersonal = $anepreview['idPersonal'],
 				'foto' => $foto = $anepreview['foto'],
 				'titulo' => $titulo = $anepreview['titulo'],
 				'autor' => $autor = $anepreview['autor'],
@@ -270,6 +261,7 @@ while($anepreview = mysql_fetch_array($aneinfo)){
 while($entpreview = mysql_fetch_array($entinfo)){
 	$entrevista[] = array(
 				'id' => $id = $entpreview['id'],
+				'idPersonal' => $idPersonal = $entpreview['idPersonal'],
 				'foto' => $foto = $entpreview['foto'],
 				'titulo' => $titulo = $entpreview['titulo'],
 				'autor' => $autor = $entpreview['autor'],
@@ -283,6 +275,7 @@ while($entpreview = mysql_fetch_array($entinfo)){
 while($rompreview = mysql_fetch_array($rominfo)){
 	$rompiendo[] = array(
 				'id' => $id = $rompreview['id'],
+				'idPersonal' => $idPersonal = $rompreview['idPersonal'],
 				'foto' => $foto = $rompreview['foto'],
 				'titulo' => $titulo = $rompreview['titulo'],
 				'autor' => $autor = $rompreview['autor'],
@@ -321,16 +314,14 @@ while($esppreview = mysql_fetch_array($espinfo)){
 				'preview' => $preview = $esppreview['preview'],
 				'fecha' => $fecha = formatoFecha($esppreview['fecha']),
 				'subseccion' => $subseccion = $esppreview['subseccion'],
+				'idPersonal' => $idPersonal = $esppreview['idPersonal'],
+				'urlSeccion' => $urlSeccion = $esppreview['urlSeccion'],
+				'urlSubseccion' => $urlSubseccion = $esppreview['urlSubseccion'],
 				'fotografo' => $fotografo = $esppreview['fotografo'],);
 }
 
-while($carpreview = mysql_fetch_array($carinfo)){
-	$caricatura[] = array(
-				'foto' => $foto = $carpreview['foto'],);
-}
-
 echo json_encode(array('columnistas' => $columnista,
-						'actualidades' => $actualidad,
+						'actualidades' => actualidad(),
 						'tribunas' => $tribuna,
 						'negocios' => $negocio,
 						'coyunturas' => $coyuntura,
@@ -351,7 +342,6 @@ echo json_encode(array('columnistas' => $columnista,
 						'contratabues' => $contratabu,
 						'especiales' => $especial,
 						'fotogalerias' => fotogaleria(),
-						'caricaturas' => $caricatura,
-						'controles' => $control));
+						'caricaturas' => caricatura(),));
 
 ?>
