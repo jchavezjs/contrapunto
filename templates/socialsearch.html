@@ -15,9 +15,9 @@
           <div class="searching-bar" ng-if="bar==true">
             <input type="text"  placeholder="Buscar..." class="input-search-nav" ng-model="query">
             <a ng-href="#/buscar/{{query}}" class="in-search"><i class="ion-android-search"></i></a>
-            <a ng-click="bar=false" class="close-bar">X</a>
           </div>
-          <a  ng-if="bar==false" class="search" ng-click="bar=true"><i class="ion-android-search"></i></a>
+          <a ng-click="bar=false" class="close-bar">X</a>
+          <a class="search" ng-click="bar=true"><i class="ion-android-search"></i></a>
         </div>
       </div>
   </div>
