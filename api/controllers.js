@@ -1,6 +1,23 @@
 angular.module('contrapunto.controllers', [])
 
+  .directive('ngSearch', function () {
+  return function (scope, element, attrs) {
+      element.bind("keydown keypress", function (event) {
+          if(event.which === 13) {
+              scope.$apply(function (){
+                  scope.$eval(attrs.ngSearch);
+              });
+
+              event.preventDefault();
+          }
+      });
+  };
+  })
     .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
+
         $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
@@ -42,6 +59,9 @@ angular.module('contrapunto.controllers', [])
 
     })
     .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
         $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
@@ -69,6 +89,9 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
         $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
@@ -87,6 +110,9 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('InternacionalesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
         $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
@@ -105,6 +131,9 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('SociedadController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
         $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
@@ -130,6 +159,9 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
         $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
@@ -157,6 +189,9 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('CulturaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
         $anchorScroll();
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
@@ -177,6 +212,9 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('DeportesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -196,8 +234,10 @@ angular.module('contrapunto.controllers', [])
     .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
         $scope.top = function(){
           $anchorScroll();
-        }
-
+        };
+        $scope.search = function(query){
+          $location.path('/buscar/' + query);
+        };
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -229,8 +269,10 @@ angular.module('contrapunto.controllers', [])
     .controller('SondeoController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
         $scope.top = function(){
           $anchorScroll();
-        }
-
+        };
+        $scope.search = function(query){
+          $location.path('/buscar/' + query);
+        };
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -253,8 +295,10 @@ angular.module('contrapunto.controllers', [])
     .controller('CaricaturaController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
         $scope.top = function(){
           $anchorScroll();
-        }
-
+        };
+        $scope.search = function(query){
+          $location.path('/buscar/' + query);
+        };
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -275,7 +319,9 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
-
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -309,7 +355,10 @@ angular.module('contrapunto.controllers', [])
         $anchorScroll();
         $scope.top = function(){
           $anchorScroll();
-        }
+        };
+        $scope.search = function(query){
+          $location.path('/buscar/' + query);
+        };
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -322,6 +371,7 @@ angular.module('contrapunto.controllers', [])
         $scope.pageSize = 4;
         $scope.maxSize = 4;
         var query = $routeParams.query;
+        $scope.query = query;
         $http.post("api/php/buscar.php?query="+query,{'selectSeccion':query}).success(function(data,status,headers,config,response){
 
                $http.get("api/php/buscar.php?query="+query).success(function(response){
@@ -339,6 +389,9 @@ angular.module('contrapunto.controllers', [])
       }
     })
     .controller('AutorController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
