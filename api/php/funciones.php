@@ -23,7 +23,7 @@ function articulo($seccion){
 }
 
 function opinion($seccion){
-	$str = "SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal as idautor,
+	$str = "SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal as idPersonal,
 			a.preview, c.rutaFoto as foto, a.fecha
 			from articulo a, personal as c
 			where a.idPersonal = c.idPersonal
@@ -33,7 +33,7 @@ function opinion($seccion){
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
 					'id' => $id = $result['id'],
-					'idautor' => $idautor = $result['idautor'],
+					'idPersonal' => $idPersonal = $result['idPersonal'],
 					'foto' => $foto = $result['foto'],
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],

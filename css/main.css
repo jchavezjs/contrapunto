@@ -36,9 +36,10 @@ a:hover{
 }
 .menu-social{
     border-bottom: 1px solid #575757;
-    padding-bottom: 3px;
+    padding-bottom: 5px;
     vertical-align: middle;
-    padding-top:8px;
+    padding-top:5px;
+    white-space: nowrap;
 }
 .facebook:hover{
     color:#3b5998;
@@ -52,17 +53,41 @@ a:hover{
 .instagram:hover{
     color:#3f729b;
 }
-.sociales{
-    margin-top: 3px;
-    position: absolute;
-    left: 90px;
+.close-bar{
+  padding: 4px 8px 3px 8px;
+  font-size: 14px;
+  margin: 0;
+  color: #fff;
+  background-color: #016CA2;
+  border-radius: 0 0 2px 0;
+
 }
 .social-btn{
     font-size: 22px;
     margin-right: 5px;
-    margin-top: 15px;
     margin-bottom: -10px;
     color: #000;
+    line-height:25px;
+    vertical-align: middle;
+}
+.input-search-nav{
+  margin-left: 10px;
+  margin-right: -25px;
+  border: none;
+  background-color: #f3f3f3;
+  height: 26px;
+  padding-left: 10px;
+  padding-right: 25px;
+}
+.in-search{
+  font-size: 16px;
+  color: #8f8f8f;
+  margin: 0;
+  padding-left: 5px;
+  border-left: 1px solid #8f8f8f;
+}
+.searching-bar{
+  display: inline-block;
 }
 .logo-center .logo{
     margin-bottom: 15px;
@@ -83,14 +108,14 @@ a:hover{
 }
 .btn-qs{
     position: absolute;
-    margin-top: -2px;
     border:0px;
     text-decoration: none;
     color: #fff;
     background-color: #242424;
     border-radius: 2px;
-    padding: 6px 20px 6px 20px;
+    padding: 8px 20px 8px 20px;
     font-size: 12px;
+    margin-top: 1px;
 }
 .btn-qs:hover{
     color: #fff;
@@ -2523,6 +2548,7 @@ margin: 10px 0 0px 0;
   font-weight: 200;
 }
 /*CARICATURAS*/
+
 @media (max-width: 400px){
     .logo-center img{
         max-width: 300px;
@@ -2544,9 +2570,6 @@ margin: 10px 0 0px 0;
         margin-left: 0px;
         text-align: center;
     }
-    .menu-social{
-        padding-bottom: 33px;
-    }
     .suscribete{
         display: none;
     }
@@ -2556,7 +2579,7 @@ margin: 10px 0 0px 0;
     .menu-social h4{
         margin-bottom: -28px;
     }
-    .search{
+    .search, .input-search-nav{
         display: none;
     }
     .mainAds{
