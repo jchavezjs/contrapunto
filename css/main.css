@@ -54,13 +54,16 @@ a:hover{
     color:#3f729b;
 }
 .close-bar{
-  padding: 4px 8px 3px 8px;
-  font-size: 14px;
+  padding: 4px 8px 6px 8px;
+  font-size: 15px;
   margin: 0;
   color: #fff;
-  background-color: #016CA2;
-  border-radius: 0 0 2px 0;
-
+  background-color: #323b43;
+}
+.close-bar:hover{
+  color: #fff;
+  background-color: #59626a;
+  cursor: pointer;
 }
 .social-btn{
     font-size: 22px;
@@ -72,22 +75,28 @@ a:hover{
 }
 .input-search-nav{
   margin-left: 10px;
-  margin-right: -25px;
+  margin-right: -22px;
   border: none;
   background-color: #f3f3f3;
-  height: 26px;
+  height: 30px;
   padding-left: 10px;
   padding-right: 25px;
 }
+.input-search-nav:focus{
+  outline: none;
+}
 .in-search{
-  font-size: 16px;
-  color: #8f8f8f;
-  margin: 0;
-  padding-left: 5px;
-  border-left: 1px solid #8f8f8f;
+  padding-top: 10px;
+  font-size: 18px;
+  color: #fff;
 }
 .searching-bar{
-  display: inline-block;
+  display: none;}
+.show{
+  display: inline-block !important;
+}
+.hide{
+  display: none !important;
 }
 .logo-center .logo{
     margin-bottom: 15px;
@@ -150,6 +159,9 @@ a:hover{
     font-size: 24px;
     color: #000;
     padding-left: 10px;
+}
+.search:hover{
+  cursor: pointer;
 }
 .search:focus{
     outline: none;
@@ -307,6 +319,9 @@ a:hover{
     height: 250px;
     background-size: cover;
     background-position: center;
+}
+.articulo .img-articulo:hover{
+  opacity: 0.8;
 }
 .ads{
     margin-top: 10px;
@@ -1425,6 +1440,9 @@ a:hover{
     height: 110px;
     margin-top: 10px;
 }
+.item-politica .img-item-politica:hover{
+  opacity: 0.8;
+}
 .preview-texto-politica p{
     font-size: 14px;
 }
@@ -1751,6 +1769,9 @@ a:hover{
     height: 160px;
     background-position: center center;
     background-size: cover;
+}
+.img-subseccion:hover{
+  opacity: 0.8;
 }
 .preview-subseccion h1{
     margin-top: 10px;

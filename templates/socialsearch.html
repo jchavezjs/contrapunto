@@ -12,12 +12,11 @@
           <a class="suscribete">
               Suscríbete
           </a>
-          <div class="searching-bar" ng-if="bar==true">
-            <input type="text"  placeholder="Buscar..." class="input-search-nav" ng-model="query">
-            <a ng-href="#/buscar/{{query}}" class="in-search"><i class="ion-android-search"></i></a>
-            <a ng-click="bar=false" class="close-bar">X</a>
+          <div class="searching-bar" ng-class="{show: bar == true}">
+            <input ng-search="search(query)" type="text"  placeholder="Buscar..." class="input-search-nav" ng-model="query">
+            <a ng-click="bar=false" class="close-bar"><i class="ion-close-round"></i></a>
           </div>
-          <a  ng-if="bar==false" class="search" ng-click="bar=true"><i class="ion-android-search"></i></a>
+            <a class="search" ng-class="{hide: bar == true}" ng-click="bar=true"><i class="ion-android-search"></i></a>
         </div>
       </div>
   </div>
