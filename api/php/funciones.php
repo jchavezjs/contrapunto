@@ -62,7 +62,7 @@ function subseccion($seccion){
 }
 
 function columna(){
-	$str = "SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.rutaFoto as foto, a.titulo, a.fecha, c.idPersonal as idautor
+	$str = "SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.rutaFoto as foto, a.titulo, a.fecha, c.idPersonal as idPersonal
 				from personal as c, columna as a
 				where c.idPersonal = a.idPersonal and a.activo = 1
 				ORDER BY a.fecha desc, a.hora desc";
@@ -70,7 +70,7 @@ function columna(){
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
 					'id' => $id = $result['id'],
-					'idautor' => $idautor = $result['idautor'],
+					'idPersonal' => $idPersonal = $result['idPersonal'],
 					'foto' => $foto = $result['foto'],
 					'titulo' => $titulo = $result['titulo'],
 					'autor' => $autor = $result['autor'],
