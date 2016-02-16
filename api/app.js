@@ -9,6 +9,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                 controller: "OpinionController",
                 templateUrl: "templates/opinion/main.html"
             })
+            .when("/opinion/columnas/1", {
+                controller: "OpinionController",
+                templateUrl: "templates/opinion/columnas.html"
+            })
             .when("/politica", {
                 controller: "PoliticaController",
                 templateUrl: "templates/politica/main.html"
