@@ -153,12 +153,16 @@ function actualidad(){
 }
 
 function caricatura(){
-	$carinfo = mysql_query("SELECT a.rutaFoto as foto
-							from caricatura a
+	$carinfo = mysql_query("SELECT a.idCaricatura, a.rutaFoto as foto, a.fecha, CONCAT(c.nombres, ' ', c.apellidos) as caricaturista
+							from caricatura a, caricaturista c
+							where a.idCaricaturista = c.idCaricaturista
 							ORDER BY a.fecha desc, a.hora desc");
 	while($carpreview = mysql_fetch_array($carinfo)){
 		$caricatura[] = array(
-					'foto' => $foto = $carpreview['foto'],);
+					'foto' => $foto = $carpreview['foto'],
+					'idCaricatura' => $idCaricatura = $carpreview['idCaricatura'],
+					'caricaturista' => $caricaturista = $carpreview['caricaturista'],
+					'fecha' => $fecha = $carpreview['fecha'],);
 	}
 	return $caricatura;
 }

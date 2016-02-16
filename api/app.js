@@ -41,6 +41,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                     controller: "CaricaturaController",
                     templateUrl: "templates/opinion/caricaturas.html"
             })
+            .when("/opinion/caricaturas/:id", {
+                    controller: "CPostController",
+                    templateUrl: "templates/opinion/post.html"
+            })
             .when("/autor/:id", {
                 controller: "AutorController",
                 templateUrl: "templates/author.html"
@@ -72,6 +76,11 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
         return function(input) {
             return input.split(" ").join("-");
         }
+    })
+    .filter('iif', function(){
+      return function(input, trueValue, falseValue){
+        return input ? trueValue : falseValue;
+      };
     })
     .filter("sanitize", ['$sce', function($sce) {
       return function(htmlCode){

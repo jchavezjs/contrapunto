@@ -386,6 +386,9 @@ angular.module('contrapunto.controllers', [])
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
+      $scope.top = function(){
+        $anchorScroll();
+      };
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
         $scope.progressbar.setColor('#35A7FF');
@@ -481,11 +484,12 @@ angular.module('contrapunto.controllers', [])
        var seccion = $routeParams.seccion;
        var subseccion = $routeParams.subseccion;
        $scope.currentPage = 1;
-       $scope.pageSize = 4;
+       $scope.pageSize = 6;
        $scope.maxSize = 15;
        $anchorScroll();
         $http.get("api/php/caricatura.php").success(function(response){
             $scope.subsecciones = response.subsecciones;
+            $scope.contenidos = response.contenidos;
         });
     })
 
@@ -500,7 +504,9 @@ angular.module('contrapunto.controllers', [])
             $scope.progressbar.complete();
             $scope.show = true;
         }, 300);
-
+      $scope.currentPage = 1;
+       $scope.pageSize = 5;
+       $scope.maxSize = 15;
         var seccion = $routeParams.seccion;
         var subseccion = $routeParams.subseccion;
         var titulo = $routeParams.titulo;
@@ -511,6 +517,35 @@ angular.module('contrapunto.controllers', [])
          $http.post("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
 
                 $http.get("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id).success(function(response){
+
+                    $scope.contenido = response.contenido;
+                    $scope.error = response.error;
+                    $scope.secinfo = response.secinfo;
+                    $scope.subinfo = response.subinfo;
+                    $scope.subsecciones = response.subsecciones;
+                    $scope.fotogaleria = response.fotogaleria;
+                });
+       });
+    })
+    .controller('CPostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        $scope.progressbar.setColor('#35A7FF');
+        $timeout(function(){
+            $scope.progressbar.complete();
+            $scope.show = true;
+        }, 300);
+
+        var id = $routeParams.id;
+        $anchorScroll();
+        $scope.fecha = fechaActual;
+
+         $http.post("api/php/cpost.php?&id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){
+
+                $http.get("api/php/cpost.php?&id="+id).success(function(response){
 
                     $scope.contenido = response.contenido;
                     $scope.error = response.error;

@@ -86,58 +86,48 @@
 <div class="container">
     <div class="row">
       <div class="col-md-10">
-          <div class="row">
-            <div class="col-md-8">
-              <div id="move" class="main-draw" style="background-image:url(http://www.contrapunto.com.sv/documentosite/contrapunta/images/postal-cortazar-contrapunta.jpg);">
-                <div class="trans">
-                  <div class="texto">
-                    <h1>Allan McDonald</h1>
-                    <h3>27/02/2016</h3>
+            <div class="row">
+              <div ng-repeat="cont in contenidos | startFrom: (currentPage == 1 | iif: (currentPage - 1)*pageSize : (currentPage - 1)*pageSize-1) | limitTo:pageSize">
+                <!-- (currentPage == 1 | iif: (currentPage - 1)*pageSize : (currentPage - 1)*pageSize-1) -->
+
+                  <div ng-if="cont == contenidos[0]" class="col-md-8">
+                    <a ng-href="#/opinion/caricaturas/{{cont.idCaricatura}}"><div id="move" class="main-draw" style="background-image:url({{cont.foto}});">
+                      <div class="trans">
+                        <div class="texto">
+                          <h1>{{cont.caricaturista}}</h1>
+                          <h3>{{cont.fecha | date:'MM/dd/yyyy'}}</h3>
+                        </div>
+                      </div>
+                    </div></a>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="draws" style="background-image:url(http://www.contrapunto.com.sv/documentosite/contrapunta/images/nueva4.jpg);">
-                <div class="trans">
-                  <div class="texto">
-                    <h1>Allan McDonald</h1>
-                    <h3>20/02/2016</h3>
+                  <div ng-if="currentPage == 1">
+                    <div ng-if="cont != contenidos[0] && cont != contenidos[5]" class="col-md-4">
+                      <a ng-href="#/opinion/caricaturas/{{cont.idCaricatura}}"><div class="draws" style="background-image:url({{cont.foto}});">
+                        <div class="trans">
+                          <div class="texto">
+                            <h1>{{cont.caricaturista}}</h1>
+                            <h3>{{cont.fecha | date:'MM/dd/yyyy'}}</h3>
+                          </div>
+                        </div>
+                      </div></a>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="draws" style="background-image:url(http://www.contrapunto.com.sv/documentosite/contrapunta/images/aniversario-fidel.jpg);">
-                <div class="trans">
-                  <div class="texto">
-                    <h1>Allan McDonald</h1>
-                    <h3>20/02/2016</h3>
+                  <div ng-if="currentPage != 1">
+                    <div ng-if="cont != contenidos[0]" class="col-md-4">
+                      <a ng-href="#/opinion/caricaturas/{{cont.idCaricatura}}"><div class="draws" style="background-image:url({{cont.foto}});">
+                        <div class="trans">
+                          <div class="texto">
+                            <h1>{{cont.caricaturista}}</h1>
+                            <h3>{{cont.fecha | date:'MM/dd/yyyy'}}</h3>
+                          </div>
+                        </div>
+                      </div></a>
+                    </div>
                   </div>
-                </div>
+
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="draws" style="background-image:url(http://www.contrapunto.com.sv/documentosite/contrapunta/images/lennon-vive-AMCdonald.jpg);">
-                <div class="trans">
-                  <div class="texto">
-                    <h1>Allan McDonald</h1>
-                    <h3>20/02/2016</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="draws" style="background-image:url(http://www.contrapunto.com.sv/documentosite/contrapunta/images/gabo-escritor.jpg);">
-                <div class="trans">
-                  <div class="texto">
-                    <h1>Allan McDonald</h1>
-                    <h3>20/02/2016</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
+          <div class="center"><uib-pagination ng-click="top()" total-items="contenidos.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination></div>
       </div>
       <div class="col-md-2 m-politica-3">
            <!-- Publicidad -->

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-02-2016 a las 09:42:33
+-- Tiempo de generación: 16-02-2016 a las 17:01:43
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -208,18 +208,56 @@ INSERT INTO `bolsa` (`idBolsa`, `nombre`, `porcentaje`, `valor`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `caricatura` (
-  `id` int(11) NOT NULL,
-  `rutaFoto` varchar(50) COLLATE utf8_bin NOT NULL,
+  `idCaricatura` int(11) NOT NULL,
+  `rutaFoto` varchar(100) COLLATE utf8_bin NOT NULL,
+  `idCaricaturista` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `hora` time NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `caricatura`
 --
 
-INSERT INTO `caricatura` (`id`, `rutaFoto`, `fecha`, `hora`) VALUES
-(1, 'img/caricatura1.jpg', '2016-01-11', '05:18:14');
+INSERT INTO `caricatura` (`idCaricatura`, `rutaFoto`, `idCaricaturista`, `fecha`, `hora`) VALUES
+(1, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/postal-cortazar-contrapunta.jpg', 1, '2016-02-15', '08:15:16'),
+(2, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/nueva4.jpg', 1, '2016-02-14', '05:12:16'),
+(3, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/lennon-vive-AMCdonald.jpg', 1, '2016-02-12', '05:12:24'),
+(4, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/aniversario-fidel.jpg', 1, '2016-02-13', '04:12:24'),
+(5, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/gabo-escritor.jpg', 1, '2016-02-10', '05:12:24'),
+(11, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/gabo-escritor.jpg', 1, '2016-02-02', '07:18:17'),
+(12, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/aniversario-fidel.jpg', 1, '2016-02-01', '08:20:18'),
+(13, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/lennon-vive-AMCdonald.jpg', 1, '2016-01-31', '12:12:12'),
+(14, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/nueva4.jpg', 1, '2016-01-30', '12:12:12'),
+(15, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/postal-cortazar-contrapunta.jpg', 1, '2015-12-13', '12:12:12'),
+(16, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/lennon-vive-AMCdonald.jpg', 1, '2015-11-06', '12:12:12'),
+(17, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/aniversario-fidel.jpg', 1, '2015-11-09', '06:15:14'),
+(18, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/nueva4.jpg', 1, '2015-10-05', '06:23:18'),
+(19, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/postal-cortazar-contrapunta.jpg', 1, '2015-10-15', '06:16:20'),
+(20, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/gabo-escritor.jpg', 1, '2015-10-17', '06:16:20'),
+(21, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/aniversario-fidel.jpg', 1, '2015-10-18', '06:16:20'),
+(22, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/nueva4.jpg', 1, '2015-10-18', '06:16:28'),
+(23, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/postal-cortazar-contrapunta.jpg', 1, '2015-10-18', '06:16:29'),
+(24, 'http://www.contrapunto.com.sv/documentosite/contrapunta/images/gabo-escritor.jpg', 1, '2015-06-07', '20:13:12');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `caricaturista`
+--
+
+CREATE TABLE IF NOT EXISTS `caricaturista` (
+  `idCaricaturista` int(11) NOT NULL,
+  `nombres` varchar(60) COLLATE utf8_bin NOT NULL,
+  `apellidos` varchar(60) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `caricaturista`
+--
+
+INSERT INTO `caricaturista` (`idCaricaturista`, `nombres`, `apellidos`) VALUES
+(1, 'Allan', 'McDonald');
 
 -- --------------------------------------------------------
 
@@ -326,7 +364,7 @@ INSERT INTO `divisa` (`idDivisa`, `nombre`, `cambio`) VALUES
 CREATE TABLE IF NOT EXISTS `fotogaleria` (
   `id` int(11) NOT NULL,
   `rutaFoto` varchar(50) COLLATE utf8_bin NOT NULL,
-  `link` varchar(50) COLLATE utf8_bin NOT NULL,
+  `link` varchar(300) COLLATE utf8_bin NOT NULL,
   `titulo` varchar(50) COLLATE utf8_bin NOT NULL,
   `idFotografo` int(11) NOT NULL,
   `fecha` date NOT NULL,
@@ -836,7 +874,14 @@ ALTER TABLE `bolsa`
 -- Indices de la tabla `caricatura`
 --
 ALTER TABLE `caricatura`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idCaricatura`),
+  ADD KEY `idCaricaturista` (`idCaricaturista`);
+
+--
+-- Indices de la tabla `caricaturista`
+--
+ALTER TABLE `caricaturista`
+  ADD PRIMARY KEY (`idCaricaturista`);
 
 --
 -- Indices de la tabla `cliente`
@@ -1009,7 +1054,12 @@ ALTER TABLE `bolsa`
 -- AUTO_INCREMENT de la tabla `caricatura`
 --
 ALTER TABLE `caricatura`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `idCaricatura` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+--
+-- AUTO_INCREMENT de la tabla `caricaturista`
+--
+ALTER TABLE `caricaturista`
+  MODIFY `idCaricaturista` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
@@ -1106,6 +1156,12 @@ ALTER TABLE `articulo`
 --
 ALTER TABLE `banner`
   ADD CONSTRAINT `banner_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `caricatura`
+--
+ALTER TABLE `caricatura`
+  ADD CONSTRAINT `caricatura_ibfk_1` FOREIGN KEY (`idCaricaturista`) REFERENCES `caricaturista` (`idCaricaturista`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `columna`
