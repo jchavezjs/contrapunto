@@ -25,7 +25,7 @@ angular.module('contrapunto.controllers', [])
           $('#ads1').cycle({
           fx: 'scrollHorz',
           speed:   500,
-          timeout: 15000,
+          timeout: 2000,
         });
       });
       $(document).ready(function() {
@@ -229,6 +229,13 @@ angular.module('contrapunto.controllers', [])
           timeout: 15000,
         });
       });
+      $(document).ready(function() {
+          $('#adsMobile').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
       //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
@@ -260,6 +267,43 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      //ads
+      $(document).ready(function() {
+          $('#ads1').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads2').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads3').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads4').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#adsMobile').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -281,6 +325,43 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('InternacionalesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      //ads
+      $(document).ready(function() {
+          $('#ads1').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads2').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads3').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads4').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#adsMobile').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -302,6 +383,43 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('SociedadController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      //ads
+      $(document).ready(function() {
+          $('#ads1').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads2').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads3').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads4').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#adsMobile').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -330,6 +448,43 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+      //ads
+      $(document).ready(function() {
+          $('#ads1').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads2').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads3').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads4').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#adsMobile').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -360,6 +515,43 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('CulturaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      //ads
+      $(document).ready(function() {
+          $('#ads1').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads2').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads3').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads4').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#adsMobile').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -383,6 +575,43 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('DeportesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      //ads
+      $(document).ready(function() {
+          $('#ads1').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads2').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads3').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads4').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#adsMobile').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -406,6 +635,36 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+      //ads
+      $(document).ready(function() {
+          $('#ads1').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads2').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads3').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#adsMobile').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      //ads
         $scope.top = function(){
           $anchorScroll();
         };
@@ -494,6 +753,29 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
+      //ads
+      $(document).ready(function() {
+          $('#ads1').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads2').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads3').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
