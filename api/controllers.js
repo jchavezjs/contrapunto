@@ -14,49 +14,190 @@ angular.module('contrapunto.controllers', [])
   };
   })
     .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+      $anchorScroll();
+
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
 
-        $anchorScroll();
-        $scope.progressbar = ngProgressFactory.createInstance();
-        $scope.progressbar.start();
-        $scope.progressbar.setColor('#35A7FF');
-        $timeout(function(){
-            $scope.progressbar.complete();
-            $scope.show = true;
-        }, 2000);
-        $scope.fecha = fechaActual;
-        $http.get("api/php/portada.php").success(function (response){
-            $scope.columnistas = response.columnistas;
-            $scope.actualidades = response.actualidades;
-            $scope.tribunas = response.tribunas;
-            $scope.negocios = response.negocios;
-            $scope.coyunturas = response.coyunturas;
-            $scope.analisiss = response.analisiss;
-            $scope.libertades = response.libertades;
-            $scope.sociedades = response.sociedades;
-            $scope.academias = response.academias;
-            $scope.resenas = response.resenas;
-            $scope.deportes = response.deportes;
-            $scope.periodismos = response.periodismos;
-            $scope.politicas = response.politicas;
-            $scope.internacionales = response.internacionales;
-            $scope.culturas = response.culturas;
-            $scope.anecdotas = response.anecdotas;
-            $scope.entrevistas = response.entrevistas;
-            $scope.rompiendos = response.rompiendos;
-            $scope.editoriales = response.editoriales;
-            $scope.contratabues = response.contratabues;
-            $scope.especiales = response.especiales;
-            $scope.fotogalerias = response.fotogalerias;
-            $scope.caricaturas = response.caricaturas;
-            $scope.controles = response.controles;
-
+      //ads
+      $(document).ready(function() {
+          $('#ads1').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
         });
+      });
+      $(document).ready(function() {
+          $('#ads2').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads3').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads4').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads5').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads6').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads7').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads8').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads9').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads10').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads11').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads12').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads13').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads14').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads15').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads16').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads17').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads18').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads19').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      $(document).ready(function() {
+          $('#ads20').cycle({
+          fx: 'scrollHorz',
+          speed:   500,
+          timeout: 15000,
+        });
+      });
+      //ads
 
+      $scope.progressbar = ngProgressFactory.createInstance();
+      $scope.progressbar.start();
+      $scope.progressbar.setColor('#35A7FF');
+      $timeout(function(){
+          $scope.progressbar.complete();
+          $scope.show = true;
+      }, 2000);
+      $scope.fecha = fechaActual;
+      $http.get("api/php/portada.php").success(function (response){
+          $scope.columnistas = response.columnistas;
+          $scope.actualidades = response.actualidades;
+          $scope.tribunas = response.tribunas;
+          $scope.negocios = response.negocios;
+          $scope.coyunturas = response.coyunturas;
+          $scope.analisiss = response.analisiss;
+          $scope.libertades = response.libertades;
+          $scope.sociedades = response.sociedades;
+          $scope.academias = response.academias;
+          $scope.resenas = response.resenas;
+          $scope.deportes = response.deportes;
+          $scope.periodismos = response.periodismos;
+          $scope.politicas = response.politicas;
+          $scope.internacionales = response.internacionales;
+          $scope.culturas = response.culturas;
+          $scope.anecdotas = response.anecdotas;
+          $scope.entrevistas = response.entrevistas;
+          $scope.rompiendos = response.rompiendos;
+          $scope.editoriales = response.editoriales;
+          $scope.contratabues = response.contratabues;
+          $scope.especiales = response.especiales;
+          $scope.fotogalerias = response.fotogalerias;
+          $scope.caricaturas = response.caricaturas;
+          $scope.controles = response.controles;
 
-
+      });
     })
     .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
       $scope.search = function(query){
@@ -372,6 +513,9 @@ angular.module('contrapunto.controllers', [])
         $scope.maxSize = 4;
         var query = $routeParams.query;
         $scope.query = query;
+        if($scope.query == 'undefined'){
+          $location.path('/');
+        }
         $http.post("api/php/buscar.php?query="+query,{'selectSeccion':query}).success(function(data,status,headers,config,response){
 
                $http.get("api/php/buscar.php?query="+query).success(function(response){
