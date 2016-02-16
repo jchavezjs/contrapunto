@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-02-2016 a las 17:01:43
+-- Tiempo de generación: 16-02-2016 a las 22:27:27
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -158,8 +158,7 @@ INSERT INTO `articulo` (`idArticulo`, `titulo`, `preview`, `contenido`, `idPerso
 (110, 'Alianza conquista un nuevo titulo de la Liga Mayor', 'Alianza se corono campeon del Apertura \r\n			2015 al vencer a FAS con gol del capitan Ramon Martinez de Paz. ', '<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like theyre actually proud of that shit. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Well, the way they make shows is, they make one show. That shows called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if theyre going to make more shows. Some pilots get picked and become television programs. Some dont, become nothing. She starred in one of the ones that became nothing. </p>', 14, 41, '2016-01-16', '12:12:12', 0, 1),
 (111, 'Alianza conquista un nuevo titulo de la Liga Mayor', 'Alianza se corono campeon del Apertura \r\n			2015 al vencer a FAS con gol del capitan Ramon Martinez de Paz. ', '<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like theyre actually proud of that shit. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Well, the way they make shows is, they make one show. That shows called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if theyre going to make more shows. Some pilots get picked and become television programs. Some dont, become nothing. She starred in one of the ones that became nothing. </p>', 14, 41, '2016-01-16', '12:12:12', 0, 1),
 (112, 'Alianza conquista un nuevo titulo de la Liga Mayor', 'Alianza se corono campeon del Apertura \r\n			2015 al vencer a FAS con gol del capitan Ramon Martinez de Paz. ', '<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like theyre actually proud of that shit. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Well, the way they make shows is, they make one show. That shows called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if theyre going to make more shows. Some pilots get picked and become television programs. Some dont, become nothing. She starred in one of the ones that became nothing. </p>', 14, 41, '2016-01-16', '12:12:12', 0, 1),
-(113, 'Columa de prueba', 'esta columna es de prueba', '<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like theyre actually proud of that shit. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Well, the way they make shows is, they make one show. That shows called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if theyre going to make more shows. Some pilots get picked and become television programs. Some dont, become nothing. She starred in one of the ones that became nothing. </p>', 2, 2, '2016-01-13', '08:21:21', 0, 1),
-(114, 'Juan Carlos acusado de violacion de patos', 'el joven conocido como Juan Carlos garcia fue encontrado teniendo relaciones coitales con patos', '<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like theyre actually proud of that shit. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Well, the way they make shows is, they make one show. That shows called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if theyre going to make more shows. Some pilots get picked and become television programs. Some dont, become nothing. She starred in one of the ones that became nothing. </p>', 14, 34, '2016-02-14', '08:16:17', 0, 1);
+(113, 'Columa de prueba', 'esta columna es de prueba', '<p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like theyre actually proud of that shit. </p> <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I dont know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that Im breaking now. We said wed say it was the snow that killed the other two, but it wasnt. Nature is lethal but it doesnt hold a candle to man. </p> <p>Well, the way they make shows is, they make one show. That shows called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if theyre going to make more shows. Some pilots get picked and become television programs. Some dont, become nothing. She starred in one of the ones that became nothing. </p>', 2, 2, '2016-01-13', '08:21:21', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -169,10 +168,35 @@ INSERT INTO `articulo` (`idArticulo`, `titulo`, `preview`, `contenido`, `idPerso
 
 CREATE TABLE IF NOT EXISTS `banner` (
   `idBanner` int(11) NOT NULL,
+  `rutaFoto` varchar(200) COLLATE utf8_bin NOT NULL,
   `idCliente` int(11) NOT NULL,
-  `posicion` varchar(10) COLLATE utf8_bin NOT NULL,
-  `link` varchar(80) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `idPosicion` int(11) NOT NULL,
+  `link` varchar(80) COLLATE utf8_bin NOT NULL,
+  `activo` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `banner`
+--
+
+INSERT INTO `banner` (`idBanner`, `rutaFoto`, `idCliente`, `idPosicion`, `link`, `activo`) VALUES
+(1, 'img/ex/1ads1.png', 1, 1, 'http://albapetroleos.com.sv/', 1),
+(2, 'img/ex/1ads2.png', 2, 1, 'http://www.superselectos.com/', 1),
+(3, 'img/ex/2ads1.png', 3, 2, 'http://www.walmart.com/', 1),
+(4, 'http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg', 1, 21, 'http://www.walmart.com/', 1),
+(5, 'img/ex/3ads1.png', 2, 3, 'http://albapetroleos.com.sv/', 1),
+(6, 'img/ex/4ads1.png', 2, 4, 'http://albapetroleos.com.sv/', 1),
+(7, 'img/ex/5ads1.png', 3, 5, 'http://www.rdarchivo.net/', 1),
+(8, 'img/ex/5ads2.png', 2, 5, 'http://contracultura.com.sv', 1),
+(9, 'img/ex/3ads1.png', 2, 6, 'http://contracultura.com.sv', 1),
+(10, 'img/ex/4ads1.png', 3, 7, 'http://contracultura.com.sv', 1),
+(11, 'img/ex/2ads1.png', 1, 8, 'http://contracultura.com.sv', 1),
+(12, 'img/ex/8ads1.png', 1, 9, 'http://contracultura.com.sv', 1),
+(13, 'img/ex/10ads1.png', 3, 10, 'http://contracultura.com.sv', 1),
+(14, 'img/ex/11ads1.png', 3, 11, 'http://contracultura.com.sv', 1),
+(15, 'img/ex/3ads1.png', 2, 12, 'http://contracultura.com.sv', 1),
+(16, 'img/ex/3ads1.png', 1, 13, 'http://contracultura.com.sv', 1),
+(17, 'img/ex/11ads1.png', 3, 14, 'http://contracultura.com.sv', 1);
 
 -- --------------------------------------------------------
 
@@ -268,8 +292,18 @@ INSERT INTO `caricaturista` (`idCaricaturista`, `nombres`, `apellidos`) VALUES
 CREATE TABLE IF NOT EXISTS `cliente` (
   `idCliente` int(11) NOT NULL,
   `nombre` varchar(30) COLLATE utf8_bin NOT NULL,
+  `rutaFoto` varchar(200) COLLATE utf8_bin NOT NULL,
   `ingreso` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`idCliente`, `nombre`, `rutaFoto`, `ingreso`) VALUES
+(1, 'Alba', 'https://lh4.googleusercontent.com/-JFUghiFoWZE/AAAAAAAAAAI/AAAAAAAAABU/I8afPaJFq1s/photo.jpg', '2016-02-16'),
+(2, 'Selectos', 'http://wscont1.apps.microsoft.com/winstore//1x/113e9c6e-183b-4c34-9b0f-9c9546e722a1/Screenshot.329170.100000.jpg', '2016-02-16'),
+(3, 'Walmart', 'http://www.ofertasahora.com/wp-content/uploads/2013/09/logo-WALMART.png', '2016-02-16');
 
 -- --------------------------------------------------------
 
@@ -514,7 +548,6 @@ INSERT INTO `imagenesarticulo` (`idImagen`, `rutaFoto`, `idArticulo`, `posicion`
 (92, 'img/deporte1.jpg', 110, 'principal', 6),
 (93, 'img/deporte1.jpg', 111, 'principal', 6),
 (94, 'img/deporte1.jpg', 112, 'principal', 6),
-(95, 'https://i.ytimg.com/vi/SJ6nkDebHuA/hqdefault.jpg', 114, 'principal', 6),
 (96, 'img/academia1.jpg', 44, 'principal', 2),
 (97, 'img/academia1.jpg', 45, 'principal', 2);
 
@@ -595,6 +628,88 @@ INSERT INTO `personal` (`idPersonal`, `nombres`, `apellidos`, `descripcion`, `ca
 (17, 'Tania', 'Primavera', NULL, 'periodista', 'img/tania.jpg'),
 (18, 'Dra. Margarita', 'Mendoza Burgos', NULL, 'periodista', 'img/margarita.jpg'),
 (19, 'Juan Jose', 'Dalton', NULL, 'periodista', 'img/jjd.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `posicion`
+--
+
+CREATE TABLE IF NOT EXISTS `posicion` (
+  `idPosicion` int(11) NOT NULL,
+  `idSeccion` int(11) NOT NULL,
+  `posicion` varchar(10) COLLATE utf8_bin NOT NULL,
+  `tiempo` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `posicion`
+--
+
+INSERT INTO `posicion` (`idPosicion`, `idSeccion`, `posicion`, `tiempo`) VALUES
+(1, 8, '1', 5000),
+(2, 8, '2', 5000),
+(3, 8, '3', 5000),
+(4, 8, '4', 5000),
+(5, 8, '5', 5000),
+(6, 8, '6', 5000),
+(7, 8, '7', 5000),
+(8, 8, '8', 5000),
+(9, 8, '9', 5000),
+(10, 8, '10', 5000),
+(11, 8, '11', 5000),
+(12, 8, '12', 5000),
+(13, 8, '13', 5000),
+(14, 8, '14', 5000),
+(15, 8, '15', 5000),
+(16, 8, '16', 5000),
+(17, 8, '17', 5000),
+(18, 8, '18', 5000),
+(19, 8, '19', 5000),
+(20, 8, '20', 5000),
+(21, 8, 'movil', 5000),
+(22, 1, '1', 5000),
+(23, 1, '2', 5000),
+(24, 1, '3', 5000),
+(25, 1, '4', 5000),
+(28, 1, 'movil', 5000),
+(29, 1, 'post', 5000),
+(30, 2, '1', 5000),
+(31, 2, '2', 5000),
+(32, 2, '3', 5000),
+(33, 2, '4', 5000),
+(36, 2, 'movil', 5000),
+(37, 2, 'post', 5000),
+(38, 3, '1', 5000),
+(39, 3, '2', 5000),
+(40, 3, '3', 5000),
+(41, 3, '4', 5000),
+(42, 3, 'movil', 5000),
+(43, 3, 'post', 5000),
+(44, 4, '1', 5000),
+(45, 4, '2', 5000),
+(46, 4, '3', 5000),
+(47, 4, '4', 5000),
+(48, 4, 'movil', 5000),
+(49, 4, 'post', 5000),
+(50, 5, '1', 5000),
+(51, 5, '2', 5000),
+(52, 5, '3', 5000),
+(53, 5, '4', 5000),
+(54, 5, 'movil', 5000),
+(55, 5, 'post', 5000),
+(56, 6, '1', 5000),
+(57, 6, '2', 5000),
+(58, 6, '3', 5000),
+(59, 6, '4', 5000),
+(60, 6, 'movil', 5000),
+(61, 6, 'post', 5000),
+(62, 7, '1', 5000),
+(63, 7, '2', 5000),
+(64, 7, '3', 5000),
+(65, 7, '4', 5000),
+(66, 7, 'movil', 5000),
+(67, 7, 'post', 5000);
 
 -- --------------------------------------------------------
 
@@ -690,7 +805,7 @@ INSERT INTO `seccion` (`idSeccion`, `nombre`, `url`) VALUES
 (5, 'EconomÃ­a', 'economia'),
 (6, 'Cultura', 'cultura'),
 (7, 'Deportes', 'deportes'),
-(8, 'Especiales', 'especiales');
+(8, 'Portada', '/');
 
 -- --------------------------------------------------------
 
@@ -758,7 +873,6 @@ INSERT INTO `subseccion` (`idSubseccion`, `idSeccion`, `nombre`, `url`) VALUES
 (57, 6, 'ReseÃ±as', 'resenas'),
 (58, 6, 'ContratabÃº', 'contratabu'),
 (59, 6, 'Entrevistas en off', 'entrevistas'),
-(60, 8, 'Especiales Semanles', 'especiales'),
 (61, 1, 'Caricaturas', 'caricaturas');
 
 -- --------------------------------------------------------
@@ -862,7 +976,8 @@ ALTER TABLE `articulo`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`idBanner`),
-  ADD KEY `idCliente` (`idCliente`);
+  ADD KEY `idCliente` (`idCliente`),
+  ADD KEY `idPosicion` (`idPosicion`);
 
 --
 -- Indices de la tabla `bolsa`
@@ -947,6 +1062,13 @@ ALTER TABLE `mercado`
 --
 ALTER TABLE `personal`
   ADD PRIMARY KEY (`idPersonal`);
+
+--
+-- Indices de la tabla `posicion`
+--
+ALTER TABLE `posicion`
+  ADD PRIMARY KEY (`idPosicion`),
+  ADD KEY `idSeccion` (`idSeccion`);
 
 --
 -- Indices de la tabla `redespersonal`
@@ -1044,7 +1166,7 @@ ALTER TABLE `articulo`
 -- AUTO_INCREMENT de la tabla `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `idBanner` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBanner` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `bolsa`
 --
@@ -1064,7 +1186,7 @@ ALTER TABLE `caricaturista`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `columna`
 --
@@ -1105,6 +1227,11 @@ ALTER TABLE `mercado`
 --
 ALTER TABLE `personal`
   MODIFY `idPersonal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT de la tabla `posicion`
+--
+ALTER TABLE `posicion`
+  MODIFY `idPosicion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
 --
 -- AUTO_INCREMENT de la tabla `redespersonal`
 --
@@ -1155,7 +1282,8 @@ ALTER TABLE `articulo`
 -- Filtros para la tabla `banner`
 --
 ALTER TABLE `banner`
-  ADD CONSTRAINT `banner_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `banner_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `banner_ibfk_2` FOREIGN KEY (`idPosicion`) REFERENCES `posicion` (`idPosicion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `caricatura`
@@ -1188,6 +1316,12 @@ ALTER TABLE `imagenesarticulo`
 --
 ALTER TABLE `logusuario`
   ADD CONSTRAINT `logusuario_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `posicion`
+--
+ALTER TABLE `posicion`
+  ADD CONSTRAINT `posicion_ibfk_1` FOREIGN KEY (`idSeccion`) REFERENCES `seccion` (`idSeccion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `redespersonal`
