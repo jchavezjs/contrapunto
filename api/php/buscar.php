@@ -1,6 +1,7 @@
 <?php
   include('connection.php');
   include('funciones.php');
+  error_reporting(E_ERROR | E_WARNING | E_PARSE);
   $editdata = json_decode(file_get_contents("php://input"));
   $busqueda = mysql_escape_string(strtolower($_GET['query']));
   // $busqueda = mysql_escape_string(strtolower('Purgatorio'));
