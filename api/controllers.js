@@ -20,14 +20,53 @@ angular.module('contrapunto.controllers', [])
         $location.path('/buscar/' + query);
       };
 
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 2000,
-        });
+      $scope.progressbar = ngProgressFactory.createInstance();
+      $scope.progressbar.start();
+      $scope.progressbar.setColor('#35A7FF');
+      $timeout(function(){
+          $scope.progressbar.complete();
+          $scope.show = true;
+      }, 2000);
+      $scope.fecha = fechaActual;
+      $http.get("api/php/portada.php").success(function (response){
+          $scope.columnistas = response.columnistas;
+          $scope.actualidades = response.actualidades;
+          $scope.tribunas = response.tribunas;
+          $scope.negocios = response.negocios;
+          $scope.coyunturas = response.coyunturas;
+          $scope.analisiss = response.analisiss;
+          $scope.libertades = response.libertades;
+          $scope.sociedades = response.sociedades;
+          $scope.academias = response.academias;
+          $scope.resenas = response.resenas;
+          $scope.deportes = response.deportes;
+          $scope.periodismos = response.periodismos;
+          $scope.politicas = response.politicas;
+          $scope.internacionales = response.internacionales;
+          $scope.culturas = response.culturas;
+          $scope.anecdotas = response.anecdotas;
+          $scope.entrevistas = response.entrevistas;
+          $scope.rompiendos = response.rompiendos;
+          $scope.editoriales = response.editoriales;
+          $scope.contratabues = response.contratabues;
+          $scope.especiales = response.especiales;
+          $scope.fotogalerias = response.fotogalerias;
+          $scope.caricaturas = response.caricaturas;
+          $scope.banners = response.banners;
+
+
       });
+
+      $scope.myInterval = 9000;
+
+      //ads
+      // $(document).ready(function() {
+      //     $('#ads1').cycle({
+      //     fx: 'scrollHorz',
+      //     speed:   500,
+      //     timeout: 5000,
+      //   });
+      // });
       $(document).ready(function() {
           $('#ads2').cycle({
           fx: 'scrollHorz',
@@ -163,41 +202,6 @@ angular.module('contrapunto.controllers', [])
       });
       //ads
 
-      $scope.progressbar = ngProgressFactory.createInstance();
-      $scope.progressbar.start();
-      $scope.progressbar.setColor('#35A7FF');
-      $timeout(function(){
-          $scope.progressbar.complete();
-          $scope.show = true;
-      }, 2000);
-      $scope.fecha = fechaActual;
-      $http.get("api/php/portada.php").success(function (response){
-          $scope.columnistas = response.columnistas;
-          $scope.actualidades = response.actualidades;
-          $scope.tribunas = response.tribunas;
-          $scope.negocios = response.negocios;
-          $scope.coyunturas = response.coyunturas;
-          $scope.analisiss = response.analisiss;
-          $scope.libertades = response.libertades;
-          $scope.sociedades = response.sociedades;
-          $scope.academias = response.academias;
-          $scope.resenas = response.resenas;
-          $scope.deportes = response.deportes;
-          $scope.periodismos = response.periodismos;
-          $scope.politicas = response.politicas;
-          $scope.internacionales = response.internacionales;
-          $scope.culturas = response.culturas;
-          $scope.anecdotas = response.anecdotas;
-          $scope.entrevistas = response.entrevistas;
-          $scope.rompiendos = response.rompiendos;
-          $scope.editoriales = response.editoriales;
-          $scope.contratabues = response.contratabues;
-          $scope.especiales = response.especiales;
-          $scope.fotogalerias = response.fotogalerias;
-          $scope.caricaturas = response.caricaturas;
-          $scope.controles = response.controles;
-
-      });
     })
     .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
       //ads

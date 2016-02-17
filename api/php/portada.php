@@ -91,7 +91,9 @@ $espinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, '
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s, seccion se
 						where a.idArticulo = i.idArticulo and a.activo = 1 and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.especial = 1 and s.idSeccion = se.idSeccion
 						ORDER BY a.fecha desc, a.hora desc");
-
+$baninfo = mysql_query("SELECT a.rutaFoto, b.posicion, a.link, b.tiempo
+	 											FROM banner a, posicion b
+												WHERE a.idPosicion = b.idPosicion and b.idSeccion = 8 ");
 
 while($colpreview = mysql_fetch_array($colinfo)){
 	$columnista[] = array(
@@ -320,6 +322,15 @@ while($esppreview = mysql_fetch_array($espinfo)){
 				'fotografo' => $fotografo = $esppreview['fotografo'],);
 }
 
+while($banpreview = mysql_fetch_array($baninfo)){
+	$banner[]=array(
+							'foto' => $foto = $banpreview['rutaFoto'],
+							'posicion' => $posicion = $banpreview['posicion'],
+							'link' => $link = $banpreview['link'],
+							'tiempo' => $tiempo = $banpreview['tiempo'],
+						);
+}
+
 echo json_encode(array('columnistas' => $columnista,
 						'actualidades' => actualidad(),
 						'tribunas' => $tribuna,
@@ -342,6 +353,7 @@ echo json_encode(array('columnistas' => $columnista,
 						'contratabues' => $contratabu,
 						'especiales' => $especial,
 						'fotogalerias' => fotogaleria(),
+						'banners' => $banner,
 						'caricaturas' => caricatura(),));
 
 ?>

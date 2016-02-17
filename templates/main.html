@@ -5,10 +5,15 @@
                 <div class="col-md-7">
                     <!-- <div style="width:100%; height:100px; background-image:url('https://placehold.it/600x100&text=1')">
                     </div> -->
-                    <div id="ads1">
-                      <a target="_blank" href=""><img class="img-responsive" src="img/ex/1ads1.png"/></a>
-                      <a target="_blank" href=""><img class="img-responsive" src="img/ex/1ads2.png"/></a>
-                    </div>
+                    <!-- <div id="ads1">
+                      <a ng-repeat="banner in banners" ng-if="banner.posicion == 1" target="_blank" href="{{banner.link}}">
+                        <img class="img-responsive" src="{{banner.foto}}"/></a>
+                    </div> -->
+                    <uib-carousel interval="myInterval">
+                      <uib-slide ng-repeat="banner in banners">
+                        <img ng-if="banner.posicion == 1" class="img-responsive" ng-src="{{banner.foto}}">
+                      </uib-slide>
+                    </uib-carousel>
                 </div>
                 <div class="col-md-5">
                     <div id="ads2">
@@ -680,4 +685,5 @@
         </div>
     </div>
 </div>
+
 <!-- Body -->
