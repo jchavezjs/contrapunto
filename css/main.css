@@ -1,3 +1,4 @@
+
 .container{
     border-left: 1px solid #c9c9c9;
     border-right: 1px solid #c9c9c9;
@@ -332,38 +333,82 @@ li{
 .articulo .img-articulo:hover{
   opacity: 0.8;
 }
+#ads1{
+  border: 2px solid #505050;
+}
+#ads2{
+  border: 2px solid #505050;
+}
+#ads3{
+  border: 2px solid #505050;
+}
+#ads4{
+  border: 2px solid #505050;
+}
+#ads5{
+  border: 2px solid #505050;
+}
+.banneralto{
+  height: 475px;
+}
+#ads6{
+  border: 2px solid #505050;
+}
+#ads7{
+  border: 2px solid #505050;
+}
+#ads8{
+  border: 2px solid #505050;
+}
+#ads9{
+  border: 2px solid #505050;
+}
+#ads10{
+  border: 2px solid #505050;
+}
+#ads11{
+  border: 2px solid #505050;
+}
+#ads12{
+  border: 2px solid #505050;
+}
+#ads13{
+  border: 2px solid #505050;
+}
+#ads14{
+  border: 2px solid #505050;
+}
+#ads15{
+  border: 2px solid #505050;
+}
+#ads16{
+  border: 2px solid #505050;
+}
+#ads17{
+  border: 2px solid #505050;
+}
+#ads18{
+  border: 2px solid #505050;
+}
+#ads19{
+  border: 2px solid #505050;
+}
+#ads20{
+  border: 2px solid #505050;
+}
 .ads{
+    text-align: center;
     margin-top: 10px;
     min-width: 100%;
     background-size: cover;
     background-position:center;
 }
-.ads .adsSquare{
-    height: 280px;
-}
-.ads .adsSquare260{
-    height: 260px;
-}
-.ads .adsTwelve{
-    height: 100px;
-}
-.ads .adsEconomia{
-    height: 90px;
-}
-.ads .adsCol31{
-    height: 250px;
-}
-.ads .adsCol32{
-    height: 300px;
-}
-.ads .adsCol33{
-    height: 500px;
-}
-.ads .adsCol34{
-    height: 100px;
-}
-.ads .adsCol35{
-    height: 250px;
+.ads span:before{
+  content: "PUBLICIDAD";
+  color:#606060;
+  font-size:9px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 .articulo h1{
     margin-top: 5px;
@@ -647,6 +692,9 @@ li{
     background-size: cover;
     background-position: center;
     margin-bottom: 10px;
+}
+.blocks .foto:hover{
+  opacity: 0.8;
 }
 .blocks h1{
     margin: 0px 0px -5px 0px;
@@ -1017,7 +1065,7 @@ li{
 
 /*OPINION*/
 .opinion-columnas-area h1{
-  
+
 }
 .sondeos-area{
   margin-top: 10px;
@@ -1640,14 +1688,16 @@ li{
 }
 .t-indicadores{
     font-family: Roboto;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .indicador-titulo{
     background-color: #2c2c2c;
     color: #fff;
     height: 40px;
+    letter-spacing: 0.5px;
     padding:5px;
     margin-top: 25px;
+    font-weight: bolder;
     text-align: center;
 }
 .indicador-titulo h3{
@@ -2226,8 +2276,8 @@ margin: 10px 0 0px 0;
     float:right;
     color:#888;
     font-weight:400;
-    margin-top:3px;
-    font-size:12px;
+    margin-top:px;
+    font-size:10px;
     text-transform:Capitalize;
     font-family:'Helvetica Neue', Arial, Sans-serif;
 }
@@ -2381,6 +2431,9 @@ margin: 10px 0 0px 0;
 }
 .negrita{
   background-color: #c9c9c9 !important;
+  font-family: 'Roboto Slab',Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #000;
 }
 
 .cc-banner{
