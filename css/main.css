@@ -701,16 +701,20 @@ li{
     font-size: 20px;
     font-family: 'Lora-bold','Roboto Slab', serif;
     font-weight: 700;
+    color: #222;
 }
 .blocks h4{
-    color: #666;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: normal;
-    margin-bottom: 5px;
+    margin-top: 11px;
+    margin-bottom: 3px;
     font-family: Helvetica, Arial, serif;
 }
+.blocks h1:hover{
+  color:#555;
+}
 .blocks p{
-    font-size: 16px;
+    font-size: 14px;
     font-family: Georgia, serif;
     bottom:0px;
 }
