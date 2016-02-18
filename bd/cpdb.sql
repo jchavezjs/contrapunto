@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-02-2016 a las 22:27:27
+-- Tiempo de generación: 18-02-2016 a las 19:44:02
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `articulo` (
   `hora` time NOT NULL,
   `especial` tinyint(1) NOT NULL DEFAULT '0',
   `activo` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `articulo`
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
   `idPosicion` int(11) NOT NULL,
   `link` varchar(80) COLLATE utf8_bin NOT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `banner`
@@ -196,7 +196,13 @@ INSERT INTO `banner` (`idBanner`, `rutaFoto`, `idCliente`, `idPosicion`, `link`,
 (14, 'img/ex/11ads1.png', 3, 11, 'http://contracultura.com.sv', 1),
 (15, 'img/ex/3ads1.png', 2, 12, 'http://contracultura.com.sv', 1),
 (16, 'img/ex/3ads1.png', 1, 13, 'http://contracultura.com.sv', 1),
-(17, 'img/ex/11ads1.png', 3, 14, 'http://contracultura.com.sv', 1);
+(17, 'img/ex/11ads1.png', 3, 14, 'http://contracultura.com.sv', 1),
+(18, 'img/ex/11ads1.png', 1, 15, 'http://www.contrapunto.com.sv/economia1', 1),
+(19, 'img/ex/11ads1.png', 2, 16, 'http://www.contrapunto.com.sv/economia1', 1),
+(20, 'img/ex/11ads1.png', 3, 17, 'http://www.contrapunto.com.sv/economia1', 1),
+(21, 'img/ex/3ads1.png', 1, 18, 'http://www.contrapunto.com.sv/economia1', 1),
+(22, 'img/ex/3ads1.png', 2, 19, 'http://www.contrapunto.com.sv/economia1', 1),
+(23, 'img/ex/3ads1.png', 1, 20, 'http://www.contrapunto.com.sv/economia1', 1);
 
 -- --------------------------------------------------------
 
@@ -1161,12 +1167,12 @@ ALTER TABLE `vistasubseccion`
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  MODIFY `idArticulo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=115;
+  MODIFY `idArticulo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=114;
 --
 -- AUTO_INCREMENT de la tabla `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `idBanner` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+  MODIFY `idBanner` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT de la tabla `bolsa`
 --

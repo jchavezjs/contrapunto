@@ -63,7 +63,7 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
             })
             .when("/:seccion/:subseccion/:titulo/:id", {
                 controller: "PostController",
-                templateUrl: "templates/politica/post.html"
+                templateUrl: "templates/post.html"
             })
             .otherwise({
                 redirectTo: "/"

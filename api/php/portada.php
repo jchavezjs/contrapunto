@@ -91,9 +91,6 @@ $espinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, '
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s, seccion se
 						where a.idArticulo = i.idArticulo and a.activo = 1 and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.especial = 1 and s.idSeccion = se.idSeccion
 						ORDER BY a.fecha desc, a.hora desc");
-$baninfo = mysql_query("SELECT a.rutaFoto, a.link, b.tiempo
-	 											FROM banner a, posicion b
-												WHERE a.idPosicion = b.idPosicion and b.idSeccion = 8 and b.posicion = '1' ");
 
 while($colpreview = mysql_fetch_array($colinfo)){
 	$columnista[] = array(
@@ -322,13 +319,7 @@ while($esppreview = mysql_fetch_array($espinfo)){
 				'fotografo' => $fotografo = $esppreview['fotografo'],);
 }
 
-while($banpreview = mysql_fetch_array($baninfo)){
-	$banner[]=array(
-							'foto' => $foto = $banpreview['rutaFoto'],
-							'link' => $link = $banpreview['link'],
-							'tiempo' => $tiempo = $banpreview['tiempo'],
-						);
-}
+
 
 echo json_encode(array('columnistas' => $columnista,
 						'actualidades' => actualidad(),
@@ -352,7 +343,28 @@ echo json_encode(array('columnistas' => $columnista,
 						'contratabues' => $contratabu,
 						'especiales' => $especial,
 						'fotogalerias' => fotogaleria(),
-						'banners' => $banner,
+						'banner1' => banner(8,1),
+						'banner2' => banner(8,2),
+						'banner3' => banner(8,3),
+						'banner4' => banner(8,4),
+						'banner5' => banner(8,5),
+						'banner5' => banner(8,5),
+						'banner6' => banner(8,6),
+						'banner7' => banner(8,7),
+						'banner8' => banner(8,8),
+						'banner9' => banner(8,9),
+						'banner10' => banner(8,10),
+						'banner11' => banner(8,11),
+						'banner12' => banner(8,12),
+						'banner13' => banner(8,13),
+						'banner14' => banner(8,14),
+						'banner15' => banner(8,15),
+						'banner16' => banner(8,16),
+						'banner17' => banner(8,17),
+						'banner18' => banner(8,18),
+						'banner19' => banner(8,19),
+						'banner20' => banner(8,20),
+						'bannerMovil' => banner(8,'movil'),
 						'caricaturas' => caricatura(),));
 
 ?>

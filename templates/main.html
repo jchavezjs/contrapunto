@@ -5,29 +5,41 @@
                 <div class="col-md-7">
                     <!-- <div style="width:100%; height:100px; background-image:url('https://placehold.it/600x100&text=1')">
                     </div> -->
-                    <!-- <div id="ads1">
+                    <!--
                       <a ng-repeat="banner in banners" ng-if="banner.posicion == 1" target="_blank" href="{{banner.link}}">
                         <img class="img-responsive" src="{{banner.foto}}"/></a>
                     </div> -->
-                    <uib-carousel interval="myInterval">
-                      <uib-slide ng-repeat="banner in banners">
+                    <div id="ads1" class="ads-border">
+                    <uib-carousel interval="intervalo1">
+                      <uib-slide ng-repeat="banner in banner1">
                         <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
                       </uib-slide>
                     </uib-carousel>
+                  </div>
                 </div>
                 <div class="col-md-5">
-                    <div id="ads2">
-                      <a target="_blank" href=""><img class="img-responsive" src="img/ex/2ads1.png"/></a>
+                    <div id="ads2" class="ads-border">
+                      <uib-carousel interval="intervalo2">
+                        <uib-slide ng-repeat="banner in banner2">
+                          <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                        </uib-slide>
+                      </uib-carousel>
                     </div>
                 </div>
             </div>
     </div>
     <div class="mainAds-mobile">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
-                </div>
-            </div>
+      <div class="row">
+          <div class="col-md-12">
+              <div id="adsMobile" class="ads-border">
+                <uib-carousel interval="intervaloMovil">
+                  <uib-slide ng-repeat="banner in bannerMovil">
+                    <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                  </uib-slide>
+                </uib-carousel>
+              </div>
+          </div>
+      </div>
     </div>
 </div>
 
@@ -115,15 +127,25 @@
                         <!-- Articulo -->
                         <!-- Publicidad -->
                         <div class="ads">
-                            <div id="ads8">
-                              <a target="_blank" href=""><img class="img-responsive" src="img/ex/2ads1.png"></a>
+                            <span></span>
+                            <div id="ads8"class="ads-border">
+                              <uib-carousel interval="intervalo8">
+                                <uib-slide ng-repeat="banner in banner8">
+                                  <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                </uib-slide>
+                              </uib-carousel>
                             </div>
                         </div>
                         <!-- Publicidad -->
                         <!-- Publicidad -->
                         <div class="ads">
-                          <div id="ads9">
-                            <a target="_blank" href=""><img class="img-responsive" src="img/ex/8ads1.png"></a>
+                          <span></span>
+                          <div id="ads9" class="ads-border">
+                            <uib-carousel interval="intervalo9">
+                              <uib-slide ng-repeat="banner in banner9">
+                                <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
                           </div>
                         </div>
                         <!-- Publicidad -->
@@ -151,8 +173,13 @@
                         <!-- Articulo -->
                         <!-- Publicidad -->
                         <div class="ads">
-                          <div id="ads3">
-                            <a target="_blank" href=""><img class="img-responsive" src="img/ex/3ads1.png"/></a>
+                          <span></span>
+                          <div id="ads3" class="ads-border">
+                            <uib-carousel interval="intervalo3">
+                              <uib-slide ng-repeat="banner in banner3">
+                                <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
                           </div>
                         </div>
                         <!-- Publicidad -->
@@ -168,8 +195,13 @@
                         <!-- Articulo -->
                         <!-- Publicidad -->
                         <div class="ads">
-                          <div id="ads6">
-                            <a target="_blank" href=""><img class="img-responsive" src="img/ex/3ads1.png"/></a>
+                          <span></span>
+                          <div id="ads6" class="ads-border">
+                            <uib-carousel interval="intervalo6">
+                              <uib-slide ng-repeat="banner in banner6">
+                                <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
                           </div>
                         </div>
                         <!-- Publicidad -->
@@ -236,16 +268,25 @@
                         <!-- El País -->
                         <!-- Publicidad -->
                         <div class="ads">
-                            <div id="ads4">
-                              <a target="_blank" href=""><img class="img-responsive" src="img/ex/4ads1.png"></a>
+                            <span></span>
+                            <div id="ads4" class="ads-border">
+                              <uib-carousel interval="intervalo4">
+                                <uib-slide ng-repeat="banner in banner4">
+                                  <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                </uib-slide>
+                              </uib-carousel>
                             </div>
                         </div>
                         <!-- Publicidad -->
                         <!-- Publicidad -->
                         <div class="ads">
-                            <div id="ads5">
-                              <a target="_blank" href="http://www.rdarchivo.net/"><img class="img-responsive" src="img/ex/5ads1.png"></a>
-                              <a target="_blank" href="http://contracultura.com.sv"><img class="img-responsive" src="img/ex/5ads2.png"></a>
+                            <span></span>
+                            <div id="ads5" class="ads-border">
+                              <uib-carousel interval="intervalo5">
+                                <uib-slide ng-repeat="banner in banner5">
+                                  <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                </uib-slide>
+                              </uib-carousel>
                             </div>
                         </div>
                         <!-- Publicidad -->
@@ -263,8 +304,13 @@
                         <!-- Columnistas -->
                         <!-- Publicidad -->
                         <div class="ads">
-                            <div id="ads7">
-                              <a target="_blank" href=""><img class="img-responsive" src="img/ex/4ads1.png"></a>
+                            <span></span>
+                            <div id="ads7" class="ads-border">
+                              <uib-carousel interval="intervalo7">
+                                <uib-slide ng-repeat="banner in banner7">
+                                  <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                </uib-slide>
+                              </uib-carousel>
                             </div>
                         </div>
                         <!-- Publicidad -->
@@ -338,8 +384,13 @@
                                 <!-- Publicidad -->
                                 <div class="col-md-12">
                                     <div class="ads">
-                                        <div id="ads10">
-                                          <a href="" target="_blank"><img class="img-responsive" src="img/ex/10ads1.png" alt=""></a>
+                                        <span></span>
+                                        <div id="ads10" class="ads-border">
+                                          <uib-carousel interval="intervalo10">
+                                            <uib-slide ng-repeat="banner in banner10">
+                                              <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                            </uib-slide>
+                                          </uib-carousel>
                                         </div>
                                     </div>
                                 </div>
@@ -397,30 +448,15 @@
                         </div>
                         <!-- Articulo -->
 
-                        <!-- Últimos
-                        <div class="ultimos">
-                            <div class="row">
-                                <h1>
-                                    <div class="col-md-1">
-                                        <img class="red-flag" src="img/120.svg">
-                                    </div>
-                                    <div class="col-md-11">
-                                    Periodistas reconocidas por CONASIDA
-                                    </div>
-                                </h1>
-                                    <div class="col-md-11 col-md-offset-1">
-                                   <h4>REDACCIÓN CONTRAPUNTO | Sociedad</h4>
-
-                                    <p>Dos periodistas de ContraPunto  recibieron reconocimiento por su labor informativa sobre el VIH </p>
-                                    </div>
-
-                            </div>
-                        </div>
-                        Últimos -->
                         <!-- Publicidad -->
                         <div class="ads">
-                            <div id="ads12">
-                              <a href="" target="_blank"><img class="img-responsive" src="img/ex/3ads1.png" alt=""></a>
+                            <span></span>
+                            <div id="ads12" class="ads-border">
+                              <uib-carousel interval="intervalo12">
+                                <uib-slide ng-repeat="banner in banner12">
+                                  <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                </uib-slide>
+                              </uib-carousel>
                             </div>
                         </div>
                         <!-- Publicidad -->
@@ -439,8 +475,13 @@
                         <!-- Articulo -->
                         <!-- Publicidad -->
                         <div class="ads">
-                          <div id="ads13">
-                            <a href="" target="_blank"><img class="img-responsive" src="img/ex/3ads1.png" alt=""></a>
+                          <span></span>
+                          <div id="ads13" class="ads-border">
+                            <uib-carousel interval="intervalo13">
+                              <uib-slide ng-repeat="banner in banner13">
+                                <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
                           </div>
                         </div>
                         <!-- Publicidad -->
@@ -457,8 +498,13 @@
                         </div>
                         <!-- Publicidad -->
                             <div class="ads">
-                                <div id="ads19">
-                                  <a href="" target="_blank"><img class="img-responsive" src="img/ex/3ads1.png" alt=""></a>
+                                <span></span>
+                                <div id="ads19" class="ads-border">
+                                  <uib-carousel interval="intervalo19">
+                                    <uib-slide ng-repeat="banner in banner19">
+                                      <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                    </uib-slide>
+                                  </uib-carousel>
                                 </div>
                             </div>
                         <!-- Publicidad -->
@@ -506,8 +552,13 @@
                         <!-- Articulo -->
                         <!-- Publicidad -->
                         <div class="ads">
-                          <div id="ads18">
-                            <a href="" target="_blank"><img class="img-responsive" src="img/ex/3ads1.png" alt=""></a>
+                          <span></span>
+                          <div id="ads18" class="ads-border">
+                            <uib-carousel interval="intervalo18">
+                              <uib-slide ng-repeat="banner in banner18">
+                                <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
                           </div>
                         </div>
                         <!-- Publicidad -->
@@ -524,8 +575,13 @@
                                 <p>{{culturas[0].preview}}</p>
                                 <!-- Publicidad -->
                                 <div class="ads">
-                                  <div id="ads20">
-                                    <a href="" target="_blank"><img class="img-responsive" src="img/ex/3ads1.png" alt=""></a>
+                                  <span></span>
+                                  <div id="ads20" class="ads-border">
+                                    <uib-carousel interval="intervalo20">
+                                      <uib-slide ng-repeat="banner in banner20">
+                                        <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                      </uib-slide>
+                                    </uib-carousel>
                                   </div>
                                 </div>
                                 <!-- Publicidad -->
@@ -541,8 +597,13 @@
                         <!-- Publicidad -->
                         <div class="ads">
                           <div class="ads">
-                              <div id="ads11">
-                                <a href="" target="_blank"><img class="img-responsive" src="img/ex/11ads1.png" alt=""></a>
+                              <span></span>
+                              <div id="ads11" class="ads-border">
+                                <uib-carousel interval="intervalo11">
+                                  <uib-slide ng-repeat="banner in banner11">
+                                    <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                  </uib-slide>
+                                </uib-carousel>
                               </div>
                           </div>
                         </div>
@@ -571,29 +632,49 @@
                         <!-- Reseñas -->
                         <!-- Publicidad -->
                         <div class="ads">
-                          <div id="ads14">
-                            <a href="" target="_blank"><img class="img-responsive" src="img/ex/11ads1.png" alt=""></a>
+                          <span></span>
+                          <div id="ads14" class="ads-border">
+                            <uib-carousel interval="intervalo14">
+                              <uib-slide ng-repeat="banner in banner14">
+                                <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
                           </div>
                         </div>
                         <!-- Publicidad -->
                         <!-- Publicidad -->
                         <div class="ads">
-                          <div id="ads15">
-                            <a href="" target="_blank"><img class="img-responsive" src="img/ex/11ads1.png" alt=""></a>
+                          <span></span>
+                          <div id="ads15" class="ads-border">
+                            <uib-carousel interval="intervalo15">
+                              <uib-slide ng-repeat="banner in banner15">
+                                <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
                           </div>
                         </div>
                         <!-- Publicidad -->
                         <!-- Publicidad -->
                         <div class="ads">
-                          <div id="ads16">
-                            <a href="" target="_blank"><img class="img-responsive" src="img/ex/11ads1.png" alt=""></a>
+                          <span></span>
+                          <div id="ads16" class="ads-border">
+                            <uib-carousel interval="intervalo16">
+                              <uib-slide ng-repeat="banner in banner16">
+                                <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
                           </div>
                         </div>
                         <!-- Publicidad -->
                         <!-- Publicidad -->
                         <div class="ads">
-                          <div id="ads17">
-                            <a href="" target="_blank"><img class="img-responsive" src="img/ex/11ads1.png" alt=""></a>
+                          <span></span>
+                          <div id="ads17" class="ads-border">
+                            <uib-carousel interval="intervalo17">
+                              <uib-slide ng-repeat="banner in banner17">
+                                <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
                           </div>
                         </div>
                         <!-- Publicidad -->

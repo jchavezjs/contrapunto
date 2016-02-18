@@ -52,155 +52,51 @@ angular.module('contrapunto.controllers', [])
           $scope.especiales = response.especiales;
           $scope.fotogalerias = response.fotogalerias;
           $scope.caricaturas = response.caricaturas;
-          $scope.banners = response.banners;
-
-
+          $scope.banner1 = response.banner1;
+          $scope.intervalo1 = $scope.banner1[0].tiempo;
+          $scope.banner2 = response.banner2;
+          $scope.intervalo2 = $scope.banner2[0].tiempo;
+          $scope.banner3 = response.banner3;
+          $scope.intervalo3 = $scope.banner3[0].tiempo;
+          $scope.banner4 = response.banner4;
+          $scope.intervalo4 = $scope.banner4[0].tiempo;
+          $scope.banner5 = response.banner5;
+          $scope.intervalo5 = $scope.banner5[0].tiempo;
+          $scope.banner6 = response.banner6;
+          $scope.intervalo6 = $scope.banner6[0].tiempo;
+          $scope.banner7 = response.banner7;
+          $scope.intervalo7 = $scope.banner7[0].tiempo;
+          $scope.banner8 = response.banner8;
+          $scope.intervalo8 = $scope.banner8[0].tiempo;
+          $scope.banner9 = response.banner9;
+          $scope.intervalo9 = $scope.banner9[0].tiempo;
+          $scope.banner10 = response.banner10;
+          $scope.intervalo10 = $scope.banner10[0].tiempo;
+          $scope.banner11 = response.banner11;
+          $scope.intervalo11 = $scope.banner11[0].tiempo;
+          $scope.banner12 = response.banner12;
+          $scope.intervalo12 = $scope.banner12[0].tiempo;
+          $scope.banner13 = response.banner13;
+          $scope.intervalo13 = $scope.banner13[0].tiempo;
+          $scope.banner14 = response.banner14;
+          $scope.intervalo14 = $scope.banner14[0].tiempo;
+          $scope.banner15 = response.banner15;
+          $scope.intervalo15 = $scope.banner15[0].tiempo;
+          $scope.banner16 = response.banner16;
+          $scope.intervalo16 = $scope.banner16[0].tiempo;
+          $scope.banner17 = response.banner17;
+          $scope.intervalo17 = $scope.banner17[0].tiempo;
+          $scope.banner18 = response.banner18;
+          $scope.intervalo18 = $scope.banner18[0].tiempo;
+          $scope.banner19 = response.banner19;
+          $scope.intervalo19 = $scope.banner19[0].tiempo;
+          $scope.banner20 = response.banner20;
+          $scope.intervalo20 = $scope.banner20[0].tiempo;
+          $scope.bannerMovil = response.bannerMovil;
+          $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
       });
 
-      $scope.myInterval = 3000;
 
-      //ads
-      // $(document).ready(function() {
-      //     $('#ads1').cycle({
-      //     fx: 'scrollHorz',
-      //     speed:   500,
-      //     timeout: 5000,
-      //   });
-      // });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads4').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads5').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads6').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads7').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads8').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads9').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads10').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads11').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads12').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads13').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads14').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads15').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads16').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads17').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads18').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads19').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads20').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
 
     })
     .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
@@ -452,6 +348,19 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+
+      var datos = {
+        "tasasInteres":{
+          "fecha": "2016-02-20"
+        },
+        "bolsasMundo":{
+          "fecha":"2016-02-15"
+        }
+      };
+
+      $scope.fechasBolsas = datos.bolsasMundo;
+      $scope.fechasTasas = datos.tasasInteres;
+
       //ads
       $(document).ready(function() {
           $('#ads1').cycle({
