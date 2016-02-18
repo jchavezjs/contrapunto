@@ -11,7 +11,7 @@
                     </div> -->
                     <uib-carousel interval="myInterval">
                       <uib-slide ng-repeat="banner in banners">
-                        <img ng-if="banner.posicion == 1" class="img-responsive" ng-src="{{banner.foto}}">
+                        <a ng-href="{{banner.link}}"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
                       </uib-slide>
                     </uib-carousel>
                 </div>

@@ -1017,7 +1017,7 @@ li{
 
 /*OPINION*/
 .opinion-columnas-area h1{
-  
+
 }
 .sondeos-area{
   margin-top: 10px;
@@ -2581,7 +2581,10 @@ margin: 10px 0 0px 0;
   font-weight: 200;
 }
 /*CARICATURAS*/
-
+/*banner*/
+.carousel-control, .carousel-indicators{
+  display: none;
+}
 @media (max-width: 400px){
     .logo-center img{
         max-width: 300px;

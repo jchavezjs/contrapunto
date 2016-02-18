@@ -57,7 +57,7 @@ angular.module('contrapunto.controllers', [])
 
       });
 
-      $scope.myInterval = 9000;
+      $scope.myInterval = 3000;
 
       //ads
       // $(document).ready(function() {
