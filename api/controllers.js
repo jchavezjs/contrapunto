@@ -448,6 +448,19 @@ angular.module('contrapunto.controllers', [])
     })
 
     .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+
+      var datos = {
+        "tasasInteres":{
+          "fecha": "2016-02-20"
+        },
+        "bolsasMundo":{
+          "fecha":"2016-02-15"
+        }
+      };
+
+      $scope.fechasBolsas = datos.bolsasMundo;
+      $scope.fechasTasas = datos.tasasInteres;
+      
       //ads
       $(document).ready(function() {
           $('#ads1').cycle({

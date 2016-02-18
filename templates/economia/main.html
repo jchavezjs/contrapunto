@@ -97,7 +97,8 @@
                 <!-- Columna 1 -->
                     <div class="col-md-5 m-politica-1">
                         <div class="bolsas-del-mundo">
-                            <div class="head">Bolsas del mundo</div>
+                            <div class="head">Bolsas del mundo | <span>Al cierre: {{fechasBolsas.fecha}}</span>
+ </div>
                             <div class="row">
                                 <div ng-repeat="bolsa in bolsas">
                                     <div class="item">
@@ -173,24 +174,26 @@
                         <!--Seccion mundo economico-->
                         <!--Seccion datos economicos-->
                         <div class="sec-politica tab">
-                            <div class="titulo-datos-economicos">
-                                <h3>Cifras Económicas de El Salvador</h3>
-                            </div>
-                            <div class="datos-economicos">
-                                <table class="t-datos">
-                                    <tr>
-                                        <th>INDICADOR</th>
-                                        <th>PERIODO</th>
-                                        <th>CIFRAS</th>
-                                        <th>DETALLES</th>
-                                    </tr>
-                                    <tr ng-repeat="dato in datos">
-                                        <td>{{dato.indicador}}</td>
-                                        <td>{{dato.periodo}}</td>
-                                        <td>{{dato.cifras}}%</td>
-                                        <td><a target="_blank" ng-href="{{dato.enlace}}">Tabla</a></td>
-                                    </tr>
-                                </table>
+                          <div class="datos-eco">
+                              <div class="titulo-datos-economicos">
+                                  <h3>Cifras Económicas de El Salvador</h3>
+                              </div>
+                              <div class="datos-economicos">
+                                  <table class="t-datos">
+                                      <tr>
+                                          <th>INDICADOR</th>
+                                          <th>PERIODO</th>
+                                          <th>CIFRAS</th>
+                                          <th>DETALLES</th>
+                                      </tr>
+                                      <tr ng-repeat="dato in datos">
+                                          <td>{{dato.indicador}}</td>
+                                          <td>{{dato.periodo}}</td>
+                                          <td>{{dato.cifras}}%</td>
+                                          <td><a target="_blank" ng-href="{{dato.enlace}}">Tabla</a></td>
+                                      </tr>
+                                  </table>
+                              </div>
                             </div>
                         </div>
                         <a style="margin-right:10px;" class="del-mundo-a" target="_blank" href="http://www.bcr.gob.sv/esp/">Fuente: BCR</a>
@@ -280,8 +283,8 @@
                                               </h6></div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6"><h6 class="titulo" style="padding-top:5px;">menor</h6></div>
-                                            <div class="col-md-6"><h6 class="titulo" style="">más</br>alto</h6></div>
+                                            <div class="col-md-6"><h6 class="titulo" style="padding-top:5px; color:#222;">menor</h6></div>
+                                            <div class="col-md-6"><h6 class="titulo" style="color:#222;">más</br>alto</h6></div>
                                         </div>
                                     </div>
                                 </div>
@@ -293,19 +296,19 @@
                                                 <h4>{{merca.nombre}}</h4>
                                                 <h6>{{merca.descripcion}}</h6>
                                             </div>
-                                            <div class="col-md-2" style="padding-top:15px;">
+                                            <div class="col-md-2 padd-exa">
                                                 <h4 class="numb">{{merca.ultimo}}</h4>
                                             </div>
-                                            <div class="col-md-2" style="padding-top:15px;">
+                                            <div class="col-md-2 padd-exa">
                                                 <h4 ng-class="{positive: merca.cambio>0, negative: merca.cambio<0}" class="numb">{{merca.cambio}}</h4>
                                             </div>
-                                            <div class="col-md-2" style="padding-top:15px;">
+                                            <div class="col-md-2 padd-exa">
                                                 <h4 class="numb" ng-class="{positive: merca.porcentaje>0, negative: merca.porcentaje<0}">{{merca.porcentaje}}%</h4>
                                             </div>
-                                            <div class="col-md-3" style="padding-top:15px;">
+                                            <div class="col-md-3 bor-eco padd-exa">
                                                 <div class="row">
-                                                    <div class="col-md-6"><h4 class="numb">{{merca.menor}}</h4></div>
-                                                    <div class="col-md-6"><h4 class="numb">{{merca.masAlto}}</h4></div>
+                                                    <div class="col-md-6"><h4 class="numb peque">{{merca.menor}}</h4></div>
+                                                    <div class="col-md-6"><h4 class="numb peque">{{merca.masAlto}}</h4></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -406,7 +409,7 @@
                         <div class="t-indicadores">
                             <div class="indicador-titulo">
                                 <h3>TASAS DE INTERÉS</h3>
-                                <div class="flecha"></div>
+                                <span>Al cierre: {{fechasTasas.fecha}}</span>
                             </div>
                             <div class="bolsas">
                                 <table>
