@@ -100,43 +100,6 @@ angular.module('contrapunto.controllers', [])
 
     })
     .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads4').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#adsMobile').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
