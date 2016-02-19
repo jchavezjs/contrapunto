@@ -1,22 +1,40 @@
 <!-- Ads Top | Portada -->
 <div class="container">
-    <div class="mainAds">
-            <div class="row">
-                <div class="col-md-7">
-                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/560x100')"></div>
+  <div class="mainAds">
+          <div class="row">
+              <div class="col-md-7">
+              <div id="ads1" class="ads-border">
+                <uib-carousel interval="intervalo1">
+                  <uib-slide ng-repeat="banner in banner1">
+                    <a ng-href="{{banner.link}}" target="_blank" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                  </uib-slide>
+                </uib-carousel>
+              </div>
+              </div>
+              <div class="col-md-5">
+                <div id="ads2" class="ads-border">
+                  <uib-carousel interval="intervalo2">
+                    <uib-slide ng-repeat="banner in banner2">
+                      <a ng-href="{{banner.link}}" target="_blank" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                    </uib-slide>
+                  </uib-carousel>
                 </div>
-                <div class="col-md-5">
-                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/400x100')"></div>
-                </div>
+              </div>
+          </div>
+  </div>
+  <div class="mainAds-mobile">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="adsMobile" class="ads-border">
+              <uib-carousel interval="intervaloMovil">
+                <uib-slide ng-repeat="banner in bannerMovil">
+                  <a ng-href="{{banner.link}}" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                </uib-slide>
+              </uib-carousel>
             </div>
+        </div>
     </div>
-    <div class="mainAds-mobile">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
-                </div>
-            </div>
-    </div>
+  </div>
 </div>
 <!-- Ads Top | Portada -->
 <!-- Header -->
@@ -200,7 +218,14 @@
       <div class="col-md-2 m-politica-3">
            <!-- Publicidad -->
           <div class="ads">
-              <div style="background-image: url(http://www.placehold.it/150x300);" class="adsCol32"></div>
+            <span></span>
+            <div id="ads3" class="ads-border">
+              <uib-carousel interval="intervalo3">
+                <uib-slide ng-repeat="banner in banner3">
+                  <a ng-href="{{banner.link}}" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                </uib-slide>
+              </uib-carousel>
+            </div>
           </div>
           <!-- Publicidad -->
           <!--Lo mas leido-->

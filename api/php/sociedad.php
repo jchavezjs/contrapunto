@@ -16,7 +16,12 @@ echo json_encode(array(
 				'periodismos' => articulo(34),
 				'tabues' => articulo(35),
 				'judiciales' => articulo(36),
-				'subsecciones' => subseccion(4)
+				'subsecciones' => subseccion(4),
+				'banner1' => banner(4,1),
+				'banner2' => banner(4,2),
+				'banner3' => banner(4,3),
+				'banner4' => banner(4,4),
+				'bannerMovil' => banner(4,'movil'),
 				));
 
 ?>

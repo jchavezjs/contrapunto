@@ -126,47 +126,20 @@ angular.module('contrapunto.controllers', [])
             $scope.economias = response.economias;
             $scope.subsecciones = response.subsecciones;
             $scope.autores = response.autores;
+            $scope.banner1 = response.banner1;
+            $scope.intervalo1 = $scope.banner1[0].tiempo;
+            $scope.banner2 = response.banner2;
+            $scope.intervalo2 = $scope.banner2[0].tiempo;
+            $scope.banner3 = response.banner3;
+            $scope.intervalo3 = $scope.banner3[0].tiempo;
+            $scope.banner4 = response.banner4;
+            $scope.intervalo4 = $scope.banner4[0].tiempo;
+            $scope.bannerMovil = response.bannerMovil;
+            $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
         });
     })
 
     .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads4').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#adsMobile').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -184,47 +157,20 @@ angular.module('contrapunto.controllers', [])
             $scope.gobiernos = response.gobiernos;
             $scope.partidos = response.partidos;
             $scope.subsecciones = response.subsecciones;
+            $scope.banner1 = response.banner1;
+            $scope.intervalo1 = $scope.banner1[0].tiempo;
+            $scope.banner2 = response.banner2;
+            $scope.intervalo2 = $scope.banner2[0].tiempo;
+            $scope.banner3 = response.banner3;
+            $scope.intervalo3 = $scope.banner3[0].tiempo;
+            $scope.banner4 = response.banner4;
+            $scope.intervalo4 = $scope.banner4[0].tiempo;
+            $scope.bannerMovil = response.bannerMovil;
+            $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
         });
     })
 
     .controller('InternacionalesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads4').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#adsMobile').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -242,47 +188,21 @@ angular.module('contrapunto.controllers', [])
             $scope.latinoamericas = response.latinoamericas;
             $scope.globales = response.globales;
             $scope.subsecciones = response.subsecciones;
+            $scope.banner1 = response.banner1;
+            $scope.intervalo1 = $scope.banner1[0].tiempo;
+            $scope.banner2 = response.banner2;
+            $scope.intervalo2 = $scope.banner2[0].tiempo;
+            $scope.banner3 = response.banner3;
+            $scope.intervalo3 = $scope.banner3[0].tiempo;
+            $scope.banner4 = response.banner4;
+            $scope.intervalo4 = $scope.banner4[0].tiempo;
+            $scope.bannerMovil = response.bannerMovil;
+            $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
         });
     })
 
     .controller('SociedadController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads4').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#adsMobile').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
+
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -307,6 +227,16 @@ angular.module('contrapunto.controllers', [])
             $scope.tabues = response.tabues;
             $scope.judiciales = response.judiciales;
             $scope.subsecciones = response.subsecciones;
+            $scope.banner1 = response.banner1;
+            $scope.intervalo1 = $scope.banner1[0].tiempo;
+            $scope.banner2 = response.banner2;
+            $scope.intervalo2 = $scope.banner2[0].tiempo;
+            $scope.banner3 = response.banner3;
+            $scope.intervalo3 = $scope.banner3[0].tiempo;
+            $scope.banner4 = response.banner4;
+            $scope.intervalo4 = $scope.banner4[0].tiempo;
+            $scope.bannerMovil = response.bannerMovil;
+            $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
         });
     })
 
@@ -324,43 +254,6 @@ angular.module('contrapunto.controllers', [])
       $scope.fechasBolsas = datos.bolsasMundo;
       $scope.fechasTasas = datos.tasasInteres;
 
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads4').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#adsMobile').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -387,47 +280,20 @@ angular.module('contrapunto.controllers', [])
             $scope.datos = response.datos;
             $scope.subsecciones = response.subsecciones;
             $scope.mercas = response.mercas;
+            $scope.banner1 = response.banner1;
+            $scope.intervalo1 = $scope.banner1[0].tiempo;
+            $scope.banner2 = response.banner2;
+            $scope.intervalo2 = $scope.banner2[0].tiempo;
+            $scope.banner3 = response.banner3;
+            $scope.intervalo3 = $scope.banner3[0].tiempo;
+            $scope.banner4 = response.banner4;
+            $scope.intervalo4 = $scope.banner4[0].tiempo;
+            $scope.bannerMovil = response.bannerMovil;
+            $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
         });
     })
 
     .controller('CulturaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads4').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#adsMobile').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -447,47 +313,20 @@ angular.module('contrapunto.controllers', [])
             $scope.literaturas = response.literaturas;
             $scope.anecdotas = response.anecdotas;
             $scope.subsecciones = response.subsecciones;
+            $scope.banner1 = response.banner1;
+            $scope.intervalo1 = $scope.banner1[0].tiempo;
+            $scope.banner2 = response.banner2;
+            $scope.intervalo2 = $scope.banner2[0].tiempo;
+            $scope.banner3 = response.banner3;
+            $scope.intervalo3 = $scope.banner3[0].tiempo;
+            $scope.banner4 = response.banner4;
+            $scope.intervalo4 = $scope.banner4[0].tiempo;
+            $scope.bannerMovil = response.bannerMovil;
+            $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
         });
     })
 
     .controller('DeportesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads4').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#adsMobile').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -507,40 +346,20 @@ angular.module('contrapunto.controllers', [])
             $scope.cronicas = response.cronicas;
             $scope.aconteceres = response.aconteceres;
             $scope.subsecciones = response.subsecciones;
+            $scope.banner1 = response.banner1;
+            $scope.intervalo1 = $scope.banner1[0].tiempo;
+            $scope.banner2 = response.banner2;
+            $scope.intervalo2 = $scope.banner2[0].tiempo;
+            $scope.banner3 = response.banner3;
+            $scope.intervalo3 = $scope.banner3[0].tiempo;
+            $scope.banner4 = response.banner4;
+            $scope.intervalo4 = $scope.banner4[0].tiempo;
+            $scope.bannerMovil = response.bannerMovil;
+            $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
         });
     })
 
     .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#adsMobile').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
         $scope.top = function(){
           $anchorScroll();
         };
@@ -570,6 +389,8 @@ angular.module('contrapunto.controllers', [])
                     $scope.secinfo = response.secinfo;
                     $scope.subinfo = response.subinfo;
                     $scope.subsecciones = response.subsecciones;
+
+
                 });
 
        });
@@ -598,6 +419,14 @@ angular.module('contrapunto.controllers', [])
        $anchorScroll();
         $http.get("api/php/sondeo.php").success(function(response){
             $scope.subsecciones = response.subsecciones;
+            $scope.banner1 = response.banner1;
+            $scope.intervalo1 = $scope.banner1[0].tiempo;
+            $scope.banner2 = response.banner2;
+            $scope.intervalo2 = $scope.banner2[0].tiempo;
+            $scope.banner3 = response.banner3;
+            $scope.intervalo3 = $scope.banner3[0].tiempo;
+            $scope.bannerMovil = response.bannerMovil;
+            $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
         });
     })
 
@@ -625,33 +454,18 @@ angular.module('contrapunto.controllers', [])
         $http.get("api/php/caricatura.php").success(function(response){
             $scope.subsecciones = response.subsecciones;
             $scope.contenidos = response.contenidos;
+            $scope.banner1 = response.banner1;
+            $scope.intervalo1 = $scope.banner1[0].tiempo;
+            $scope.banner2 = response.banner2;
+            $scope.intervalo2 = $scope.banner2[0].tiempo;
+            $scope.banner3 = response.banner3;
+            $scope.intervalo3 = $scope.banner3[0].tiempo;
+            $scope.bannerMovil = response.bannerMovil;
+            $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
         });
     })
 
     .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
-      //ads
-      $(document).ready(function() {
-          $('#ads1').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads2').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      $(document).ready(function() {
-          $('#ads3').cycle({
-          fx: 'scrollHorz',
-          speed:   500,
-          timeout: 15000,
-        });
-      });
-      //ads
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -746,6 +560,12 @@ angular.module('contrapunto.controllers', [])
                    $scope.resultados = response.resultado;
                    $scope.actualidades = response.actualidades;
                    $scope.caricatura = response.caricatura;
+                   $scope.banner1 = response.banner1;
+                   $scope.intervalo1 = $scope.banner1[0].tiempo;
+                   $scope.banner2 = response.banner2;
+                   $scope.intervalo2 = $scope.banner2[0].tiempo;
+                   $scope.bannerMovil = response.bannerMovil;
+                   $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
 
                });
 
@@ -778,6 +598,12 @@ angular.module('contrapunto.controllers', [])
                    $scope.autor = response.autor;
                    $scope.articulos = response.articulos;
                    $scope.actualidades = response.actualidades;
+                   $scope.banner1 = response.banner1;
+                   $scope.intervalo1 = $scope.banner1[0].tiempo;
+                   $scope.banner2 = response.banner2;
+                   $scope.intervalo2 = $scope.banner2[0].tiempo;
+                   $scope.bannerMovil = response.bannerMovil;
+                   $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
                });
 
 

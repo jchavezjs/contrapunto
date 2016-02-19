@@ -79,7 +79,12 @@ echo json_encode(array(
 				'internacionales' => dropdown(3),
 				'subsecciones' => subseccion(1),
 				'culturas' => dropdown(6),
-				'autores' => $columnista
+				'autores' => $columnista,
+				'banner1' => banner(1,1),
+				'banner2' => banner(1,2),
+				'banner3' => banner(1,3),
+				'banner4' => banner(1,4),
+				'bannerMovil' => banner(1,'movil'),
 				));
 
 ?>

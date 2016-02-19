@@ -54,6 +54,9 @@ echo json_encode(array(
                 'autor'=>$autor,
                 'articulos' => $articulos,
                 'fotogalerias' => fotogaleria(),
-                'actualidades' => actualidad()
+                'actualidades' => actualidad(),
+                'banner1' => banner(8,1),
+                'banner2' => banner(8,2),
+                'bannerMovil' => banner(8,'movil'),
                 ));
 ?>

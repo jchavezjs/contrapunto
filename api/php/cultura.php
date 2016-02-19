@@ -11,7 +11,12 @@ echo json_encode(array(
 				'artes' => articulo(55),
 				'literaturas' => articulo(56),
 				'anecdotas' => articulo(54),
-				'subsecciones' => subseccion(6)
+				'subsecciones' => subseccion(6),
+				'banner1' => banner(6,1),
+				'banner2' => banner(6,2),
+				'banner3' => banner(6,3),
+				'banner4' => banner(6,4),
+				'bannerMovil' => banner(6,'movil'),
 				));
 
 ?>

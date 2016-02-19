@@ -3,27 +3,37 @@
   <div class="mainAds">
           <div class="row">
               <div class="col-md-7">
-              <div id="ads1">
-                <a href="" target="_blank"><img class="img-responsive" src="img/ex/1ads1.png" alt=""></a>
-                <a href="" target="_blank"><img class="img-responsive" src="img/ex/1ads2.png" alt=""></a>
+              <div id="ads1" class="ads-border">
+                <uib-carousel interval="intervalo1">
+                  <uib-slide ng-repeat="banner in banner1">
+                    <a ng-href="{{banner.link}}" target="_blank" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                  </uib-slide>
+                </uib-carousel>
               </div>
               </div>
               <div class="col-md-5">
-                <div id="ads2">
-                  <a href="" target="_blank"><img class="img-responsive" src="img/ex/2ads1.png" alt=""></a>
-                  <a href="" target="_blank"><img class="img-responsive" src="img/ex/2ads1.png" alt=""></a>
+                <div id="ads2" class="ads-border">
+                  <uib-carousel interval="intervalo2">
+                    <uib-slide ng-repeat="banner in banner2">
+                      <a ng-href="{{banner.link}}" target="_blank" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                    </uib-slide>
+                  </uib-carousel>
                 </div>
               </div>
           </div>
   </div>
   <div class="mainAds-mobile">
-          <div class="row">
-              <div class="col-md-12">
-                  <div id="adsMobile">
-                    <a href="" target="_blank"><img class="img-responsive" src="http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg" alt=""></a>
-                  </div>
-              </div>
-          </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="adsMobile" class="ads-border">
+              <uib-carousel interval="intervaloMovil">
+                <uib-slide ng-repeat="banner in bannerMovil">
+                  <a ng-href="{{banner.link}}" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                </uib-slide>
+              </uib-carousel>
+            </div>
+        </div>
+    </div>
   </div>
 </div>
 <!-- Ads Top | Portada -->
@@ -321,8 +331,12 @@
                                 <!--Seccion COYUNTURA-->
                                 <div class="ads ad-politica" style="padding-top:15px;">
                                     <span></span>
-                                    <div id="ads4">
-                                      <a target="_blank" href=""><img class="img-responsive" src="img/ex/3ads1.png" alt=""></a>
+                                    <div id="ads4" class="ads-border">
+                                      <uib-carousel interval="intervalo4">
+                                        <uib-slide ng-repeat="banner in banner4">
+                                          <a ng-href="{{banner.link}}" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                        </uib-slide>
+                                      </uib-carousel>
                                     </div>
                                 </div>
                                  <!--Seccion Analisis economico-->
@@ -366,8 +380,12 @@
                          <!-- Publicidad -->
                          <div class="ads">
                              <span></span>
-                             <div id="ads3">
-                               <a target="_blank" href=""><img class="img-responsive" src="img/ex/4ads1.png" alt=""></a>
+                             <div id="ads3" class="ads-border">
+                               <uib-carousel interval="intervalo3">
+                                 <uib-slide ng-repeat="banner in banner3">
+                                   <a ng-href="{{banner.link}}" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                                 </uib-slide>
+                               </uib-carousel>
                              </div>
                          </div>
                         <!-- Publicidad -->

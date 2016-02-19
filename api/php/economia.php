@@ -63,7 +63,12 @@ echo json_encode(array(
 				'divisas' => $divisa,
 				'datos' => $dato,
 				'subsecciones' => subseccion(5),
-				'mercas' => $mercado
+				'mercas' => $mercado,
+				'banner1' => banner(5,1),
+				'banner2' => banner(5,2),
+				'banner3' => banner(5,3),
+				'banner4' => banner(5,4),
+				'bannerMovil' => banner(5,'movil'),
 				));
 
 ?>
