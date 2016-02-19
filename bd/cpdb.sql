@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-02-2016 a las 19:44:02
+-- Tiempo de generación: 20-02-2016 a las 00:54:11
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
   `idPosicion` int(11) NOT NULL,
   `link` varchar(80) COLLATE utf8_bin NOT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `banner`
@@ -202,7 +202,57 @@ INSERT INTO `banner` (`idBanner`, `rutaFoto`, `idCliente`, `idPosicion`, `link`,
 (20, 'img/ex/11ads1.png', 3, 17, 'http://www.contrapunto.com.sv/economia1', 1),
 (21, 'img/ex/3ads1.png', 1, 18, 'http://www.contrapunto.com.sv/economia1', 1),
 (22, 'img/ex/3ads1.png', 2, 19, 'http://www.contrapunto.com.sv/economia1', 1),
-(23, 'img/ex/3ads1.png', 1, 20, 'http://www.contrapunto.com.sv/economia1', 1);
+(23, 'img/ex/3ads1.png', 1, 20, 'http://www.contrapunto.com.sv/economia1', 1),
+(24, 'img/ex/1ads1.png', 2, 22, 'http://cinepolis.com.sv/', 1),
+(25, 'img/ex/1ads2.png', 3, 22, 'http://cinepolis.com.sv/', 1),
+(26, 'img/ex/2ads1.png', 2, 23, 'http://cinepolis.com.sv/', 1),
+(27, 'img/ex/2ads1.png', 1, 23, 'http://cinepolis.com.sv/', 1),
+(28, 'img/ex/4ads1.png', 2, 24, 'http://cinepolis.com.sv/', 1),
+(29, 'img/ex/3ads1.png', 3, 25, 'http://cinepolis.com.sv/', 1),
+(30, 'http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg', 3, 28, 'https://www.google.com.sv/', 1),
+(31, 'img/ex/adsPost.png', 1, 29, 'https://www.google.com.sv/', 1),
+(36, 'img/ex/1ads1.png', 1, 30, 'http://albapetroleos.com.sv/', 1),
+(37, 'img/ex/1ads1.png', 1, 38, 'http://albapetroleos.com.sv/', 1),
+(38, 'img/ex/1ads1.png', 1, 44, 'http://albapetroleos.com.sv/', 1),
+(39, 'img/ex/1ads1.png', 1, 50, 'http://albapetroleos.com.sv/', 1),
+(40, 'img/ex/1ads1.png', 1, 56, 'http://albapetroleos.com.sv/', 1),
+(41, 'img/ex/1ads1.png', 1, 62, 'http://albapetroleos.com.sv/', 1),
+(48, 'img/ex/1ads2.png', 2, 30, 'http://albapetroleos.com.sv/', 1),
+(49, 'img/ex/1ads2.png', 2, 38, 'http://albapetroleos.com.sv/', 1),
+(50, 'img/ex/1ads2.png', 2, 44, 'http://albapetroleos.com.sv/', 1),
+(51, 'img/ex/1ads2.png', 2, 50, 'http://albapetroleos.com.sv/', 1),
+(52, 'img/ex/1ads2.png', 2, 56, 'http://albapetroleos.com.sv/', 1),
+(53, 'img/ex/1ads2.png', 2, 62, 'http://albapetroleos.com.sv/', 1),
+(54, 'img/ex/2ads1.png', 2, 31, 'http://albapetroleos.com.sv/', 1),
+(55, 'img/ex/2ads1.png', 2, 39, 'http://albapetroleos.com.sv/', 1),
+(56, 'img/ex/2ads1.png', 2, 45, 'http://albapetroleos.com.sv/', 1),
+(57, 'img/ex/2ads1.png', 2, 51, 'http://albapetroleos.com.sv/', 1),
+(58, 'img/ex/2ads1.png', 2, 57, 'http://albapetroleos.com.sv/', 1),
+(59, 'img/ex/2ads1.png', 2, 63, 'http://albapetroleos.com.sv/', 1),
+(60, 'img/ex/4ads1.png', 2, 32, 'http://albapetroleos.com.sv/', 1),
+(61, 'img/ex/4ads1.png', 2, 40, 'http://albapetroleos.com.sv/', 1),
+(62, 'img/ex/4ads1.png', 2, 46, 'http://albapetroleos.com.sv/', 1),
+(63, 'img/ex/4ads1.png', 2, 52, 'http://albapetroleos.com.sv/', 1),
+(64, 'img/ex/4ads1.png', 2, 58, 'http://albapetroleos.com.sv/', 1),
+(65, 'img/ex/4ads1.png', 2, 64, 'http://albapetroleos.com.sv/', 1),
+(66, 'img/ex/3ads1.png', 2, 33, 'http://albapetroleos.com.sv/', 1),
+(67, 'img/ex/3ads1.png', 2, 41, 'http://albapetroleos.com.sv/', 1),
+(68, 'img/ex/3ads1.png', 2, 47, 'http://albapetroleos.com.sv/', 1),
+(69, 'img/ex/3ads1.png', 2, 53, 'http://albapetroleos.com.sv/', 1),
+(70, 'img/ex/3ads1.png', 2, 59, 'http://albapetroleos.com.sv/', 1),
+(71, 'img/ex/3ads1.png', 2, 65, 'http://albapetroleos.com.sv/', 1),
+(72, 'http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg', 2, 36, 'http://albapetroleos.com.sv/', 1),
+(73, 'http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg', 2, 42, 'http://albapetroleos.com.sv/', 1),
+(74, 'http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg', 2, 48, 'http://albapetroleos.com.sv/', 1),
+(75, 'http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg', 2, 54, 'http://albapetroleos.com.sv/', 1),
+(76, 'http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg', 2, 60, 'http://albapetroleos.com.sv/', 1),
+(77, 'http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg', 2, 66, 'http://albapetroleos.com.sv/', 1),
+(78, 'img/ex/adsPost.png', 2, 37, 'http://albapetroleos.com.sv/', 1),
+(79, 'img/ex/adsPost.png', 2, 43, 'http://albapetroleos.com.sv/', 1),
+(80, 'img/ex/adsPost.png', 2, 49, 'http://albapetroleos.com.sv/', 1),
+(81, 'img/ex/adsPost.png', 2, 55, 'http://albapetroleos.com.sv/', 1),
+(82, 'img/ex/adsPost.png', 2, 61, 'http://albapetroleos.com.sv/', 1),
+(83, 'img/ex/adsPost.png', 2, 67, 'http://albapetroleos.com.sv/', 1);
 
 -- --------------------------------------------------------
 
@@ -773,7 +823,17 @@ CREATE TABLE IF NOT EXISTS `respuesta` (
   `idRespuesta` int(11) NOT NULL,
   `idSondeo` int(11) NOT NULL,
   `respuesta` varchar(40) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `respuesta`
+--
+
+INSERT INTO `respuesta` (`idRespuesta`, `idSondeo`, `respuesta`) VALUES
+(1, 1, 'Si, estoy de acuerdo'),
+(2, 1, 'No estoy de acuerdo'),
+(3, 2, 'Posiblemente'),
+(4, 2, 'No me interesa');
 
 -- --------------------------------------------------------
 
@@ -821,10 +881,20 @@ INSERT INTO `seccion` (`idSeccion`, `nombre`, `url`) VALUES
 
 CREATE TABLE IF NOT EXISTS `sondeo` (
   `idSondeo` int(11) NOT NULL,
-  `pregunta` varchar(140) COLLATE utf8_bin NOT NULL,
+  `titulo` varchar(50) COLLATE utf8_bin NOT NULL,
+  `pregunta` varchar(200) COLLATE utf8_bin NOT NULL,
   `fecha` date NOT NULL,
-  `rutaFoto` varchar(25) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `hora` time NOT NULL,
+  `rutaFoto` varchar(300) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `sondeo`
+--
+
+INSERT INTO `sondeo` (`idSondeo`, `titulo`, `pregunta`, `fecha`, `hora`, `rutaFoto`) VALUES
+(1, 'Caso Jesuitas', 'Esta usted de acuerdo con que se lleven a espana a los militares involucrados en el caso Jesuita?', '2016-02-18', '07:18:19', 'http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2016/02/JOV8638-copy.jpg'),
+(2, 'Salarios de policia', 'Esta usted de acuerdo con que le aumenten el salario a los agentes de la PNC?', '2016-02-16', '09:24:23', 'http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2016/01/JOV6782-copy.jpg');
 
 -- --------------------------------------------------------
 
@@ -1172,7 +1242,7 @@ ALTER TABLE `articulo`
 -- AUTO_INCREMENT de la tabla `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `idBanner` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+  MODIFY `idBanner` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=84;
 --
 -- AUTO_INCREMENT de la tabla `bolsa`
 --
@@ -1252,7 +1322,7 @@ ALTER TABLE `redessociales`
 -- AUTO_INCREMENT de la tabla `respuesta`
 --
 ALTER TABLE `respuesta`
-  MODIFY `idRespuesta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRespuesta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `seccion`
 --
@@ -1262,7 +1332,7 @@ ALTER TABLE `seccion`
 -- AUTO_INCREMENT de la tabla `sondeo`
 --
 ALTER TABLE `sondeo`
-  MODIFY `idSondeo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idSondeo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `subseccion`
 --
