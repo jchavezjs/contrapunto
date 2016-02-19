@@ -336,6 +336,12 @@ li{
 .ads-border{
   border: 2px solid #505050;
 }
+#ads3{
+  border: 2px solid #505050;
+}
+#ads4{
+  border: 2px solid #505050;
+}
 .ads{
     text-align: center;
     margin-top: 10px;
@@ -1622,6 +1628,13 @@ li{
 .indicador-nombre{
     text-transform: uppercase;
 }
+.indicador-nombre p{
+  margin:0px;
+  font-size: 11px;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
+  color: #0C8FE2;
+}
 .titulo-datos-economicos h3{
     line-height: 50px;
     vertical-align: center;
@@ -1631,8 +1644,10 @@ li{
     text-transform: uppercase;
 }
 .t-indicadores{
+    margin-top: 25px;
     font-family: Roboto;
     margin-bottom: 5px;
+    border: 2px solid #0C8FE2;
 }
 .indicador-titulo{
     background-color: #2c2c2c;
@@ -1640,7 +1655,6 @@ li{
     min-height: 40px;
     letter-spacing: 0.5px;
     padding:5px;
-    margin-top: 25px;
     font-weight: bolder;
     text-align: center;
 }
@@ -1885,7 +1899,7 @@ li{
 }
 .post-img img{
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
 .post-title{
     font-family: 'Lora', Helvetica, Arial, sans-serif;
@@ -1906,10 +1920,12 @@ li{
 }
 /*entradilla*/
 .blacky{
-  font-family: 'Roboto Slab','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px !important;
   color: #000;
   margin-bottom: 20px;
+  font-weight: bolder;
+  line-height: 20px;
 }
 /*entradilla*/
 .post-body{
@@ -2288,9 +2304,8 @@ margin: 10px 0 0px 0;
 }
 .minus-top{
   margin-top: -32px;
-  font-size: 10px !important;
-  color: #222 !important;
-  font-weight: normal !important;
+  font-size: 12px !important;
+  color: #000 !important;
 }
 .padddd{
     padding: 0px 0px 0px 5px;
@@ -2332,22 +2347,19 @@ margin: 10px 0 0px 0;
     text-align: center;
 }
 .mercados-del-mundo .titulo{
-    font-family:Helvetica, Arial, Sans-serif;
     font-size: 12px;
     color: #fff;
     margin-bottom:0px;
     text-transform: lowercase;
     text-align: center;
-    font-weight:200;
 }
 .mercados-del-mundo span{
-    font-family:Helvetica, Arial, Sans-serif;
     font-size: 9px;
     color: #fff;
     margin-bottom:0px;
     text-transform: lowercase;
     text-align: center;
-    font-weight:200;
+    font-weight:bolder;
 }
 .mercados-del-mundo .item .numb{
     font-family:Helvetica, Arial, Sans-serif;
