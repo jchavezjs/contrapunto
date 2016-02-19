@@ -283,7 +283,7 @@
                                         <h6 class="titulo" style="padding-top:5px;">cambios</h6>
                                     </div>
                                     <div class="col-md-2">
-                                        <h6 class="titulo">%</br>cambio</h6>
+                                        <h6 class="titulo"><p style="margin-bottom:4px;">%</p> cambio</h6>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="row">
@@ -423,7 +423,7 @@
                             </div>
                         </div>
                         <!--Lo mas leido-->
-                         <!--Tasas de interes-->
+                           <!--Tasas de interes-->
                         <div class="t-indicadores">
                             <div class="indicador-titulo">
                                 <h3>TASAS DE INTERÉS</h3>
@@ -433,7 +433,7 @@
                                 <table>
                                     <tr ng-repeat="interes in intereses" ng-class="{negrita: interes.nombre == 'TASA FED'}">
                                         <td class="indicador-nombre">{{interes.nombre}}</td>
-                                        <td class="indicador">{{interes.porcentaje}}%</td>
+                                        <td class="indicador">{{interes.porcentaje | number: 2}}%</td>
                                     </tr>
                                 </table>
                             </div>
@@ -445,12 +445,12 @@
                         <div class="t-indicadores">
                             <div class="indicador-titulo">
                                 <h3 class="titulo-divisas">DIVISAS</h3>
-                                <div class="flecha"></div>
+                                <span>20 de Febrero del 2016</span>
                             </div>
                             <div class="divisas">
                                 <table>
                                     <tr ng-repeat="divisa in divisas">
-                                        <td class="indicador-nombre">{{divisa.nombre}}</td>
+                                        <td class="indicador-nombre">{{divisa.nombre}} <p>Pais</p></td>
                                         <td class="indicador">{{divisa.cambio}}</td>
                                     </tr>
                                 </table>
