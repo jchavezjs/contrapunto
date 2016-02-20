@@ -128,7 +128,11 @@ echo json_encode(array(
 			'secinfo' => $secinfo,
 			'subinfo' => $subinfo,
 			'subsecciones' => $sub,
-			'fotogaleria' => fotogaleria()
+			'fotogaleria' => fotogaleria(),
+			'banner1' => banner($secinfo['id'],1),
+			'banner2' => banner($secinfo['id'],2),
+			'bannerMovil' => banner($secinfo['id'],'movil'),
+			'bannerPost' => banner($secinfo['id'],'post'),
 			));
 
 ?>

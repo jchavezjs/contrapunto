@@ -389,8 +389,14 @@ angular.module('contrapunto.controllers', [])
                     $scope.secinfo = response.secinfo;
                     $scope.subinfo = response.subinfo;
                     $scope.subsecciones = response.subsecciones;
-
-
+                    $scope.banner1 = response.banner1;
+                    $scope.intervalo1 = $scope.banner1[0].tiempo;
+                    $scope.banner2 = response.banner2;
+                    $scope.intervalo2 = $scope.banner2[0].tiempo;
+                    $scope.banner3 = response.banner3;
+                    $scope.intervalo3 = $scope.banner3[0].tiempo;
+                    $scope.bannerMovil = response.bannerMovil;
+                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
                 });
 
        });
@@ -496,6 +502,14 @@ angular.module('contrapunto.controllers', [])
                     $scope.subinfo = response.subinfo;
                     $scope.subsecciones = response.subsecciones;
                     $scope.fotogaleria = response.fotogaleria;
+                    $scope.banner1 = response.banner1;
+                    $scope.intervalo1 = $scope.banner1[0].tiempo;
+                    $scope.banner2 = response.banner2;
+                    $scope.intervalo2 = $scope.banner2[0].tiempo;
+                    $scope.bannerMovil = response.bannerMovil;
+                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                    $scope.bannerPost = response.bannerPost;
+                    $scope.intervaloPost = $scope.bannerPost[0].tiempo;
                 });
        });
     })

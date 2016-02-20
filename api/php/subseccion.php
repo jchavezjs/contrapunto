@@ -50,6 +50,10 @@ echo json_encode(array(
 			'error' => $error,
 			'secinfo' => $secinfo,
 			'subinfo' => $subinfo,
-			'subsecciones' => $sub
+			'subsecciones' => $sub,
+			'banner1' => banner($secinfo['id'],1),
+			'banner2' => banner($secinfo['id'],2),
+			'banner3' => banner($secinfo['id'],3),
+			'bannerMovil' => banner($secinfo['id'],'movil'),
 			));
 ?>
