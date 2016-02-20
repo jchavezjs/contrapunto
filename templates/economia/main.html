@@ -107,7 +107,7 @@
                 <!-- Columna 1 -->
                     <div class="col-md-5 m-politica-1">
                         <div class="bolsas-del-mundo">
-                            <div class="head">Bolsas del mundo | <span>Al cierre: {{fechasBolsas.fecha}}</span>
+                            <div class="head">Bolsas del mundo | <span>Al cierre: {{bolsas[0].fecha | date:"dd-MM-yyyy"}}</span>
  </div>
                             <div class="row">
                                 <div ng-repeat="bolsa in bolsas">
@@ -277,7 +277,7 @@
                                 <div class="row" style="margin-top:5px;">
                                     <div class="col-md-2 col-md-offset-3">
                                         <h6 class="titulo">último</h6>
-                                        <span>{{mercadofecha}}</span>
+                                        <span>{{mercas[0].fecha | date:"dd/MM/yyyy"}}</span>
                                     </div>
                                     <div class="col-md-2">
                                         <h6 class="titulo" style="padding-top:5px;">cambios</h6>
@@ -427,7 +427,7 @@
                         <div class="t-indicadores">
                             <div class="indicador-titulo">
                                 <h3>TASAS DE INTERÉS</h3>
-                                <span>Al cierre: {{fechasTasas.fecha}}</span>
+                                <span>Al cierre: {{intereses[0].fecha | date:"dd-MM-yyyy"}}</span>
                             </div>
                             <div class="bolsas">
                                 <table>
@@ -445,12 +445,12 @@
                         <div class="t-indicadores">
                             <div class="indicador-titulo">
                                 <h3 class="titulo-divisas">DIVISAS</h3>
-                                <span>20 de Febrero del 2016</span>
+                                <span>{{divisas[0].fecha}}</span>
                             </div>
                             <div class="divisas">
                                 <table>
                                     <tr ng-repeat="divisa in divisas">
-                                        <td class="indicador-nombre">{{divisa.nombre}} <p>Pais</p></td>
+                                        <td class="indicador-nombre">{{divisa.nombre}} <p>{{divisa.pais}}</p></td>
                                         <td class="indicador">{{divisa.cambio}}</td>
                                     </tr>
                                 </table>

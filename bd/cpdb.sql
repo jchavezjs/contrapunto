@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-02-2016 a las 00:54:11
+-- Tiempo de generación: 20-02-2016 a las 07:23:20
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -264,22 +264,23 @@ CREATE TABLE IF NOT EXISTS `bolsa` (
   `idBolsa` int(11) NOT NULL,
   `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
   `porcentaje` float NOT NULL,
-  `valor` float DEFAULT NULL
+  `valor` float DEFAULT NULL,
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `bolsa`
 --
 
-INSERT INTO `bolsa` (`idBolsa`, `nombre`, `porcentaje`, `valor`) VALUES
-(1, 'Dow Jones', 2.39, 15944.5),
-(2, 'Nasdaq', -2.74, 15944.5),
-(3, 'FTSE 100', -1.93, 15944.5),
-(4, 'DAX', 2.54, 15944.5),
-(5, 'CAC-40', -2.38, 15944.5),
-(6, 'Nikkei', -0.54, 15944.5),
-(7, 'IPC', -1.22, 15944.5),
-(8, 'BOVESPA', -2.36, 15944.5);
+INSERT INTO `bolsa` (`idBolsa`, `nombre`, `porcentaje`, `valor`, `fecha`) VALUES
+(1, 'Dow Jones', 2.39, 15944.5, '2016-02-20'),
+(2, 'Nasdaq', -2.74, 15944.5, '2016-02-20'),
+(3, 'FTSE 100', -1.93, 15944.5, '2016-02-20'),
+(4, 'DAX', 2.54, 15944.5, '2016-02-20'),
+(5, 'CAC-40', -2.38, 15944.5, '2016-02-20'),
+(6, 'Nikkei', -0.54, 15944.5, '2016-02-20'),
+(7, 'IPC', -1.22, 15944.5, '2016-02-20'),
+(8, 'BOVESPA', -2.36, 15944.5, '2016-02-20');
 
 -- --------------------------------------------------------
 
@@ -427,23 +428,25 @@ INSERT INTO `datoseconomicos` (`idDatos`, `indicador`, `periodo`, `cifras`, `enl
 CREATE TABLE IF NOT EXISTS `divisa` (
   `idDivisa` int(11) NOT NULL,
   `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
-  `cambio` float NOT NULL
+  `cambio` float NOT NULL,
+  `pais` varchar(15) COLLATE utf8_bin NOT NULL,
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `divisa`
 --
 
-INSERT INTO `divisa` (`idDivisa`, `nombre`, `cambio`) VALUES
-(1, 'Euro', 0.914),
-(2, 'Yen', 120.5),
-(3, 'LIBRA', 0.675),
-(4, 'DÃ³lar', 1.388),
-(5, 'Peso', 17.381),
-(6, 'Quetzal', 7.633),
-(7, 'Lempira', 22.355),
-(8, 'CÃ³rdova', 27.924),
-(9, 'ColÃ³n', 537.3);
+INSERT INTO `divisa` (`idDivisa`, `nombre`, `cambio`, `pais`, `fecha`) VALUES
+(1, 'Euro', 0.914, 'Europa', '2016-02-19'),
+(2, 'Yen', 120.5, 'JapÃ³n', '2016-02-19'),
+(3, 'LIBRA', 0.675, 'Reino Unido', '2016-02-19'),
+(4, 'DÃ³lar', 1.388, 'CanadÃ¡', '2016-02-19'),
+(5, 'Peso', 17.381, 'MÃ©xico', '2016-02-19'),
+(6, 'Quetzal', 7.633, 'Guatemala', '2016-02-19'),
+(7, 'Lempira', 22.355, 'Honduras', '2016-02-19'),
+(8, 'CÃ³rdova', 27.924, 'Nicaragua', '2016-02-19'),
+(9, 'ColÃ³n', 537.3, 'Costa Rica', '2016-02-19');
 
 -- --------------------------------------------------------
 
@@ -633,17 +636,18 @@ CREATE TABLE IF NOT EXISTS `mercado` (
   `porcentaje` float NOT NULL,
   `menor` float NOT NULL,
   `masAlto` float NOT NULL,
-  `ultimo` float NOT NULL
+  `ultimo` float NOT NULL,
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `mercado`
 --
 
-INSERT INTO `mercado` (`idMercado`, `nombre`, `descripcion`, `cambio`, `porcentaje`, `menor`, `masAlto`, `ultimo`) VALUES
-(1, 'PETROLEO', 'contrato  Nov 2015  $ / barril', 0.54, 2.06, 37.75, 77.83, 26.75),
-(2, 'CAFE', 'contrato  Dic 2015  Centavos de dolar por libra', -0.65, -0.57, 114.95, 197.15, 114.1),
-(3, 'AZUCAR', 'contrato  Jul. 2016  Centavos de dolar por libra', -0.6, -4.43, 11.28, 16.7, 12.94);
+INSERT INTO `mercado` (`idMercado`, `nombre`, `descripcion`, `cambio`, `porcentaje`, `menor`, `masAlto`, `ultimo`, `fecha`) VALUES
+(1, 'PETROLEO', 'contrato  Nov 2015  $ / barril', 0.54, 2.06, 37.75, 77.83, 26.75, '2016-02-19'),
+(2, 'CAFE', 'contrato  Dic 2015  Centavos de dolar por libra', -0.65, -0.57, 114.95, 197.15, 114.1, '2016-02-19'),
+(3, 'AZUCAR', 'contrato  Jul. 2016  Centavos de dolar por libra', -0.6, -4.43, 11.28, 16.7, 12.94, '2016-02-19');
 
 -- --------------------------------------------------------
 
@@ -960,19 +964,20 @@ INSERT INTO `subseccion` (`idSubseccion`, `idSeccion`, `nombre`, `url`) VALUES
 CREATE TABLE IF NOT EXISTS `tasainteres` (
   `idTasa` int(11) NOT NULL,
   `nombre` varchar(30) COLLATE utf8_bin NOT NULL,
-  `porcentaje` float NOT NULL
+  `porcentaje` float NOT NULL,
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `tasainteres`
 --
 
-INSERT INTO `tasainteres` (`idTasa`, `nombre`, `porcentaje`) VALUES
-(1, 'TASA FED', 0.5),
-(2, 'WSJ prime', 3.5),
-(3, 'Libor 3 meses', 0.62),
-(4, 'Libor 6 meses', 0.85),
-(5, 'Libor 12 meses', 1.15);
+INSERT INTO `tasainteres` (`idTasa`, `nombre`, `porcentaje`, `fecha`) VALUES
+(1, 'TASA FED', 0.5, '2016-02-20'),
+(2, 'WSJ prime', 3.5, '2016-02-20'),
+(3, 'Libor 3 meses', 0.62, '2016-02-20'),
+(4, 'Libor 6 meses', 0.85, '2016-02-20'),
+(5, 'Libor 12 meses', 1.15, '2016-02-20');
 
 -- --------------------------------------------------------
 

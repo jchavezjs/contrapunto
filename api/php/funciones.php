@@ -10,14 +10,14 @@ function articulo($seccion){
 	$query = mysql_query($str);
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
-					'id' => $id = $result['id'],
-					'idPersonal' => $idPersonal = $result['idPersonal'],
-					'foto' => $foto = $result['foto'],
-					'titulo' => $titulo = $result['titulo'],
-					'autor' => $autor = $result['autor'],
-					'preview' => $preview = $result['preview'],
-					'fecha' => $fecha = formatoFecha($result['fecha']),
-					'fotografo' => $fotografo = $result['fotografo'],);
+					'id' => $result['id'],
+					'idPersonal' => $result['idPersonal'],
+					'foto' => $result['foto'],
+					'titulo' => $result['titulo'],
+					'autor' => $result['autor'],
+					'preview' => $result['preview'],
+					'fecha' => formatoFecha($result['fecha']),
+					'fotografo' => $result['fotografo'],);
 	}
 	return $resultado;
 }
@@ -32,13 +32,13 @@ function opinion($seccion){
 	$query = mysql_query($str);
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
-					'id' => $id = $result['id'],
-					'idPersonal' => $idPersonal = $result['idPersonal'],
-					'foto' => $foto = $result['foto'],
-					'titulo' => $titulo = $result['titulo'],
-					'autor' => $autor = $result['autor'],
-					'preview' => $preview = $result['preview'],
-					'fecha' => $fecha = formatoFecha($result['fecha']),
+					'id' => $result['id'],
+					'idPersonal' => $result['idPersonal'],
+					'foto' => $result['foto'],
+					'titulo' => $result['titulo'],
+					'autor' => $result['autor'],
+					'preview' => $result['preview'],
+					'fecha' => formatoFecha($result['fecha']),
 					);
 	}
 	return $resultado;
@@ -53,9 +53,9 @@ function subseccion($seccion){
 	$query = mysql_query($str);
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
-					'id' => $id = $result['id'],
-					'nombre' => $nombre = $result['nombre'],
-					'url' => $url = $result['url'],
+					'id' => $result['id'],
+					'nombre' => $result['nombre'],
+					'url' => $result['url'],
 					);
 	}
 	return $resultado;
@@ -69,12 +69,12 @@ function columna(){
 	$query = mysql_query($str);
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
-					'id' => $id = $result['id'],
-					'idPersonal' => $idPersonal = $result['idPersonal'],
-					'foto' => $foto = $result['foto'],
-					'titulo' => $titulo = $result['titulo'],
-					'autor' => $autor = $result['autor'],
-					'fecha' => $fecha = formatoFecha($result['fecha']),
+					'id' => $result['id'],
+					'idPersonal' => $result['idPersonal'],
+					'foto' => $result['foto'],
+					'titulo' => $result['titulo'],
+					'autor' => $result['autor'],
+					'fecha' => formatoFecha($result['fecha']),
 					);
 	}
 	return $resultado;
@@ -87,8 +87,8 @@ function dropdown($seccion){
 	$query = mysql_query($str);
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
-					'id' => $id = $result['id'],
-					'nombre' => $nombre = $result['nombre']);
+					'id' => $result['id'],
+					'nombre' => $result['nombre']);
 	}
 	return $resultado;
 }
@@ -113,6 +113,12 @@ function formatoFecha($fecha){
 	return $nombre." ".$dia." de ".$meses[$mes -1]." del ".$anio;
 }
 
+function formatoFecha2($fecha){
+	list($dia, $mes, $anio) = explode(" ",date("d m Y", strtotime($fecha)));
+	$meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+	return $dia." de ".$meses[$mes -1]." del ".$anio;
+}
+
 function fotogaleria(){
 	$fotinfo = mysql_query("SELECT a.titulo, a.rutaFoto as foto, f.nombre as fotografo, a.link
 							from fotogaleria a, fotografo as f
@@ -120,10 +126,10 @@ function fotogaleria(){
 							ORDER BY a.fecha desc, a.hora desc");
 	while($fotpreview = mysql_fetch_array($fotinfo)){
 		$fotogaleria[] = array(
-					'fotografo' => $fotografo = $fotpreview['fotografo'],
-					'foto' => $foto = $fotpreview['foto'],
-					'link' => $link = $fotpreview['link'],
-					'titulo' => $titulo = $fotpreview['titulo'],);
+					'fotografo' => $fotpreview['fotografo'],
+					'foto' => $fotpreview['foto'],
+					'link' => $fotpreview['link'],
+					'titulo' => $fotpreview['titulo'],);
 	}
 	return $fotogaleria;
 }
@@ -136,17 +142,17 @@ function actualidad(){
 							ORDER BY a.fecha desc, a.hora desc");
 	while($actpreview = mysql_fetch_array($actinfo)){
 		$actualidad[] = array(
-					'id' => $id = $actpreview['id'],
-					'idPersonal' => $idPersonal = $actpreview['idPersonal'],
-					'titulo' => $titulo = $actpreview['titulo'],
-					'autor' => $autor = $actpreview['autor'],
-					'fecha' => $fecha = formatoFecha($actpreview['fecha']),
-					'subseccion' => $subseccion = $actpreview['subseccion'],
-					'preview' => $preview = $actpreview['preview'],
-					'urlSeccion' => $urlSeccion = $actpreview['urlSeccion'],
-					'urlSubseccion' => $urlSubseccion = $actpreview['urlSubseccion'],
-					'foto' => $foto = $actpreview['foto'],
-					'fotografo' => $fotografo = $actpreview['fotografo'],);
+					'id' => $actpreview['id'],
+					'idPersonal' => $actpreview['idPersonal'],
+					'titulo' => $actpreview['titulo'],
+					'autor' => $actpreview['autor'],
+					'fecha' => formatoFecha($actpreview['fecha']),
+					'subseccion' => $actpreview['subseccion'],
+					'preview' => $actpreview['preview'],
+					'urlSeccion' => $actpreview['urlSeccion'],
+					'urlSubseccion' => $actpreview['urlSubseccion'],
+					'foto' => $actpreview['foto'],
+					'fotografo' => $actpreview['fotografo'],);
 	}
 
 	return $actualidad;
@@ -159,10 +165,10 @@ function caricatura(){
 							ORDER BY a.fecha desc, a.hora desc");
 	while($carpreview = mysql_fetch_array($carinfo)){
 		$caricatura[] = array(
-					'foto' => $foto = $carpreview['foto'],
-					'idCaricatura' => $idCaricatura = $carpreview['idCaricatura'],
-					'caricaturista' => $caricaturista = $carpreview['caricaturista'],
-					'fecha' => $fecha = $carpreview['fecha'],);
+					'foto' => $carpreview['foto'],
+					'idCaricatura' => $carpreview['idCaricatura'],
+					'caricaturista' => $carpreview['caricaturista'],
+					'fecha' => $carpreview['fecha'],);
 	}
 	return $caricatura;
 }
@@ -174,9 +180,9 @@ function banner($seccion, $posicion){
 	$baninfo = mysql_query($query);
 	while($banpreview = mysql_fetch_array($baninfo)){
 		$banner[]=array(
-								'foto' => $foto = $banpreview['rutaFoto'],
-								'link' => $link = $banpreview['link'],
-								'tiempo' => $tiempo = $banpreview['tiempo'],
+								'foto' => $banpreview['rutaFoto'],
+								'link' => $banpreview['link'],
+								'tiempo' => $banpreview['tiempo'],
 							);
 	}
 	return $banner;

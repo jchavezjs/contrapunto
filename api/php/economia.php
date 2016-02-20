@@ -4,52 +4,57 @@ include('funciones.php');
 
 date_default_timezone_set('America/El_Salvador');
 
-$bolinfo = mysql_query("SELECT nombre, porcentaje, valor from bolsa");
+$bolinfo = mysql_query("SELECT nombre, porcentaje, valor, fecha from bolsa");
 
-$intinfo = mysql_query("SELECT nombre, porcentaje from tasainteres");
+$intinfo = mysql_query("SELECT nombre, porcentaje, fecha from tasainteres");
 
-$divinfo = mysql_query("SELECT nombre, cambio from divisa");
+$divinfo = mysql_query("SELECT nombre, cambio, pais, fecha from divisa");
 
 $datinfo = mysql_query("SELECT indicador, periodo, cifras, enlaceDetalles as enlace from datoseconomicos");
 
-$merinfo = mysql_query("SELECT nombre, descripcion, cambio, porcentaje, menor, masAlto, ultimo from mercado");
+$merinfo = mysql_query("SELECT nombre, descripcion, cambio, porcentaje, menor, masAlto, ultimo, fecha from mercado");
 
 while($bolpreview = mysql_fetch_array($bolinfo)){
 	$bolsa[]=array(
-			'nombre' => $nombre = $bolpreview['nombre'],
-			'valor' => $valor = $bolpreview['valor'],
-			'porcentaje' => $porcentaje = $bolpreview['porcentaje']);
+			'nombre' => $bolpreview['nombre'],
+			'fecha' => $bolpreview['fecha'],
+			'valor' =>  $bolpreview['valor'],
+			'porcentaje' => $bolpreview['porcentaje']);
 }
 
 while($intpreview = mysql_fetch_array($intinfo)){
 	$interes[]=array(
-			'nombre' => $nombre = $intpreview['nombre'],
-			'porcentaje' => $porcentaje = $intpreview['porcentaje']);
+			'nombre' => $intpreview['nombre'],
+			'fecha' => $intpreview['fecha'],
+			'porcentaje' => $intpreview['porcentaje']);
 }
 
 while($divpreview = mysql_fetch_array($divinfo)){
 	$divisa[]=array(
-			'nombre' => $nombre = $divpreview['nombre'],
-			'cambio' => $porcentaje = $divpreview['cambio']);
+			'nombre' => $divpreview['nombre'],
+			'pais' => $divpreview['pais'],
+			'fecha' => formatoFecha2($divpreview['fecha']),
+			'cambio' => $divpreview['cambio']);
 }
 
 while($datpreview = mysql_fetch_array($datinfo)){
 	$dato[]=array(
-			'indicador' => $indicador = $datpreview['indicador'],
-			'periodo' => $periodo = $datpreview['periodo'],
-			'cifras' => $cifras = $datpreview['cifras'],
-			'enlace' => $enlace = $datpreview['enlace'],);
+			'indicador' => $datpreview['indicador'],
+			'periodo' => $datpreview['periodo'],
+			'cifras' => $datpreview['cifras'],
+			'enlace' => $datpreview['enlace'],);
 }
 
 while($merpreview = mysql_fetch_array($merinfo)){
 	$mercado[]=array(
-			'nombre' => $nombre = $merpreview['nombre'],
-			'descripcion' => $descripcion = $merpreview['descripcion'],
-			'cambio' => $cambio = $merpreview['cambio'],
-			'porcentaje' => $porcentaje = $merpreview['porcentaje'],
-			'menor' => $menor = $merpreview['menor'],
-			'masAlto' => $masAlto = $merpreview['masAlto'],
-			'ultimo' => $ultimo = $merpreview['ultimo'],);
+			'nombre' => $merpreview['nombre'],
+			'descripcion' => $merpreview['descripcion'],
+			'cambio' => $merpreview['cambio'],
+			'porcentaje' => $merpreview['porcentaje'],
+			'menor' => $merpreview['menor'],
+			'masAlto' => $merpreview['masAlto'],
+			'fecha' => $merpreview['fecha'],
+			'ultimo' => $merpreview['ultimo'],);
 }
 
 echo json_encode(array(
