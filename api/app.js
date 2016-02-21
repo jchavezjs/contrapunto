@@ -1,4 +1,4 @@
-angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services','angular.filter','ngRoute','ngProgress','ui.bootstrap','ngSanitize'])
+angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services','angular.filter','ngRoute','ngProgress','ui.bootstrap','ngSanitize','720kb.socialshare'])
     .config(function($routeProvider, $locationProvider){
         $routeProvider
             .when("/", {
@@ -8,6 +8,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
             .when("/opinion", {
                 controller: "OpinionController",
                 templateUrl: "templates/opinion/main.html"
+            })
+            .when("/opinion/sondeo/:id", {
+                controller: "OpinionController",
+                templateUrl: "templates/opinion/sondeoPost.html"
             })
             .when("/opinion/columnas/1", {
                 controller: "OpinionController",
@@ -46,8 +50,8 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                     templateUrl: "templates/opinion/caricaturas.html"
             })
             .when("/opinion/caricaturas/:id", {
-                    controller: "CPostController",
-                    templateUrl: "templates/opinion/post.html"
+                    controller: "OpinionController",
+                    templateUrl: "templates/opinion/caricaturasPost.html"
             })
             .when("/autor/:id", {
                 controller: "AutorController",

@@ -487,7 +487,9 @@ angular.module('contrapunto.controllers', [])
        $scope.maxSize = 15;
         var seccion = $routeParams.seccion;
         var subseccion = $routeParams.subseccion;
+        $scope.subseccion = subseccion;
         var titulo = $routeParams.titulo;
+        $scope.tituloUrl = titulo;
         var id = $routeParams.id;
         $anchorScroll();
         $scope.fecha = fechaActual;
