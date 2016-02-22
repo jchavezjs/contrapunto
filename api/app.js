@@ -50,7 +50,7 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                     templateUrl: "templates/opinion/caricaturas.html"
             })
             .when("/opinion/caricaturas/:id", {
-                    controller: "OpinionController",
+                    controller: "CPostController",
                     templateUrl: "templates/opinion/caricaturasPost.html"
             })
             .when("/autor/:id", {

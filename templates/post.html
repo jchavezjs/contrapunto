@@ -107,7 +107,7 @@
 
                     <div class="col-md-8">
                         <h1 class="post-title">{{contenido.titulo}}</h1>
-                        <h3 class="post-author"><span>{{contenido.autor}}</span> | {{contenido.fecha}}</h3>
+                        <h3 class="post-author"><a ng-href="#/autor/{{contenido.idPersonal}}"><span>{{contenido.autor}}</span></a> | {{contenido.fecha}}</h3>
                         <center><div class="post-divisor"></div></center>
                         <div class="post-img" ng-if="subinfo.id != 3">
                             <img ng-src="{{contenido.foto}}" alt="foto de articulo" class="post-img">

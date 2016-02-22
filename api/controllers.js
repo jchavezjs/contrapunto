@@ -242,18 +242,6 @@ angular.module('contrapunto.controllers', [])
 
     .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
 
-      var datos = {
-        "tasasInteres":{
-          "fecha": "2016-02-20"
-        },
-        "bolsasMundo":{
-          "fecha":"2016-02-15"
-        }
-      };
-
-      $scope.fechasBolsas = datos.bolsasMundo;
-      $scope.fechasTasas = datos.tasasInteres;
-
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -385,6 +373,10 @@ angular.module('contrapunto.controllers', [])
                 $http.get("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion).success(function(response){
 
                     $scope.contenidos = response.contenidos;
+                    if ($scope.contenidos == null) {
+                      alert("EL contenido solicitado no esta disponible");
+                      $location.path('/');
+                    }
                     $scope.error = response.error;
                     $scope.secinfo = response.secinfo;
                     $scope.subinfo = response.subinfo;
@@ -499,7 +491,10 @@ angular.module('contrapunto.controllers', [])
                 $http.get("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id).success(function(response){
 
                     $scope.contenido = response.contenido;
-                    $scope.error = response.error;
+                    if ($scope.contenido == null) {
+                      alert("EL contenido solicitado no esta disponible");
+                      $location.path('/');
+                    }
                     $scope.secinfo = response.secinfo;
                     $scope.subinfo = response.subinfo;
                     $scope.subsecciones = response.subsecciones;
@@ -536,11 +531,19 @@ angular.module('contrapunto.controllers', [])
                 $http.get("api/php/cpost.php?&id="+id).success(function(response){
 
                     $scope.contenido = response.contenido;
-                    $scope.error = response.error;
-                    $scope.secinfo = response.secinfo;
-                    $scope.subinfo = response.subinfo;
+                    if ($scope.contenido == null) {
+                      alert("EL contenido solicitado no esta disponible");
+                      $location.path('/');
+                    }
                     $scope.subsecciones = response.subsecciones;
-                    $scope.fotogaleria = response.fotogaleria;
+                    $scope.banner1 = response.banner1;
+                    $scope.intervalo1 = $scope.banner1[0].tiempo;
+                    $scope.banner2 = response.banner2;
+                    $scope.intervalo2 = $scope.banner2[0].tiempo;
+                    $scope.banner3 = response.banner3;
+                    $scope.intervalo3 = $scope.banner3[0].tiempo;
+                    $scope.bannerMovil = response.bannerMovil;
+                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
                 });
        });
     })
@@ -567,7 +570,7 @@ angular.module('contrapunto.controllers', [])
         var query = $routeParams.query;
         $scope.query = query;
         if($scope.query == 'undefined'){
-          $location.path('/');
+          $scope.resultados = 'error';
         }
         $http.post("api/php/buscar.php?query="+query,{'selectSeccion':query}).success(function(data,status,headers,config,response){
 
@@ -588,7 +591,11 @@ angular.module('contrapunto.controllers', [])
 
       });
        $scope.buscar = function(busqueda){
-        $location.path('/buscar/' + busqueda);
+        if(busqueda == 'undefined'){
+          $scope.resultados = 'error';
+        }else{
+          $location.path('/buscar/' + busqueda);
+        }
       }
     })
     .controller('AutorController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){

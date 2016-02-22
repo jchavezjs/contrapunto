@@ -2,7 +2,7 @@
 
 include('connection.php');
 include('funciones.php');
-
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $editdata = json_decode(file_get_contents("php://input"));
 
 $seccion = $_GET['seccion'];
@@ -32,87 +32,92 @@ if($secvalidate){
 		$sub = subseccion($secinfo['id']);
 		if($secinfo['id'] == 1){
 			if($subinfo['id'] == 2){
-				$cont = mysql_query("SELECT a.idColumna as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor,
+				$cont = mysql_query("SELECT a.idColumna as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal,
 									a.contenido, c.rutaFoto as foto, a.fecha
 									from columna a, personal as c
 									where a.idPersonal = c.idPersonal and a.activo = 1
 									and a.idColumna=$id");
 				while($result = mysql_fetch_array($cont)){
 					$contenido = array(
-					'id' => $id = $result['id'],
-					'foto' => $foto = $result['foto'],
-					'titulo' => $titulo = $result['titulo'],
-					'autor' => $autor = $result['autor'],
-					'contenido' => $contenido = htmlspecialchars_decode(stripslashes($result['contenido'])),
-					'fecha' => $fecha = formatoFecha($result['fecha']),
+					'id' => $result['id'],
+					'idPersonal' => $result['idPersonal'],
+					'foto' => $result['foto'],
+					'titulo' => $result['titulo'],
+					'autor' => $result['autor'],
+					'contenido' => htmlspecialchars_decode(stripslashes($result['contenido'])),
+					'fecha' => formatoFecha($result['fecha']),
 					);
 				}
 			}elseif($subinfo['id'] == 6){
-				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido, a.preview,
+				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido, a.preview, c.idPersonal,
 								 i.rutaFoto as foto, a.fecha, f.nombre as fotografo
 									from articulo as a, personal as c, fotografo as f, imagenesarticulo as i
 									where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo and a.activo = 1
 									and i.posicion='principal' and a.idArticulo=$id");
 				while($result = mysql_fetch_array($cont)){
 					$contenido = array(
-						'id' => $id = $result['id'],
-						'foto' => $foto = $result['foto'],
-						'titulo' => $titulo = $result['titulo'],
-						'autor' => $autor = $result['autor'],
-						'preview' => $preview = $result['preview'],
-						'contenido' => $contenido = $result['contenido'],
-						'fecha' => $fecha = formatoFecha($result['fecha']),
-						'fotografo' => $fotografo = $result['fotografo'],);
+						'id' => $result['id'],
+						'idPersonal' => $result['idPersonal'],
+						'foto' => $result['foto'],
+						'titulo' => $result['titulo'],
+						'autor' => $result['autor'],
+						'preview' => $result['preview'],
+						'contenido' => $result['contenido'],
+						'fecha' => formatoFecha($result['fecha']),
+						'fotografo' => $result['fotografo'],);
 				}
 			}elseif($subinfo['id'] == 3){
-				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor,
+				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal,
 									a.contenido, a.fecha
 									from articulo a, personal as c
 									where a.idPersonal = c.idPersonal and a.activo = 1
 									and a.idArticulo=$id");
 				while($result = mysql_fetch_array($cont)){
 					$contenido = array(
-					'id' => $id = $result['id'],
-					'titulo' => $titulo = $result['titulo'],
-					'autor' => $autor = $result['autor'],
-					'contenido' => $contenido = $result['contenido'],
-					'fecha' => $fecha = formatoFecha($result['fecha']),
+					'id' => $result['id'],
+					'idPersonal' => $result['idPersonal'],
+					'titulo' => $result['titulo'],
+					'autor' => $result['autor'],
+					'contenido' => $result['contenido'],
+					'fecha' => formatoFecha($result['fecha']),
 					);
 				}
 			}else{
-				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview,
+				$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, c.idPersonal,
 									a.contenido, c.rutaFoto as foto, a.fecha
 									from articulo a, personal as c
 									where a.idPersonal = c.idPersonal and a.activo = 1
 									and a.idArticulo=$id");
 				while($result = mysql_fetch_array($cont)){
 					$contenido = array(
-					'id' => $id = $result['id'],
-					'foto' => $foto = $result['foto'],
-					'titulo' => $titulo = $result['titulo'],
-					'autor' => $autor = $result['autor'],
-					'contenido' => $contenido = $result['contenido'],
-					'preview' => $preview = $result['preview'],
-					'fecha' => $fecha = formatoFecha($result['fecha']),
+					'id' => $result['id'],
+					'idPersonal' => $result['idPersonal'],
+					'foto' => $result['foto'],
+					'titulo' => $result['titulo'],
+					'autor' => $result['autor'],
+					'contenido' => $result['contenido'],
+					'preview' => $result['preview'],
+					'fecha' => formatoFecha($result['fecha']),
 					);
 				}
 			}
 		}else{
-			$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido, a.preview,
+			$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido, a.preview, c.idPersonal,
 								 i.rutaFoto as foto, a.fecha, f.nombre as fotografo
 									from articulo as a, personal as c, fotografo as f, imagenesarticulo as i
 									where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo  and a.activo = 1
 									and i.posicion='principal' and a.idArticulo=$id");
 			while($result = mysql_fetch_array($cont)){
 				$contenido = array(
-					'id' => $id = $result['id'],
-					'foto' => $foto = $result['foto'],
-					'titulo' => $titulo = $result['titulo'],
-					'autor' => $autor = $result['autor'],
-					'preview' => $preview = $result['preview'],
-					'contenido' => $contenido = $result['contenido'],
-					'fecha' => $fecha = formatoFecha($result['fecha']),
-					'fotografo' => $fotografo = $result['fotografo'],);
+					'id' => $result['id'],
+					'idPersonal' => $result['idPersonal'],
+					'foto' => $result['foto'],
+					'titulo' => $result['titulo'],
+					'autor' => $result['autor'],
+					'preview' => $result['preview'],
+					'contenido' => $result['contenido'],
+					'fecha' => formatoFecha($result['fecha']),
+					'fotografo' => $result['fotografo'],);
 			}
 		}
 	}else{

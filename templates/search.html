@@ -102,6 +102,7 @@
                     <h6>Por <a class="autor" ng-href="#/autor/{{resultado.idPersonal}}">{{resultado.autor}}</a> {{resultado.fecha}}</h6>
                     <p>{{resultado.preview}}</p>
                 </div>
+                <div ng-if="resultados == 'error' || resultados == null" class="item"><h3>No existen resultados de su busqueda</h3></div>
             </div>
             <div class="center"><uib-pagination ng-click="top()" total-items="resultados.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination></div>
         </div>
@@ -130,7 +131,7 @@
                     </a>
               </div>
             </div>
-            <a href="#/opinion/caricaturas"><div class="search-caricatura" style="background-image:url({{caricatura[0].foto}});">
+            <a ng-href="#/opinion/caricaturas/{{caricatura[0].idCaricatura}}"><div class="search-caricatura" style="background-image:url({{caricatura[0].foto}});">
             </div></a>
             <div class="lml-search">
                 <div class="row">

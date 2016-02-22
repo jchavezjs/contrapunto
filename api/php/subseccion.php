@@ -2,7 +2,7 @@
 
 include('connection.php');
 include('funciones.php');
-
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $editdata = json_decode(file_get_contents("php://input"));
 
 $seccion = $_GET['seccion'];

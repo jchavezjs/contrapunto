@@ -104,18 +104,18 @@
 <div class="container">
     <div class="row">
       <div class="col-md-10">
-            <h1 class="post-title">Allan McDonald</h1>
-            <h3 class="post-author">Jueves, 14 de Enero del 2016</h3>
+            <h1 class="post-title">{{contenido[0].caricaturista}}</h1>
+            <h3 class="post-author">{{contenido[0].fecha}}</h3>
             <center><div class="post-divisor"></div></center>
             <div class="caricatura-big">
-              <img src="http://www.contrapunto.com.sv/documentosite/contrapunta/images/postal-cortazar-contrapunta.jpg" alt="Caricatura">
+              <img ng-src="{{contenido[0].foto}}" alt="Caricatura">
             </div>
             <center><div class="post-divisor"></div></center>
             <div class="social-posts">
-                <a href="" socialshare socialshare-provider="facebook" socialshare-url="http://contrapunto.com.sv/opinion/caricaturas/id" socialshare-text="Caso Jesuitas" socialshare-description="¿Está usted de acuerdo con que se lleven a españa a los militares involucrados en el caso Jesuita?" socialshare-media="https://www.facebook.com/DiarioDigitalContraPunto/?fref=ts"  socialshare-caption="http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2016/02/JOV8638-copy.jpg"><i class="ion-social-facebook fb"></i></a>
+                <a href="" socialshare socialshare-provider="facebook" socialshare-url="http://contrapunto.com.sv/opinion/caricaturas/{{contenido[0].idCaricatura}}" socialshare-text="Caso Jesuitas" socialshare-description="¿Está usted de acuerdo con que se lleven a españa a los militares involucrados en el caso Jesuita?" socialshare-media="https://www.facebook.com/DiarioDigitalContraPunto/?fref=ts"  socialshare-caption="http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2016/02/JOV8638-copy.jpg"><i class="ion-social-facebook fb"></i></a>
                 <a href="" socialshare socialshare-provider="twitter" socialshare-text="¿Que se lleven a españa a los militares involucrados en el caso Jesuita?" socialshare-hashtags=""
-  socialshare-url="http://contrapunto.com.sv/opinion/caricaturas/id" socialshare-via="contra_punto"><i class="ion-social-twitter tw"></i></a>
-                <a href="" socialshare socialshare-provider="google+" socialshare-url="http://contrapunto.com.sv/opinion/caricaturas/id"><i class="ion-social-googleplus g"></i></a>
+  socialshare-url="http://contrapunto.com.sv/opinion/caricaturas/{{contenido[0].idCaricatura}}" socialshare-via="contra_punto"><i class="ion-social-twitter tw"></i></a>
+                <a href="" socialshare socialshare-provider="google+" socialshare-url="http://contrapunto.com.sv/opinion/caricaturas/{{contenido[0].idCaricatura}}"><i class="ion-social-googleplus g"></i></a>
                 <a target="_blank" href="mailto:"><i class="ion-email mail"></i></a>
             </div>
             <!-- Disqus-->
