@@ -13,7 +13,7 @@ angular.module('contrapunto.controllers', [])
       });
   };
   })
-    .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
+    .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
       $anchorScroll();
 
       $scope.search = function(query){
@@ -95,9 +95,9 @@ angular.module('contrapunto.controllers', [])
           $scope.bannerMovil = response.bannerMovil;
           $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
       });
-
-
-
+      $scope.vistoBanner = function(id){
+        $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+      };
     })
     .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
       $scope.search = function(query){
@@ -136,7 +136,11 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            $http.post("api/php/vistoseccion.php?id="+1,{'selectSeccion':1}).success(function(data,status,headers,config,response){});
         });
+        $scope.vistoBanner = function(id){
+          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        };
     })
 
     .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
@@ -167,7 +171,11 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            $http.post("api/php/vistoseccion.php?id="+2,{'selectSeccion':2}).success(function(data,status,headers,config,response){});
         });
+        $scope.vistoBanner = function(id){
+          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        };
     })
 
     .controller('InternacionalesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
@@ -198,7 +206,11 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            $http.post("api/php/vistoseccion.php?id="+3,{'selectSeccion':3}).success(function(data,status,headers,config,response){});
         });
+        $scope.vistoBanner = function(id){
+          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        };
     })
 
     .controller('SociedadController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
@@ -237,7 +249,11 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            $http.post("api/php/vistoseccion.php?id="+4,{'selectSeccion':4}).success(function(data,status,headers,config,response){});
         });
+        $scope.vistoBanner = function(id){
+          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        };
     })
 
     .controller('EconomiaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
@@ -278,7 +294,11 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            $http.post("api/php/vistoseccion.php?id="+5,{'selectSeccion':5}).success(function(data,status,headers,config,response){});
         });
+        $scope.vistoBanner = function(id){
+          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        };
     })
 
     .controller('CulturaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
@@ -311,7 +331,11 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            $http.post("api/php/vistoseccion.php?id="+6,{'selectSeccion':6}).success(function(data,status,headers,config,response){});
         });
+        $scope.vistoBanner = function(id){
+          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        };
     })
 
     .controller('DeportesController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
@@ -344,7 +368,11 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            $http.post("api/php/vistoseccion.php?id="+7,{'selectSeccion':7}).success(function(data,status,headers,config,response){});
         });
+        $scope.vistoBanner = function(id){
+          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        };
     })
 
     .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
@@ -371,13 +399,15 @@ angular.module('contrapunto.controllers', [])
        $http.post("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
 
                 $http.get("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion).success(function(response){
-
+                    $scope.secinfo = response.secinfo;
+                    $scope.subinfo = response.subinfo;
                     $scope.contenidos = response.contenidos;
                     if ($scope.contenidos == null) {
                       alert("EL contenido solicitado no esta disponible");
                       $location.path('/');
+                    }else{
+                      $http.post("api/php/vistosubseccion.php?id="+$scope.subinfo.id,{'selectSeccion':$scope.subinfo.id}).success(function(data,status,headers,config,response){});
                     }
-                    $scope.error = response.error;
                     $scope.secinfo = response.secinfo;
                     $scope.subinfo = response.subinfo;
                     $scope.subsecciones = response.subsecciones;
@@ -392,6 +422,9 @@ angular.module('contrapunto.controllers', [])
                 });
 
        });
+       $scope.vistoBanner = function(id){
+         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+       };
     })
 
     .controller('SondeoController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
@@ -425,7 +458,11 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo3 = $scope.banner3[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            $http.post("api/php/vistosubseccion.php?id="+5,{'selectSeccion':5}).success(function(data,status,headers,config,response){});
         });
+        $scope.vistoBanner = function(id){
+          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        };
     })
 
     .controller('CaricaturaController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
@@ -460,7 +497,11 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo3 = $scope.banner3[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            $http.post("api/php/vistosubseccion.php?id="+61,{'selectSeccion':61}).success(function(data,status,headers,config,response){});
         });
+        $scope.vistoBanner = function(id){
+          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        };
     })
 
     .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
@@ -491,12 +532,16 @@ angular.module('contrapunto.controllers', [])
                 $http.get("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id).success(function(response){
 
                     $scope.contenido = response.contenido;
+                    $scope.subinfo = response.subinfo;
                     if ($scope.contenido == null) {
                       alert("EL contenido solicitado no esta disponible");
                       $location.path('/');
+                    }else{
+                      if($scope.subinfo.id != 2){
+                      $http.post("api/php/vistarticulo.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+                      }
                     }
                     $scope.secinfo = response.secinfo;
-                    $scope.subinfo = response.subinfo;
                     $scope.subsecciones = response.subsecciones;
                     $scope.fotogaleria = response.fotogaleria;
                     $scope.banner1 = response.banner1;
@@ -509,6 +554,9 @@ angular.module('contrapunto.controllers', [])
                     $scope.intervaloPost = $scope.bannerPost[0].tiempo;
                 });
        });
+       $scope.vistoBanner = function(id){
+         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+       };
     })
     .controller('CPostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
       $scope.search = function(query){
@@ -546,6 +594,9 @@ angular.module('contrapunto.controllers', [])
                     $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
                 });
        });
+       $scope.vistoBanner = function(id){
+         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+       };
     })
 
     .controller('BuscarController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
@@ -597,6 +648,9 @@ angular.module('contrapunto.controllers', [])
           $location.path('/buscar/' + busqueda);
         }
       }
+      $scope.vistoBanner = function(id){
+        $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+      };
     })
     .controller('AutorController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
       $scope.search = function(query){
@@ -631,4 +685,7 @@ angular.module('contrapunto.controllers', [])
 
 
       });
+      $scope.vistoBanner = function(id){
+        $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+      };
     });

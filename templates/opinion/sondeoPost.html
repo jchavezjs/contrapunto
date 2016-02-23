@@ -6,7 +6,7 @@
               <div id="ads1" class="ads-border">
                 <uib-carousel interval="intervalo1">
                   <uib-slide ng-repeat="banner in banner1">
-                    <a ng-href="{{banner.link}}" target="_blank" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                    <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
                   </uib-slide>
                 </uib-carousel>
               </div>
@@ -15,7 +15,7 @@
                 <div id="ads2" class="ads-border">
                   <uib-carousel interval="intervalo2">
                     <uib-slide ng-repeat="banner in banner2">
-                      <a ng-href="{{banner.link}}" target="_blank" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                      <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
                     </uib-slide>
                   </uib-carousel>
                 </div>
@@ -28,7 +28,7 @@
             <div id="adsMobile" class="ads-border">
               <uib-carousel interval="intervaloMovil">
                 <uib-slide ng-repeat="banner in bannerMovil">
-                  <a ng-href="{{banner.link}}" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                  <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
                 </uib-slide>
               </uib-carousel>
             </div>
@@ -182,7 +182,7 @@
             <div id="ads3" class="ads-border">
               <uib-carousel interval="intervalo3">
                 <uib-slide ng-repeat="banner in banner3">
-                  <a ng-href="{{banner.link}}" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                  <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
                 </uib-slide>
               </uib-carousel>
             </div>

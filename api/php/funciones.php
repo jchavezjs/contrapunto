@@ -174,12 +174,13 @@ function caricatura(){
 }
 
 function banner($seccion, $posicion){
-	$query = "SELECT a.rutaFoto, a.link, b.tiempo
+	$query = "SELECT a.rutaFoto, a.link, b.tiempo, a.idBanner as id
 		 											FROM banner a, posicion b
 													WHERE a.idPosicion = b.idPosicion and b.idSeccion = $seccion and b.posicion = '$posicion' and a.activo = 1";
 	$baninfo = mysql_query($query);
 	while($banpreview = mysql_fetch_array($baninfo)){
 		$banner[]=array(
+								'id' => $banpreview['id'],
 								'foto' => $banpreview['rutaFoto'],
 								'link' => $banpreview['link'],
 								'tiempo' => $banpreview['tiempo'],
