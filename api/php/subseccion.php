@@ -55,5 +55,6 @@ echo json_encode(array(
 			'banner2' => banner($secinfo['id'],2),
 			'banner3' => banner($secinfo['id'],3),
 			'bannerMovil' => banner($secinfo['id'],'movil'),
+			'leidos' => leidos($secinfo['id'])
 			));
 ?>

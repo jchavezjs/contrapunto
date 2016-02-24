@@ -191,7 +191,7 @@
                 <div class="columna2">
                     <div class="col-md-5">
                         <!-- Titulo Seccion Portada -->
-                        <a href="#/opinion/caricaturas"><div style="background-image: url({{caricaturas[0].foto}});" class="caricatura-imagen caricatura-opinion"></div></a>
+                        <a href="#/opinion/caricaturas/{{caricaturas[0].idCaricatura}}"><div style="background-image: url({{caricaturas[0].foto}});" class="caricatura-imagen caricatura-opinion"></div></a>
                         <!-- Sondeo -->
                         <div class="sondeo">
                             <div class="header">
@@ -336,18 +336,13 @@
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="lmlportada">
                                     <ul class="leido">
-                                        <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
-                                        <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
-                                        <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
+                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlopinion">
                                     <ul class="leido">
-                                        <li><a href="#" class="leido-item">La pupusa salvadoreña</a></li>
-                                        <li><a href="#" class="leido-item">Se estrena Star Wars</a></li>
-                                        <li><a href="#" class="leido-item">La ética social</a></li>
-                                        <li><a href="#" class="leido-item">La actualización humana</a></li>
+                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#/opinion/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
+                                        <li ng-repeat="sec in leidos.seccion2"><a ng-href="#/opinion/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
                                     </ul>
                                 </div>
                               </div>

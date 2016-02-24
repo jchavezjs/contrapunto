@@ -94,9 +94,14 @@ angular.module('contrapunto.controllers', [])
           $scope.intervalo20 = $scope.banner20[0].tiempo;
           $scope.bannerMovil = response.bannerMovil;
           $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+          $http.post("api/php/vistoseccion.php?id="+8,{'selectSeccion':8}).success(function(data,status,headers,config,response){});
+
       });
       $scope.vistoBanner = function(id){
         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+      };
+      $scope.vistoFoto = function(id){
+        $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
       };
     })
     .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
@@ -122,6 +127,7 @@ angular.module('contrapunto.controllers', [])
             $scope.politicas = response.politicas;
             $scope.internacionales = response.internacionales;
             $scope.culturas = response.culturas;
+            $scope.leidos = response.leidos;
             $scope.sociedades = response.sociedades;
             $scope.economias = response.economias;
             $scope.subsecciones = response.subsecciones;
@@ -160,6 +166,7 @@ angular.module('contrapunto.controllers', [])
             $scope.politicas = response.politicas;
             $scope.gobiernos = response.gobiernos;
             $scope.partidos = response.partidos;
+            $scope.leidos = response.leidos;
             $scope.subsecciones = response.subsecciones;
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
@@ -195,6 +202,7 @@ angular.module('contrapunto.controllers', [])
             $scope.centroamericas = response.centroamericas;
             $scope.latinoamericas = response.latinoamericas;
             $scope.globales = response.globales;
+            $scope.leidos = response.leidos;
             $scope.subsecciones = response.subsecciones;
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
@@ -232,6 +240,7 @@ angular.module('contrapunto.controllers', [])
             $scope.violencias = response.violencias;
             $scope.saludes = response.saludes;
             $scope.dds = response.dds;
+            $scope.leidos = response.leidos;
             $scope.educaciones = response.educaciones;
             $scope.migraciones = response.migraciones;
             $scope.generos = response.generos;
@@ -278,6 +287,7 @@ angular.module('contrapunto.controllers', [])
             $scope.mundos = response.mundos;
             $scope.mercados = response.mercados;
             $scope.analisiss = response.analisiss;
+            $scope.leidos = response.leidos;
             $scope.bolsas = response.bolsas;
             $scope.intereses = response.intereses;
             $scope.divisas = response.divisas;
@@ -318,6 +328,7 @@ angular.module('contrapunto.controllers', [])
             $scope.contratabues = response.contratabues;
             $scope.resenas = response.resenas;
             $scope.artes = response.artes;
+            $scope.leidos = response.leidos;
             $scope.literaturas = response.literaturas;
             $scope.anecdotas = response.anecdotas;
             $scope.subsecciones = response.subsecciones;
@@ -358,6 +369,7 @@ angular.module('contrapunto.controllers', [])
             $scope.cronicas = response.cronicas;
             $scope.aconteceres = response.aconteceres;
             $scope.subsecciones = response.subsecciones;
+            $scope.leidos = response.leidos;
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
             $scope.banner2 = response.banner2;
@@ -410,6 +422,7 @@ angular.module('contrapunto.controllers', [])
                     }
                     $scope.secinfo = response.secinfo;
                     $scope.subinfo = response.subinfo;
+                    $scope.leidos = response.leidos;
                     $scope.subsecciones = response.subsecciones;
                     $scope.banner1 = response.banner1;
                     $scope.intervalo1 = $scope.banner1[0].tiempo;
@@ -450,6 +463,7 @@ angular.module('contrapunto.controllers', [])
        $anchorScroll();
         $http.get("api/php/sondeo.php").success(function(response){
             $scope.subsecciones = response.subsecciones;
+            $scope.leidos = response.leidos;
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
             $scope.banner2 = response.banner2;
@@ -490,6 +504,7 @@ angular.module('contrapunto.controllers', [])
             $scope.subsecciones = response.subsecciones;
             $scope.contenidos = response.contenidos;
             $scope.banner1 = response.banner1;
+            $scope.leidos = response.leidos;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
@@ -544,6 +559,7 @@ angular.module('contrapunto.controllers', [])
                     $scope.secinfo = response.secinfo;
                     $scope.subsecciones = response.subsecciones;
                     $scope.fotogaleria = response.fotogaleria;
+                    $scope.leidos = response.leidos;
                     $scope.banner1 = response.banner1;
                     $scope.intervalo1 = $scope.banner1[0].tiempo;
                     $scope.banner2 = response.banner2;
@@ -556,6 +572,9 @@ angular.module('contrapunto.controllers', [])
        });
        $scope.vistoBanner = function(id){
          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+       };
+       $scope.vistoFoto = function(id){
+         $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
        };
     })
     .controller('CPostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
@@ -584,6 +603,7 @@ angular.module('contrapunto.controllers', [])
                       $location.path('/');
                     }
                     $scope.subsecciones = response.subsecciones;
+                    $scope.leidos = response.leidos;
                     $scope.banner1 = response.banner1;
                     $scope.intervalo1 = $scope.banner1[0].tiempo;
                     $scope.banner2 = response.banner2;
@@ -687,5 +707,8 @@ angular.module('contrapunto.controllers', [])
       });
       $scope.vistoBanner = function(id){
         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+      };
+      $scope.vistoFoto = function(id){
+        $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
       };
     });

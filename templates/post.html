@@ -168,7 +168,7 @@
                       </div>
                       <!-- Publicidad -->
                         <h2 class="fotogaleriah2">FOTOGALERÍA</h2>
-                        <a ng-href="{{fotogaleria[0].link}}" target="_blank"><div class="autor-fotogaleria" style="background-image:url({{fotogaleria[0].foto}});">
+                        <a ng-href="{{fotogaleria[0].link}}" target="_blank" ng-click="vistoFoto(fotogaleria[0].id)"><div class="autor-fotogaleria" style="background-image:url({{fotogaleria[0].foto}});">
                           <div class="trans">
                             <img class="foto-imagen-autor" src="http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2015/04/LOGO345X76.png" alt="cptv" />
                             <div class="text">
@@ -184,49 +184,19 @@
                               <!-- Nav tabs -->
                               <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada2">Portada</a></li>
-                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica2">Política</a></li>
+                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica2">{{secinfo.nombre}}</a></li>
                               </ul>
 
                               <!-- Tab panes -->
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="lmlportada2">
                                     <ul class="leido leido-tab2">
-                                        <li><a href="#">
+                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}">
                                             <div class="row tab2-item">
-                                                <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/08ace4c0814f27b62fc9e8ffc37e5d54_resized.JPG);" class="col-xs-4 img-tab2"></div>
+                                                <div style="background-image: url({{port.foto}});" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
-                                                    <h4>PDDH pide inmediata detención de exmilitares</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
-                                                </div>
-                                            </div>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">
-                                            <div class="row tab2-item">
-                                                <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/18e81a50fbbc6cc29690af7e55ac6cfe_resized.jpg);" class="col-xs-4 img-tab2"></div>
-                                                <div class=" col-xs-8 info-tab2">
-                                                    <h4>¿Llegó el fiscal anticorrupción?</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
-                                                </div>
-                                            </div>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">
-                                            <div class="row tab2-item">
-                                                <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/50a52a022d15f4f3d89746473aed0b36_resized.png);" class="col-xs-4 img-tab2"></div>
-                                                <div class=" col-xs-8 info-tab2">
-                                                    <h4>Tres reos asesinados en penal de Izalco</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
-                                                </div>
-                                            </div>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">
-                                            <div class="row tab2-item">
-                                                <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/a98d119b3ccee914ea164a182459f78a_resized.jpg);" class="col-xs-4 img-tab2"></div>
-                                                <div class=" col-xs-8 info-tab2">
-                                                    <h4>IUDOP: la gente vive con miedo</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
+                                                    <h4>{{port.titulo}}</h4>
+                                                    <span class="fecha-tab2">{{port.fecha}}</span>
                                                 </div>
                                             </div>
                                             </a>
@@ -235,42 +205,22 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlpolitica2">
                                     <ul class="leido leido-tab2">
-                                        <li><a href="#">
+                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}">
                                             <div class="row tab2-item">
-                                                <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/24ace4229fe5c0c808859bb66b595640_resized.jpg);" class="col-xs-4 img-tab2"></div>
+                                                <div style="background-image: url({{sec.foto}});" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
-                                                    <h4>Militares de caso jesuita no huirán</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
+                                                    <h4>{{sec.titulo}}</h4>
+                                                    <span class="fecha-tab2">{{sec.fecha}}</span>
                                                 </div>
                                             </div>
                                             </a>
                                         </li>
-                                        <li><a href="#">
+                                        <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec2.id}}">
                                             <div class="row tab2-item">
-                                                <div style="background-image: url(http://cdn.revistagq.com/uploads/images/thumbs/201315/concierto_7995_645x.jpg);" class="col-xs-4 img-tab2"></div>
+                                                <div style="background-image: url({{sec2.foto}});" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
-                                                    <h4>Una experiencia fuera de este mundo</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
-                                                </div>
-                                            </div>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">
-                                            <div class="row tab2-item">
-                                                <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/be4b5705b53c3ab629e74391c959b69a_resized.jpg);" class="col-xs-4 img-tab2"></div>
-                                                <div class=" col-xs-8 info-tab2">
-                                                    <h4>SC empujará propuesta de reforma de Ley</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
-                                                </div>
-                                            </div>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">
-                                            <div class="row tab2-item">
-                                                <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp2/1ca72db0b7b8fd1565b8c1ae2fdbb3b6_resized.jpg);" class="col-xs-4 img-tab2"></div>
-                                                <div class=" col-xs-8 info-tab2">
-                                                    <h4>Crimen jesuita, ¿gatos o ratones?</h4>
-                                                    <span class="fecha-tab2">9 de agosto del 2015</span>
+                                                    <h4>{{sec2.titulo}}</h4>
+                                                    <span class="fecha-tab2">{{sec2.fecha}}</span>
                                                 </div>
                                             </div>
                                             </a>

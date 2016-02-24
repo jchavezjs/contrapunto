@@ -120,12 +120,13 @@ function formatoFecha2($fecha){
 }
 
 function fotogaleria(){
-	$fotinfo = mysql_query("SELECT a.titulo, a.rutaFoto as foto, f.nombre as fotografo, a.link
+	$fotinfo = mysql_query("SELECT a.id, a.titulo, a.rutaFoto as foto, f.nombre as fotografo, a.link
 							from fotogaleria a, fotografo as f
 							where a.idFotografo = f.idFotografo
 							ORDER BY a.fecha desc, a.hora desc");
 	while($fotpreview = mysql_fetch_array($fotinfo)){
 		$fotogaleria[] = array(
+					'id' => $fotpreview['id'],
 					'fotografo' => $fotpreview['fotografo'],
 					'foto' => $fotpreview['foto'],
 					'link' => $fotpreview['link'],
@@ -187,5 +188,62 @@ function banner($seccion, $posicion){
 							);
 	}
 	return $banner;
+}
+
+function leidos($idSeccion){
+	$seccion='';
+	$seccion2 = '';
+	if($idSeccion == 1){
+		$info = mysql_query("SELECT a.idArticulo as id, a.titulo, c.url as urlSubseccion, se.url as urlSeccion, i.rutafoto as foto, a.fecha, count(b.idArticulo) as total from articulo a, vistaarticulo b, subseccion c, seccion se, imagenesarticulo i where a.idArticulo = i.idArticulo and i.posicion = 'principal' and (select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion) = $idSeccion and a.idArticulo = b.idArticulo and a.activo = 1 and c.idSeccion = se.idSeccion and c.idSubseccion = a.idSubseccion and a.idSubseccion = 6 group by b.idArticulo order by total desc limit 2");
+		while($infopreview = mysql_fetch_array($info)){
+			$seccion[] = array(
+				'id' => $infopreview['id'],
+				'titulo' => $infopreview['titulo'],
+				'urlSubseccion' => $infopreview['urlSubseccion'],
+				'urlSeccion' => $infopreview['urlSeccion'],
+				'total' => $infopreview['total'],
+				'foto' => $infopreview['foto'],
+				'fecha' => formatoFecha2($infopreview['fecha']),
+			);
+		}
+		$info2 = mysql_query("SELECT a.idArticulo as id, a.titulo, c.url as urlSubseccion, se.url as urlSeccion, i.rutafoto as foto, a.fecha,count(b.idArticulo) as total from articulo a, vistaarticulo b, subseccion c, seccion se, personal i where a.idPersonal = i.idPersonal and (select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion) = $idSeccion and a.idArticulo = b.idArticulo and a.activo = 1 and a.idSubseccion <> 6 and c.idSeccion = se.idSeccion and c.idSubseccion = a.idSubseccion group by b.idArticulo order by total desc limit 2");
+		while($info2preview = mysql_fetch_array($info2)){
+			$seccion2[] = array(
+				'id' => $info2preview['id'],
+				'titulo' => $info2preview['titulo'],
+				'urlSubseccion' => $info2preview['urlSubseccion'],
+				'urlSeccion' => $info2preview['urlSeccion'],
+				'total' => $info2preview['total'],
+				'foto' => $info2preview['foto'],
+				'fecha' => formatoFecha2($info2preview['fecha']),
+			);
+		}
+	}else{
+		$info = mysql_query("SELECT a.idArticulo as id, a.titulo, c.url as urlSubseccion, se.url as urlSeccion, i.rutafoto as foto, a.fecha, count(b.idArticulo) as total from articulo a, vistaarticulo b, subseccion c, seccion se, imagenesarticulo i where a.idArticulo = i.idArticulo and i.posicion = 'principal' and (select x.idSeccion from subseccion as x where x.idSubseccion=a.idSubseccion) = $idSeccion and a.idArticulo = b.idArticulo and a.activo = 1 and c.idSeccion = se.idSeccion and c.idSubseccion = a.idSubseccion group by b.idArticulo order by total desc limit 4");
+		while($infopreview = mysql_fetch_array($info)){
+			$seccion[] = array(
+				'id' => $infopreview['id'],
+				'titulo' => $infopreview['titulo'],
+				'urlSubseccion' => $infopreview['urlSubseccion'],
+				'urlSeccion' => $infopreview['urlSeccion'],
+				'total' => $infopreview['total'],
+				'foto' => $infopreview['foto'],
+				'fecha' => formatoFecha2($infopreview['fecha']),
+			);
+		}
+	}
+	$actinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, s.url as urlSubseccion, se.url as urlSeccion, i.rutafoto as foto, a.fecha, count(b.idArticulo) from articulo a, subseccion as s, seccion se, vistaarticulo b, imagenesarticulo i where a.idArticulo = i.idArticulo and i.posicion = 'principal' and a.idSubseccion = s.idSubseccion and a.activo = 1 and s.idSeccion = se.idSeccion and a.idArticulo = b.idArticulo and a.idSubseccion not in (1,2,3,4,5,6,35,45,46,49,54,57,58,59,60) group by b.idArticulo ORDER BY a.fecha desc, a.hora desc limit 4");
+	while($actpreview = mysql_fetch_array($actinfo)){
+		$actualidad[] = array(
+					'id' => $actpreview['id'],
+					'titulo' => $actpreview['titulo'],
+					'urlSeccion' => $actpreview['urlSeccion'],
+					'urlSubseccion' => $actpreview['urlSubseccion'],
+					'foto' => $actpreview['foto'],
+					'fecha' => formatoFecha2($actpreview['fecha']),
+					);
+	}
+
+	return array('seccion' => $seccion, 'seccion2' => $seccion2, 'portada' => $actualidad);
 }
 ?>

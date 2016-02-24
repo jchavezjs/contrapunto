@@ -22,6 +22,7 @@ echo json_encode(array(
 				'banner3' => banner(4,3),
 				'banner4' => banner(4,4),
 				'bannerMovil' => banner(4,'movil'),
+				'leidos' => leidos(4)
 				));
 
 ?>

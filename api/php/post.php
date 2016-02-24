@@ -138,6 +138,7 @@ echo json_encode(array(
 			'banner2' => banner($secinfo['id'],2),
 			'bannerMovil' => banner($secinfo['id'],'movil'),
 			'bannerPost' => banner($secinfo['id'],'post'),
+			'leidos' => leidos($secinfo['id'])
 			));
 
 ?>

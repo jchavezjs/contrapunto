@@ -196,25 +196,20 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                   <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada">Portada</a></li>
-                  <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica">Política</a></li>
+                  <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica">Opinión</a></li>
                 </ul>
 
                 <!-- Tab panes -->
                 <div class="tab-content">
                   <div role="tabpanel" class="tab-pane active" id="lmlportada">
                       <ul class="leido">
-                          <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
-                          <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
-                          <li><a href="#" class="leido-item">Un centenar de mexicanos a las urnas</a></li>
-                          <li><a href="#" class="leido-item">Ataques en París, oriente ataca</a></li>
+                          <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
                       </ul>
                   </div>
                   <div role="tabpanel" class="tab-pane" id="lmlpolitica">
                       <ul class="leido">
-                          <li><a href="#" class="leido-item">La pupusa salvadoreña</a></li>
-                          <li><a href="#" class="leido-item">Se estrena Star Wars</a></li>
-                          <li><a href="#" class="leido-item">La ética social</a></li>
-                          <li><a href="#" class="leido-item">La actualización humana</a></li>
+                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
+                        <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec2.id}}" class="leido-item">{{sec2.titulo}}</a></li>
                       </ul>
                   </div>
                 </div>
