@@ -24,10 +24,17 @@
     <!-- Date/Search Section -->
     <div data-ng-include data-src="'templates/socialsearch.html?i=1'"></div>
     <!-- Date/Search Section -->
+    <!-- Menu -->
+    <div data-ng-include data-src="'templates/menu.html'"></div>
+    <!-- Menu -->
     <!-- Logo Section -->
     <div class="row">
-        <div class="logo-center">
-            <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" class="logo"></a></br>
+        <div class="logo-center seccion-nombre">
+            <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+            <a href="#/opinion"><h3>OPINIÓN</h3></a>
+            <a class="opinion-logo-title sub" href="#/opinion/sondeo">
+                Columnas
+            </a>
             <h4>{{fecha}}</h4>
         </div>
     </div>
@@ -54,7 +61,7 @@
             <li><a href="#/opinion">Opinión</a></li>
             <li><a href="#">Nacionales</a></li>
             <li><a href="#">Mundo</a></li>
-            <li><a href="#">Sociedad</a></li>
+            <li><a href="#/sociedad">Sociedad</a></li>
             <li><a href="#">Economía</a></li>
             <li><a href="#">Cultura</a></li>
             <li><a href="#">Deportes</a></li>
@@ -63,7 +70,15 @@
       </div>
     </nav>
     <!-- Menu Responsive -->
-    <div data-ng-include data-src="'templates/menu.html?i=0'"></div>
+    <!-- Menu -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="menu">
+                <a ng-repeat="subseccion in subsecciones" ng-href="#/opinion/{{subseccion.url}}">{{subseccion.nombre}}</a>
+            </div>
+        </div>
+    </div>
+    <!-- Menu -->
     <!-- Menu Section -->
 </div>
 <!-- Header -->
