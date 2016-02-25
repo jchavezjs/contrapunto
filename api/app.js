@@ -17,6 +17,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                 controller: "OpinionController",
                 templateUrl: "templates/opinion/columnas.html"
             })
+            .when("/opinion/columnas/temas/:id", {
+                controller: "OpinionController",
+                templateUrl: "templates/opinion/columnas.html"
+            })
             .when("/politica", {
                 controller: "PoliticaController",
                 templateUrl: "templates/politica/main.html"
