@@ -31,12 +31,12 @@ if($secvalidate){
 			if($subinfo['id'] == 2){
 				$contenido = columna();
 			}elseif($subinfo['id'] == 6){
-				$contenido = articulo($subinfo['id']);
+				$contenido = articulos($subinfo['id']);
 			}else{
 				$contenido = opinion($subinfo['id']);
 			}
 		}else{
-			$contenido = articulo($subinfo['id']);
+			$contenido = articulos($subinfo['id']);
 		}
 	}else{
 		$error = array('description' => 'ERROR 404...la seccion seleccionada no existe');

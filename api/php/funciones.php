@@ -23,6 +23,29 @@ function articulo($seccion){
 	return $resultado;
 }
 
+function articulos($seccion){
+	$str = "SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal as idPersonal,
+			a.preview, i.rutaFoto as foto, a.fecha, f.nombre as fotografo
+			from articulo a, personal as c, imagenesarticulo as i, fotografo as f
+			where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo and a.activo = 1
+			and i.posicion='principal' and a.idSubseccion=$seccion
+			ORDER BY a.fecha desc, a.hora desc";
+	$query = mysql_query($str);
+	while($result = mysql_fetch_array($query)){
+		$resultado[] = array(
+					'id' => $result['id'],
+					'idPersonal' => $result['idPersonal'],
+					'foto' => $result['foto'],
+					'titulo' => $result['titulo'],
+					'autor' => $result['autor'],
+					'preview' => $result['preview'],
+					'fecha' => formatoFecha($result['fecha']),
+					'fotografo' => $result['fotografo'],);
+	}
+	return $resultado;
+}
+
+
 function opinion($seccion){
 	$str = "SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal as idPersonal,
 			a.preview, c.rutaFoto as foto, a.fecha
