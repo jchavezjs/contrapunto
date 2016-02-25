@@ -5,7 +5,7 @@ include('funciones.php');
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $editdata = json_decode(file_get_contents("php://input"));
 date_default_timezone_set('America/El_Salvador');
-$id = $_GET['id'];
+
 $subseccion = $_GET['subseccion'];
 
 /*$seccion = 'deportes';
@@ -23,9 +23,9 @@ $subvalidate = mysql_query("SELECT idSubseccion, nombre, url from subseccion whe
 		$subprev = mysql_fetch_row($subvalidate);
 		$subinfo = array('id' => $subprev[0], 'nombre' => $subprev[1], 'url' => $subprev[2]);
 		$sub = subseccion(1);
-		$coninfo = mysql_quer("SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.titulo, a.fecha, c.idPersonal as idPersonal, se.nombre as subseccion, se.url as urlSubseccion
+		$coninfo = mysql_query("SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.titulo, a.fecha, c.idPersonal as idPersonal, se.nombre as subseccion, se.url as urlSubseccion
   				from personal as c, columna as a, subseccion se
-  				where c.idPersonal = a.idPersonal and a.activo = 1 and a.idSubseccion = se.idSubseccion
+  				where c.idPersonal = a.idPersonal and a.activo = 1 and  a.idSubseccion = ".$subinfo['id']." and a.idSubseccion = se.idSubseccion and a.idSubseccion not in (1,2,3,4,5,6)
   				ORDER BY a.fecha desc, a.hora desc");
     while($result = mysql_fetch_array($coninfo)){
   		$resultado[] = array(
@@ -49,10 +49,11 @@ echo json_encode(array(
 			'error' => $error,
 			'subinfo' => $subinfo,
 			'subsecciones' => $sub,
-			'banner1' => banner($secinfo['id'],1),
-			'banner2' => banner($secinfo['id'],2),
-			'banner3' => banner($secinfo['id'],3),
-			'bannerMovil' => banner($secinfo['id'],'movil'),
-			'leidos' => leidos($secinfo['id'])
+      'fotogalerias' => fotogaleria(),
+      'actualidades' => actualidad(),
+			'banner1' => banner(1,1),
+			'banner2' => banner(1,2),
+			'bannerMovil' => banner(1,'movil'),
+			'leidos' => leidos(1)
 			));
 ?>

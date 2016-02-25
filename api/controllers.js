@@ -875,4 +875,45 @@ angular.module('contrapunto.controllers', [])
       $scope.vistoFoto = function(id){
         $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
       };
+    })
+    .controller('CSeccionController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        $scope.progressbar.setColor('#35A7FF');
+        $timeout(function(){
+            $scope.progressbar.complete();
+            $scope.show = true;
+        }, 300);
+        $scope.fecha = fechaActual;
+        var id = $routeParams.id;
+        var subseccion = $routeParams.subseccion;
+        $scope.currentPage = 1;
+        $scope.pageSize = 4;
+        $scope.maxSize = 4;
+        $http.post("api/php/columnasSeccion.php?subseccion="+subseccion,{'selectSeccion':id}).success(function(data,status,headers,config,response){
+
+               $http.get("api/php/columnasSeccion.php?subseccion="+subseccion).success(function(response){
+                  $scope.fotogalerias = response.fotogalerias;
+                   $scope.contenidos = response.contenidos;
+                   $scope.subinfo = response.subinfo;
+                   $scope.actualidades = response.actualidades;
+                   $scope.banner1 = response.banner1;
+                   $scope.intervalo1 = $scope.banner1[0].tiempo;
+                   $scope.banner2 = response.banner2;
+                   $scope.intervalo2 = $scope.banner2[0].tiempo;
+                   $scope.bannerMovil = response.bannerMovil;
+                   $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+               });
+
+
+      });
+      $scope.vistoBanner = function(id){
+        $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+      };
+      $scope.vistoFoto = function(id){
+        $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+      };
     });
