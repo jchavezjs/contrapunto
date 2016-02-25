@@ -77,7 +77,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                 redirectTo: "/"
             });
 
-        /*$locationProvider.html5Mode(true);*/
+
+      //       if(window.history && window.history.pushState){
+      //   $locationProvider.html5Mode(true);
+      // }
     })
     .filter('startFrom', function(){
         return function(data, start){

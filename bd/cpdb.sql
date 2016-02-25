@@ -2,10 +2,10 @@
 -- version 4.4.14
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 24-02-2016 a las 07:51:12
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Host: 127.0.0.1
+-- Generation Time: Feb 25, 2016 at 08:20 PM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `cpdb`
+-- Database: `cpdb`
 --
 CREATE DATABASE IF NOT EXISTS `cpdb` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 USE `cpdb`;
@@ -25,7 +25,7 @@ USE `cpdb`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `articulo`
+-- Table structure for table `articulo`
 --
 
 CREATE TABLE IF NOT EXISTS `articulo` (
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `articulo` (
 ) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `articulo`
+-- Dumping data for table `articulo`
 --
 
 INSERT INTO `articulo` (`idArticulo`, `titulo`, `preview`, `contenido`, `idPersonal`, `idSubseccion`, `fecha`, `hora`, `especial`, `activo`) VALUES
@@ -163,7 +163,7 @@ INSERT INTO `articulo` (`idArticulo`, `titulo`, `preview`, `contenido`, `idPerso
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `banner`
+-- Table structure for table `banner`
 --
 
 CREATE TABLE IF NOT EXISTS `banner` (
@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `banner` (
 ) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `banner`
+-- Dumping data for table `banner`
 --
 
 INSERT INTO `banner` (`idBanner`, `rutaFoto`, `idCliente`, `idPosicion`, `link`, `activo`) VALUES
@@ -257,7 +257,7 @@ INSERT INTO `banner` (`idBanner`, `rutaFoto`, `idCliente`, `idPosicion`, `link`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `bolsa`
+-- Table structure for table `bolsa`
 --
 
 CREATE TABLE IF NOT EXISTS `bolsa` (
@@ -269,7 +269,7 @@ CREATE TABLE IF NOT EXISTS `bolsa` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `bolsa`
+-- Dumping data for table `bolsa`
 --
 
 INSERT INTO `bolsa` (`idBolsa`, `nombre`, `porcentaje`, `valor`, `fecha`) VALUES
@@ -285,7 +285,7 @@ INSERT INTO `bolsa` (`idBolsa`, `nombre`, `porcentaje`, `valor`, `fecha`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `caricatura`
+-- Table structure for table `caricatura`
 --
 
 CREATE TABLE IF NOT EXISTS `caricatura` (
@@ -297,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `caricatura` (
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `caricatura`
+-- Dumping data for table `caricatura`
 --
 
 INSERT INTO `caricatura` (`idCaricatura`, `rutaFoto`, `idCaricaturista`, `fecha`, `hora`) VALUES
@@ -324,7 +324,7 @@ INSERT INTO `caricatura` (`idCaricatura`, `rutaFoto`, `idCaricaturista`, `fecha`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `caricaturista`
+-- Table structure for table `caricaturista`
 --
 
 CREATE TABLE IF NOT EXISTS `caricaturista` (
@@ -334,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `caricaturista` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `caricaturista`
+-- Dumping data for table `caricaturista`
 --
 
 INSERT INTO `caricaturista` (`idCaricaturista`, `nombres`, `apellidos`) VALUES
@@ -343,7 +343,7 @@ INSERT INTO `caricaturista` (`idCaricaturista`, `nombres`, `apellidos`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cliente`
+-- Table structure for table `cliente`
 --
 
 CREATE TABLE IF NOT EXISTS `cliente` (
@@ -354,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `cliente`
+-- Dumping data for table `cliente`
 --
 
 INSERT INTO `cliente` (`idCliente`, `nombre`, `rutaFoto`, `ingreso`) VALUES
@@ -365,7 +365,7 @@ INSERT INTO `cliente` (`idCliente`, `nombre`, `rutaFoto`, `ingreso`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `columna`
+-- Table structure for table `columna`
 --
 
 CREATE TABLE IF NOT EXISTS `columna` (
@@ -380,7 +380,7 @@ CREATE TABLE IF NOT EXISTS `columna` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `columna`
+-- Dumping data for table `columna`
 --
 
 INSERT INTO `columna` (`idColumna`, `titulo`, `contenido`, `fecha`, `hora`, `idSubseccion`, `idPersonal`, `activo`) VALUES
@@ -393,7 +393,7 @@ INSERT INTO `columna` (`idColumna`, `titulo`, `contenido`, `fecha`, `hora`, `idS
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `datoseconomicos`
+-- Table structure for table `datoseconomicos`
 --
 
 CREATE TABLE IF NOT EXISTS `datoseconomicos` (
@@ -405,7 +405,7 @@ CREATE TABLE IF NOT EXISTS `datoseconomicos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `datoseconomicos`
+-- Dumping data for table `datoseconomicos`
 --
 
 INSERT INTO `datoseconomicos` (`idDatos`, `indicador`, `periodo`, `cifras`, `enlaceDetalles`) VALUES
@@ -422,7 +422,7 @@ INSERT INTO `datoseconomicos` (`idDatos`, `indicador`, `periodo`, `cifras`, `enl
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `divisa`
+-- Table structure for table `divisa`
 --
 
 CREATE TABLE IF NOT EXISTS `divisa` (
@@ -434,7 +434,7 @@ CREATE TABLE IF NOT EXISTS `divisa` (
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `divisa`
+-- Dumping data for table `divisa`
 --
 
 INSERT INTO `divisa` (`idDivisa`, `nombre`, `cambio`, `pais`, `fecha`) VALUES
@@ -451,7 +451,7 @@ INSERT INTO `divisa` (`idDivisa`, `nombre`, `cambio`, `pais`, `fecha`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `fotogaleria`
+-- Table structure for table `fotogaleria`
 --
 
 CREATE TABLE IF NOT EXISTS `fotogaleria` (
@@ -465,7 +465,7 @@ CREATE TABLE IF NOT EXISTS `fotogaleria` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `fotogaleria`
+-- Dumping data for table `fotogaleria`
 --
 
 INSERT INTO `fotogaleria` (`id`, `rutaFoto`, `link`, `titulo`, `idFotografo`, `fecha`, `hora`) VALUES
@@ -474,7 +474,7 @@ INSERT INTO `fotogaleria` (`id`, `rutaFoto`, `link`, `titulo`, `idFotografo`, `f
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `fotografo`
+-- Table structure for table `fotografo`
 --
 
 CREATE TABLE IF NOT EXISTS `fotografo` (
@@ -483,7 +483,7 @@ CREATE TABLE IF NOT EXISTS `fotografo` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `fotografo`
+-- Dumping data for table `fotografo`
 --
 
 INSERT INTO `fotografo` (`idFotografo`, `nombre`) VALUES
@@ -497,7 +497,7 @@ INSERT INTO `fotografo` (`idFotografo`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `imagenesarticulo`
+-- Table structure for table `imagenesarticulo`
 --
 
 CREATE TABLE IF NOT EXISTS `imagenesarticulo` (
@@ -509,7 +509,7 @@ CREATE TABLE IF NOT EXISTS `imagenesarticulo` (
 ) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `imagenesarticulo`
+-- Dumping data for table `imagenesarticulo`
 --
 
 INSERT INTO `imagenesarticulo` (`idImagen`, `rutaFoto`, `idArticulo`, `posicion`, `idFotografo`) VALUES
@@ -613,7 +613,7 @@ INSERT INTO `imagenesarticulo` (`idImagen`, `rutaFoto`, `idArticulo`, `posicion`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `logusuario`
+-- Table structure for table `logusuario`
 --
 
 CREATE TABLE IF NOT EXISTS `logusuario` (
@@ -625,7 +625,7 @@ CREATE TABLE IF NOT EXISTS `logusuario` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `mercado`
+-- Table structure for table `mercado`
 --
 
 CREATE TABLE IF NOT EXISTS `mercado` (
@@ -641,7 +641,7 @@ CREATE TABLE IF NOT EXISTS `mercado` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `mercado`
+-- Dumping data for table `mercado`
 --
 
 INSERT INTO `mercado` (`idMercado`, `nombre`, `descripcion`, `cambio`, `porcentaje`, `menor`, `masAlto`, `ultimo`, `fecha`) VALUES
@@ -652,7 +652,7 @@ INSERT INTO `mercado` (`idMercado`, `nombre`, `descripcion`, `cambio`, `porcenta
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `personal`
+-- Table structure for table `personal`
 --
 
 CREATE TABLE IF NOT EXISTS `personal` (
@@ -665,7 +665,7 @@ CREATE TABLE IF NOT EXISTS `personal` (
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `personal`
+-- Dumping data for table `personal`
 --
 
 INSERT INTO `personal` (`idPersonal`, `nombres`, `apellidos`, `descripcion`, `cargo`, `rutaFoto`) VALUES
@@ -692,7 +692,7 @@ INSERT INTO `personal` (`idPersonal`, `nombres`, `apellidos`, `descripcion`, `ca
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `posicion`
+-- Table structure for table `posicion`
 --
 
 CREATE TABLE IF NOT EXISTS `posicion` (
@@ -703,7 +703,7 @@ CREATE TABLE IF NOT EXISTS `posicion` (
 ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `posicion`
+-- Dumping data for table `posicion`
 --
 
 INSERT INTO `posicion` (`idPosicion`, `idSeccion`, `posicion`, `tiempo`) VALUES
@@ -774,7 +774,7 @@ INSERT INTO `posicion` (`idPosicion`, `idSeccion`, `posicion`, `tiempo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `redespersonal`
+-- Table structure for table `redespersonal`
 --
 
 CREATE TABLE IF NOT EXISTS `redespersonal` (
@@ -785,7 +785,7 @@ CREATE TABLE IF NOT EXISTS `redespersonal` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `redespersonal`
+-- Dumping data for table `redespersonal`
 --
 
 INSERT INTO `redespersonal` (`idRedPersonal`, `idPersonal`, `idRed`, `link`) VALUES
@@ -798,7 +798,7 @@ INSERT INTO `redespersonal` (`idRedPersonal`, `idPersonal`, `idRed`, `link`) VAL
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `redessociales`
+-- Table structure for table `redessociales`
 --
 
 CREATE TABLE IF NOT EXISTS `redessociales` (
@@ -807,7 +807,7 @@ CREATE TABLE IF NOT EXISTS `redessociales` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `redessociales`
+-- Dumping data for table `redessociales`
 --
 
 INSERT INTO `redessociales` (`idRed`, `nombre`) VALUES
@@ -820,29 +820,30 @@ INSERT INTO `redessociales` (`idRed`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `respuesta`
+-- Table structure for table `respuesta`
 --
 
 CREATE TABLE IF NOT EXISTS `respuesta` (
   `idRespuesta` int(11) NOT NULL,
   `idSondeo` int(11) NOT NULL,
   `respuesta` varchar(40) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `respuesta`
+-- Dumping data for table `respuesta`
 --
 
 INSERT INTO `respuesta` (`idRespuesta`, `idSondeo`, `respuesta`) VALUES
 (1, 1, 'Si, estoy de acuerdo'),
 (2, 1, 'No estoy de acuerdo'),
 (3, 2, 'Posiblemente'),
-(4, 2, 'No me interesa');
+(4, 2, 'No me interesa'),
+(5, 1, 'N/A');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `resultado`
+-- Table structure for table `resultado`
 --
 
 CREATE TABLE IF NOT EXISTS `resultado` (
@@ -851,10 +852,66 @@ CREATE TABLE IF NOT EXISTS `resultado` (
   `hora` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `resultado`
+--
+
+INSERT INTO `resultado` (`idRespuesta`, `fecha`, `hora`) VALUES
+(1, '2016-02-24', '09:19:09'),
+(1, '2016-02-16', '05:13:09'),
+(2, '2016-02-10', '05:13:09'),
+(3, '2016-02-17', '05:13:09'),
+(4, '2016-02-18', '05:13:09'),
+(5, '2016-02-10', '05:12:12'),
+(5, '2016-02-10', '05:12:12'),
+(2, '2016-02-24', '15:43:36'),
+(1, '2016-02-24', '15:46:18'),
+(2, '2016-02-24', '15:46:27'),
+(3, '2016-02-24', '15:46:44'),
+(4, '2016-02-24', '15:46:49'),
+(3, '2016-02-24', '15:47:27'),
+(4, '2016-02-24', '15:47:30'),
+(1, '2016-02-24', '15:47:33'),
+(2, '2016-02-24', '15:47:36'),
+(5, '2016-02-24', '15:47:38'),
+(2, '2016-02-24', '15:56:43'),
+(1, '2016-02-24', '16:06:04'),
+(2, '2016-02-24', '16:07:08'),
+(1, '2016-02-24', '16:07:35'),
+(1, '2016-02-24', '16:08:28'),
+(1, '2016-02-24', '16:09:24'),
+(5, '2016-02-24', '16:10:59'),
+(1, '2016-02-24', '16:11:41'),
+(5, '2016-02-24', '16:11:52'),
+(1, '2016-02-24', '16:17:42'),
+(1, '2016-02-24', '16:18:43'),
+(1, '2016-02-24', '16:21:49'),
+(1, '2016-02-24', '16:23:38'),
+(1, '2016-02-24', '16:25:01'),
+(3, '2016-02-24', '16:25:13'),
+(4, '2016-02-24', '16:25:17'),
+(3, '2016-02-24', '16:25:48'),
+(4, '2016-02-24', '16:25:50'),
+(1, '2016-02-24', '16:27:49'),
+(3, '2016-02-24', '16:27:55'),
+(3, '2016-02-24', '16:28:08'),
+(2, '2016-02-24', '16:33:58'),
+(4, '2016-02-24', '19:58:57'),
+(3, '2016-02-24', '21:41:15'),
+(5, '2016-02-24', '21:42:06'),
+(3, '2016-02-24', '21:42:19'),
+(5, '2016-02-24', '21:47:25'),
+(2, '2016-02-24', '21:48:42'),
+(2, '2016-02-24', '23:10:11'),
+(2, '2016-02-24', '23:11:03'),
+(1, '2016-02-24', '23:11:22'),
+(1, '2016-02-24', '23:21:14'),
+(3, '2016-02-24', '23:36:04');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `seccion`
+-- Table structure for table `seccion`
 --
 
 CREATE TABLE IF NOT EXISTS `seccion` (
@@ -864,7 +921,7 @@ CREATE TABLE IF NOT EXISTS `seccion` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `seccion`
+-- Dumping data for table `seccion`
 --
 
 INSERT INTO `seccion` (`idSeccion`, `nombre`, `url`) VALUES
@@ -880,7 +937,7 @@ INSERT INTO `seccion` (`idSeccion`, `nombre`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sondeo`
+-- Table structure for table `sondeo`
 --
 
 CREATE TABLE IF NOT EXISTS `sondeo` (
@@ -893,7 +950,7 @@ CREATE TABLE IF NOT EXISTS `sondeo` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `sondeo`
+-- Dumping data for table `sondeo`
 --
 
 INSERT INTO `sondeo` (`idSondeo`, `titulo`, `pregunta`, `fecha`, `hora`, `rutaFoto`) VALUES
@@ -903,7 +960,7 @@ INSERT INTO `sondeo` (`idSondeo`, `titulo`, `pregunta`, `fecha`, `hora`, `rutaFo
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `subseccion`
+-- Table structure for table `subseccion`
 --
 
 CREATE TABLE IF NOT EXISTS `subseccion` (
@@ -914,7 +971,7 @@ CREATE TABLE IF NOT EXISTS `subseccion` (
 ) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `subseccion`
+-- Dumping data for table `subseccion`
 --
 
 INSERT INTO `subseccion` (`idSubseccion`, `idSeccion`, `nombre`, `url`) VALUES
@@ -958,7 +1015,7 @@ INSERT INTO `subseccion` (`idSubseccion`, `idSeccion`, `nombre`, `url`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tasainteres`
+-- Table structure for table `tasainteres`
 --
 
 CREATE TABLE IF NOT EXISTS `tasainteres` (
@@ -969,7 +1026,7 @@ CREATE TABLE IF NOT EXISTS `tasainteres` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `tasainteres`
+-- Dumping data for table `tasainteres`
 --
 
 INSERT INTO `tasainteres` (`idTasa`, `nombre`, `porcentaje`, `fecha`) VALUES
@@ -982,7 +1039,7 @@ INSERT INTO `tasainteres` (`idTasa`, `nombre`, `porcentaje`, `fecha`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -995,7 +1052,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vistaarticulo`
+-- Table structure for table `vistaarticulo`
 --
 
 CREATE TABLE IF NOT EXISTS `vistaarticulo` (
@@ -1005,7 +1062,7 @@ CREATE TABLE IF NOT EXISTS `vistaarticulo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `vistaarticulo`
+-- Dumping data for table `vistaarticulo`
 --
 
 INSERT INTO `vistaarticulo` (`idArticulo`, `fecha`, `hora`) VALUES
@@ -1039,12 +1096,26 @@ INSERT INTO `vistaarticulo` (`idArticulo`, `fecha`, `hora`) VALUES
 (70, '2016-02-23', '23:42:36'),
 (44, '2016-02-24', '00:14:28'),
 (39, '2016-02-24', '00:49:43'),
-(41, '2016-02-24', '00:50:08');
+(41, '2016-02-24', '00:50:08'),
+(41, '2016-02-24', '10:46:13'),
+(41, '2016-02-24', '14:52:32'),
+(85, '2016-02-24', '23:26:57'),
+(78, '2016-02-24', '23:32:57'),
+(112, '2016-02-24', '23:47:06'),
+(112, '2016-02-24', '23:48:27'),
+(107, '2016-02-24', '23:58:36'),
+(111, '2016-02-25', '09:56:33'),
+(112, '2016-02-25', '09:56:46'),
+(60, '2016-02-25', '09:57:28'),
+(52, '2016-02-25', '09:58:27'),
+(107, '2016-02-25', '09:59:05'),
+(61, '2016-02-25', '10:06:58'),
+(44, '2016-02-25', '10:39:42');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vistabanner`
+-- Table structure for table `vistabanner`
 --
 
 CREATE TABLE IF NOT EXISTS `vistabanner` (
@@ -1054,7 +1125,7 @@ CREATE TABLE IF NOT EXISTS `vistabanner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `vistabanner`
+-- Dumping data for table `vistabanner`
 --
 
 INSERT INTO `vistabanner` (`idBanner`, `fecha`, `hora`) VALUES
@@ -1066,12 +1137,34 @@ INSERT INTO `vistabanner` (`idBanner`, `fecha`, `hora`) VALUES
 (28, '2016-02-22', '15:27:56'),
 (26, '2016-02-22', '15:29:48'),
 (2, '2016-02-23', '13:57:11'),
-(2, '2016-02-23', '13:57:55');
+(2, '2016-02-23', '13:57:55'),
+(1, '2016-02-24', '20:12:58'),
+(83, '2016-02-25', '09:56:48');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vistafotogaleria`
+-- Table structure for table `vistacolumna`
+--
+
+CREATE TABLE IF NOT EXISTS `vistacolumna` (
+  `idColumna` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `vistacolumna`
+--
+
+INSERT INTO `vistacolumna` (`idColumna`, `fecha`, `hora`) VALUES
+(3, '2016-02-25', '13:16:19'),
+(8, '2016-02-25', '13:17:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vistafotogaleria`
 --
 
 CREATE TABLE IF NOT EXISTS `vistafotogaleria` (
@@ -1081,7 +1174,7 @@ CREATE TABLE IF NOT EXISTS `vistafotogaleria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `vistafotogaleria`
+-- Dumping data for table `vistafotogaleria`
 --
 
 INSERT INTO `vistafotogaleria` (`id`, `fecha`, `hora`) VALUES
@@ -1092,7 +1185,7 @@ INSERT INTO `vistafotogaleria` (`id`, `fecha`, `hora`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vistaseccion`
+-- Table structure for table `vistaseccion`
 --
 
 CREATE TABLE IF NOT EXISTS `vistaseccion` (
@@ -1102,7 +1195,7 @@ CREATE TABLE IF NOT EXISTS `vistaseccion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `vistaseccion`
+-- Dumping data for table `vistaseccion`
 --
 
 INSERT INTO `vistaseccion` (`idSeccion`, `fecha`, `hora`) VALUES
@@ -1191,12 +1284,99 @@ INSERT INTO `vistaseccion` (`idSeccion`, `fecha`, `hora`) VALUES
 (3, '2016-02-24', '00:44:57'),
 (1, '2016-02-24', '00:44:59'),
 (8, '2016-02-24', '00:49:40'),
-(1, '2016-02-24', '00:50:06');
+(1, '2016-02-24', '00:50:06'),
+(8, '2016-02-24', '10:27:11'),
+(8, '2016-02-24', '10:46:35'),
+(1, '2016-02-24', '13:36:24'),
+(4, '2016-02-24', '14:53:49'),
+(1, '2016-02-24', '14:53:51'),
+(8, '2016-02-24', '15:49:36'),
+(1, '2016-02-24', '15:49:58'),
+(8, '2016-02-24', '16:33:47'),
+(1, '2016-02-24', '16:33:51'),
+(8, '2016-02-24', '19:59:47'),
+(1, '2016-02-24', '20:11:46'),
+(8, '2016-02-24', '21:19:58'),
+(1, '2016-02-24', '21:20:01'),
+(8, '2016-02-24', '22:06:26'),
+(8, '2016-02-24', '22:18:08'),
+(8, '2016-02-24', '22:23:15'),
+(8, '2016-02-24', '22:28:55'),
+(8, '2016-02-24', '22:37:10'),
+(8, '2016-02-24', '22:37:56'),
+(8, '2016-02-24', '22:41:32'),
+(8, '2016-02-24', '22:44:02'),
+(8, '2016-02-24', '22:45:21'),
+(8, '2016-02-24', '22:45:47'),
+(8, '2016-02-24', '23:00:43'),
+(8, '2016-02-24', '23:01:51'),
+(8, '2016-02-24', '23:04:12'),
+(8, '2016-02-24', '23:07:16'),
+(8, '2016-02-24', '23:09:26'),
+(8, '2016-02-24', '23:09:47'),
+(8, '2016-02-24', '23:10:22'),
+(8, '2016-02-24', '23:11:10'),
+(1, '2016-02-24', '23:11:58'),
+(8, '2016-02-24', '23:12:26'),
+(8, '2016-02-24', '23:12:34'),
+(1, '2016-02-24', '23:12:59'),
+(1, '2016-02-24', '23:18:29'),
+(1, '2016-02-24', '23:18:43'),
+(1, '2016-02-24', '23:19:08'),
+(1, '2016-02-24', '23:21:05'),
+(1, '2016-02-24', '23:22:14'),
+(8, '2016-02-24', '23:23:00'),
+(8, '2016-02-24', '23:23:31'),
+(8, '2016-02-24', '23:24:16'),
+(8, '2016-02-24', '23:25:29'),
+(8, '2016-02-24', '23:26:40'),
+(8, '2016-02-24', '23:29:16'),
+(8, '2016-02-24', '23:29:24'),
+(1, '2016-02-24', '23:35:39'),
+(1, '2016-02-24', '23:35:44'),
+(1, '2016-02-24', '23:37:53'),
+(1, '2016-02-24', '23:39:00'),
+(1, '2016-02-24', '23:40:21'),
+(8, '2016-02-24', '23:40:38'),
+(8, '2016-02-24', '23:42:00'),
+(3, '2016-02-24', '23:42:26'),
+(3, '2016-02-24', '23:44:07'),
+(6, '2016-02-24', '23:44:19'),
+(5, '2016-02-24', '23:44:30'),
+(1, '2016-02-24', '23:46:37'),
+(1, '2016-02-24', '23:46:41'),
+(7, '2016-02-24', '23:47:04'),
+(8, '2016-02-24', '23:48:32'),
+(5, '2016-02-24', '23:51:03'),
+(3, '2016-02-24', '23:51:08'),
+(7, '2016-02-24', '23:51:15'),
+(2, '2016-02-24', '23:51:23'),
+(8, '2016-02-24', '23:58:32'),
+(8, '2016-02-25', '09:56:10'),
+(3, '2016-02-25', '09:57:10'),
+(3, '2016-02-25', '09:58:22'),
+(3, '2016-02-25', '09:58:37'),
+(6, '2016-02-25', '09:58:53'),
+(7, '2016-02-25', '09:58:56'),
+(8, '2016-02-25', '10:06:51'),
+(8, '2016-02-25', '10:07:07'),
+(1, '2016-02-25', '10:28:38'),
+(1, '2016-02-25', '10:43:59'),
+(8, '2016-02-25', '10:46:47'),
+(8, '2016-02-25', '10:46:52'),
+(4, '2016-02-25', '10:49:18'),
+(1, '2016-02-25', '10:49:22'),
+(8, '2016-02-25', '10:50:26'),
+(8, '2016-02-25', '10:55:11'),
+(8, '2016-02-25', '10:59:01'),
+(8, '2016-02-25', '13:11:14'),
+(8, '2016-02-25', '13:16:12'),
+(1, '2016-02-25', '13:16:15');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vistasubseccion`
+-- Table structure for table `vistasubseccion`
 --
 
 CREATE TABLE IF NOT EXISTS `vistasubseccion` (
@@ -1206,7 +1386,7 @@ CREATE TABLE IF NOT EXISTS `vistasubseccion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Volcado de datos para la tabla `vistasubseccion`
+-- Dumping data for table `vistasubseccion`
 --
 
 INSERT INTO `vistasubseccion` (`idSubseccion`, `fecha`, `hora`) VALUES
@@ -1241,14 +1421,123 @@ INSERT INTO `vistasubseccion` (`idSubseccion`, `fecha`, `hora`) VALUES
 (6, '2016-02-24', '00:14:25'),
 (3, '2016-02-24', '00:20:01'),
 (42, '2016-02-24', '00:40:01'),
-(61, '2016-02-24', '00:45:01');
+(61, '2016-02-24', '00:45:01'),
+(5, '2016-02-24', '13:36:27'),
+(5, '2016-02-24', '13:37:16'),
+(5, '2016-02-24', '13:38:52'),
+(5, '2016-02-24', '13:45:12'),
+(5, '2016-02-24', '13:48:58'),
+(5, '2016-02-24', '13:59:05'),
+(5, '2016-02-24', '14:02:49'),
+(5, '2016-02-24', '14:12:53'),
+(5, '2016-02-24', '14:17:58'),
+(5, '2016-02-24', '14:18:43'),
+(5, '2016-02-24', '14:19:07'),
+(5, '2016-02-24', '14:19:31'),
+(5, '2016-02-24', '14:19:56'),
+(5, '2016-02-24', '14:40:58'),
+(5, '2016-02-24', '14:42:29'),
+(5, '2016-02-24', '14:43:18'),
+(5, '2016-02-24', '14:43:44'),
+(5, '2016-02-24', '14:49:58'),
+(5, '2016-02-24', '14:51:08'),
+(1, '2016-02-24', '14:52:30'),
+(5, '2016-02-24', '14:53:54'),
+(5, '2016-02-24', '14:55:54'),
+(5, '2016-02-24', '14:57:01'),
+(5, '2016-02-24', '14:58:10'),
+(5, '2016-02-24', '14:59:03'),
+(5, '2016-02-24', '14:59:47'),
+(5, '2016-02-24', '15:00:42'),
+(5, '2016-02-24', '15:00:57'),
+(5, '2016-02-24', '15:01:28'),
+(5, '2016-02-24', '15:09:37'),
+(5, '2016-02-24', '15:09:52'),
+(5, '2016-02-24', '15:11:53'),
+(5, '2016-02-24', '15:12:01'),
+(5, '2016-02-24', '15:13:34'),
+(5, '2016-02-24', '15:15:44'),
+(5, '2016-02-24', '15:17:22'),
+(5, '2016-02-24', '15:19:34'),
+(5, '2016-02-24', '15:20:20'),
+(5, '2016-02-24', '15:20:54'),
+(5, '2016-02-24', '15:21:38'),
+(5, '2016-02-24', '15:23:19'),
+(5, '2016-02-24', '15:24:20'),
+(5, '2016-02-24', '15:29:00'),
+(5, '2016-02-24', '15:30:03'),
+(5, '2016-02-24', '15:31:02'),
+(5, '2016-02-24', '15:32:37'),
+(5, '2016-02-24', '15:33:19'),
+(5, '2016-02-24', '15:33:50'),
+(5, '2016-02-24', '15:36:05'),
+(5, '2016-02-24', '15:43:30'),
+(5, '2016-02-24', '15:43:40'),
+(5, '2016-02-24', '15:46:13'),
+(5, '2016-02-24', '15:46:37'),
+(5, '2016-02-24', '15:46:56'),
+(5, '2016-02-24', '15:47:24'),
+(5, '2016-02-24', '15:50:10'),
+(5, '2016-02-24', '15:56:33'),
+(5, '2016-02-24', '16:03:38'),
+(5, '2016-02-24', '16:04:41'),
+(5, '2016-02-24', '16:05:53'),
+(5, '2016-02-24', '16:06:32'),
+(5, '2016-02-24', '16:08:18'),
+(5, '2016-02-24', '16:09:19'),
+(5, '2016-02-24', '16:10:33'),
+(5, '2016-02-24', '16:11:37'),
+(5, '2016-02-24', '16:14:08'),
+(5, '2016-02-24', '16:16:48'),
+(5, '2016-02-24', '16:17:50'),
+(5, '2016-02-24', '16:21:45'),
+(5, '2016-02-24', '16:23:34'),
+(5, '2016-02-24', '16:24:57'),
+(5, '2016-02-24', '16:25:40'),
+(5, '2016-02-24', '16:27:38'),
+(5, '2016-02-24', '16:30:47'),
+(5, '2016-02-24', '16:33:53'),
+(5, '2016-02-24', '20:13:31'),
+(5, '2016-02-24', '20:16:05'),
+(5, '2016-02-24', '20:26:22'),
+(5, '2016-02-24', '20:26:30'),
+(61, '2016-02-24', '21:20:03'),
+(5, '2016-02-24', '21:20:13'),
+(5, '2016-02-24', '21:40:02'),
+(5, '2016-02-24', '21:41:00'),
+(5, '2016-02-24', '21:41:58'),
+(5, '2016-02-24', '21:57:48'),
+(5, '2016-02-24', '21:58:44'),
+(5, '2016-02-24', '21:58:51'),
+(34, '2016-02-24', '23:27:16'),
+(35, '2016-02-24', '23:27:19'),
+(5, '2016-02-24', '23:35:46'),
+(61, '2016-02-24', '23:40:24'),
+(42, '2016-02-24', '23:44:14'),
+(40, '2016-02-24', '23:51:19'),
+(37, '2016-02-24', '23:51:25'),
+(37, '2016-02-24', '23:52:36'),
+(5, '2016-02-25', '10:28:48'),
+(5, '2016-02-25', '10:29:24'),
+(3, '2016-02-25', '10:29:29'),
+(61, '2016-02-25', '10:29:33'),
+(61, '2016-02-25', '10:31:21'),
+(61, '2016-02-25', '10:31:40'),
+(5, '2016-02-25', '10:37:30'),
+(61, '2016-02-25', '10:37:41'),
+(61, '2016-02-25', '10:42:40'),
+(4, '2016-02-25', '10:42:41'),
+(61, '2016-02-25', '10:42:44'),
+(5, '2016-02-25', '10:44:12'),
+(5, '2016-02-25', '10:49:29'),
+(2, '2016-02-25', '13:17:14');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `articulo`
+-- Indexes for table `articulo`
 --
 ALTER TABLE `articulo`
   ADD PRIMARY KEY (`idArticulo`),
@@ -1256,7 +1545,7 @@ ALTER TABLE `articulo`
   ADD KEY `idSubseccion` (`idSubseccion`);
 
 --
--- Indices de la tabla `banner`
+-- Indexes for table `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`idBanner`),
@@ -1264,32 +1553,32 @@ ALTER TABLE `banner`
   ADD KEY `idPosicion` (`idPosicion`);
 
 --
--- Indices de la tabla `bolsa`
+-- Indexes for table `bolsa`
 --
 ALTER TABLE `bolsa`
   ADD PRIMARY KEY (`idBolsa`);
 
 --
--- Indices de la tabla `caricatura`
+-- Indexes for table `caricatura`
 --
 ALTER TABLE `caricatura`
   ADD PRIMARY KEY (`idCaricatura`),
   ADD KEY `idCaricaturista` (`idCaricaturista`);
 
 --
--- Indices de la tabla `caricaturista`
+-- Indexes for table `caricaturista`
 --
 ALTER TABLE `caricaturista`
   ADD PRIMARY KEY (`idCaricaturista`);
 
 --
--- Indices de la tabla `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`idCliente`);
 
 --
--- Indices de la tabla `columna`
+-- Indexes for table `columna`
 --
 ALTER TABLE `columna`
   ADD PRIMARY KEY (`idColumna`),
@@ -1297,32 +1586,32 @@ ALTER TABLE `columna`
   ADD KEY `idPersonal` (`idPersonal`);
 
 --
--- Indices de la tabla `datoseconomicos`
+-- Indexes for table `datoseconomicos`
 --
 ALTER TABLE `datoseconomicos`
   ADD KEY `idDatos` (`idDatos`);
 
 --
--- Indices de la tabla `divisa`
+-- Indexes for table `divisa`
 --
 ALTER TABLE `divisa`
   ADD PRIMARY KEY (`idDivisa`);
 
 --
--- Indices de la tabla `fotogaleria`
+-- Indexes for table `fotogaleria`
 --
 ALTER TABLE `fotogaleria`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idFotografo` (`idFotografo`);
 
 --
--- Indices de la tabla `fotografo`
+-- Indexes for table `fotografo`
 --
 ALTER TABLE `fotografo`
   ADD PRIMARY KEY (`idFotografo`);
 
 --
--- Indices de la tabla `imagenesarticulo`
+-- Indexes for table `imagenesarticulo`
 --
 ALTER TABLE `imagenesarticulo`
   ADD PRIMARY KEY (`idImagen`),
@@ -1330,32 +1619,32 @@ ALTER TABLE `imagenesarticulo`
   ADD KEY `idFotografo` (`idFotografo`);
 
 --
--- Indices de la tabla `logusuario`
+-- Indexes for table `logusuario`
 --
 ALTER TABLE `logusuario`
   ADD KEY `idUsuario` (`idUsuario`);
 
 --
--- Indices de la tabla `mercado`
+-- Indexes for table `mercado`
 --
 ALTER TABLE `mercado`
   ADD PRIMARY KEY (`idMercado`);
 
 --
--- Indices de la tabla `personal`
+-- Indexes for table `personal`
 --
 ALTER TABLE `personal`
   ADD PRIMARY KEY (`idPersonal`);
 
 --
--- Indices de la tabla `posicion`
+-- Indexes for table `posicion`
 --
 ALTER TABLE `posicion`
   ADD PRIMARY KEY (`idPosicion`),
   ADD KEY `idSeccion` (`idSeccion`);
 
 --
--- Indices de la tabla `redespersonal`
+-- Indexes for table `redespersonal`
 --
 ALTER TABLE `redespersonal`
   ADD PRIMARY KEY (`idRedPersonal`),
@@ -1363,313 +1652,325 @@ ALTER TABLE `redespersonal`
   ADD KEY `idRed` (`idRed`);
 
 --
--- Indices de la tabla `redessociales`
+-- Indexes for table `redessociales`
 --
 ALTER TABLE `redessociales`
   ADD PRIMARY KEY (`idRed`);
 
 --
--- Indices de la tabla `respuesta`
+-- Indexes for table `respuesta`
 --
 ALTER TABLE `respuesta`
   ADD PRIMARY KEY (`idRespuesta`),
   ADD KEY `idSondeo` (`idSondeo`);
 
 --
--- Indices de la tabla `resultado`
+-- Indexes for table `resultado`
 --
 ALTER TABLE `resultado`
   ADD KEY `idRespuesta` (`idRespuesta`);
 
 --
--- Indices de la tabla `seccion`
+-- Indexes for table `seccion`
 --
 ALTER TABLE `seccion`
   ADD PRIMARY KEY (`idSeccion`);
 
 --
--- Indices de la tabla `sondeo`
+-- Indexes for table `sondeo`
 --
 ALTER TABLE `sondeo`
   ADD PRIMARY KEY (`idSondeo`);
 
 --
--- Indices de la tabla `subseccion`
+-- Indexes for table `subseccion`
 --
 ALTER TABLE `subseccion`
   ADD PRIMARY KEY (`idSubseccion`),
   ADD KEY `idSeccion` (`idSeccion`);
 
 --
--- Indices de la tabla `tasainteres`
+-- Indexes for table `tasainteres`
 --
 ALTER TABLE `tasainteres`
   ADD PRIMARY KEY (`idTasa`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`),
   ADD KEY `idPersonal` (`idPersonal`);
 
 --
--- Indices de la tabla `vistaarticulo`
+-- Indexes for table `vistaarticulo`
 --
 ALTER TABLE `vistaarticulo`
   ADD KEY `idArticulo` (`idArticulo`);
 
 --
--- Indices de la tabla `vistabanner`
+-- Indexes for table `vistabanner`
 --
 ALTER TABLE `vistabanner`
   ADD KEY `idBanner` (`idBanner`);
 
 --
--- Indices de la tabla `vistafotogaleria`
+-- Indexes for table `vistacolumna`
+--
+ALTER TABLE `vistacolumna`
+  ADD KEY `idColumna` (`idColumna`);
+
+--
+-- Indexes for table `vistafotogaleria`
 --
 ALTER TABLE `vistafotogaleria`
   ADD KEY `id` (`id`);
 
 --
--- Indices de la tabla `vistaseccion`
+-- Indexes for table `vistaseccion`
 --
 ALTER TABLE `vistaseccion`
   ADD KEY `idSeccion` (`idSeccion`);
 
 --
--- Indices de la tabla `vistasubseccion`
+-- Indexes for table `vistasubseccion`
 --
 ALTER TABLE `vistasubseccion`
   ADD KEY `idSubseccion` (`idSubseccion`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `articulo`
+-- AUTO_INCREMENT for table `articulo`
 --
 ALTER TABLE `articulo`
   MODIFY `idArticulo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=114;
 --
--- AUTO_INCREMENT de la tabla `banner`
+-- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
   MODIFY `idBanner` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=84;
 --
--- AUTO_INCREMENT de la tabla `bolsa`
+-- AUTO_INCREMENT for table `bolsa`
 --
 ALTER TABLE `bolsa`
   MODIFY `idBolsa` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT de la tabla `caricatura`
+-- AUTO_INCREMENT for table `caricatura`
 --
 ALTER TABLE `caricatura`
   MODIFY `idCaricatura` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
--- AUTO_INCREMENT de la tabla `caricaturista`
+-- AUTO_INCREMENT for table `caricaturista`
 --
 ALTER TABLE `caricaturista`
   MODIFY `idCaricaturista` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `cliente`
+-- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
   MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT de la tabla `columna`
+-- AUTO_INCREMENT for table `columna`
 --
 ALTER TABLE `columna`
   MODIFY `idColumna` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
--- AUTO_INCREMENT de la tabla `datoseconomicos`
+-- AUTO_INCREMENT for table `datoseconomicos`
 --
 ALTER TABLE `datoseconomicos`
   MODIFY `idDatos` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT de la tabla `divisa`
+-- AUTO_INCREMENT for table `divisa`
 --
 ALTER TABLE `divisa`
   MODIFY `idDivisa` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT de la tabla `fotogaleria`
+-- AUTO_INCREMENT for table `fotogaleria`
 --
 ALTER TABLE `fotogaleria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `fotografo`
+-- AUTO_INCREMENT for table `fotografo`
 --
 ALTER TABLE `fotografo`
   MODIFY `idFotografo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT de la tabla `imagenesarticulo`
+-- AUTO_INCREMENT for table `imagenesarticulo`
 --
 ALTER TABLE `imagenesarticulo`
   MODIFY `idImagen` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=98;
 --
--- AUTO_INCREMENT de la tabla `mercado`
+-- AUTO_INCREMENT for table `mercado`
 --
 ALTER TABLE `mercado`
   MODIFY `idMercado` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT de la tabla `personal`
+-- AUTO_INCREMENT for table `personal`
 --
 ALTER TABLE `personal`
   MODIFY `idPersonal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
--- AUTO_INCREMENT de la tabla `posicion`
+-- AUTO_INCREMENT for table `posicion`
 --
 ALTER TABLE `posicion`
   MODIFY `idPosicion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
 --
--- AUTO_INCREMENT de la tabla `redespersonal`
+-- AUTO_INCREMENT for table `redespersonal`
 --
 ALTER TABLE `redespersonal`
   MODIFY `idRedPersonal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de la tabla `redessociales`
+-- AUTO_INCREMENT for table `redessociales`
 --
 ALTER TABLE `redessociales`
   MODIFY `idRed` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de la tabla `respuesta`
+-- AUTO_INCREMENT for table `respuesta`
 --
 ALTER TABLE `respuesta`
-  MODIFY `idRespuesta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `idRespuesta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de la tabla `seccion`
+-- AUTO_INCREMENT for table `seccion`
 --
 ALTER TABLE `seccion`
   MODIFY `idSeccion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT de la tabla `sondeo`
+-- AUTO_INCREMENT for table `sondeo`
 --
 ALTER TABLE `sondeo`
   MODIFY `idSondeo` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de la tabla `subseccion`
+-- AUTO_INCREMENT for table `subseccion`
 --
 ALTER TABLE `subseccion`
   MODIFY `idSubseccion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=62;
 --
--- AUTO_INCREMENT de la tabla `tasainteres`
+-- AUTO_INCREMENT for table `tasainteres`
 --
 ALTER TABLE `tasainteres`
   MODIFY `idTasa` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `articulo`
+-- Constraints for table `articulo`
 --
 ALTER TABLE `articulo`
   ADD CONSTRAINT `articulo_ibfk_1` FOREIGN KEY (`idSubseccion`) REFERENCES `subseccion` (`idSubseccion`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `articulo_ibfk_2` FOREIGN KEY (`idPersonal`) REFERENCES `personal` (`idPersonal`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `banner`
+-- Constraints for table `banner`
 --
 ALTER TABLE `banner`
   ADD CONSTRAINT `banner_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`idCliente`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `banner_ibfk_2` FOREIGN KEY (`idPosicion`) REFERENCES `posicion` (`idPosicion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `caricatura`
+-- Constraints for table `caricatura`
 --
 ALTER TABLE `caricatura`
   ADD CONSTRAINT `caricatura_ibfk_1` FOREIGN KEY (`idCaricaturista`) REFERENCES `caricaturista` (`idCaricaturista`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `columna`
+-- Constraints for table `columna`
 --
 ALTER TABLE `columna`
   ADD CONSTRAINT `columna_ibfk_1` FOREIGN KEY (`idPersonal`) REFERENCES `personal` (`idPersonal`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `columna_ibfk_2` FOREIGN KEY (`idSubseccion`) REFERENCES `subseccion` (`idSubseccion`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `fotogaleria`
+-- Constraints for table `fotogaleria`
 --
 ALTER TABLE `fotogaleria`
   ADD CONSTRAINT `fotogaleria_ibfk_1` FOREIGN KEY (`idFotografo`) REFERENCES `fotografo` (`idFotografo`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `imagenesarticulo`
+-- Constraints for table `imagenesarticulo`
 --
 ALTER TABLE `imagenesarticulo`
   ADD CONSTRAINT `imagenesarticulo_ibfk_1` FOREIGN KEY (`idArticulo`) REFERENCES `articulo` (`idArticulo`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `imagenesarticulo_ibfk_2` FOREIGN KEY (`idFotografo`) REFERENCES `fotografo` (`idFotografo`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `logusuario`
+-- Constraints for table `logusuario`
 --
 ALTER TABLE `logusuario`
   ADD CONSTRAINT `logusuario_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `posicion`
+-- Constraints for table `posicion`
 --
 ALTER TABLE `posicion`
   ADD CONSTRAINT `posicion_ibfk_1` FOREIGN KEY (`idSeccion`) REFERENCES `seccion` (`idSeccion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `redespersonal`
+-- Constraints for table `redespersonal`
 --
 ALTER TABLE `redespersonal`
   ADD CONSTRAINT `redespersonal_ibfk_1` FOREIGN KEY (`idRed`) REFERENCES `redessociales` (`idRed`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `redespersonal_ibfk_2` FOREIGN KEY (`idPersonal`) REFERENCES `personal` (`idPersonal`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `respuesta`
+-- Constraints for table `respuesta`
 --
 ALTER TABLE `respuesta`
   ADD CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`idSondeo`) REFERENCES `sondeo` (`idSondeo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `resultado`
+-- Constraints for table `resultado`
 --
 ALTER TABLE `resultado`
   ADD CONSTRAINT `resultado_ibfk_1` FOREIGN KEY (`idRespuesta`) REFERENCES `respuesta` (`idRespuesta`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `subseccion`
+-- Constraints for table `subseccion`
 --
 ALTER TABLE `subseccion`
   ADD CONSTRAINT `subseccion_ibfk_1` FOREIGN KEY (`idSeccion`) REFERENCES `seccion` (`idSeccion`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `usuario`
+-- Constraints for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idPersonal`) REFERENCES `personal` (`idPersonal`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `vistaarticulo`
+-- Constraints for table `vistaarticulo`
 --
 ALTER TABLE `vistaarticulo`
   ADD CONSTRAINT `vistaarticulo_ibfk_1` FOREIGN KEY (`idArticulo`) REFERENCES `articulo` (`idArticulo`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `vistabanner`
+-- Constraints for table `vistabanner`
 --
 ALTER TABLE `vistabanner`
   ADD CONSTRAINT `vistabanner_ibfk_1` FOREIGN KEY (`idBanner`) REFERENCES `banner` (`idBanner`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `vistafotogaleria`
+-- Constraints for table `vistacolumna`
+--
+ALTER TABLE `vistacolumna`
+  ADD CONSTRAINT `vistacolumna_ibfk_1` FOREIGN KEY (`idColumna`) REFERENCES `columna` (`idColumna`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `vistafotogaleria`
 --
 ALTER TABLE `vistafotogaleria`
   ADD CONSTRAINT `vistafotogaleria_ibfk_1` FOREIGN KEY (`id`) REFERENCES `fotogaleria` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `vistaseccion`
+-- Constraints for table `vistaseccion`
 --
 ALTER TABLE `vistaseccion`
   ADD CONSTRAINT `vistaseccion_ibfk_1` FOREIGN KEY (`idSeccion`) REFERENCES `seccion` (`idSeccion`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `vistasubseccion`
+-- Constraints for table `vistasubseccion`
 --
 ALTER TABLE `vistasubseccion`
   ADD CONSTRAINT `vistasubseccion_ibfk_1` FOREIGN KEY (`idSubseccion`) REFERENCES `subseccion` (`idSubseccion`) ON DELETE NO ACTION ON UPDATE CASCADE;

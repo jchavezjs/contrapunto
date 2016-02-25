@@ -648,6 +648,8 @@ angular.module('contrapunto.controllers', [])
                     }else{
                       if($scope.subinfo.id != 2){
                       $http.post("api/php/vistarticulo.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+                      }else{
+                        $http.post("api/php/vistoColumna.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
                       }
                     }
                     $scope.secinfo = response.secinfo;
