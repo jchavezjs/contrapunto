@@ -7,19 +7,23 @@ date_default_timezone_set('America/El_Salvador');
 $ediinfo = mysql_query("SELECT idArticulo as id,titulo, fecha, preview
 						FROM articulo
 						WHERE idSubseccion = 1 and activo = 1
-						ORDER BY fecha desc, hora desc");
+						ORDER BY fecha desc, hora desc
+						limit 3");
 $triinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha, c.idPersonal
 						from personal as c, articulo as a
 						where c.idPersonal = a.idPersonal and a.idSubseccion = 3 and a.activo = 1
-						ORDER BY a.fecha desc, a.hora desc");
+						ORDER BY a.fecha desc, a.hora desc
+						limit 3");
 $libinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, c.rutaFoto as foto, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha, c.idPersonal
 						from articulo as a, personal as c
 						where a.idSubseccion = 4 and a.idPersonal=c.idPersonal and a.activo = 1
-						ORDER BY a.fecha desc, a.hora desc ");
+						ORDER BY a.fecha desc, a.hora desc
+						limit 3");
 $acainfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha, c.idPersonal
 						from articulo as a, personal as c
 						where a.idSubseccion = 6 and a.idPersonal=c.idPersonal and a.activo = 1
-						ORDER BY a.fecha desc, a.hora desc ");
+						ORDER BY a.fecha desc, a.hora desc
+						limit 3");
 $colinfo = mysql_query("SELECT CONCAT(nombres, ' ', apellidos) as nombre, idPersonal as id from personal where cargo='columnista'");
 
 while($edipreview = mysql_fetch_array($ediinfo)){
@@ -85,7 +89,8 @@ echo json_encode(array(
 				'banner3' => banner(1,3),
 				'banner4' => banner(1,4),
 				'bannerMovil' => banner(1,'movil'),
-				'leidos' => leidos(1)
+				'leidos' => leidos(1),
+				'sondeo' => primerSondeo()
 				));
 
 ?>

@@ -218,21 +218,19 @@
                                 <h1>¡Tu opinión vale!</h1>
                             </div>
                             <div class="body">
-                                <h4>¿Está usted de acuerdo con que se instaure el Socialismo en El Salvador?</h4>
+                                <a ng-href="#/opinion/sondeo/{{sondeo[0].idSondeo}}"><h4>{{sondeo[0].pregunta}}</h4></a>
                                 <form>
-                                    <input type="radio" name="respuesta" value="si"> Si, estoy de acuerdo</br>
-                                    <input type="radio" name="respuesta" value="no"> No, estoy de acuerdo</br>
-                            <button>votar</button>
+                                  <div ng-repeat="respuesta in sondeo[0].respuestas">
+                                    <input type="radio" name="respuesta" value="{{respuesta.idRespuesta}}" ng-model="$parent.idR" name="r{{sondeo[0].idSondeo}}"> {{respuesta.respuesta}}</div>
+                            <button ng-click="votar(idR,sondeo[0].idSondeo)">votar</button>
                                 </form>
-                            <!--<img class="line-votar"/><i class="total-votos">44 votos en total</i><img class="line-votar"/>
+                            <!-- <img class="line-votar"/><i class="total-votos">{{sondeo[0].total}} votos en total</i><img class="line-votar"/>
                                 <div class="body-estadisticas">
-                                    <span>Si - 56.8% | 25 votos</span>
-                                    <div style="width: 56.8%;
-    " class="estadistica"></div>
-                                    <span>No - 43.2% | 19 votos</span>
-                                    <div style="width: 43.2%;
-    " class="estadistica"></div>
-                                </div>-->
+                                  <div ng-repeat="respuesta in sondeo[0].respuestas">
+                                    <span>{{respuesta.respuesta}} - {{(respuesta.total * 100) / sondeo[0].total | number:2}}% | {{respuesta.total}} votos</span>
+                                    <div style="width:{{(respuesta.total * 100) / sondeo[0].total | number:2}}%;" class="estadistica"></div>
+                                  </div>
+                                </div> -->
                             </div>
                         </div>
                         <!-- Sondeo -->

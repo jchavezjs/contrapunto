@@ -104,11 +104,11 @@
 <div class="container">
     <div class="row">
       <div class="col-md-10">
-            <div ng-repeat="sondeo in sondeos" class="sondeo-background">
+            <div ng-repeat="sondeo in sondeos | startFrom:(currentPage - 1)*pageSize | limitTo:pageSize" class="sondeo-background">
               <div class="sondeo-imagen" style="background-image:url({{sondeo.foto}});">
               </div>
-              <div class="sondeo-header" ng-class="{'header-new': sondeo.idSondeo == sondeos[0].idSondeo, 'header-old': sondeo.idSondeo != sondeos[0].idSondeo}">
-                <h1>{{sondeo.titulo}} | {{sondeo.fecha}}</h1>
+            <div class="sondeo-header" ng-class="{'header-new': sondeo.idSondeo == sondeos[0].idSondeo, 'header-old': sondeo.idSondeo != sondeos[0].idSondeo}">
+                <a ng-href="#/opinion/sondeo/{{sondeo.idSondeo}}">  <h1>{{sondeo.titulo}} | {{sondeo.fecha}}</h1></a>
               </div>
               <div class="area-pregunta">
                 <div class="row">

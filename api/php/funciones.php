@@ -6,7 +6,8 @@ function articulo($seccion){
 			from articulo a, personal as c, imagenesarticulo as i, fotografo as f
 			where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo and a.activo = 1
 			and i.posicion='principal' and a.idSubseccion=$seccion
-			ORDER BY a.fecha desc, a.hora desc";
+			ORDER BY a.fecha desc, a.hora desc
+			limit 3";
 	$query = mysql_query($str);
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
@@ -65,7 +66,8 @@ function columna(){
 	$str = "SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.rutaFoto as foto, a.titulo, a.fecha, c.idPersonal as idPersonal
 				from personal as c, columna as a
 				where c.idPersonal = a.idPersonal and a.activo = 1
-				ORDER BY a.fecha desc, a.hora desc";
+				ORDER BY a.fecha desc, a.hora desc
+				limit 3";
 	$query = mysql_query($str);
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
@@ -123,7 +125,8 @@ function fotogaleria(){
 	$fotinfo = mysql_query("SELECT a.id, a.titulo, a.rutaFoto as foto, f.nombre as fotografo, a.link
 							from fotogaleria a, fotografo as f
 							where a.idFotografo = f.idFotografo
-							ORDER BY a.fecha desc, a.hora desc");
+							ORDER BY a.fecha desc, a.hora desc
+							limit 1");
 	while($fotpreview = mysql_fetch_array($fotinfo)){
 		$fotogaleria[] = array(
 					'id' => $fotpreview['id'],
@@ -140,7 +143,8 @@ function actualidad(){
 							from articulo a, personal as c, subseccion as s, imagenesarticulo as i, fotografo as f, seccion se
 							where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and a.activo = 1 and s.idSeccion = se.idSeccion
 							and c.cargo='periodista' and i.posicion='principal' and a.especial = 0 and a.idSubseccion not in (1,2,3,4,5,6,35,45,46,49,54,57,58,59,60)
-							ORDER BY a.fecha desc, a.hora desc");
+							ORDER BY a.fecha desc, a.hora desc
+							limit 5");
 	while($actpreview = mysql_fetch_array($actinfo)){
 		$actualidad[] = array(
 					'id' => $actpreview['id'],
@@ -160,6 +164,22 @@ function actualidad(){
 }
 
 function caricatura(){
+	$carinfo = mysql_query("SELECT a.idCaricatura, a.rutaFoto as foto, a.fecha, CONCAT(c.nombres, ' ', c.apellidos) as caricaturista
+							from caricatura a, caricaturista c
+							where a.idCaricaturista = c.idCaricaturista
+							ORDER BY a.fecha desc, a.hora desc
+							limit 1");
+	while($carpreview = mysql_fetch_array($carinfo)){
+		$caricatura[] = array(
+					'foto' => $carpreview['foto'],
+					'idCaricatura' => $carpreview['idCaricatura'],
+					'caricaturista' => $carpreview['caricaturista'],
+					'fecha' => $carpreview['fecha'],);
+	}
+	return $caricatura;
+}
+
+function caricaturap(){
 	$carinfo = mysql_query("SELECT a.idCaricatura, a.rutaFoto as foto, a.fecha, CONCAT(c.nombres, ' ', c.apellidos) as caricaturista
 							from caricatura a, caricaturista c
 							where a.idCaricaturista = c.idCaricaturista
@@ -246,6 +266,20 @@ function leidos($idSeccion){
 
 	return array('seccion' => $seccion, 'seccion2' => $seccion2, 'portada' => $actualidad);
 }
+function primerSondeo(){
+	$soninfo = mysql_query("SELECT idSondeo, pregunta
+												FROM sondeo
+												ORDER BY fecha desc, hora desc limit 1");
+	$sonpreview = mysql_fetch_row($soninfo);
+	$sondeo[] = array(
+	  'idSondeo' => $sonpreview[0],
+	  'pregunta' => $sonpreview[1],
+	  'respuestas' => respuestas($sonpreview[0]),
+		'total' => maxTotal($sonpreview[0])
+	);
+	return $sondeo;
+}
+
 function respuestas($id){
 	$resinfo = mysql_query("SELECT idRespuesta, idSondeo, respuesta
 												FROM respuesta");

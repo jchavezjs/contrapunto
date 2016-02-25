@@ -108,36 +108,31 @@
               <div class="sondeo-imagen" style="background-image:url(http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2016/02/JOV8638-copy.jpg);">
               </div>
               <div class="sondeo-header header-new">
-                <h1>Caso Jesuitas | 27 de enero del 2016</h1>
+                <h1>{{contenido[0].titulo}} | {{contenido[0].fecha}}</h1>
               </div>
               <div class="area-pregunta">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="pregunta">
-                      <h4>¿Está usted de acuerdo con que se lleven a españa a los militares involucrados en el caso Jesuita?</h4>
+                      <h4>{{contenido[0].pregunta}}</h4>
                       <ul>
-                        <li><input type="radio" name="r">Si, estoy de acuerdo</li>
-                        <li><input type="radio" name="r">No, estoy de acuerdo</li>
+                        <li ng-repeat="respuesta in contenido[0].respuestas"><input type="radio" value="{{respuesta.idRespuesta}}" ng-model="$parent.idR" name="r{{sondeo.idSondeo}}" >{{respuesta.respuesta}}</li>
                       </ul>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="votos">
                       <img class="line-votar-2">
-                      <span>110 votos en total</span>
+                      <span>{{contenido[0].total}} votos en total</span>
                       <img class="line-votar-2">
                     </div>
-                    <div class="respuesta">
-                        <div class="text">Si, estoy de acuerdo <span>65% | 65 votos</span></div>
-                        <div style="width:65%;" class="full  new-color-back"></div>
-                    </div>
-                    <div class="respuesta">
-                        <div class="text">No, estoy de acuerdo <span>45% | 45 votos</span></div>
-                        <div style="width:45%;" class="full  new-color-back"></div>
+                    <div ng-repeat="respuesta in contenido[0].respuestas" class="respuesta">
+                        <div class="text">{{respuesta.respuesta}}<span>{{(respuesta.total * 100) / contenido[0].total | number:2}}% | {{respuesta.total}} votos</span></div>
+                        <div style="width:{{(respuesta.total * 100) / contenido[0].total | number:2}}%;" class="full  new-color-back"></div>
                     </div>
                   </div>
                 </div>
-                  <div class="botonparavotar"><button class="new-color-back">Votar</button></div>
+                  <div class="botonparavotar"><button class="new-color-back" ng-click="votar(idR,contenido[0].idSondeo)">Votar</button></div>
               </div>
             </div>
             <center><div class="post-divisor"></div></center>

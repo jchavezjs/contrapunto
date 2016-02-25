@@ -13,7 +13,7 @@ angular.module('contrapunto.controllers', [])
       });
   };
   })
-    .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+    .controller('MainController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll, $cookies){
       $anchorScroll();
 
       $scope.search = function(query){
@@ -52,6 +52,7 @@ angular.module('contrapunto.controllers', [])
           $scope.especiales = response.especiales;
           $scope.fotogalerias = response.fotogalerias;
           $scope.caricaturas = response.caricaturas;
+          $scope.sondeo = response.sondeo;
           $scope.banner1 = response.banner1;
           $scope.intervalo1 = $scope.banner1[0].tiempo;
           $scope.banner2 = response.banner2;
@@ -103,8 +104,35 @@ angular.module('contrapunto.controllers', [])
       $scope.vistoFoto = function(id){
         $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
       };
+      $scope.votar = function(idv,ids){
+        if(idv){
+          if(!$cookies.get('sondeo'+ids)){
+          $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
+
+            $http.get("api/php/portada.php").success(function(response){
+                $scope.sondeo = response.sondeo;
+              });
+
+              var now = new Date(),
+              exp = new Date(now.getFullYear(), now.getMonth()+6, now.getDate());
+
+              $cookies.put('sondeo'+ids,'sondeo'+ids,{
+                expires: exp
+              });
+
+              var id = $cookies.get('sondeo'+ids);
+
+          });
+
+        }else{
+          alert("Usted ya realizo la votación");
+        }
+      }else{
+        alert("Debe seleccionar una opcion");
+      }
+    }
     })
-    .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+    .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll, $cookies){
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -127,6 +155,7 @@ angular.module('contrapunto.controllers', [])
             $scope.politicas = response.politicas;
             $scope.internacionales = response.internacionales;
             $scope.culturas = response.culturas;
+            $scope.sondeo = response.sondeo;
             $scope.leidos = response.leidos;
             $scope.sociedades = response.sociedades;
             $scope.economias = response.economias;
@@ -147,6 +176,33 @@ angular.module('contrapunto.controllers', [])
         $scope.vistoBanner = function(id){
           $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
         };
+        $scope.votar = function(idv,ids){
+          if(idv){
+            if(!$cookies.get('sondeo'+ids)){
+            $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
+
+              $http.get("api/php/opinion.php").success(function(response){
+                  $scope.sondeo = response.sondeo;
+                });
+
+                var now = new Date(),
+                exp = new Date(now.getFullYear(), now.getMonth()+6, now.getDate());
+
+                $cookies.put('sondeo'+ids,'sondeo'+ids,{
+                  expires: exp
+                });
+
+                var id = $cookies.get('sondeo'+ids);
+
+            });
+
+          }else{
+            alert("Usted ya realizo la votación");
+          }
+        }else{
+          alert("Debe seleccionar una opcion");
+        }
+      }
     })
 
     .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
@@ -479,28 +535,32 @@ angular.module('contrapunto.controllers', [])
           $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
         };
         $scope.votar = function(idv,ids){
-          if(!$cookies.get('sondeo'+ids)){
-          $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
+          if(idv){
+            if(!$cookies.get('sondeo'+ids)){
+            $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
 
-            $http.get("api/php/sondeo.php").success(function(response){
-                $scope.sondeos = response.sondeos;
-              });
+              $http.get("api/php/sondeo.php").success(function(response){
+                  $scope.sondeos = response.sondeos;
+                });
 
-              var now = new Date(),
-              exp = new Date(now.getFullYear(), now.getMonth()+6, now.getDate());
+                var now = new Date(),
+                exp = new Date(now.getFullYear(), now.getMonth()+6, now.getDate());
 
-              $cookies.put('sondeo'+ids,'sondeo'+ids,{
-                expires: exp
-              });
+                $cookies.put('sondeo'+ids,'sondeo'+ids,{
+                  expires: exp
+                });
 
-              var id = $cookies.get('sondeo'+ids);
+                var id = $cookies.get('sondeo'+ids);
 
-          });
+            });
 
+          }else{
+            alert("Usted ya realizo la votación");
+          }
         }else{
-          alert("Usted ya realizo la votación");
+          alert("Debe seleccionar una opcion");
         }
-        }
+      }
     })
 
     .controller('CaricaturaController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
@@ -643,7 +703,7 @@ angular.module('contrapunto.controllers', [])
        };
     })
 
-    .controller('SPostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
+    .controller('SPostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll, $cookies){
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -663,11 +723,11 @@ angular.module('contrapunto.controllers', [])
 
                 $http.get("api/php/spost.php?&id="+id).success(function(response){
 
-                    // $scope.contenido = response.contenido;
-                    // if ($scope.contenido == null) {
-                    //   alert("EL contenido solicitado no esta disponible");
-                    //   $location.path('/');
-                    // }
+                    $scope.contenido = response.contenido;
+                    if ($scope.contenido == null) {
+                      alert("EL contenido solicitado no esta disponible");
+                      $location.path('/');
+                    }
                     $scope.subsecciones = response.subsecciones;
                     $scope.leidos = response.leidos;
                     $scope.banner1 = response.banner1;
@@ -683,6 +743,33 @@ angular.module('contrapunto.controllers', [])
        $scope.vistoBanner = function(id){
          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
        };
+       $scope.votar = function(idv,ids){
+         if(idv){
+           if(!$cookies.get('sondeo'+ids)){
+           $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
+
+             $http.get("api/php/spost.php?id="+ids).success(function(response){
+                 $scope.contenido = response.contenido;
+               });
+
+               var now = new Date(),
+               exp = new Date(now.getFullYear(), now.getMonth()+6, now.getDate());
+
+               $cookies.put('sondeo'+ids,'sondeo'+ids,{
+                 expires: exp
+               });
+
+               var id = $cookies.get('sondeo'+ids);
+
+           });
+
+         }else{
+           alert("Usted ya realizo la votación");
+         }
+       }else{
+         alert("Debe seleccionar una opcion");
+       }
+     }
     })
     .controller('BuscarController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
         $anchorScroll();
