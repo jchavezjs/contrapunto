@@ -335,8 +335,6 @@ while($esppreview = mysql_fetch_array($espinfo)){
 				'fotografo' => $fotografo = $esppreview['fotografo'],);
 }
 
-
-
 echo json_encode(array('columnistas' => $columnista,
 						'actualidades' => actualidad(),
 						'tribunas' => $tribuna,
@@ -383,5 +381,4 @@ echo json_encode(array('columnistas' => $columnista,
 						'bannerMovil' => banner(8,'movil'),
 						'sondeo' => primerSondeo(),
 						'caricaturas' => caricatura(),));
-
 ?>

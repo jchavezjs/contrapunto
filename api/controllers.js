@@ -121,7 +121,7 @@ angular.module('contrapunto.controllers', [])
               });
 
               var id = $cookies.get('sondeo'+ids);
-
+              $scope.checkid = $cookies.get('sondeo'+ids);
           });
 
         }else{
@@ -131,6 +131,11 @@ angular.module('contrapunto.controllers', [])
         alert("Debe seleccionar una opcion");
       }
     }
+    $http.get("api/php/portada.php").success(function(response){
+        $scope.sondeo = response.sondeo;
+        var sid = $scope.sondeo[0].idSondeo;
+        $scope.checkid = $cookies.get('sondeo'+sid);
+    });
     })
     .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll, $cookies){
       $scope.search = function(query){
@@ -193,7 +198,7 @@ angular.module('contrapunto.controllers', [])
                 });
 
                 var id = $cookies.get('sondeo'+ids);
-
+                $scope.checkid = $cookies.get('sondeo'+ids);
             });
 
           }else{
@@ -203,6 +208,11 @@ angular.module('contrapunto.controllers', [])
           alert("Debe seleccionar una opcion");
         }
       }
+      $http.get("api/php/portada.php").success(function(response){
+          $scope.sondeo = response.sondeo;
+          var sid = $scope.sondeo[0].idSondeo;
+          $scope.checkid = $cookies.get('sondeo'+sid);
+      });
     })
 
     .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
