@@ -106,13 +106,14 @@ function columna(){
 }
 
 function dropdown($seccion){
-	$str = "SELECT idSubseccion as id, nombre
+	$str = "SELECT idSubseccion as id, nombre, url
 			from subseccion
 			where idSeccion = $seccion";
 	$query = mysql_query($str);
 	while($result = mysql_fetch_array($query)){
 		$resultado[] = array(
 					'id' => $result['id'],
+					'url' => $result['url'],
 					'nombre' => $result['nombre']);
 	}
 	return $resultado;

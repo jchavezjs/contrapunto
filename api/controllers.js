@@ -899,6 +899,7 @@ angular.module('contrapunto.controllers', [])
                   $scope.fotogalerias = response.fotogalerias;
                    $scope.contenidos = response.contenidos;
                    $scope.subinfo = response.subinfo;
+                   $scope.subsecciones = response.subsecciones;
                    $scope.actualidades = response.actualidades;
                    $scope.banner1 = response.banner1;
                    $scope.intervalo1 = $scope.banner1[0].tiempo;

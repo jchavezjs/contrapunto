@@ -1,22 +1,40 @@
 <!-- Ads Top | Portada -->
 <div class="container">
-    <div class="mainAds">
-            <div class="row">
-                <div class="col-md-7">
-                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/560x100&text=1')"></div>
+  <div class="mainAds">
+          <div class="row">
+              <div class="col-md-7">
+              <div id="ads1" class="ads-border">
+                <uib-carousel interval="intervalo1">
+                  <uib-slide ng-repeat="banner in banner1">
+                    <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                  </uib-slide>
+                </uib-carousel>
+              </div>
+              </div>
+              <div class="col-md-5">
+                <div id="ads2" class="ads-border">
+                  <uib-carousel interval="intervalo2">
+                    <uib-slide ng-repeat="banner in banner2">
+                      <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                    </uib-slide>
+                  </uib-carousel>
                 </div>
-                <div class="col-md-5">
-                    <div style="width:100%; height:100px; background-image:url('https://placehold.it/400x100&text=2')"></div>
-                </div>
+              </div>
+          </div>
+  </div>
+  <div class="mainAds-mobile">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="adsMobile" class="ads-border">
+              <uib-carousel interval="intervaloMovil">
+                <uib-slide ng-repeat="banner in bannerMovil">
+                  <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                </uib-slide>
+              </uib-carousel>
             </div>
+        </div>
     </div>
-    <div class="mainAds-mobile">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="ads-mobile" style="background-image:url('http://hotelperunews.com/wp-content/uploads/2015/07/Decameron-Hotel-Punta-Sal.jpg')"></div>
-                </div>
-            </div>
-    </div>
+  </div>
 </div>
 <!-- Ads Top | Portada -->
 <!-- Header -->
@@ -32,7 +50,7 @@
         <div class="logo-center seccion-nombre">
             <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
             <a href="#/opinion"><h3>OPINIÓN</h3></a>
-            <a class="opinion-logo-title sub" href="#/opinion/sondeo">
+            <a class="opinion-logo-title sub" href="#/opinion/columnistas">
                 Columnas
             </a>
             <h4>{{fecha}}</h4>
@@ -87,14 +105,13 @@
     <div class="row">
         <div class="col-md-8">
             <div class="opinion-columnas-area">
-              <h1>Columnas sobre <span>Gobierno</span></h1>
+              <h1>Columnas sobre <span>{{subinfo.nombre}}</span></h1>
             </div>
             <div class="search-results">
-                <div class="item" ng-repeat="articulo in articulos | startFrom:(currentPage - 1)*pageSize | limitTo:pageSize">
-                    <a ng-href="#/{{articulo.urlSeccion}}/{{articulo.url}}"><span class="category">{{articulo.subseccion}}</span></a>
-                    <a ng-href="#/{{articulo.urlSeccion}}/{{articulo.url}}/{{articulo.titulo | urlEncode}}/{{articulo.id}}"><h1>{{articulo.titulo}}</h1>
-                    <h6>Por <a class="autor">{{articulo.autor}}</a> {{articulo.fecha}}</h6>
-                    <p>{{articulo.preview}}</p>
+                <div class="item" ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo:pageSize">
+                    <a href="#/opinion/columnistas"><span class="category">Columnistas</span></a>
+                    <a ng-href="#/opinion/columnistas/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1>
+                    <h6>Por <a class="autor" ng-href="#/autor/{{contenido.idPersonal}}">{{contenido.autor}}</a> {{contenido.fecha}}</h6>
                 </div>
             </div>
             <div class="center"><uib-pagination ng-click="top()" total-items="articulos.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination></div>
