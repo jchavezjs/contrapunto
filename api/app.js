@@ -1,4 +1,4 @@
-angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services','angular.filter','ngRoute','ngProgress','ui.bootstrap','ngSanitize','720kb.socialshare'])
+angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services','angular.filter','ngRoute','ngProgress','ui.bootstrap','ngSanitize','720kb.socialshare','ngCookies'])
     .config(function($routeProvider, $locationProvider){
         $routeProvider
             .when("/", {
@@ -10,7 +10,7 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                 templateUrl: "templates/opinion/main.html"
             })
             .when("/opinion/sondeo/:id", {
-                controller: "OpinionController",
+                controller: "SPostController",
                 templateUrl: "templates/opinion/sondeoPost.html"
             })
             .when("/opinion/columnas/1", {

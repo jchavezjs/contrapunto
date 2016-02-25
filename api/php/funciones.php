@@ -246,4 +246,33 @@ function leidos($idSeccion){
 
 	return array('seccion' => $seccion, 'seccion2' => $seccion2, 'portada' => $actualidad);
 }
+function respuestas($id){
+	$resinfo = mysql_query("SELECT idRespuesta, idSondeo, respuesta
+												FROM respuesta");
+	while ($respreview = mysql_fetch_array($resinfo)) {
+		if($id == $respreview['idSondeo']){
+			$respuestas[] = array(
+								'idRespuesta' => $respreview['idRespuesta'],
+								'idSondeo' => $respreview['idSondeo'],
+								'respuesta' => $respreview['respuesta'],
+								'total' => total($respreview['idRespuesta'])
+							);
+		}
+	}
+	return $respuestas;
+}
+function total($id){
+	$resinfo = mysql_query("SELECT count(a.idRespuesta) as total
+												FROM resultado a where a.idRespuesta = $id group by a.idRespuesta");
+	$res = mysql_fetch_row($resinfo);
+	$respuestas = $res[0];
+	return $respuestas;
+}
+function maxTotal($id){
+	$resinfo = mysql_query("SELECT count(a.idRespuesta) as total
+												FROM resultado a, respuesta b where a.idRespuesta = b.idRespuesta and b.idSondeo = $id");
+	$res = mysql_fetch_row($resinfo);
+	$respuestas = $res[0];
+	return $respuestas;
+}
 ?>

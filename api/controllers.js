@@ -440,7 +440,7 @@ angular.module('contrapunto.controllers', [])
        };
     })
 
-    .controller('SondeoController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+    .controller('SondeoController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll, $cookies){
         $scope.top = function(){
           $anchorScroll();
         };
@@ -464,6 +464,7 @@ angular.module('contrapunto.controllers', [])
         $http.get("api/php/sondeo.php").success(function(response){
             $scope.subsecciones = response.subsecciones;
             $scope.leidos = response.leidos;
+            $scope.sondeos = response.sondeos;
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
             $scope.banner2 = response.banner2;
@@ -477,6 +478,29 @@ angular.module('contrapunto.controllers', [])
         $scope.vistoBanner = function(id){
           $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
         };
+        $scope.votar = function(idv,ids){
+          if(!$cookies.get('sondeo'+ids)){
+          $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
+
+            $http.get("api/php/sondeo.php").success(function(response){
+                $scope.sondeos = response.sondeos;
+              });
+
+              var now = new Date(),
+              exp = new Date(now.getFullYear(), now.getMonth()+6, now.getDate());
+
+              $cookies.put('sondeo'+ids,'sondeo'+ids,{
+                expires: exp
+              });
+
+              var id = $cookies.get('sondeo'+ids);
+
+          });
+
+        }else{
+          alert("Usted ya realizo la votación");
+        }
+        }
     })
 
     .controller('CaricaturaController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
@@ -619,6 +643,47 @@ angular.module('contrapunto.controllers', [])
        };
     })
 
+    .controller('SPostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        $scope.progressbar.setColor('#35A7FF');
+        $timeout(function(){
+            $scope.progressbar.complete();
+            $scope.show = true;
+        }, 300);
+
+        var id = $routeParams.id;
+        $anchorScroll();
+        $scope.fecha = fechaActual;
+
+         $http.post("api/php/spost.php?&id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){
+
+                $http.get("api/php/spost.php?&id="+id).success(function(response){
+
+                    // $scope.contenido = response.contenido;
+                    // if ($scope.contenido == null) {
+                    //   alert("EL contenido solicitado no esta disponible");
+                    //   $location.path('/');
+                    // }
+                    $scope.subsecciones = response.subsecciones;
+                    $scope.leidos = response.leidos;
+                    $scope.banner1 = response.banner1;
+                    $scope.intervalo1 = $scope.banner1[0].tiempo;
+                    $scope.banner2 = response.banner2;
+                    $scope.intervalo2 = $scope.banner2[0].tiempo;
+                    $scope.banner3 = response.banner3;
+                    $scope.intervalo3 = $scope.banner3[0].tiempo;
+                    $scope.bannerMovil = response.bannerMovil;
+                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                });
+       });
+       $scope.vistoBanner = function(id){
+         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+       };
+    })
     .controller('BuscarController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
         $anchorScroll();
         $scope.top = function(){

@@ -104,112 +104,35 @@
 <div class="container">
     <div class="row">
       <div class="col-md-10">
-            <div class="sondeo-background">
-              <div class="sondeo-imagen" style="background-image:url(http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2016/02/JOV8638-copy.jpg);">
+            <div ng-repeat="sondeo in sondeos" class="sondeo-background">
+              <div class="sondeo-imagen" style="background-image:url({{sondeo.foto}});">
               </div>
-              <div class="sondeo-header header-new">
-                <h1>Caso Jesuitas | 27 de enero del 2016</h1>
+              <div class="sondeo-header" ng-class="{'header-new': sondeo.idSondeo == sondeos[0].idSondeo, 'header-old': sondeo.idSondeo != sondeos[0].idSondeo}">
+                <h1>{{sondeo.titulo}} | {{sondeo.fecha}}</h1>
               </div>
               <div class="area-pregunta">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="pregunta">
-                      <h4>¿Está usted de acuerdo con que se lleven a españa a los militares involucrados en el caso Jesuita?</h4>
+                      <h4>{{sondeo.pregunta}}</h4>
                       <ul>
-                        <li><input type="radio" name="r">Si, estoy de acuerdo</li>
-                        <li><input type="radio" name="r">No, estoy de acuerdo</li>
+                        <li ng-repeat="respuesta in sondeo.respuestas"><input type="radio" value="{{respuesta.idRespuesta}}" ng-model="$parent.idR" name="r{{sondeo.idSondeo}}" >{{respuesta.respuesta}}</li>
                       </ul>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="votos">
                       <img class="line-votar-2">
-                      <span>110 votos en total</span>
+                      <span>{{sondeo.total}} votos en total</span>
                       <img class="line-votar-2">
                     </div>
-                    <div class="respuesta">
-                        <div class="text">Si, estoy de acuerdo <span>65% | 65 votos</span></div>
-                        <div style="width:65%;" class="full  new-color-back"></div>
-                    </div>
-                    <div class="respuesta">
-                        <div class="text">No, estoy de acuerdo <span>45% | 45 votos</span></div>
-                        <div style="width:45%;" class="full  new-color-back"></div>
+                    <div ng-repeat="respuesta in sondeo.respuestas" class="respuesta">
+                        <div class="text">{{respuesta.respuesta}}<span>{{(respuesta.total * 100) / sondeo.total | number:2}}% | {{respuesta.total}} votos</span></div>
+                        <div style="width:{{(respuesta.total * 100) / sondeo.total | number:2}}%;" class="full  new-color-back"></div>
                     </div>
                   </div>
                 </div>
-                  <div class="botonparavotar"><button class="new-color-back">Votar</button></div>
-              </div>
-            </div>
-            <div class="sondeo-background">
-              <div class="sondeo-imagen" style="background-image:url(http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2016/01/JOV6782-copy.jpg);">
-              </div>
-              <div class="sondeo-header header-old">
-                <h1>Salarios de policias | 27 de enero del 2016</h1>
-              </div>
-              <div class="area-pregunta">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="pregunta">
-                      <h4>¿Está usted de acuerdo con que le aumenten el salario a los agentes de la PNC?</h4>
-                      <ul>
-                        <li><input type="radio" name="r">Si, estoy de acuerdo</li>
-                        <li><input type="radio" name="r">No, estoy de acuerdo</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="votos">
-                      <img class="line-votar-2">
-                      <span>110 votos en total</span>
-                      <img class="line-votar-2">
-                    </div>
-                    <div class="respuesta">
-                        <div class="text">Si, estoy de acuerdo <span>65% | 65 votos</span></div>
-                        <div style="width:65%;" class="full old-color-back"></div>
-                    </div>
-                    <div class="respuesta">
-                        <div class="text">No, estoy de acuerdo <span>45% | 45 votos</span></div>
-                        <div style="width:45%;" class="full old-color-back"></div>
-                    </div>
-                  </div>
-                </div>
-                  <div class="botonparavotar"><button class="old-color-back">Votar</button></div>
-              </div>
-            </div>
-            <div class="sondeo-background">
-              <div class="sondeo-imagen" style="background-image:url(https://tribktla.files.wordpress.com/2015/06/trump-presidential-announcement-2015.jpg);">
-              </div>
-              <div class="sondeo-header header-old">
-                <h1>TRUMP presidente | 12 de abril del 2015</h1>
-              </div>
-              <div class="area-pregunta">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="pregunta">
-                      <h4>¿Usted cree que Donald Trump puede ganar las elecciones presidenciales de USA 2016?</h4>
-                      <ul>
-                        <li><input type="radio" name="r">Si, es posible</li>
-                        <li><input type="radio" name="r">No, no lo considero posible</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="votos">
-                      <img class="line-votar-2">
-                      <span>110 votos en total</span>
-                      <img class="line-votar-2">
-                    </div>
-                    <div class="respuesta">
-                        <div class="text">Si, es posible <span>10% | 10 votos</span></div>
-                        <div style="width:10%;" class="full old-color-back"></div>
-                    </div>
-                    <div class="respuesta">
-                        <div class="text">No, no lo considero posible <span>90% | 90 votos</span></div>
-                        <div style="width:90%;" class="full old-color-back"></div>
-                    </div>
-                  </div>
-                </div>
-                  <div class="botonparavotar"><button class="old-color-back">Votar</button></div>
+                  <div class="botonparavotar"><button class="new-color-back" ng-click="votar(idR,sondeo.idSondeo)">Votar</button></div>
               </div>
             </div>
 
@@ -249,7 +172,7 @@
                   <div role="tabpanel" class="tab-pane" id="lmlpolitica">
                       <ul class="leido">
                         <li ng-repeat="sec in leidos.seccion"><a ng-href="#/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
-                        <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec2.id}}" class="leido-item">{{sec2.titulo}}</a></li>
+                        <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec2.id}}" class="leido-item">{{sec2.titulo}}</a></li>
                       </ul>
                   </div>
                 </div>
