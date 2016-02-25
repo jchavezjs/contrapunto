@@ -13,11 +13,11 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                 controller: "SPostController",
                 templateUrl: "templates/opinion/sondeoPost.html"
             })
-            .when("/opinion/columnas/1", {
+            .when("/opinion/columnistas/1", {
                 controller: "OpinionController",
                 templateUrl: "templates/opinion/columnas.html"
             })
-            .when("/opinion/columnas/temas/:id", {
+            .when("/opinion/columnas/:subseccion/:id", {
                 controller: "OpinionController",
                 templateUrl: "templates/opinion/columnas.html"
             })
