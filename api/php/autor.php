@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 include('funciones.php');
-
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 date_default_timezone_set('America/El_Salvador');
   $editdata = json_decode(file_get_contents("php://input"));
 $id = $_GET['id'];

@@ -293,6 +293,7 @@ function leidos($idSeccion){
 function primerSondeo(){
 	$soninfo = mysql_query("SELECT idSondeo, pregunta
 												FROM sondeo
+												where activo = 1
 												ORDER BY fecha desc, hora desc limit 1");
 	$sonpreview = mysql_fetch_row($soninfo);
 	$sondeo[] = array(
@@ -323,7 +324,11 @@ function total($id){
 	$resinfo = mysql_query("SELECT count(a.idRespuesta) as total
 												FROM resultado a where a.idRespuesta = $id group by a.idRespuesta");
 	$res = mysql_fetch_row($resinfo);
-	$respuestas = $res[0];
+	if($res[0]){
+		$respuestas = $res[0];
+	}else{
+		$respuestas = 0;
+	}
 	return $respuestas;
 }
 function maxTotal($id){

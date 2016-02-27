@@ -6,6 +6,7 @@ date_default_timezone_set('America/El_Salvador');
 
 $soninfo = mysql_query("SELECT idSondeo, titulo, pregunta, fecha, rutaFoto as foto
 											FROM sondeo
+											where activo = 1
 											ORDER BY fecha desc, hora desc");
 
 while ($sonpreview = mysql_fetch_array($soninfo)) {
