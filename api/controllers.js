@@ -95,23 +95,21 @@ angular.module('contrapunto.controllers', [])
           $scope.intervalo20 = $scope.banner20[0].tiempo;
           $scope.bannerMovil = response.bannerMovil;
           $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-          $http.post("api/php/vistoseccion.php?id="+8,{'selectSeccion':8}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistoseccion.php",{'id':8}).success(function(response){});
 
       });
       $scope.vistoBanner = function(id){
-        $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
       };
       $scope.vistoFoto = function(id){
-        $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        $http.post("api/php/vistofotogaleria.php",{'id':id}).success(function(response){});
       };
       $scope.votar = function(idv,ids){
         if(idv){
           if(!$cookies.get('sondeo'+ids)){
-          $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
+          $http.post("api/php/votarSondeo.php",{'id':idv}).success(function(response){
 
-            $http.get("api/php/portada.php").success(function(response){
-                $scope.sondeo = response.sondeo;
-              });
+              $scope.sondeo = response.sondeo;
 
               var now = new Date(),
               exp = new Date(now.getFullYear(), now.getMonth()+6, now.getDate());
@@ -176,20 +174,17 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-            $http.post("api/php/vistoseccion.php?id="+1,{'selectSeccion':1}).success(function(data,status,headers,config,response){});
+            $http.post("api/php/vistoseccion.php",{'id':1}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
-          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
         };
         $scope.votar = function(idv,ids){
           if(idv){
             if(!$cookies.get('sondeo'+ids)){
-            $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
+            $http.post("api/php/votarSondeo.php",{'id':idv}).success(function(response){
 
-              $http.get("api/php/opinion.php").success(function(response){
-                  $scope.sondeo = response.sondeo;
-                });
-
+                $scope.sondeo = response.sondeo;
                 var now = new Date(),
                 exp = new Date(now.getFullYear(), now.getMonth()+6, now.getDate());
 
@@ -244,10 +239,10 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-            $http.post("api/php/vistoseccion.php?id="+2,{'selectSeccion':2}).success(function(data,status,headers,config,response){});
+            $http.post("api/php/vistoseccion.php",{'id':2}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
-          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
         };
     })
 
@@ -280,10 +275,10 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-            $http.post("api/php/vistoseccion.php?id="+3,{'selectSeccion':3}).success(function(data,status,headers,config,response){});
+            $http.post("api/php/vistoseccion.php",{'id':3}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
-          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
         };
     })
 
@@ -324,10 +319,10 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-            $http.post("api/php/vistoseccion.php?id="+4,{'selectSeccion':4}).success(function(data,status,headers,config,response){});
+            $http.post("api/php/vistoseccion.php",{'id':4}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
-          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistobanner.php?id="+id,{'id':id}).success(function(response){});
         };
     })
 
@@ -370,10 +365,10 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-            $http.post("api/php/vistoseccion.php?id="+5,{'selectSeccion':5}).success(function(data,status,headers,config,response){});
+            $http.post("api/php/vistoseccion.php",{'id':5}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
-          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
         };
     })
 
@@ -408,10 +403,10 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-            $http.post("api/php/vistoseccion.php?id="+6,{'selectSeccion':6}).success(function(data,status,headers,config,response){});
+            $http.post("api/php/vistoseccion.php",{'id':6}).success(function(data,status,headers,config,response){});
         });
         $scope.vistoBanner = function(id){
-          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistobanner.php",{'id':id}).success(function(data,status,headers,config,response){});
         };
     })
 
@@ -446,10 +441,10 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo4 = $scope.banner4[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-            $http.post("api/php/vistoseccion.php?id="+7,{'selectSeccion':7}).success(function(data,status,headers,config,response){});
+            $http.post("api/php/vistoseccion.php",{'id':7}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
-          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
         };
     })
 
@@ -474,7 +469,7 @@ angular.module('contrapunto.controllers', [])
        $scope.pageSize = 4;
        $scope.maxSize = 15;
        $anchorScroll();
-       $http.post("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
+
 
                 $http.get("api/php/subseccion.php?seccion="+seccion+"&subseccion="+subseccion).success(function(response){
                     $scope.secinfo = response.secinfo;
@@ -484,7 +479,7 @@ angular.module('contrapunto.controllers', [])
                       alert("EL contenido solicitado no esta disponible");
                       $location.path('/');
                     }else{
-                      $http.post("api/php/vistosubseccion.php?id="+$scope.subinfo.id,{'selectSeccion':$scope.subinfo.id}).success(function(data,status,headers,config,response){});
+                      $http.post("api/php/vistosubseccion.php",{'id':$scope.subinfo.id}).success(function(response){});
                     }
                     $scope.secinfo = response.secinfo;
                     $scope.subinfo = response.subinfo;
@@ -500,9 +495,8 @@ angular.module('contrapunto.controllers', [])
                     $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
                 });
 
-       });
        $scope.vistoBanner = function(id){
-         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+         $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
        };
     })
 
@@ -539,15 +533,15 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo3 = $scope.banner3[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-            $http.post("api/php/vistosubseccion.php?id="+5,{'selectSeccion':5}).success(function(data,status,headers,config,response){});
+            $http.post("api/php/vistosubseccion.php",{'id':5}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
-          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistobanner.php?id="+id,{'id':id}).success(function(response){});
         };
         $scope.votar = function(idv,ids){
           if(idv){
             if(!$cookies.get('sondeo'+ids)){
-            $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
+            $http.post("api/php/votarSondeo.php",{'id':idv}).success(function(response){
 
               $http.get("api/php/sondeo.php").success(function(response){
                   $scope.sondeos = response.sondeos;
@@ -606,10 +600,10 @@ angular.module('contrapunto.controllers', [])
             $scope.intervalo3 = $scope.banner3[0].tiempo;
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-            $http.post("api/php/vistosubseccion.php?id="+61,{'selectSeccion':61}).success(function(data,status,headers,config,response){});
+            $http.post("api/php/vistosubseccion.php",{'id':61}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
-          $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+          $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
         };
     })
 
@@ -636,7 +630,6 @@ angular.module('contrapunto.controllers', [])
         $anchorScroll();
         $scope.fecha = fechaActual;
 
-         $http.post("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id,{'selectSeccion':seccion}).success(function(data,status,headers,config,response){
 
                 $http.get("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&id="+id).success(function(response){
 
@@ -647,9 +640,9 @@ angular.module('contrapunto.controllers', [])
                       $location.path('/');
                     }else{
                       if($scope.subinfo.id != 2){
-                      $http.post("api/php/vistarticulo.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+                      $http.post("api/php/vistarticulo.php",{'id':id}).success(function(response){});
                       }else{
-                        $http.post("api/php/vistoColumna.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+                        $http.post("api/php/vistoColumna.php",{'id':id}).success(function(response){});
                       }
                     }
                     $scope.secinfo = response.secinfo;
@@ -665,12 +658,11 @@ angular.module('contrapunto.controllers', [])
                     $scope.bannerPost = response.bannerPost;
                     $scope.intervaloPost = $scope.bannerPost[0].tiempo;
                 });
-       });
        $scope.vistoBanner = function(id){
-         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+         $http.post("api/php/vistobanner.php",{'id':id}).success(function(data,status,headers,config,response){});
        };
        $scope.vistoFoto = function(id){
-         $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+         $http.post("api/php/vistofotogaleria.php",{'id':id}).success(function(data,status,headers,config,response){});
        };
     })
     .controller('CPostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
@@ -689,7 +681,6 @@ angular.module('contrapunto.controllers', [])
         $anchorScroll();
         $scope.fecha = fechaActual;
 
-         $http.post("api/php/cpost.php?&id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){
 
                 $http.get("api/php/cpost.php?&id="+id).success(function(response){
 
@@ -709,9 +700,8 @@ angular.module('contrapunto.controllers', [])
                     $scope.bannerMovil = response.bannerMovil;
                     $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
                 });
-       });
        $scope.vistoBanner = function(id){
-         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+         $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
        };
     })
 
@@ -731,7 +721,6 @@ angular.module('contrapunto.controllers', [])
         $anchorScroll();
         $scope.fecha = fechaActual;
 
-         $http.post("api/php/spost.php?&id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){
 
                 $http.get("api/php/spost.php?&id="+id).success(function(response){
 
@@ -751,14 +740,14 @@ angular.module('contrapunto.controllers', [])
                     $scope.bannerMovil = response.bannerMovil;
                     $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
                 });
-       });
+
        $scope.vistoBanner = function(id){
-         $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+         $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
        };
        $scope.votar = function(idv,ids){
          if(idv){
            if(!$cookies.get('sondeo'+ids)){
-           $http.post("api/php/votarSondeo.php?id="+idv,{'selectSeccion':idv}).success(function(data,status,headers,config,response){
+           $http.post("api/php/votarSondeo.php",{'id':idv}).success(function(response){
 
              $http.get("api/php/spost.php?id="+ids).success(function(response){
                  $scope.contenido = response.contenido;
@@ -807,7 +796,7 @@ angular.module('contrapunto.controllers', [])
         if($scope.query == 'undefined'){
           $scope.resultados = 'error';
         }
-        $http.post("api/php/buscar.php?query="+query,{'selectSeccion':query}).success(function(data,status,headers,config,response){
+
 
                $http.get("api/php/buscar.php?query="+query).success(function(response){
 
@@ -824,7 +813,6 @@ angular.module('contrapunto.controllers', [])
                });
 
 
-      });
        $scope.buscar = function(busqueda){
         if(busqueda == 'undefined'){
           $scope.resultados = 'error';
@@ -833,7 +821,7 @@ angular.module('contrapunto.controllers', [])
         }
       }
       $scope.vistoBanner = function(id){
-        $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
       };
     })
     .controller('AutorController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
@@ -852,7 +840,6 @@ angular.module('contrapunto.controllers', [])
         $scope.currentPage = 1;
         $scope.pageSize = 4;
         $scope.maxSize = 4;
-        $http.post("api/php/autor.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){
 
                $http.get("api/php/autor.php?id="+id).success(function(response){
                   $scope.fotogalerias = response.fotogalerias;
@@ -867,13 +854,11 @@ angular.module('contrapunto.controllers', [])
                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
                });
 
-
-      });
       $scope.vistoBanner = function(id){
-        $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
       };
       $scope.vistoFoto = function(id){
-        $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        $http.post("api/php/vistofotogaleria.php",{'id':id}).success(function(response){});
       };
     })
     .controller('CSeccionController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
@@ -893,7 +878,7 @@ angular.module('contrapunto.controllers', [])
         $scope.currentPage = 1;
         $scope.pageSize = 4;
         $scope.maxSize = 4;
-        $http.post("api/php/columnasSeccion.php?subseccion="+subseccion,{'selectSeccion':id}).success(function(data,status,headers,config,response){
+
 
                $http.get("api/php/columnasSeccion.php?subseccion="+subseccion).success(function(response){
                   $scope.fotogalerias = response.fotogalerias;
@@ -909,12 +894,10 @@ angular.module('contrapunto.controllers', [])
                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
                });
 
-
-      });
       $scope.vistoBanner = function(id){
-        $http.post("api/php/vistobanner.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        $http.post("api/php/vistobanner.php",{'id':id}).success(function(data,status,headers,config,response){});
       };
       $scope.vistoFoto = function(id){
-        $http.post("api/php/vistofotogaleria.php?id="+id,{'selectSeccion':id}).success(function(data,status,headers,config,response){});
+        $http.post("api/php/vistofotogaleria.php",{'id':id}).success(function(data,status,headers,config,response){});
       };
     });
