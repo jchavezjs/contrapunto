@@ -53,48 +53,90 @@ angular.module('contrapunto.controllers', [])
           $scope.fotogalerias = response.fotogalerias;
           $scope.caricaturas = response.caricaturas;
           $scope.sondeo = response.sondeo;
+          if(response.banner1){
           $scope.banner1 = response.banner1;
           $scope.intervalo1 = $scope.banner1[0].tiempo;
+          }
+          if(response.banner2){
           $scope.banner2 = response.banner2;
           $scope.intervalo2 = $scope.banner2[0].tiempo;
+          }
+          if(response.banner3){
           $scope.banner3 = response.banner3;
           $scope.intervalo3 = $scope.banner3[0].tiempo;
+          }
+          if(response.banner4){
           $scope.banner4 = response.banner4;
           $scope.intervalo4 = $scope.banner4[0].tiempo;
+          }
+          if(response.banner5){
           $scope.banner5 = response.banner5;
           $scope.intervalo5 = $scope.banner5[0].tiempo;
+          }
+          if(response.banner6){
           $scope.banner6 = response.banner6;
           $scope.intervalo6 = $scope.banner6[0].tiempo;
+          }
+          if(response.banner7){
           $scope.banner7 = response.banner7;
           $scope.intervalo7 = $scope.banner7[0].tiempo;
+          }
+          if(response.banner8){
           $scope.banner8 = response.banner8;
           $scope.intervalo8 = $scope.banner8[0].tiempo;
+          }
+          if(response.banner9){
           $scope.banner9 = response.banner9;
           $scope.intervalo9 = $scope.banner9[0].tiempo;
+          }
+          if(response.banner10){
           $scope.banner10 = response.banner10;
           $scope.intervalo10 = $scope.banner10[0].tiempo;
+          }
+          if(response.banner11){
           $scope.banner11 = response.banner11;
           $scope.intervalo11 = $scope.banner11[0].tiempo;
+          }
+          if(response.banner12){
           $scope.banner12 = response.banner12;
           $scope.intervalo12 = $scope.banner12[0].tiempo;
+          }
+          if(response.banner13){
           $scope.banner13 = response.banner13;
           $scope.intervalo13 = $scope.banner13[0].tiempo;
+          }
+          if(response.banner14){
           $scope.banner14 = response.banner14;
           $scope.intervalo14 = $scope.banner14[0].tiempo;
+          }
+          if(response.banner15){
           $scope.banner15 = response.banner15;
           $scope.intervalo15 = $scope.banner15[0].tiempo;
+          }
+          if(response.banner16){
           $scope.banner16 = response.banner16;
           $scope.intervalo16 = $scope.banner16[0].tiempo;
+          }
+          if(response.banner17){
           $scope.banner17 = response.banner17;
           $scope.intervalo17 = $scope.banner17[0].tiempo;
+          }
+          if(response.banner18){
           $scope.banner18 = response.banner18;
           $scope.intervalo18 = $scope.banner18[0].tiempo;
+          }
+          if(response.banner19){
           $scope.banner19 = response.banner19;
           $scope.intervalo19 = $scope.banner19[0].tiempo;
+          }
+          if(response.banner20){
           $scope.banner20 = response.banner20;
           $scope.intervalo20 = $scope.banner20[0].tiempo;
+          }
+          if(response.banner20){
           $scope.bannerMovil = response.bannerMovil;
           $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+          }
           $http.post("api/php/vistoseccion.php",{'id':8}).success(function(response){});
 
       });
@@ -164,16 +206,26 @@ angular.module('contrapunto.controllers', [])
             $scope.economias = response.economias;
             $scope.subsecciones = response.subsecciones;
             $scope.autores = response.autores;
+            if(response.banner1){
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
+            }
+            if(response.banner2){
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
+            }
+            if(response.banner3){
             $scope.banner3 = response.banner3;
             $scope.intervalo3 = $scope.banner3[0].tiempo;
+            }
+            if(response.banner4){
             $scope.banner4 = response.banner4;
             $scope.intervalo4 = $scope.banner4[0].tiempo;
+            }
+            if(response.bannerMovil){
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            }
             $http.post("api/php/vistoseccion.php",{'id':1}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
@@ -229,16 +281,26 @@ angular.module('contrapunto.controllers', [])
             $scope.partidos = response.partidos;
             $scope.leidos = response.leidos;
             $scope.subsecciones = response.subsecciones;
+            if(response.banner1){
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
+            }
+            if(response.banner2){
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
+            }
+            if(response.banner3){
             $scope.banner3 = response.banner3;
             $scope.intervalo3 = $scope.banner3[0].tiempo;
+            }
+            if(response.banner4){
             $scope.banner4 = response.banner4;
             $scope.intervalo4 = $scope.banner4[0].tiempo;
+            }
+            if(response.bannerMovil){
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            }
             $http.post("api/php/vistoseccion.php",{'id':2}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
@@ -265,16 +327,26 @@ angular.module('contrapunto.controllers', [])
             $scope.globales = response.globales;
             $scope.leidos = response.leidos;
             $scope.subsecciones = response.subsecciones;
+            if(response.banner1){
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
+            }
+            if(response.banner2){
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
+            }
+            if(response.banner3){
             $scope.banner3 = response.banner3;
             $scope.intervalo3 = $scope.banner3[0].tiempo;
+            }
+            if(response.banner4){
             $scope.banner4 = response.banner4;
             $scope.intervalo4 = $scope.banner4[0].tiempo;
+            }
+            if(response.bannerMovil){
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            }
             $http.post("api/php/vistoseccion.php",{'id':3}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
@@ -309,16 +381,26 @@ angular.module('contrapunto.controllers', [])
             $scope.tabues = response.tabues;
             $scope.judiciales = response.judiciales;
             $scope.subsecciones = response.subsecciones;
+            if(response.banner1){
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
+            }
+            if(response.banner2){
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
+            }
+            if(response.banner3){
             $scope.banner3 = response.banner3;
             $scope.intervalo3 = $scope.banner3[0].tiempo;
+            }
+            if(response.banner4){
             $scope.banner4 = response.banner4;
             $scope.intervalo4 = $scope.banner4[0].tiempo;
+            }
+            if(response.bannerMovil){
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            }
             $http.post("api/php/vistoseccion.php",{'id':4}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
@@ -355,16 +437,26 @@ angular.module('contrapunto.controllers', [])
             $scope.datos = response.datos;
             $scope.subsecciones = response.subsecciones;
             $scope.mercas = response.mercas;
+            if(response.banner1){
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
+            }
+            if(response.banner2){
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
+            }
+            if(response.banner3){
             $scope.banner3 = response.banner3;
             $scope.intervalo3 = $scope.banner3[0].tiempo;
+            }
+            if(response.banner4){
             $scope.banner4 = response.banner4;
             $scope.intervalo4 = $scope.banner4[0].tiempo;
+            }
+            if(response.bannerMovil){
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            }
             $http.post("api/php/vistoseccion.php",{'id':5}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
@@ -393,16 +485,26 @@ angular.module('contrapunto.controllers', [])
             $scope.literaturas = response.literaturas;
             $scope.anecdotas = response.anecdotas;
             $scope.subsecciones = response.subsecciones;
+            if(response.banner1){
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
+            }
+            if(response.banner2){
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
+            }
+            if(response.banner3){
             $scope.banner3 = response.banner3;
             $scope.intervalo3 = $scope.banner3[0].tiempo;
+            }
+            if(response.banner4){
             $scope.banner4 = response.banner4;
             $scope.intervalo4 = $scope.banner4[0].tiempo;
+            }
+            if(response.bannerMovil){
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            }
             $http.post("api/php/vistoseccion.php",{'id':6}).success(function(data,status,headers,config,response){});
         });
         $scope.vistoBanner = function(id){
@@ -431,16 +533,26 @@ angular.module('contrapunto.controllers', [])
             $scope.aconteceres = response.aconteceres;
             $scope.subsecciones = response.subsecciones;
             $scope.leidos = response.leidos;
+            if(response.banner1){
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
+            }
+            if(response.banner2){
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
+            }
+            if(response.banner3){
             $scope.banner3 = response.banner3;
             $scope.intervalo3 = $scope.banner3[0].tiempo;
+            }
+            if(response.banner4){
             $scope.banner4 = response.banner4;
             $scope.intervalo4 = $scope.banner4[0].tiempo;
+            }
+            if(response.bannerMovil){
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            }
             $http.post("api/php/vistoseccion.php",{'id':7}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
@@ -485,14 +597,22 @@ angular.module('contrapunto.controllers', [])
                     $scope.subinfo = response.subinfo;
                     $scope.leidos = response.leidos;
                     $scope.subsecciones = response.subsecciones;
+                    if(response.banner1){
                     $scope.banner1 = response.banner1;
                     $scope.intervalo1 = $scope.banner1[0].tiempo;
+                    }
+                    if(response.banner2){
                     $scope.banner2 = response.banner2;
                     $scope.intervalo2 = $scope.banner2[0].tiempo;
+                    }
+                    if(response.banner3){
                     $scope.banner3 = response.banner3;
                     $scope.intervalo3 = $scope.banner3[0].tiempo;
+                    }
+                    if(response.bannerMovil){
                     $scope.bannerMovil = response.bannerMovil;
                     $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                    }
                 });
 
        $scope.vistoBanner = function(id){
@@ -525,14 +645,22 @@ angular.module('contrapunto.controllers', [])
             $scope.subsecciones = response.subsecciones;
             $scope.leidos = response.leidos;
             $scope.sondeos = response.sondeos;
+            if(response.banner1){
             $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
+            }
+            if(response.banner2){
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
+            }
+            if(response.banner3){
             $scope.banner3 = response.banner3;
             $scope.intervalo3 = $scope.banner3[0].tiempo;
+            }
+            if(response.bannerMovil){
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            }
             $http.post("api/php/vistosubseccion.php",{'id':5}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
@@ -593,13 +721,22 @@ angular.module('contrapunto.controllers', [])
             $scope.contenidos = response.contenidos;
             $scope.banner1 = response.banner1;
             $scope.leidos = response.leidos;
+            if(response.banner1){
+            $scope.banner1 = response.banner1;
             $scope.intervalo1 = $scope.banner1[0].tiempo;
+            }
+            if(response.banner2){
             $scope.banner2 = response.banner2;
             $scope.intervalo2 = $scope.banner2[0].tiempo;
+            }
+            if(response.banner3){
             $scope.banner3 = response.banner3;
             $scope.intervalo3 = $scope.banner3[0].tiempo;
+            }
+            if(response.bannerMovil){
             $scope.bannerMovil = response.bannerMovil;
             $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+            }
             $http.post("api/php/vistosubseccion.php",{'id':61}).success(function(response){});
         });
         $scope.vistoBanner = function(id){
@@ -649,14 +786,22 @@ angular.module('contrapunto.controllers', [])
                     $scope.subsecciones = response.subsecciones;
                     $scope.fotogaleria = response.fotogaleria;
                     $scope.leidos = response.leidos;
+                    if(response.banner1){
                     $scope.banner1 = response.banner1;
                     $scope.intervalo1 = $scope.banner1[0].tiempo;
+                    }
+                    if(response.banner2){
                     $scope.banner2 = response.banner2;
                     $scope.intervalo2 = $scope.banner2[0].tiempo;
+                    }
+                    if(response.banner3){
+                    $scope.banner3 = response.banner3;
+                    $scope.intervalo3 = $scope.banner3[0].tiempo;
+                    }
+                    if(response.bannerMovil){
                     $scope.bannerMovil = response.bannerMovil;
                     $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
-                    $scope.bannerPost = response.bannerPost;
-                    $scope.intervaloPost = $scope.bannerPost[0].tiempo;
+                    }
                 });
        $scope.vistoBanner = function(id){
          $http.post("api/php/vistobanner.php",{'id':id}).success(function(data,status,headers,config,response){});
@@ -691,14 +836,22 @@ angular.module('contrapunto.controllers', [])
                     }
                     $scope.subsecciones = response.subsecciones;
                     $scope.leidos = response.leidos;
+                    if(response.banner1){
                     $scope.banner1 = response.banner1;
                     $scope.intervalo1 = $scope.banner1[0].tiempo;
+                    }
+                    if(response.banner2){
                     $scope.banner2 = response.banner2;
                     $scope.intervalo2 = $scope.banner2[0].tiempo;
+                    }
+                    if(response.banner3){
                     $scope.banner3 = response.banner3;
                     $scope.intervalo3 = $scope.banner3[0].tiempo;
+                    }
+                    if(response.bannerMovil){
                     $scope.bannerMovil = response.bannerMovil;
                     $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                    }
                 });
        $scope.vistoBanner = function(id){
          $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
@@ -731,14 +884,22 @@ angular.module('contrapunto.controllers', [])
                     }
                     $scope.subsecciones = response.subsecciones;
                     $scope.leidos = response.leidos;
+                    if(response.banner1){
                     $scope.banner1 = response.banner1;
                     $scope.intervalo1 = $scope.banner1[0].tiempo;
+                    }
+                    if(response.banner2){
                     $scope.banner2 = response.banner2;
                     $scope.intervalo2 = $scope.banner2[0].tiempo;
+                    }
+                    if(response.banner3){
                     $scope.banner3 = response.banner3;
                     $scope.intervalo3 = $scope.banner3[0].tiempo;
+                    }
+                    if(response.bannerMovil){
                     $scope.bannerMovil = response.bannerMovil;
                     $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                    }
                 });
 
        $scope.vistoBanner = function(id){
@@ -803,12 +964,18 @@ angular.module('contrapunto.controllers', [])
                    $scope.resultados = response.resultado;
                    $scope.actualidades = response.actualidades;
                    $scope.caricatura = response.caricatura;
+                   if(response.banner1){
                    $scope.banner1 = response.banner1;
                    $scope.intervalo1 = $scope.banner1[0].tiempo;
+                   }
+                   if(response.banner2){
                    $scope.banner2 = response.banner2;
                    $scope.intervalo2 = $scope.banner2[0].tiempo;
+                   }
+                   if(response.bannerMovil){
                    $scope.bannerMovil = response.bannerMovil;
                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                   }
 
                });
 
@@ -846,12 +1013,21 @@ angular.module('contrapunto.controllers', [])
                    $scope.autor = response.autor;
                    $scope.articulos = response.articulos;
                    $scope.actualidades = response.actualidades;
+                   $scope.resultados = response.resultado;
+                   $scope.actualidades = response.actualidades;
+                   $scope.caricatura = response.caricatura;
+                   if(response.banner1){
                    $scope.banner1 = response.banner1;
                    $scope.intervalo1 = $scope.banner1[0].tiempo;
+                   }
+                   if(response.banner2){
                    $scope.banner2 = response.banner2;
                    $scope.intervalo2 = $scope.banner2[0].tiempo;
+                   }
+                   if(response.bannerMovil){
                    $scope.bannerMovil = response.bannerMovil;
                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                   }
                });
 
       $scope.vistoBanner = function(id){
@@ -886,12 +1062,21 @@ angular.module('contrapunto.controllers', [])
                    $scope.subinfo = response.subinfo;
                    $scope.subsecciones = response.subsecciones;
                    $scope.actualidades = response.actualidades;
+                   $scope.resultados = response.resultado;
+                   $scope.actualidades = response.actualidades;
+                   $scope.caricatura = response.caricatura;
+                   if(response.banner1){
                    $scope.banner1 = response.banner1;
                    $scope.intervalo1 = $scope.banner1[0].tiempo;
+                   }
+                   if(response.banner2){
                    $scope.banner2 = response.banner2;
                    $scope.intervalo2 = $scope.banner2[0].tiempo;
+                   }
+                   if(response.bannerMovil){
                    $scope.bannerMovil = response.bannerMovil;
                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                   }
                });
 
       $scope.vistoBanner = function(id){
