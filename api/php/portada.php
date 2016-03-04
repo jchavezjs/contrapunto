@@ -104,7 +104,7 @@ $coninfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, '
 						limit 1");
 $espinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.preview, i.rutaFoto as foto, a.fecha, s.nombre as subseccion, f.nombre as fotografo, s.url as urlSubseccion, se.url as urlSeccion, c.idPersonal
 						from articulo a, personal as c, imagenesarticulo as i, fotografo as f, subseccion as s, seccion se
-						where a.idArticulo = i.idArticulo and a.activo = 1 and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and c.cargo='periodista' and i.posicion='principal' and a.especial = 1 and s.idSeccion = se.idSeccion
+						where a.idArticulo = i.idArticulo and a.activo = 1 and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and i.posicion='principal' and a.especial = 1 and s.idSeccion = se.idSeccion
 						ORDER BY a.fecha desc, a.hora desc
 						limit 3");
 

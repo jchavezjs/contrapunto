@@ -794,9 +794,9 @@ angular.module('contrapunto.controllers', [])
                     $scope.banner2 = response.banner2;
                     $scope.intervalo2 = $scope.banner2[0].tiempo;
                     }
-                    if(response.banner3){
-                    $scope.banner3 = response.banner3;
-                    $scope.intervalo3 = $scope.banner3[0].tiempo;
+                    if(response.bannerPost){
+                    $scope.bannerPost = response.bannerPost;
+                    $scope.intervaloPost = $scope.bannerPost[0].tiempo;
                     }
                     if(response.bannerMovil){
                     $scope.bannerMovil = response.bannerMovil;
