@@ -1,0 +1,218 @@
+<!-- Ads Top | Portada -->
+<div class="container">
+  <div class="mainAds">
+          <div class="row">
+              <div class="col-md-7">
+              <div id="ads1" class="ads-border">
+                <uib-carousel interval="intervalo1">
+                  <uib-slide ng-repeat="banner in banner1">
+                    <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                  </uib-slide>
+                </uib-carousel>
+              </div>
+              </div>
+              <div class="col-md-5">
+                <div id="ads2" class="ads-border">
+                  <uib-carousel interval="intervalo2">
+                    <uib-slide ng-repeat="banner in banner2">
+                      <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                    </uib-slide>
+                  </uib-carousel>
+                </div>
+              </div>
+          </div>
+  </div>
+  <div class="mainAds-mobile">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="adsMobile" class="ads-border">
+              <uib-carousel interval="intervaloMovil">
+                <uib-slide ng-repeat="banner in bannerMovil">
+                  <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                </uib-slide>
+              </uib-carousel>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Ads Top | Portada -->
+<!-- Header -->
+<div class="container">
+    <!-- Date/Search Section -->
+    <div data-ng-include data-src="'templates/socialsearch.html?i=1'"></div>
+    <!-- Date/Search Section -->
+    <!-- Menu -->
+    <div data-ng-include data-src="'templates/menu.html'"></div>
+    <!-- Menu -->
+    <!-- Logo Section -->
+    <div class="row">
+        <div class="logo-center seccion-nombre">
+            <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+            <a href="#/opinion"><h3>OPINIÓN</h3></a>
+            <a class="opinion-logo-title sub" href="#/opinion/caricaturas">
+                Sondeo
+            </a>
+            <h4>{{fecha}}</h4>
+        </div>
+    </div>
+    <!-- Logo Section -->
+    <div class="top-line"></div>
+    <!-- Menu Section -->
+    <!-- Menu Responsive -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#/">Portada</a></li>
+            <li><a href="#/opinion">Opinión</a></li>
+            <li><a href="#">Nacionales</a></li>
+            <li><a href="#">Mundo</a></li>
+            <li><a href="#/sociedad">Sociedad</a></li>
+            <li><a href="#">Economía</a></li>
+            <li><a href="#">Cultura</a></li>
+            <li><a href="#">Deportes</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Menu Responsive -->
+    <!-- Menu -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="menu">
+                <a ng-repeat="subseccion in subsecciones" ng-href="#/opinion/{{subseccion.url}}">{{subseccion.nombre}}</a>
+            </div>
+        </div>
+    </div>
+    <!-- Menu -->
+    <!-- Menu Section -->
+</div>
+<!-- Header -->
+<!-- Body -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-10">
+            <div class="sondeo-background">
+              <div class="sondeo-imagen" style="background-image:url({{contenido[0].foto}});">
+              </div>
+              <div class="sondeo-header header-new">
+                <h1>{{contenido[0].titulo}} | {{contenido[0].fecha}}</h1>
+              </div>
+              <div class="area-pregunta">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="pregunta">
+                      <h4>{{contenido[0].pregunta}}</h4>
+                      <ul>
+                        <li ng-repeat="respuesta in contenido[0].respuestas"><input type="radio" value="{{respuesta.idRespuesta}}" ng-model="$parent.idR" name="r{{sondeo.idSondeo}}" >{{respuesta.respuesta}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="votos">
+                      <img class="line-votar-2">
+                      <span>{{contenido[0].total}} votos en total</span>
+                      <img class="line-votar-2">
+                    </div>
+                    <div ng-repeat="respuesta in contenido[0].respuestas" class="respuesta">
+                        <div class="text">{{respuesta.respuesta}}<span>{{(respuesta.total * 100) / contenido[0].total | number:2}}% | {{respuesta.total}} votos</span></div>
+                        <div style="width:{{(respuesta.total * 100) / contenido[0].total | number:2}}%;" class="full  new-color-back"></div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="botonparavotar"><button class="new-color-back" ng-click="votar(idR,contenido[0].idSondeo)">Votar</button></div>
+              </div>
+            </div>
+            <center><div class="post-divisor"></div></center>
+            <div class="social-posts">
+                <a href="" socialshare socialshare-provider="facebook" socialshare-url="http://contrapunto.com.sv/#/opinion/sondeo/{{contenido[0].idSondeo}}" socialshare-text="Caso Jesuitas" socialshare-description="{{contenido[0].pregunta}}" socialshare-media="https://www.facebook.com/DiarioDigitalContraPunto/?fref=ts"  socialshare-caption="{{contenido[0].foto}}"><i class="ion-social-facebook fb"></i></a>
+                <a href="" socialshare socialshare-provider="twitter" socialshare-text="{{contenido[0].pregunta}}" socialshare-hashtags=""
+  socialshare-url="http://contrapunto.com.sv/#/opinion/sondeo/{{contenido[0].idSondeo}}" socialshare-via="contra_punto"><i class="ion-social-twitter tw"></i></a>
+                <a href="" socialshare socialshare-provider="google+" socialshare-url="http://contrapunto.com.sv/#/opinion/sondeo/{{contenido[0].idSondeo}}"><i class="ion-social-googleplus g"></i></a>
+                <a target="_blank" href="mailto:"><i class="ion-email mail"></i></a>
+            </div>
+            <!-- Disqus-->
+            <div class="post-comments">
+            <div id="disqus_thread"></div>
+            <script>
+            /**
+            * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+            */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//contrapunto.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <!-- Disqus-->
+            </div>
+      </div>
+      <div class="col-md-2 m-politica-3">
+           <!-- Publicidad -->
+          <div class="ads">
+            <span></span>
+            <div id="ads3" class="ads-border">
+              <uib-carousel interval="intervalo3">
+                <uib-slide ng-repeat="banner in banner3">
+                  <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                </uib-slide>
+              </uib-carousel>
+            </div>
+          </div>
+          <!-- Publicidad -->
+          <!--Lo mas leido-->
+          <div class="columnistas-portada">
+              <h3>LO MÁS LEÍDO</h3>
+              <!--Lo mas leido-TABS-->
+              <div role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada">Portada</a></li>
+                  <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica">Opinión</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="lmlportada">
+                      <ul class="leido">
+                          <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
+                      </ul>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="lmlpolitica">
+                      <ul class="leido">
+                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
+                        <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec2.id}}" class="leido-item">{{sec2.titulo}}</a></li>
+                      </ul>
+                  </div>
+                </div>
+              <!--Lo mas leido-TABS-->
+              </div>
+          </div>
+          <!--Lo mas leido-->
+      </div>
+    </div>
+    <div data-ng-include data-src="'templates/footer.html'"></div>
+</div>

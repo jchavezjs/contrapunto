@@ -293,7 +293,7 @@ function leidos($idSeccion){
 function primerSondeo(){
 	$soninfo = mysql_query("SELECT idSondeo, pregunta
 												FROM sondeo
-												where activo = 1
+												where activo = 1 and pagado = 0
 												ORDER BY fecha desc, hora desc limit 1");
 	$sonpreview = mysql_fetch_row($soninfo);
 	$sondeo[] = array(
