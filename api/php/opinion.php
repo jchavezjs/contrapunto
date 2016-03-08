@@ -28,44 +28,44 @@ $colinfo = mysql_query("SELECT CONCAT(nombres, ' ', apellidos) as nombre, idPers
 
 while($edipreview = mysql_fetch_array($ediinfo)){
 	$editorial[]=array(
-				'id' => $id = $edipreview['id'],
-				'titulo' => $titulo = $edipreview['titulo'],
-				'fecha' => $fecha =  formatoFecha($edipreview['fecha']),
-				'preview' => $preview = $edipreview['preview']);
+				'id' => $edipreview['id'],
+				'titulo' => $edipreview['titulo'],
+				'fecha' => formatoFecha($edipreview['fecha']),
+				'preview' => $edipreview['preview']);
 }
 
 while($colpreview = mysql_fetch_array($colinfo)){
 	$columnista[] = array(
-		'id' => $id = $colpreview['id'],
-		'nombre' => $nombre = $colpreview['nombre'],);
+		'id' => $colpreview['id'],
+		'nombre' => $colpreview['nombre'],);
 }
 
 while($tripreview = mysql_fetch_array($triinfo)){
 	$tribuna[] = array(
-				'id' => $id = $tripreview['id'],
-				'idPersonal' => $idPersonal = $tripreview['idPersonal'],
-				'autor' => $autor = $tripreview['autor'],
-				'fecha' => $fecha =  formatoFecha($tripreview['fecha']),
-				'titulo' => $titulo = $tripreview['titulo'],);
+				'id' => $tripreview['id'],
+				'idPersonal' => $tripreview['idPersonal'],
+				'autor' => $tripreview['autor'],
+				'fecha' => formatoFecha($tripreview['fecha']),
+				'titulo' => $tripreview['titulo'],);
 }
 
 while($libpreview = mysql_fetch_array($libinfo)){
 	$libertad[] = array(
-				'id' => $id = $libpreview['id'],
-				'idPersonal' => $idPersonal = $libpreview['idPersonal'],
-				'foto' => $foto = $libpreview['foto'],
-				'fecha' => $fecha =  formatoFecha($libpreview['fecha']),
-				'titulo' => $titulo = $libpreview['titulo'],
-				'autor' => $autor = $libpreview['autor'],);
+				'id' => $libpreview['id'],
+				'idPersonal' => $libpreview['idPersonal'],
+				'foto' => $libpreview['foto'],
+				'fecha' => formatoFecha($libpreview['fecha']),
+				'titulo' => $libpreview['titulo'],
+				'autor' => $libpreview['autor'],);
 }
 
 while($acapreview = mysql_fetch_array($acainfo)){
 	$academia[] = array(
-				'id' => $id = $acapreview['id'],
-				'idPersonal' => $idPersonal = $acapreview['idPersonal'],
-				'titulo' => $titulo = $acapreview['titulo'],
-				'autor' => $autor = $acapreview['autor'],
-				'fecha' => $fecha = formatoFecha($acapreview['fecha']),
+				'id' => $acapreview['id'],
+				'idPersonal' => $acapreview['idPersonal'],
+				'titulo' => $acapreview['titulo'],
+				'autor' => $acapreview['autor'],
+				'fecha' => formatoFecha($acapreview['fecha']),
 				);
 }
 

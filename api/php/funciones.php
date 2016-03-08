@@ -166,7 +166,7 @@ function actualidad(){
 	$actinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.fecha, s.nombre as subseccion, s.url as urlSubseccion, a.preview, i.rutaFoto as foto, f.nombre as fotografo, se.url as urlSeccion, c.idPersonal
 							from articulo a, personal as c, subseccion as s, imagenesarticulo as i, fotografo as f, seccion se
 							where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and i.idFotografo = f.idFotografo and a.activo = 1 and s.idSeccion = se.idSeccion
-							and c.cargo='periodista' and i.posicion='principal' and a.especial = 0 and a.idSubseccion not in (1,2,3,4,5,6,35,45,46,49,54,57,58,59,60)
+							and c.cargo='periodista' and a.especial = 0 and a.idSubseccion not in (1,2,3,4,5,6,35,45,46,49,54,57,58,59)
 							ORDER BY a.fecha desc, a.hora desc
 							limit 5");
 	while($actpreview = mysql_fetch_array($actinfo)){
