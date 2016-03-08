@@ -248,6 +248,7 @@ li{
     padding-bottom: 5px;
     text-align: center;
     background-color: #F9F9F9;
+    overflow-wrap: break-word;
 }
 .menu a{
     color: #444;
@@ -2636,11 +2637,25 @@ margin: 10px 0 0px 0;
   font-weight: 200;
 }
 /*CARICATURAS*/
+/*Video*/
+iframe{
+  min-height: 350px !important;
+}
+.html5-video-player .ta-insert-video{
+  min-height: 350px !important;
+}
+/*Video*/
 /*banner*/
 .carousel-control, .carousel-indicators{
   display: none;
 }
+.ta-hidden-input{
+  display: none !important;
+}
 @media (max-width: 400px){
+  .opinion-logo-title, .politica-logo-title, .mundo-logo-title, .sociedad-logo-title, .economia-logo-title{
+    font-size: 30px;
+  }
     .logo-center img{
         max-width: 300px;
     }
