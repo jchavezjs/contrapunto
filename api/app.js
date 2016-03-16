@@ -1,5 +1,7 @@
-angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services','angular.filter','ngRoute','ngProgress','ui.bootstrap','720kb.socialshare','ngCookies','textAngular'])
-    .config(function($routeProvider, $locationProvider){
+angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services','angular.filter','ngRoute','ngProgress','ui.bootstrap','720kb.socialshare','ngCookies','textAngular','ngDisqus'])
+    .config(function($routeProvider, $locationProvider,$disqusProvider){
+        $locationProvider.html5Mode(false).hashPrefix("!");
+        $disqusProvider.setShortname('contrapunto');
         $routeProvider
             .when("/", {
                 controller: "MainController",
@@ -77,10 +79,6 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                 redirectTo: "/"
             });
 
-
-      //       if(window.history && window.history.pushState){
-      //   $locationProvider.html5Mode(true);
-      // }
     })
     .filter('startFrom', function(){
         return function(data, start){

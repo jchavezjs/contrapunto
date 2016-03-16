@@ -764,6 +764,7 @@ angular.module('contrapunto.controllers', [])
         var titulo = $routeParams.titulo;
         $scope.tituloUrl = titulo;
         var id = $routeParams.id;
+        $scope.idart = $routeParams.id;
         $anchorScroll();
         $scope.fecha = fechaActual;
 
