@@ -4,7 +4,7 @@ include('funciones.php');
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 date_default_timezone_set('America/El_Salvador');
 
-$bolinfo = mysql_query("SELECT nombre, porcentaje, valor, fecha from bolsa");
+$bolinfo = mysql_query("SELECT nombre, porcentaje, valor, fecha, ciudad from bolsa");
 
 $intinfo = mysql_query("SELECT nombre, porcentaje, fecha from tasainteres");
 
@@ -19,6 +19,7 @@ while($bolpreview = mysql_fetch_array($bolinfo)){
 			'nombre' => $bolpreview['nombre'],
 			'fecha' => $bolpreview['fecha'],
 			'valor' =>  $bolpreview['valor'],
+			'ciudad' =>  $bolpreview['ciudad'],
 			'porcentaje' => $bolpreview['porcentaje']);
 }
 

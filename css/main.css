@@ -1403,6 +1403,9 @@ background-color:#f1f1f1;
     min-width: 100%;
     box-shadow: 0 0 0 0!important;
 }
+.backs li:nth-child(odd){
+  background-color: #f3f3f3;
+}
 .option li{
     border-bottom: 1px dotted #d1d1d1;
     width: 93%;

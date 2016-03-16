@@ -164,7 +164,7 @@
                                  <!--Seccion RESEÑA-->
                                 <div class="sec-politica sec-cultura scultura1">
                                     <!-- Titulo reseña -->
-                                    <h2>Reseña</h2>
+                                    <h2>Reseñas</h2>
                                     <!-- Titulo reseña -->
                                     <!-- Preview seccion reseña -->
                                     <div class="articulo preview-sec-politica preview-sec-cultura">
@@ -210,6 +210,24 @@
                             <!-- Preview seccion literatura -->
                         </div>
                         <!--Seccion LITERATURA-->
+                        <!--Seccion LITERATURA-->
+                       <div class="sec-politica sec-cultura">
+                           <!-- Titulo literatura -->
+                           <h2>Entrevistas en off</h2>
+                           <!-- Titulo literatura -->
+                           <!-- Preview seccion literatura -->
+                           <div class="articulo preview-sec-politica preview-sec-cultura">
+                               <div class="item-politica-main">
+                                   <a ng-href="#/cultura/entrevistas/{{entrevistas[0].titulo | urlEncode}}/{{entrevistas[0].id}}"><div style="background-image: url({{entrevistas[0].foto}});" class="img-articulo"></div></a>
+                                   <p class="foto-autor-main">Foto: {{entrevistas[0].fotografo}}</p>
+                                   <h1 class="h1-cultura"><a ng-href="#/cultura/literatura/{{entrevistas[0].titulo | urlEncode}}/{{entrevistas[0].id}}">{{entrevistas[0].titulo}}</a></h1>
+                                   <h4 class="info-autor-politica"><a ng-href="#/autor/{{entrevistas[0].idPersonal}}">{{entrevistas[0].autor | uppercase}}</a> | {{entrevistas[0].fecha}}</h4>
+                                   <p>{{entrevistas[0].preview}}</p>
+                               </div>
+                           </div>
+                           <!-- Preview seccion literatura -->
+                       </div>
+                       <!--Seccion LITERATURA-->
                         </div>
                     </div>
                 <!-- Columna 2 -->

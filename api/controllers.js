@@ -481,6 +481,7 @@ angular.module('contrapunto.controllers', [])
             $scope.contratabues = response.contratabues;
             $scope.resenas = response.resenas;
             $scope.artes = response.artes;
+            $scope.entrevistas = response.entrevistas;
             $scope.leidos = response.leidos;
             $scope.literaturas = response.literaturas;
             $scope.anecdotas = response.anecdotas;
