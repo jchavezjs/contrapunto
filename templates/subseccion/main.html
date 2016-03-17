@@ -48,9 +48,9 @@
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center seccion-nombre">
-            <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
-            <a ng-href="#/{{secinfo.url}}"><h3>{{secinfo.nombre}}</h3></a>
-            <a class="opinion-logo-title sub" ng-href="#/{{secinfo.url}}/{{subinfo.url}}">
+            <a href="#!/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+            <a ng-href="#!/{{secinfo.url}}"><h3>{{secinfo.nombre}}</h3></a>
+            <a class="opinion-logo-title sub" ng-href="#!/{{secinfo.url}}/{{subinfo.url}}">
                 {{subinfo.nombre}}
             </a>
             <h4>{{fecha}}</h4>
@@ -63,26 +63,26 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#!bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#!"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#/">Portada</a></li>
-            <li><a href="#/opinion">Opinión</a></li>
-            <li><a href="#">Nacionales</a></li>
-            <li><a href="#">Mundo</a></li>
-            <li><a href="#/sociedad">Sociedad</a></li>
-            <li><a href="#">Economía</a></li>
-            <li><a href="#">Cultura</a></li>
-            <li><a href="#">Deportes</a></li>
+            <li><a href="#!/">Portada</a></li>
+            <li><a href="#!/opinion">Opinión</a></li>
+            <li><a href="#!">Nacionales</a></li>
+            <li><a href="#!">Mundo</a></li>
+            <li><a href="#!/sociedad">Sociedad</a></li>
+            <li><a href="#!">Economía</a></li>
+            <li><a href="#!">Cultura</a></li>
+            <li><a href="#!">Deportes</a></li>
           </ul>
         </div>
       </div>
@@ -92,7 +92,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a ng-repeat="subseccion in subsecciones" ng-href="#/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
+                <a ng-repeat="subseccion in subsecciones" ng-href="#!/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div>
@@ -108,16 +108,16 @@
             <div class="preview-subseccion">
               <div class="row">
                 <div class="col-md-4">
-                  <a ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}">
+                  <a ng-href="#!/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}">
                     <div style="background-image: url({{contenido.foto}});" class="img-subseccion"></div>
                   </a>
                 </div>
                 <div class="col-md-8">
                    <div class="info-subseccion">
-                      <a class="autor" ng-href="#/autor/{{contenido.idPersonal}}">{{contenido.autor}}</a>
+                      <a class="autor" ng-href="#!/autor/{{contenido.idPersonal}}">{{contenido.autor}}</a>
                       <h4 class="info-autor-politica subseccion-autor">
                       {{contenido.fecha}}</h4>
-                      <a class="titulo-subseccion" ng-href="#/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
+                      <a class="titulo-subseccion" ng-href="#!/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
                       <p ng-if="contenido.preview != 'null'" class="subseccion-prev">{{contenido.preview | limitTo: 150}}... </p>
                   </div>
                 </div>
@@ -154,13 +154,13 @@
                 <div class="tab-content">
                   <div role="tabpanel" class="tab-pane active" id="lmlportada">
                       <ul class="leido">
-                          <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
+                          <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#!/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
                       </ul>
                   </div>
                   <div role="tabpanel" class="tab-pane" id="lmlpolitica">
                       <ul class="leido">
-                          <li ng-repeat="sec in leidos.seccion"><a ng-href="#/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
-                          <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec2.id}}" class="leido-item">{{sec2.titulo}}</a></li>
+                          <li ng-repeat="sec in leidos.seccion"><a ng-href="#!/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
+                          <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#!/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec2.id}}" class="leido-item">{{sec2.titulo}}</a></li>
                       </ul>
                   </div>
                 </div>

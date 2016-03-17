@@ -133,7 +133,7 @@ angular.module('contrapunto.controllers', [])
           $scope.banner20 = response.banner20;
           $scope.intervalo20 = $scope.banner20[0].tiempo;
           }
-          if(response.banner20){
+          if(response.bannerMovil){
           $scope.bannerMovil = response.bannerMovil;
           $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
           }
@@ -638,6 +638,7 @@ angular.module('contrapunto.controllers', [])
         $scope.fecha = fechaActual;
        var seccion = $routeParams.seccion;
        var subseccion = $routeParams.subseccion;
+       console.log($scope.idart);
        $scope.currentPage = 1;
        $scope.pageSize = 4;
        $scope.maxSize = 15;
@@ -825,6 +826,8 @@ angular.module('contrapunto.controllers', [])
         }, 300);
 
         var id = $routeParams.id;
+        $scope.idart = $routeParams.id;
+
         $anchorScroll();
         $scope.fecha = fechaActual;
 
@@ -873,6 +876,7 @@ angular.module('contrapunto.controllers', [])
         }, 300);
 
         var id = $routeParams.id;
+        $scope.idart = $routeParams.id;
         $anchorScroll();
         $scope.fecha = fechaActual;
 

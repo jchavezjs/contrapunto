@@ -30,8 +30,8 @@
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center">
-            <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
-            <a class="politica-logo-title" alt="cambiar a 60px" ng-href="#/{{secinfo.url}}">
+            <a href="#!/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+            <a class="politica-logo-title" alt="cambiar a 60px" ng-href="#!/{{secinfo.url}}">
                 {{secinfo.nombre}}
             </a>
             <h4>{{fecha}}</h4>
@@ -44,26 +44,26 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#!bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#!"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#/">Portada</a></li>
-            <li><a href="#/opinion">Opinión</a></li>
-            <li><a href="#">Nacionales</a></li>
-            <li><a href="#">Mundo</a></li>
-            <li><a href="#">Sociedad</a></li>
-            <li><a href="#">Economía</a></li>
-            <li><a href="#">Cultura</a></li>
-            <li><a href="#">Deportes</a></li>
+            <li><a href="#!/">Portada</a></li>
+            <li><a href="#!/opinion">Opinión</a></li>
+            <li><a href="#!">Nacionales</a></li>
+            <li><a href="#!">Mundo</a></li>
+            <li><a href="#!">Sociedad</a></li>
+            <li><a href="#!">Economía</a></li>
+            <li><a href="#!">Cultura</a></li>
+            <li><a href="#!">Deportes</a></li>
           </ul>
         </div>
       </div>
@@ -73,7 +73,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a ng-repeat="subseccion in subsecciones" ng-href="#/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
+                <a ng-repeat="subseccion in subsecciones" ng-href="#!/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div>
@@ -113,7 +113,7 @@
                         <script>
                         /**
                         * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                        * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                        * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#!configuration-variables
                         */
                         /*
                         var disqus_config = function () {
@@ -157,15 +157,15 @@
                             <div role="tabpanel">
                               <!-- Nav tabs -->
                               <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada2">Portada</a></li>
-                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica2">Política</a></li>
+                                <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #!lmlportada2">Portada</a></li>
+                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #!lmlpolitica2">Política</a></li>
                               </ul>
 
                               <!-- Tab panes -->
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="lmlportada2">
                                     <ul class="leido leido-tab2">
-                                        <li><a href="#">
+                                        <li><a href="#!">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/08ace4c0814f27b62fc9e8ffc37e5d54_resized.JPG);" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
@@ -175,7 +175,7 @@
                                             </div>
                                             </a>
                                         </li>
-                                        <li><a href="#">
+                                        <li><a href="#!">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/18e81a50fbbc6cc29690af7e55ac6cfe_resized.jpg);" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
@@ -185,7 +185,7 @@
                                             </div>
                                             </a>
                                         </li>
-                                        <li><a href="#">
+                                        <li><a href="#!">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/50a52a022d15f4f3d89746473aed0b36_resized.png);" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
@@ -195,7 +195,7 @@
                                             </div>
                                             </a>
                                         </li>
-                                        <li><a href="#">
+                                        <li><a href="#!">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/a98d119b3ccee914ea164a182459f78a_resized.jpg);" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
@@ -209,7 +209,7 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlpolitica2">
                                     <ul class="leido leido-tab2">
-                                        <li><a href="#">
+                                        <li><a href="#!">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/24ace4229fe5c0c808859bb66b595640_resized.jpg);" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
@@ -219,7 +219,7 @@
                                             </div>
                                             </a>
                                         </li>
-                                        <li><a href="#">
+                                        <li><a href="#!">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url(http://cdn.revistagq.com/uploads/images/thumbs/201315/concierto_7995_645x.jpg);" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
@@ -229,7 +229,7 @@
                                             </div>
                                             </a>
                                         </li>
-                                        <li><a href="#">
+                                        <li><a href="#!">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp1/be4b5705b53c3ab629e74391c959b69a_resized.jpg);" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
@@ -239,7 +239,7 @@
                                             </div>
                                             </a>
                                         </li>
-                                        <li><a href="#">
+                                        <li><a href="#!">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url(http://www.contrapunto.com.sv/cache/mod_k2_notascp2/1ca72db0b7b8fd1565b8c1ae2fdbb3b6_resized.jpg);" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">

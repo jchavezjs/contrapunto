@@ -48,7 +48,7 @@
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center">
-            <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+            <a href="#!/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
             <a class="opinion-logo-title" alt="cambiar a 60px" href="">
                 Cultura
             </a>
@@ -62,26 +62,26 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#!bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#!"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#/">Portada</a></li>
-            <li><a href="#/opinion">Opinión</a></li>
-            <li><a href="#">Nacionales</a></li>
-            <li><a href="#">Mundo</a></li>
-            <li><a href="#/sociedad">Sociedad</a></li>
-            <li><a href="#">Economía</a></li>
-            <li><a href="#">Cultura</a></li>
-            <li><a href="#">Deportes</a></li>
+            <li><a href="#!/">Portada</a></li>
+            <li><a href="#!/opinion">Opinión</a></li>
+            <li><a href="#!">Nacionales</a></li>
+            <li><a href="#!">Mundo</a></li>
+            <li><a href="#!/sociedad">Sociedad</a></li>
+            <li><a href="#!">Economía</a></li>
+            <li><a href="#!">Cultura</a></li>
+            <li><a href="#!">Deportes</a></li>
           </ul>
         </div>
       </div>
@@ -91,7 +91,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a ng-repeat="subseccion in subsecciones" ng-href="#/cultura/{{subseccion.url}}">{{subseccion.nombre}}</a>
+                <a ng-repeat="subseccion in subsecciones" ng-href="#!/cultura/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div>
@@ -110,7 +110,7 @@
                         <div class="sec-politica sec-cultura">
                             <h2>Contratabú</h2>
                             <div class="cultura-contratabu">
-                            <a ng-href="#/cultura/contratabu/{{contratabues[0].titulo | urlEncode}}/{{contratabues[0].id}}"><div style="background:url({{contratabues[0].foto}}) center center;background-size: cover;" class="main-rompiendo-tabues">
+                            <a ng-href="#!/cultura/contratabu/{{contratabues[0].titulo | urlEncode}}/{{contratabues[0].id}}"><div style="background:url({{contratabues[0].foto}}) center center;background-size: cover;" class="main-rompiendo-tabues">
                             <div class="trans t-politica">
                                 <h3 class="titulo-preview">{{contratabues[0].titulo}}</h3>
                             </div>
@@ -127,10 +127,10 @@
                             <!-- Preview seccion artes -->
                             <div class="articulo preview-sec-politica preview-sec-cultura">
                                 <div class="item-politica-main">
-                                    <a ng-href="#/cultura/artes/{{artes[0].titulo | urlEncode}}/{{artes[0].id}}"><div style="background-image: url({{artes[0].foto}});" class="img-articulo"></div></a>
+                                    <a ng-href="#!/cultura/artes/{{artes[0].titulo | urlEncode}}/{{artes[0].id}}"><div style="background-image: url({{artes[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{artes[0].fotografo}}</p>
-                                    <h1 class="h1-cultura"><a ng-href="#/cultura/artes/{{artes[0].titulo | urlEncode}}/{{artes[0].id}}">{{artes[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{artes[0].idPersonal}}">{{artes[0].autor | uppercase}}</a> | {{artes[0].fecha}}</h4>
+                                    <h1 class="h1-cultura"><a ng-href="#!/cultura/artes/{{artes[0].titulo | urlEncode}}/{{artes[0].id}}">{{artes[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#!/autor/{{artes[0].idPersonal}}">{{artes[0].autor | uppercase}}</a> | {{artes[0].fecha}}</h4>
                                     <p>{{artes[0].preview}}</p>
                                 </div>
                             </div>
@@ -145,10 +145,10 @@
                             <!-- Preview seccion anecdota -->
                             <div class="articulo preview-sec-politica preview-sec-cultura">
                                 <div class="item-politica-main">
-                                    <a ng-href="#/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}"><div style="background-image: url({{anecdotas[0].foto}});" class="img-articulo"></div></a>
+                                    <a ng-href="#!/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}"><div style="background-image: url({{anecdotas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{anecdotas[0].fotografo}}</p>
-                                    <h1 class="h1-cultura"><a ng-href="#/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}">{{anecdotas[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{anecdotas[0].idPersonal}}">{{anecdotas[0].autor | uppercase}}</a> | {{anecdotas[0].fecha}}</h4>
+                                    <h1 class="h1-cultura"><a ng-href="#!/cultura/anecdota/{{anecdotas[0].titulo | urlEncode}}/{{anecdotas[0].id}}">{{anecdotas[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#!/autor/{{anecdotas[0].idPersonal}}">{{anecdotas[0].autor | uppercase}}</a> | {{anecdotas[0].fecha}}</h4>
                                     <p>{{anecdotas[0].preview}}</p>
                                 </div>
                             </div>
@@ -169,10 +169,10 @@
                                     <!-- Preview seccion reseña -->
                                     <div class="articulo preview-sec-politica preview-sec-cultura">
                                         <div class="row item-politica-main resena-cultura">
-                                            <a ng-href="#/cultura/resena/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}"><div style="background-image: url({{resenas[0].foto}});" class="col-xs-5 img-articulo-cultura"></div></a>
+                                            <a ng-href="#!/cultura/resena/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}"><div style="background-image: url({{resenas[0].foto}});" class="col-xs-5 img-articulo-cultura"></div></a>
                                             <div class="col-xs-7">
-                                                <h1 class="resena-title"><a ng-href="#/cultura/resena/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}">{{resenas[0].titulo}}</a></h1>
-                                                <h4 class="info-autor-politica"><a ng-href="#/autor/{{resenas[0].idPersonal}}">{{resenas[0].autor | uppercase}}</a> </br> {{resenas[0].fecha}}</h4>
+                                                <h1 class="resena-title"><a ng-href="#!/cultura/resena/{{resenas[0].titulo | urlEncode}}/{{resenas[0].id}}">{{resenas[0].titulo}}</a></h1>
+                                                <h4 class="info-autor-politica"><a ng-href="#!/autor/{{resenas[0].idPersonal}}">{{resenas[0].autor | uppercase}}</a> </br> {{resenas[0].fecha}}</h4>
                                                 <p class="info-resena">{{resenas[0].preview}}</p>
                                             </div>
                                         </div>
@@ -200,10 +200,10 @@
                             <!-- Preview seccion literatura -->
                             <div class="articulo preview-sec-politica preview-sec-cultura">
                                 <div class="item-politica-main">
-                                    <a ng-href="#/cultura/literatura/{{literaturas[0].titulo | urlEncode}}/{{literaturas[0].id}}"><div style="background-image: url({{literaturas[0].foto}});" class="img-articulo"></div></a>
+                                    <a ng-href="#!/cultura/literatura/{{literaturas[0].titulo | urlEncode}}/{{literaturas[0].id}}"><div style="background-image: url({{literaturas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{literaturas[0].fotografo}}</p>
-                                    <h1 class="h1-cultura"><a ng-href="#/cultura/literatura/{{literaturas[0].titulo | urlEncode}}/{{literaturas[0].id}}">{{literaturas[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{literaturas[0].idPersonal}}">{{literaturas[0].autor | uppercase}}</a> | {{literaturas[0].fecha}}</h4>
+                                    <h1 class="h1-cultura"><a ng-href="#!/cultura/literatura/{{literaturas[0].titulo | urlEncode}}/{{literaturas[0].id}}">{{literaturas[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#!/autor/{{literaturas[0].idPersonal}}">{{literaturas[0].autor | uppercase}}</a> | {{literaturas[0].fecha}}</h4>
                                     <p>{{literaturas[0].preview}}</p>
                                 </div>
                             </div>
@@ -218,10 +218,10 @@
                            <!-- Preview seccion literatura -->
                            <div class="articulo preview-sec-politica preview-sec-cultura">
                                <div class="item-politica-main">
-                                   <a ng-href="#/cultura/entrevistas/{{entrevistas[0].titulo | urlEncode}}/{{entrevistas[0].id}}"><div style="background-image: url({{entrevistas[0].foto}});" class="img-articulo"></div></a>
+                                   <a ng-href="#!/cultura/entrevistas/{{entrevistas[0].titulo | urlEncode}}/{{entrevistas[0].id}}"><div style="background-image: url({{entrevistas[0].foto}});" class="img-articulo"></div></a>
                                    <p class="foto-autor-main">Foto: {{entrevistas[0].fotografo}}</p>
-                                   <h1 class="h1-cultura"><a ng-href="#/cultura/literatura/{{entrevistas[0].titulo | urlEncode}}/{{entrevistas[0].id}}">{{entrevistas[0].titulo}}</a></h1>
-                                   <h4 class="info-autor-politica"><a ng-href="#/autor/{{entrevistas[0].idPersonal}}">{{entrevistas[0].autor | uppercase}}</a> | {{entrevistas[0].fecha}}</h4>
+                                   <h1 class="h1-cultura"><a ng-href="#!/cultura/literatura/{{entrevistas[0].titulo | urlEncode}}/{{entrevistas[0].id}}">{{entrevistas[0].titulo}}</a></h1>
+                                   <h4 class="info-autor-politica"><a ng-href="#!/autor/{{entrevistas[0].idPersonal}}">{{entrevistas[0].autor | uppercase}}</a> | {{entrevistas[0].fecha}}</h4>
                                    <p>{{entrevistas[0].preview}}</p>
                                </div>
                            </div>
@@ -261,12 +261,12 @@
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="lmlportada">
                                     <ul class="leido">
-                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
+                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#!/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlcultura">
                                     <ul class="leido">
-                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
+                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#!/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
                                     </ul>
                                 </div>
                               </div>

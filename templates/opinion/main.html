@@ -48,7 +48,7 @@
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center">
-            <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+            <a href="#!/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
             <a class="opinion-logo-title" alt="cambiar a 60px" href="">
                 Opinión
             </a>
@@ -62,26 +62,26 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#!bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#!"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#/">Portada</a></li>
-            <li><a href="#/opinion">Opinión</a></li>
-            <li><a href="#">Nacionales</a></li>
-            <li><a href="#">Mundo</a></li>
-            <li><a href="#">Sociedad</a></li>
-            <li><a href="#">Economía</a></li>
-            <li><a href="#">Cultura</a></li>
-            <li><a href="#">Deportes</a></li>
+            <li><a href="#!/">Portada</a></li>
+            <li><a href="#!/opinion">Opinión</a></li>
+            <li><a href="#!">Nacionales</a></li>
+            <li><a href="#!">Mundo</a></li>
+            <li><a href="#!">Sociedad</a></li>
+            <li><a href="#!">Economía</a></li>
+            <li><a href="#!">Cultura</a></li>
+            <li><a href="#!">Deportes</a></li>
           </ul>
         </div>
       </div>
@@ -91,7 +91,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a ng-repeat="subseccion in subsecciones" ng-href="#/opinion/{{subseccion.url}}">{{subseccion.nombre}}</a>
+                <a ng-repeat="subseccion in subsecciones" ng-href="#!/opinion/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div>
@@ -114,7 +114,7 @@
                                 <div class="separador"></div>
                             </div>
                             <div class="preview-editorial" ng-repeat="editorial in editoriales | limitTo: 3">
-                                <a ng-href="#/opinion/editorial/{{editorial.titulo | urlEncode}}/{{editorial.id}}"><h2 class="titulo-preview-editorial">
+                                <a ng-href="#!/opinion/editorial/{{editorial.titulo | urlEncode}}/{{editorial.id}}"><h2 class="titulo-preview-editorial">
                                     {{editorial.titulo}}
                                 </h2></a>
                                 <span class="fecha-preview-editorial">
@@ -133,10 +133,10 @@
                                 <div class="separador"></div>
                             </div>
                             <div class="preview-tribuna" ng-repeat="tribuna in tribunas | limitTo: 3">
-                                <a ng-href="#/autor/{{tribuna.idPersonal}}"><span class="autor-preview-tribuna">
+                                <a ng-href="#!/autor/{{tribuna.idPersonal}}"><span class="autor-preview-tribuna">
                                     {{tribuna.autor}}
                                 </span></a>
-                                <a ng-href="#/opinion/tribuna/{{tribuna.titulo | urlEncode}}/{{tribuna.id}}"><h2 class="titulo-preview-tribuna">
+                                <a ng-href="#!/opinion/tribuna/{{tribuna.titulo | urlEncode}}/{{tribuna.id}}"><h2 class="titulo-preview-tribuna">
                                     {{tribuna.titulo}}
                                 </h2></a>
                                 <p class="fecha-preview-tribuna">
@@ -154,11 +154,11 @@
                             <div class="row" ng-repeat="libertad in libertades | limitTo: 3">
                                 <div class="preview-libertad">
                                     <div class="col-xs-3 image-autor">
-                                        <a ng-href="#/opinion/libertad/{{libertad.titulo | urlEncode}}/{{libertad.id}}"><div class="img-autor" style="background:url('{{libertad.foto}}') center;background-size: cover;"></div></a>
+                                        <a ng-href="#!/opinion/libertad/{{libertad.titulo | urlEncode}}/{{libertad.id}}"><div class="img-autor" style="background:url('{{libertad.foto}}') center;background-size: cover;"></div></a>
                                     </div>
                                     <div class="col-xs-9 libertad-info">
-                                        <a ng-href="#/autor/{{libertad.idPersonal}}"><span class="nombre-autor">{{libertad.autor}}</span></a>
-                                        <a ng-href="#/opinion/libertad/{{libertad.titulo | urlEncode}}/{{libertad.id}}"><h1 class="titulo-libertad">{{libertad.titulo}}</h1></a>
+                                        <a ng-href="#!/autor/{{libertad.idPersonal}}"><span class="nombre-autor">{{libertad.autor}}</span></a>
+                                        <a ng-href="#!/opinion/libertad/{{libertad.titulo | urlEncode}}/{{libertad.id}}"><h1 class="titulo-libertad">{{libertad.titulo}}</h1></a>
                                         <p class="fecha-preview-libertad">{{libertad.fecha}}</p>
                                     </div>
                                 </div>
@@ -172,10 +172,10 @@
                                 <div class="separador"></div>
                             </div>
                             <div class="preview-tribuna" ng-repeat="academia in academias | limitTo: 3">
-                                <a ng-href="#/autor/{{academia.idPersonal}}"><span class="autor-preview-tribuna">
+                                <a ng-href="#!/autor/{{academia.idPersonal}}"><span class="autor-preview-tribuna">
                                     {{academia.autor}}
                                 </span></a>
-                                <a ng-href="#/opinion/academia/{{academia.titulo | urlEncode}}/{{academia.id}}"><h2 class="titulo-preview-tribuna">
+                                <a ng-href="#!/opinion/academia/{{academia.titulo | urlEncode}}/{{academia.id}}"><h2 class="titulo-preview-tribuna">
                                     {{academia.titulo}}
                                 </h2></a>
                                 <p class="fecha-preview-tribuna">
@@ -191,14 +191,14 @@
                 <div class="columna2">
                     <div class="col-md-5">
                         <!-- Titulo Seccion Portada -->
-                        <a href="#/opinion/caricaturas/{{caricaturas[0].idCaricatura}}"><div style="background-image: url({{caricaturas[0].foto}});" class="caricatura-imagen caricatura-opinion"></div></a>
+                        <a href="#!/opinion/caricaturas/{{caricaturas[0].idCaricatura}}"><div style="background-image: url({{caricaturas[0].foto}});" class="caricatura-imagen caricatura-opinion"></div></a>
                         <!-- Sondeo -->
                         <div class="sondeo">
                             <div class="header">
                                 <h1>¡Tu opinión vale!</h1>
                             </div>
                             <div class="body">
-                              <a ng-href="#/opinion/sondeo/{{sondeo[0].idSondeo}}"><h4>{{sondeo[0].pregunta}}</h4></a>
+                              <a ng-href="#!/opinion/sondeo/{{sondeo[0].idSondeo}}"><h4>{{sondeo[0].pregunta}}</h4></a>
                               <div ng-if="checkid == undefined">
                                 <div ng-repeat="respuesta in sondeo[0].respuestas">
                                   <input type="radio" name="respuesta" value="{{respuesta.idRespuesta}}" ng-model="$parent.idR" name="r{{sondeo[0].idSondeo}}"> {{respuesta.respuesta}}
@@ -231,11 +231,11 @@
                            <div class="row" ng-repeat="columnista in columnistas | limitTo: 3">
                                 <div class="preview-libertad">
                                     <div class="col-xs-3 image-autor">
-                                        <a ng-href="#/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><div class="img-autor" style="background:url({{columnista.foto}}) center;background-size: cover;"></div></a>
+                                        <a ng-href="#!/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><div class="img-autor" style="background:url({{columnista.foto}}) center;background-size: cover;"></div></a>
                                     </div>
                                     <div class="col-xs-9 libertad-info">
-                                        <a ng-href="#/autor/{{columnista.idPersonal}}"><span class="nombre-autor">{{columnista.autor}}</span></a>
-                                        <a ng-href="#/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><h1 class="titulo-libertad">{{columnista.titulo}}</h1></a>
+                                        <a ng-href="#!/autor/{{columnista.idPersonal}}"><span class="nombre-autor">{{columnista.autor}}</span></a>
+                                        <a ng-href="#!/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><h1 class="titulo-libertad">{{columnista.titulo}}</h1></a>
                                         <p class="fecha-preview-libertad">{{columnista.fecha}}</p>
                                     </div>
                                 </div>
@@ -281,7 +281,7 @@
                                   <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">POLITICA</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
-                                    <li ng-repeat="politica in politicas"><a ng-href="#/opinion/columnistas/{{politica.url}}">{{politica.nombre}}</a></li>
+                                    <li ng-repeat="politica in politicas"><a ng-href="#!/opinion/columnistas/{{politica.url}}">{{politica.nombre}}</a></li>
                                   </ul>
                                 </div>
                             <!--filtro-->
@@ -290,7 +290,7 @@
                                   <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">ECONOMÍA</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
-                                    <li ng-repeat="economia in economias"><a ng-href="#/opinion/columnistas/{{economia.url}}">{{economia.nombre}}</a></li>
+                                    <li ng-repeat="economia in economias"><a ng-href="#!/opinion/columnistas/{{economia.url}}">{{economia.nombre}}</a></li>
                                   </ul>
                                 </div>
                             <!--filtro-->
@@ -299,7 +299,7 @@
                                   <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">INTERNACIONAL</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
-                                    <li ng-repeat="internacional in internacionales"><a ng-href="#/opinion/columnistas/{{internacional.url}}">{{internacional.nombre}}</a></li>
+                                    <li ng-repeat="internacional in internacionales"><a ng-href="#!/opinion/columnistas/{{internacional.url}}">{{internacional.nombre}}</a></li>
                                   </ul>
                                 </div>
                             <!--filtro-->
@@ -308,7 +308,7 @@
                                   <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">CULTURA</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
-                                    <li ng-repeat="cultura in culturas"><a ng-href="#/opinion/columnistas/{{cultura.url}}">{{cultura.nombre}}</a></li>
+                                    <li ng-repeat="cultura in culturas"><a ng-href="#!/opinion/columnistas/{{cultura.url}}">{{cultura.nombre}}</a></li>
                                   </ul>
                                 </div>
                             <!--filtro-->
@@ -317,7 +317,7 @@
                                   <button class="btn btn-default dropdown-toggle select" type="button" id="drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="drop-title">SOCIEDAD</span>
                                   <span class="caret drop-arrow"></span></button>
                                   <ul class="dropdown-menu option" aria-labellebdy="drop1">
-                                    <li ng-repeat="sociedad in sociedades"><a ng-href="#/opinion/columnistas/{{sociedad.url}}">{{sociedad.nombre}}</a></li>
+                                    <li ng-repeat="sociedad in sociedades"><a ng-href="#!/opinion/columnistas/{{sociedad.url}}">{{sociedad.nombre}}</a></li>
                                   </ul>
                                 </div>
                             <!--filtro-->
@@ -338,13 +338,13 @@
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="lmlportada">
                                     <ul class="leido">
-                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
+                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#!/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlopinion">
                                     <ul class="leido">
-                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#/opinion/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
-                                        <li ng-repeat="sec in leidos.seccion2"><a ng-href="#/opinion/{{sec.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
+                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#!/opinion/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
+                                        <li ng-repeat="sec in leidos.seccion2"><a ng-href="#!/opinion/{{sec.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
                                     </ul>
                                 </div>
                               </div>
@@ -357,7 +357,7 @@
                           <span class="drop-title">COLUMNISTAS</span>
                           <span class="caret drop-arrow"></span></button>
                           <ul class="dropdown-menu option backs" aria-labellebdy="drop1">
-                            <li ng-repeat="autor in autores"><a ng-href="#/autor/{{autor.id}}">{{autor.nombre}}</a></li>
+                            <li ng-repeat="autor in autores"><a ng-href="#!/autor/{{autor.id}}">{{autor.nombre}}</a></li>
                           </ul>
                         </div>
                     </div>

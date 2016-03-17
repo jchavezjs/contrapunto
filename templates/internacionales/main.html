@@ -62,26 +62,26 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#!bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#!"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#/">Portada</a></li>
-            <li><a href="#/opinion">Opinión</a></li>
-            <li><a href="#">Nacionales</a></li>
-            <li><a href="#/mundo">Mundo</a></li>
-            <li><a href="#">Sociedad</a></li>
-            <li><a href="#">Economía</a></li>
-            <li><a href="#">Cultura</a></li>
-            <li><a href="#">Deportes</a></li>
+            <li><a href="#!/">Portada</a></li>
+            <li><a href="#!/opinion">Opinión</a></li>
+            <li><a href="#!">Nacionales</a></li>
+            <li><a href="#!/mundo">Mundo</a></li>
+            <li><a href="#!">Sociedad</a></li>
+            <li><a href="#!">Economía</a></li>
+            <li><a href="#!">Cultura</a></li>
+            <li><a href="#!">Deportes</a></li>
           </ul>
         </div>
       </div>
@@ -91,7 +91,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a ng-repeat="subseccion in subsecciones" ng-href="#/internacionales/{{subseccion.url}}">{{subseccion.nombre}}</a>
+                <a ng-repeat="subseccion in subsecciones" ng-href="#!/internacionales/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div>
@@ -117,17 +117,17 @@
                             <!-- Preview seccion politica -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1><a ng-href="#/internacionales/centroamerica/{{centroamericas[0].titulo | urlEncode}}/{{centroamericas[0].id}}">{{centroamericas[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{centroamericas[0].idPersonal}}">{{centroamericas[0].autor | uppercase}}</a> | {{centroamericas[0].fecha}}</h4>
+                                    <h1><a ng-href="#!/internacionales/centroamerica/{{centroamericas[0].titulo | urlEncode}}/{{centroamericas[0].id}}">{{centroamericas[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#!/autor/{{centroamericas[0].idPersonal}}">{{centroamericas[0].autor | uppercase}}</a> | {{centroamericas[0].fecha}}</h4>
                                     <p>{{centroamericas[0].preview}}</p>
-                                    <a ng-href="#/internacionales/centroamerica/{{centroamericas[0].titulo | urlEncode}}/{{centroamericas[0].id}}"><div style="background-image: url({{centroamericas[0].foto}});" class="img-articulo"></div></a>
+                                    <a ng-href="#!/internacionales/centroamerica/{{centroamericas[0].titulo | urlEncode}}/{{centroamericas[0].id}}"><div style="background-image: url({{centroamericas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{centroamericas[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="centroamerica in centroamericas | limitTo: 3" ng-if="centroamerica != centroamericas[0]">
-                                    <a ng-href="#/internacionales/centroamerica/{{centroamerica.titulo | urlEncode}}/{{centroamerica.id}}"><div style="background-image: url({{centroamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
+                                    <a ng-href="#!/internacionales/centroamerica/{{centroamerica.titulo | urlEncode}}/{{centroamerica.id}}"><div style="background-image: url({{centroamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <a ng-href="#/internacionales/centroamerica/{{centroamerica.titulo | urlEncode}}/{{centroamerica.id}}"><h3>{{centroamerica.titulo}}</h3></a>
-                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{centroamerica.idPersonal}}">{{centroamerica.autor | uppercase}}</a> | {{centroamerica.fecha}}</span></p>
+                                        <a ng-href="#!/internacionales/centroamerica/{{centroamerica.titulo | urlEncode}}/{{centroamerica.id}}"><h3>{{centroamerica.titulo}}</h3></a>
+                                        <p><span class="info-autor-politica"><a ng-href="#!/autor/{{centroamerica.idPersonal}}">{{centroamerica.autor | uppercase}}</a> | {{centroamerica.fecha}}</span></p>
                                         <p>{{centroamerica.preview}}</p>
                                     </div>
                                 </div>
@@ -146,17 +146,17 @@
                             <!-- Preview seccion politica -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1><a ng-href="#/internacionales/global/{{globales[0].titulo | urlEncode}}/{{globales[0].id}}">{{globales[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{globales[0].idPersonal}}">{{globales[0].autor | uppercase}}</a> | {{globales[0].fecha}}</h4>
+                                    <h1><a ng-href="#!/internacionales/global/{{globales[0].titulo | urlEncode}}/{{globales[0].id}}">{{globales[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#!/autor/{{globales[0].idPersonal}}">{{globales[0].autor | uppercase}}</a> | {{globales[0].fecha}}</h4>
                                     <p>{{globales[0].preview}}</p>
-                                    <a ng-href="#/internacionales/global/{{globales[0].titulo | urlEncode}}/{{globales[0].id}}"><div style="background-image: url({{globales[0].foto}});" class="img-articulo"></div></a>
+                                    <a ng-href="#!/internacionales/global/{{globales[0].titulo | urlEncode}}/{{globales[0].id}}"><div style="background-image: url({{globales[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{globales[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="global in globales | limitTo: 3" ng-if="global != globales[0]">
-                                    <a ng-href="#/internacionales/global/{{global.titulo | urlEncode}}/{{global.id}}"><div style="background-image: url({{global.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
+                                    <a ng-href="#!/internacionales/global/{{global.titulo | urlEncode}}/{{global.id}}"><div style="background-image: url({{global.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <a ng-href="#/internacionales/global/{{global.titulo | urlEncode}}/{{global.id}}"><h3>{{global.titulo}}</h3></a>
-                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{global.idPersonal}}">{{global.autor | uppercase}}</a> | {{global.fecha}}</span></p>
+                                        <a ng-href="#!/internacionales/global/{{global.titulo | urlEncode}}/{{global.id}}"><h3>{{global.titulo}}</h3></a>
+                                        <p><span class="info-autor-politica"><a ng-href="#!/autor/{{global.idPersonal}}">{{global.autor | uppercase}}</a> | {{global.fecha}}</span></p>
                                         <p>{{global.preview}}</p>
                                     </div>
                                 </div>
@@ -182,17 +182,17 @@
                             <!-- Titulo politica -->
                                  <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1><a ng-href="#/internacionales/latinoamerica/{{latinoamericas[0].titulo | urlEncode}}/{{latinoamericas[0].id}}">{{latinoamericas[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{latinoamericas[0].idPersonal}}">{{latinoamericas[0].autor | uppercase}}</a> | {{latinoamericas[0].fecha}}</h4>
+                                    <h1><a ng-href="#!/internacionales/latinoamerica/{{latinoamericas[0].titulo | urlEncode}}/{{latinoamericas[0].id}}">{{latinoamericas[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#!/autor/{{latinoamericas[0].idPersonal}}">{{latinoamericas[0].autor | uppercase}}</a> | {{latinoamericas[0].fecha}}</h4>
                                     <p>{{latinoamericas[0].preview}}</p>
-                                    <a ng-href="#/internacionales/latinoamerica/{{latinoamericas[0].titulo | urlEncode}}/{{latinoamericas[0].id}}"><div style="background-image: url({{latinoamericas[0].foto}});" class="img-articulo"></div></a>
+                                    <a ng-href="#!/internacionales/latinoamerica/{{latinoamericas[0].titulo | urlEncode}}/{{latinoamericas[0].id}}"><div style="background-image: url({{latinoamericas[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{latinoamericas[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="latinoamerica in latinoamericas | limitTo: 3" ng-if="latinoamerica != latinoamericas[0]">
-                                    <a ng-href="#/internacionales/latinoamerica/{{latinoamerica.titulo | urlEncode}}/{{latinoamerica.id}}"><div style="background-image: url({{latinoamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
+                                    <a ng-href="#!/internacionales/latinoamerica/{{latinoamerica.titulo | urlEncode}}/{{latinoamerica.id}}"><div style="background-image: url({{latinoamerica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <a ng-href="#/internacionales/latinoamerica/{{latinoamerica.titulo | urlEncode}}/{{latinoamerica.id}}"><h3>{{latinoamerica.titulo}}</h3></a>
-                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{latinoamerica.idPersonal}}">{{latinoamerica.autor | uppercase}}</a> | {{latinoamerica.fecha}}</span></p>
+                                        <a ng-href="#!/internacionales/latinoamerica/{{latinoamerica.titulo | urlEncode}}/{{latinoamerica.id}}"><h3>{{latinoamerica.titulo}}</h3></a>
+                                        <p><span class="info-autor-politica"><a ng-href="#!/autor/{{latinoamerica.idPersonal}}">{{latinoamerica.autor | uppercase}}</a> | {{latinoamerica.fecha}}</span></p>
                                         <p>{{latinoamerica.preview}}</p>
                                     </div>
                                 </div>
@@ -238,19 +238,19 @@
                               <!-- Nav tabs -->
                               <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada">Portada</a></li>
-                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica">Mundo</a></li>
+                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica">Interna...</a></li>
                               </ul>
 
                               <!-- Tab panes -->
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="lmlportada">
                                     <ul class="leido">
-                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
+                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#!/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlpolitica">
                                     <ul class="leido">
-                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
+                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#!/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
                                     </ul>
                                 </div>
                               </div>
@@ -267,8 +267,3 @@
     </div>
 </div>
 <!-- Body -->
-<script type="text/javascript">
-    $(document).ready(function(){
-    $(" ").height( $("#main").height() );
-    });
-</script>

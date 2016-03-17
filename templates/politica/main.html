@@ -48,7 +48,7 @@
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center">
-          <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+          <a href="#!/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
             <a class="politica-logo-title" alt="cambiar a 60px" href="">
                 Política
             </a>
@@ -62,26 +62,26 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#!bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#!"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#/">Portada</a></li>
-            <li><a href="#/opinion">Opinión</a></li>
-            <li><a href="#">Nacionales</a></li>
-            <li><a href="#">Mundo</a></li>
-            <li><a href="#">Sociedad</a></li>
-            <li><a href="#">Economía</a></li>
-            <li><a href="#">Cultura</a></li>
-            <li><a href="#">Deportes</a></li>
+            <li><a href="#!/">Portada</a></li>
+            <li><a href="#!/opinion">Opinión</a></li>
+            <li><a href="#!">Nacionales</a></li>
+            <li><a href="#!">Mundo</a></li>
+            <li><a href="#!">Sociedad</a></li>
+            <li><a href="#!">Economía</a></li>
+            <li><a href="#!">Cultura</a></li>
+            <li><a href="#!">Deportes</a></li>
           </ul>
         </div>
       </div>
@@ -91,7 +91,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a ng-repeat="subseccion in subsecciones" ng-href="#/politica/{{subseccion.url}}">{{subseccion.nombre}}</a>
+                <a ng-repeat="subseccion in subsecciones" ng-href="#!/politica/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div>
@@ -119,17 +119,17 @@
                             <!-- Preview seccion politica -->
                            <div class="articulo preview-sec-politica">
                                <div class="item-politica-main">
-                                   <h1><a ng-href="#/politica/sociedadcivil/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}">{{politicas[0].titulo}}</a></h1>
-                                   <h4 class="info-autor-politica"><a ng-href="#/autor/{{politicas[0].idPersonal}}">{{politicas[0].autor | uppercase}}</a> | {{politicas[0].fecha}}</h4>
+                                   <h1><a ng-href="#!/politica/sociedadcivil/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}">{{politicas[0].titulo}}</a></h1>
+                                   <h4 class="info-autor-politica"><a ng-href="#!/autor/{{politicas[0].idPersonal}}">{{politicas[0].autor | uppercase}}</a> | {{politicas[0].fecha}}</h4>
                                    <p>{{politicas[0].preview}}</p>
-                                   <a ng-href="#/politica/sociedadcivil/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}"><div style="background-image: url({{politicas[0].foto}});" class="img-articulo"></div></a>
+                                   <a ng-href="#!/politica/sociedadcivil/{{politicas[0].titulo | urlEncode}}/{{politicas[0].id}}"><div style="background-image: url({{politicas[0].foto}});" class="img-articulo"></div></a>
                                    <p class="foto-autor-main">Foto: {{politicas[0].fotografo}}</p>
                                </div>
                               <div class="row item-politica" ng-repeat="politica in politicas | limitTo: 3" ng-if="politica != politicas[0]">
-                                  <a ng-href="#/politica/sociedadcivil/{{politica.titulo | urlEncode}}/{{politica.id}}"><div style="background-image: url({{politica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
+                                  <a ng-href="#!/politica/sociedadcivil/{{politica.titulo | urlEncode}}/{{politica.id}}"><div style="background-image: url({{politica.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                   <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                      <a ng-href="#/politica/sociedadcivil/{{politica.titulo | urlEncode}}/{{politica.id}}"><h3>{{politica.titulo}}</h3></a>
-                                      <p><span class="info-autor-politica"><a ng-href="#/autor/{{politica.idPersonal}}">{{politica.autor}}</a> | {{politica.fecha}}</span></p>
+                                      <a ng-href="#!/politica/sociedadcivil/{{politica.titulo | urlEncode}}/{{politica.id}}"><h3>{{politica.titulo}}</h3></a>
+                                      <p><span class="info-autor-politica"><a ng-href="#!/autor/{{politica.idPersonal}}">{{politica.autor}}</a> | {{politica.fecha}}</span></p>
                                       <p>{{politica.preview}}</p>
                                   </div>
                                </div>
@@ -151,17 +151,17 @@
                             <!-- Preview seccion politica -->
                             <div class="articulo preview-sec-politica">
                                 <div class="item-politica-main">
-                                    <h1><a ng-href="#/politica/partidos/{{partidos[0].titulo | urlEncode}}/{{partidos[0].id}}">{{partidos[0].titulo}}</a></h1>
-                                    <h4 class="info-autor-politica"><a ng-href="#/autor/{{partidos[0].idPersonal}}">{{partidos[0].autor | uppercase}}</a> | {{partidos[0].fecha}}</h4>
+                                    <h1><a ng-href="#!/politica/partidos/{{partidos[0].titulo | urlEncode}}/{{partidos[0].id}}">{{partidos[0].titulo}}</a></h1>
+                                    <h4 class="info-autor-politica"><a ng-href="#!/autor/{{partidos[0].idPersonal}}">{{partidos[0].autor | uppercase}}</a> | {{partidos[0].fecha}}</h4>
                                     <p>{{partidos[0].preview}}</p>
-                                    <a ng-href="#/politica/partidos/{{partidos[0].titulo | urlEncode}}/{{partidos[0].id}}"><div style="background-image: url({{partidos[0].foto}});" class="img-articulo"></div></a>
+                                    <a ng-href="#!/politica/partidos/{{partidos[0].titulo | urlEncode}}/{{partidos[0].id}}"><div style="background-image: url({{partidos[0].foto}});" class="img-articulo"></div></a>
                                     <p class="foto-autor-main">Foto: {{partidos[0].fotografo}}</p>
                                 </div>
                                 <div class="row item-politica" ng-repeat="partido in partidos | limitTo: 3" ng-if="partido != partidos[0]">
-                                    <a ng-href="#/politica/partidos/{{partido.titulo | urlEncode}}/{{partido.id}}"><div style="background-image: url({{partido.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
+                                    <a ng-href="#!/politica/partidos/{{partido.titulo | urlEncode}}/{{partido.id}}"><div style="background-image: url({{partido.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                        <a ng-href="#/politica/partidos/{{partido.titulo | urlEncode}}/{{partido.id}}"><h3>{{partido.titulo}}</h3></a>
-                                        <p><span class="info-autor-politica"><a ng-href="#/autor/{{partido.idPersonal}}">{{partido.autor}}</a> | {{partido.fecha}}</span></p>
+                                        <a ng-href="#!/politica/partidos/{{partido.titulo | urlEncode}}/{{partido.id}}"><h3>{{partido.titulo}}</h3></a>
+                                        <p><span class="info-autor-politica"><a ng-href="#!/autor/{{partido.idPersonal}}">{{partido.autor}}</a> | {{partido.fecha}}</span></p>
                                         <p>{{partido.preview}}</p>
                                     </div>
                                 </div>
@@ -187,17 +187,17 @@
                                 <!-- Preview seccion politica -->
                                 <div class="articulo preview-sec-politica">
                                     <div class="item-politica-main">
-                                        <h1><a ng-href="#/politica/gobierno/{{gobiernos[0].titulo | urlEncode}}/{{gobiernos[0].id}}">{{gobiernos[0].titulo}}</a></h1>
-                                        <h4 class="info-autor-politica"><a ng-href="#/autor/{{gobiernos[0].idPersonal}}">{{gobiernos[0].autor | uppercase}}</a> | {{gobiernos[0].fecha}}</h4>
+                                        <h1><a ng-href="#!/politica/gobierno/{{gobiernos[0].titulo | urlEncode}}/{{gobiernos[0].id}}">{{gobiernos[0].titulo}}</a></h1>
+                                        <h4 class="info-autor-politica"><a ng-href="#!/autor/{{gobiernos[0].idPersonal}}">{{gobiernos[0].autor | uppercase}}</a> | {{gobiernos[0].fecha}}</h4>
                                         <p>{{gobiernos[0].preview}}</p>
-                                        <a ng-href="#/politica/gobierno/{{gobiernos[0].titulo | urlEncode}}/{{gobiernos[0].id}}"><div style="background-image: url({{gobiernos[0].foto}});" class="img-articulo"></div></a>
+                                        <a ng-href="#!/politica/gobierno/{{gobiernos[0].titulo | urlEncode}}/{{gobiernos[0].id}}"><div style="background-image: url({{gobiernos[0].foto}});" class="img-articulo"></div></a>
                                         <p class="foto-autor-main">Foto: {{gobiernos[0].fotografo}}</p>
                                     </div>
                                     <div class="row item-politica" ng-repeat="gobierno in gobiernos | limitTo: 3" ng-if="gobierno != gobiernos[0]">
-                                        <a ng-href="#/politica/gobierno/{{gobierno.titulo | urlEncode}}/{{gobierno.id}}"><div style="background-image: url({{gobierno.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
+                                        <a ng-href="#!/politica/gobierno/{{gobierno.titulo | urlEncode}}/{{gobierno.id}}"><div style="background-image: url({{gobierno.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                         <div class="col-xs-8 col-md-7 preview-texto-politica">
-                                            <a ng-href="#/politica/gobierno/{{gobierno.titulo | urlEncode}}/{{gobierno.id}}"><h3>{{gobierno.titulo}}</h3></a>
-                                            <p><span class="info-autor-politica"><a ng-href="#/autor/{{gobierno.idPersonal}}">{{gobierno.autor}}</a> | {{gobierno.fecha}}</span></p>
+                                            <a ng-href="#!/politica/gobierno/{{gobierno.titulo | urlEncode}}/{{gobierno.id}}"><h3>{{gobierno.titulo}}</h3></a>
+                                            <p><span class="info-autor-politica"><a ng-href="#!/autor/{{gobierno.idPersonal}}">{{gobierno.autor}}</a> | {{gobierno.fecha}}</span></p>
                                             <p>{{gobierno.preview}}</p>
                                         </div>
                                     </div>
@@ -250,12 +250,12 @@
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="lmlportada">
                                     <ul class="leido">
-                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
+                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#!/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}" class="leido-item">{{port.titulo}}</a></li>
                                     </ul>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlpolitica">
                                     <ul class="leido">
-                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
+                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#!/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}" class="leido-item">{{sec.titulo}}</a></li>
                                     </ul>
                                 </div>
                               </div>

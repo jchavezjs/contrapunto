@@ -48,8 +48,8 @@
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center">
-            <a href="#/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
-            <a class="politica-logo-title" alt="cambiar a 60px" ng-href="#/{{secinfo.url}}">
+            <a href="#!/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+            <a class="politica-logo-title" alt="cambiar a 60px" ng-href="#!/{{secinfo.url}}">
                 {{secinfo.nombre}}
             </a>
             <h4>{{fecha}}</h4>
@@ -62,26 +62,26 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#!bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#!"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#/">Portada</a></li>
-            <li><a href="#/opinion">Opinión</a></li>
-            <li><a href="#">Nacionales</a></li>
-            <li><a href="#">Mundo</a></li>
-            <li><a href="#">Sociedad</a></li>
-            <li><a href="#">Economía</a></li>
-            <li><a href="#">Cultura</a></li>
-            <li><a href="#">Deportes</a></li>
+            <li><a href="#!/">Portada</a></li>
+            <li><a href="#!/opinion">Opinión</a></li>
+            <li><a href="#!">Nacionales</a></li>
+            <li><a href="#!">Mundo</a></li>
+            <li><a href="#!">Sociedad</a></li>
+            <li><a href="#!">Economía</a></li>
+            <li><a href="#!">Cultura</a></li>
+            <li><a href="#!">Deportes</a></li>
           </ul>
         </div>
       </div>
@@ -91,7 +91,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="menu">
-                <a ng-repeat="subseccion in subsecciones" ng-href="#/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
+                <a ng-repeat="subseccion in subsecciones" ng-href="#!/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
             </div>
         </div>
     </div>
@@ -110,14 +110,14 @@
                               <center>
                                 <div style="background-image:url({{contenido.foto}}); margin-top:33px; width:70px; height:70px" class="autor-photo"></div>
                                 <h1 class="post-title">{{contenido.titulo}}</h1>
-                                <h3 class="post-author"><a ng-href="#/autor/{{contenido.idPersonal}}"><span>{{contenido.autor}}</span></a> | {{contenido.fecha}}</h3>
+                                <h3 class="post-author"><a ng-href="#!/autor/{{contenido.idPersonal}}"><span>{{contenido.autor}}</span></a> | {{contenido.fecha}}</h3>
                               </center>
                           <center><div class="post-divisor"></div></center>
                           <span class="post-foto-autor" ng-if="subinfo.id == 6 || secinfo.id != 1">Foto: {{contenido.fotografo}}</span>
                         </div>
                         <div ng-if="subseccion != 'editorial' && subseccion != 'columnistas' && subseccion != 'libertad'">
                           <h1 class="post-title">{{contenido.titulo}}</h1>
-                          <h3 class="post-author"><a ng-href="#/autor/{{contenido.idPersonal}}"><span>{{contenido.autor}}</span></a> | {{contenido.fecha}}</h3>
+                          <h3 class="post-author"><a ng-href="#!/autor/{{contenido.idPersonal}}"><span>{{contenido.autor}}</span></a> | {{contenido.fecha}}</h3>
                           <center><div class="post-divisor"></div></center>
                           <div class="post-img" ng-if="subinfo.id != 3">
                               <img ng-src="{{contenido.foto}}" alt="foto de articulo" class="post-img">
@@ -131,17 +131,17 @@
                         </div>
                         <center><div class="post-divisor"></div></center>
                         <div class="social-posts">
-                            <a href="" socialshare socialshare-provider="facebook" socialshare-url="http://contrapunto.com.sv/#/{{secinfo.url}}/{{subseccion}}/{{tituloUrl}}/{{contenido.id}}" socialshare-text="{{contenido.titulo}}" socialshare-description="{{contenido.preview}}" socialshare-media="https://www.facebook.com/DiarioDigitalContraPunto/?fref=ts"  socialshare-caption="{{contenido.foto}}"><i class="ion-social-facebook fb"></i></a>
+                            <a href="" socialshare socialshare-provider="facebook" socialshare-url="http://contrapunto.com.sv/#!/{{secinfo.url}}/{{subseccion}}/{{tituloUrl}}/{{contenido.id}}" socialshare-text="{{contenido.titulo}}" socialshare-description="{{contenido.preview}}" socialshare-media="https://www.facebook.com/DiarioDigitalContraPunto/?fref=ts"  socialshare-caption="{{contenido.foto}}"><i class="ion-social-facebook fb"></i></a>
                             <a href="" socialshare socialshare-provider="twitter" socialshare-text="{{contenido.titulo}}" socialshare-hashtags=""
-              socialshare-url="http://contrapunto.com.sv/#/{{secinfo.url}}/{{subseccion}}/{{tituloUrl}}/{{contenido.id}}" socialshare-via="contra_punto"><i class="ion-social-twitter tw"></i></a>
-                            <a href="" socialshare socialshare-provider="google+" socialshare-url="http://contrapunto.com.sv/#/{{secinfo.url}}/{{subseccion}}/{{tituloUrl}}/{{contenido.id}}"><i class="ion-social-googleplus g"></i></a>
+              socialshare-url="http://contrapunto.com.sv/#!/{{secinfo.url}}/{{subseccion}}/{{tituloUrl}}/{{contenido.id}}" socialshare-via="contra_punto"><i class="ion-social-twitter tw"></i></a>
+                            <a href="" socialshare socialshare-provider="google+" socialshare-url="http://contrapunto.com.sv/#!/{{secinfo.url}}/{{subseccion}}/{{tituloUrl}}/{{contenido.id}}"><i class="ion-social-googleplus g"></i></a>
                             <a target="_blank" href="mailto:"><i class="ion-email mail"></i></a>
                         </div>
                         <!-- Disqus-->
                         <div class="post-comments">
-                        <div disqus="idart"></div>
-                        <!-- Disqus-->
+                          <div disqus="idart"></div>
                         </div>
+                        <!-- Disqus-->
                     </div>
                 <!-- Columna 3 - 1 -->
                 <div class="col-md-4 m-politica-3">
@@ -181,7 +181,7 @@
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="lmlportada2">
                                     <ul class="leido leido-tab2">
-                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}">
+                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#!/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url({{port.foto}});" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
@@ -195,7 +195,7 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="lmlpolitica2">
                                     <ul class="leido leido-tab2">
-                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}">
+                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#!/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url({{sec.foto}});" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
@@ -205,7 +205,7 @@
                                             </div>
                                             </a>
                                         </li>
-                                        <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec2.id}}">
+                                        <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#!/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec2.id}}">
                                             <div class="row tab2-item">
                                                 <div style="background-image: url({{sec2.foto}});" class="col-xs-4 img-tab2"></div>
                                                 <div class=" col-xs-8 info-tab2">
