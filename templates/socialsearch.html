@@ -27,5 +27,30 @@
             <a class="search" ng-class="{hide: bar == true}" ng-click="bar=true"><i class="ion-android-search"></i></a>
         </div>
       </div>
+      <div class="col-sm-12 sc-search-movil">
+        <div class="right">
+          <a target="_blank" href="https://www.facebook.com/DiarioDigitalContraPunto/?ref=ts" class="social-btn facebook"><span class="ion-social-facebook"></span></a>
+          <a target="_blank" href="https://twitter.com/contra_punto" class="social-btn twitter"><span class="ion-social-twitter"></span></a>
+          <a target="_blank" href="https://plus.google.com/u/0/103830590298417641066/posts" class="social-btn googleplus"><span class="ion-social-googleplus"></span></a>
+          <a target="_blank" href="https://www.linkedin.com/in/contrapuntosv?authType=&authToken=&trk=mp-allpost-aut-name" class="social-btn twitter"><span class="ion-social-linkedin"></span></a>
+          <a class="suscribete">
+              Suscríbete
+          </a>
+
+          <!-- <div class="searching-bar" ng-if="bar==true">
+            <input type="text"  placeholder="Buscar..." class="input-search-nav" ng-model="query">
+            <a ng-href="#!/buscar/{{query}}" class="in-search"><i class="ion-android-search"></i></a>
+          </div>
+          <a ng-click="bar=false" class="close-bar">X</a>
+          <a class="search" ng-click="bar=true"><i class="ion-android-search"></i></a> -->
+
+          <div class="searching-bar" ng-class="{show: bar == true}">
+            <input ng-search="search(query)" type="text"  placeholder="Buscar..." class="input-search-nav" ng-model="query">
+            <a ng-click="bar=false" class="close-bar"><i class="ion-close-round"></i></a>
+          </div>
+            <a class="search" ng-class="{hide: bar == true}" ng-click="bar=true"><i class="ion-android-search"></i></a>
+        </div>
+        </div>
+      </div>
   </div>
 </div>

@@ -290,14 +290,15 @@ function leidos($idSeccion){
 	return array('seccion' => $seccion, 'seccion2' => $seccion2, 'portada' => $actualidad);
 }
 function primerSondeo(){
-	$soninfo = mysql_query("SELECT idSondeo, pregunta
+	$soninfo = mysql_query("SELECT idSondeo, pregunta, rutaFoto
 												FROM sondeo
 												where activo = 1 and pagado = 0
 												ORDER BY fecha desc, hora desc limit 1");
 	$sonpreview = mysql_fetch_row($soninfo);
 	$sondeo[] = array(
 	  'idSondeo' => $sonpreview[0],
-	  'pregunta' => $sonpreview[1],
+		'pregunta' => $sonpreview[1],
+		'foto' => $sonpreview[2],
 	  'respuestas' => respuestas($sonpreview[0]),
 		'total' => maxTotal($sonpreview[0])
 	);

@@ -88,8 +88,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
     .filter('urlEncode', function() {
         return function(input) {
             var patron ="?";
+            var patron2 = "/";
             var var_new = input.replace(patron,"-");
-            return var_new.split(" ").join("-");
+            var var_new2 = var_new.replace(patron2,"-");
+            return var_new2.split(" ").join("-");
         }
     })
     .filter('iif', function(){

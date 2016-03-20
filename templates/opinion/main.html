@@ -194,24 +194,27 @@
                         <a href="#!/opinion/caricaturas/{{caricaturas[0].idCaricatura}}"><div style="background-image: url({{caricaturas[0].foto}});" class="caricatura-imagen caricatura-opinion"></div></a>
                         <!-- Sondeo -->
                         <div class="sondeo">
+                            <div class="sondeo-imagen" style="background-image: url({{sondeo[0].foto}});"></div>
                             <div class="header">
                                 <h1>¡Tu opinión vale!</h1>
                             </div>
                             <div class="body">
                               <a ng-href="#!/opinion/sondeo/{{sondeo[0].idSondeo}}"><h4>{{sondeo[0].pregunta}}</h4></a>
                               <div ng-if="checkid == undefined">
-                                <div ng-repeat="respuesta in sondeo[0].respuestas">
+                                <div class="inputs" ng-repeat="respuesta in sondeo[0].respuestas">
                                   <input type="radio" name="respuesta" value="{{respuesta.idRespuesta}}" ng-model="$parent.idR" name="r{{sondeo[0].idSondeo}}"> {{respuesta.respuesta}}
                                 </div>
-                                <button ng-click="votar(idR,sondeo[0].idSondeo)">votar</button>
+                                <div class="sboton">
+                                  <button ng-click="votar(idR,sondeo[0].idSondeo)">votar</button>
+                                </div>
                               </div>
 
                                <div ng-if="checkid">
-                                 <img class="line-votar"/><i class="total-votos">{{sondeo[0].total}} votos en total</i><img class="line-votar"/>
+                                 <center><i class="total-votos">-» {{sondeo[0].total}} votos en total «-</i></center>
                                   <div class="body-estadisticas">
-                                    <div ng-repeat="respuesta in sondeo[0].respuestas">
-                                      <span>{{respuesta.respuesta}} - {{(respuesta.total * 100) / sondeo[0].total | number:2}}% | {{respuesta.total}} votos</span>
-                                      <div style="width:{{(respuesta.total * 100) / sondeo[0].total | number:2}}%;" class="estadistica"></div>
+                                    <div ng-repeat="respuesta in sondeo[0].respuestas" class="respuesta">
+                                        <div class="text-portada">{{respuesta.respuesta}}<span>{{(respuesta.total * 100) / sondeo[0].total | number:2}}% | {{respuesta.total}} votos</span></div>
+                                        <div style="width:{{(respuesta.total * 100) / sondeo[0].total | number:2}}%;" class="full  new-color-sondeo-portada"></div>
                                     </div>
                                   </div>
                                </div>
