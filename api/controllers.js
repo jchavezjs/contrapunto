@@ -1072,6 +1072,9 @@ angular.module('contrapunto.controllers', [])
       };
     })
     .controller('AutorController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, $anchorScroll, fechaActual){
+      $scope.top = function(){
+        $anchorScroll();
+      };
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
