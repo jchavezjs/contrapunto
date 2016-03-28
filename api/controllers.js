@@ -177,7 +177,7 @@ angular.module('contrapunto.controllers', [])
         $scope.checkid = $cookies.get('sondeo'+sid);
     });
     })
-    .controller('OpinionController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll, $cookies){
+    .controller('OpinionController',['$scope','$http','$location','$timeout','ngProgressFactory','fechaActual','$anchorScroll','$cookies', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll, $cookies){
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -260,7 +260,7 @@ angular.module('contrapunto.controllers', [])
           var sid = $scope.sondeo[0].idSondeo;
           $scope.checkid = $cookies.get('sondeo'+sid);
       });
-    })
+    }])
 
     .controller('PoliticaController', function($scope, $http, $location, $timeout, ngProgressFactory, fechaActual,$anchorScroll){
       $scope.search = function(query){

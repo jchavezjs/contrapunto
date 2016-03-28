@@ -1441,7 +1441,12 @@ background-color:#f1f1f1;
     box-shadow: 0 0 0 0!important;
 }
 .backs li:nth-child(odd){
-  background-color: #f3f3f3;
+  background-color: #f9f9f9;
+}
+.backs{
+  height: 300px;
+  overflow-y: scroll;
+
 }
 .option li{
     border-bottom: 1px dotted #d1d1d1;
@@ -1450,7 +1455,7 @@ background-color:#f1f1f1;
 }
 .option li a:hover{
     color: #000;
-    background-color: #fff !important;
+    background-color: #f1f1f1 !important;
 }
 .option li a{
     padding-left: 0;
