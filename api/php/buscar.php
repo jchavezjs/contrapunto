@@ -4,7 +4,7 @@
   error_reporting(E_ERROR | E_WARNING | E_PARSE);
   date_default_timezone_set('America/El_Salvador');
   $editdata = json_decode(file_get_contents("php://input"));
-  $busqueda = mysql_escape_string(strtolower($_GET['query']));
+  $busqueda = mysql_real_escape_string(strtolower($_GET['query']));
   // $busqueda = mysql_escape_string(strtolower('Purgatorio'));
   $info = mysql_query("SELECT a.idArticulo as id, a.titulo,a.preview, a.fecha, s.nombre, s.url, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal, se.url as urlSeccion
                       FROM articulo a, personal c, subseccion s, seccion se

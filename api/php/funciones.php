@@ -128,13 +128,13 @@ function formatoFecha($fecha){
 	}elseif($diaNombre == "Tuesday,"){
 		$nombre = "Martes,";
 	}elseif($diaNombre == "Wednesday,"){
-		$nombre = "Lunes,";
+		$nombre = "Miércoles,";
 	}elseif($diaNombre == "Thursday,"){
 		$nombre = "Jueves,";
 	}elseif($diaNombre == "Friday,"){
-		$nombre = "Lunes,";
+		$nombre = "Viernes,";
 	}elseif($diaNombre == "Saturday,"){
-		$nombre = "Sabado,";
+		$nombre = "Sábado,";
 	}
 	return $nombre." ".$dia." de ".$meses[$mes -1]." del ".$anio;
 }
