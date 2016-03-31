@@ -7,9 +7,9 @@ date_default_timezone_set('America/El_Salvador');
 $id = $_GET['id'];
 // $id = 14;
 $error = "";
-$autorinfo =  mysql_query("SELECT CONCAT(nombres,' ',apellidos), descripcion, rutaFoto, cargo, (select link from redespersonal where idPersonal=$id and idRed = 1) as facebook,
-                          (select link from redespersonal where idPersonal=$id and idRed = 2) as twitter, (select link from redespersonal where idPersonal=$id and idRed = 3) as googleplus,
-                          (select link from redespersonal where idPersonal=$id and idRed = 4) as linkedin, (select link from redespersonal where idPersonal=$id and idRed = 5) as mail
+$autorinfo =  mysql_query("SELECT CONCAT(nombres,' ',apellidos), descripcion, rutaFoto, cargo, (select facebook from usuario where idPersonal=$id) as facebook,
+                          (select twitter from usuario where idPersonal=$id) as twitter, (select googleplus from usuario where idPersonal=$id) as googleplus,
+                          (select linkedin from usuario where idPersonal=$id) as linkedin, (select mail from usuario where idPersonal=$id) as mail
                           FROM personal
                           WHERE idPersonal=$id");
 if($autorinfo){
