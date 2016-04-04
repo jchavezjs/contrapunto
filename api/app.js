@@ -93,9 +93,14 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
         return function(input) {
             var patron ="?";
             var patron2 = "/";
+            var patron3 = '\"';
+            var patron4 = ':';
             var var_new = input.replace(patron,"-");
             var var_new2 = var_new.replace(patron2,"-");
-            return var_new2.split(" ").join("-");
+            var var_new3 = var_new2.replace(patron3,"-");
+            var var_new4 = var_new3.replace(patron4,"-");
+            var var_new5 = var_new4.replace(patron3,"-");
+            return var_new5.split(" ").join("-");
         }
     })
     .filter('iif', function(){
