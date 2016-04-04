@@ -1168,4 +1168,32 @@ angular.module('contrapunto.controllers', [])
       $scope.vistoFoto = function(id){
         $http.post("api/php/vistofotogaleria.php",{'id':id}).success(function(data,status,headers,config,response){});
       };
+    })
+
+    .controller('ErrorController', function($scope, $location, $anchorScroll,fechaActual,$window,$http){
+
+      $http.get("api/php/portada.php").success(function (response){
+          if(response.banner1){
+          $scope.banner1 = response.banner1;
+          $scope.intervalo1 = $scope.banner1[0].tiempo;
+          }
+          if(response.banner2){
+          $scope.banner2 = response.banner2;
+          $scope.intervalo2 = $scope.banner2[0].tiempo;
+          }
+          $http.post("api/php/vistoseccion.php",{'id':8}).success(function(response){});
+      });
+
+      $scope.vistoBanner = function(id){
+        $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
+      };
+
+      $scope.fecha = fechaActual;
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
+      $scope.searchArchivo = function(queryArchivo){
+        $window.location.href = 'http://www.contrapunto.com.sv/archivo2016/index.php?option=com_rssearch&search='+ queryArchivo +'&view=results&layout=default&module_id=480&Itemid=486';
+
+      };
     });

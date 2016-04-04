@@ -107,14 +107,16 @@
           <div ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo:pageSize">
             <div class="preview-subseccion">
               <div class="row">
-                <div class="col-md-4">
-                  <a ng-href="#!/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}">
-                    <div style="background-image: url({{contenido.foto}});" class="img-subseccion"></div>
-                  </a>
-                </div>
+                  <div class="col-md-4">
+                    <a ng-href="#!/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}">
+                      <div ng-if="subinfo.nombre != 'Editorial'" style="background-image: url({{contenido.foto}});" class="img-subseccion"></div>
+                      <div ng-if="subinfo.nombre == 'Editorial'" style="background-image: url(http://contrapunto.com.sv/img/editorial-subseccion.png);" class="img-subseccion"></div>
+                    </a>
+                  </div>
                 <div class="col-md-8">
                    <div class="info-subseccion">
-                      <a class="autor" ng-href="#!/autor/{{contenido.idPersonal}}">{{contenido.autor}}</a>
+                      <a ng-if="subinfo.nombre == 'Editorial'" class="autor" ng-href="#!/{{secinfo.url}}">Opini&oacute;n</a>
+                      <a ng-if="subinfo.nombre != 'Editorial'" class="autor" ng-href="#!/autor/{{contenido.idPersonal}}">{{contenido.autor}}</a>
                       <h4 class="info-autor-politica subseccion-autor">
                       {{contenido.fecha}}</h4>
                       <a class="titulo-subseccion" ng-href="#!/{{secinfo.url}}/{{subinfo.url}}/{{contenido.titulo | urlEncode}}/{{contenido.id}}"><h1>{{contenido.titulo}}</h1></a>
@@ -141,7 +143,7 @@
           <!-- Publicidad -->
           <!--Lo mas leido-->
           <div class="columnistas-portada">
-              <h3>LO MÁS LEÍDO</h3>
+              <h3>LO M&Aacute;S LE&Iacute;DO</h3>
               <!--Lo mas leido-TABS-->
               <div role="tabpanel">
                 <!-- Nav tabs -->

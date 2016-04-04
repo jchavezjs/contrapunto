@@ -67,6 +67,10 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
                 controller: "BuscarController",
                 templateUrl: "templates/search.html"
             })
+            .when("/404", {
+                controller: "ErrorController",
+                templateUrl: "templates/404.html"
+            })
             .when("/:seccion/:subseccion", {
                     controller: "SubseccionController",
                     templateUrl: "templates/subseccion/main.html"

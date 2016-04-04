@@ -16,9 +16,57 @@ html {
     font-family: 'Roboto';
     src: url(../fonts/Roboto/Roboto-Regular.ttf);
 }
-
 body{
     font-family:Roboto,Helvetica,Arial,sans-serif;
+}
+.errorCon{
+  text-align: center;
+}
+.errorh1{
+  margin-top: 50px;
+  font-size: 80px;
+  font-family:Lora;
+  font-weight: bolder;
+}
+.errorh2{
+  margin-top: 40px;
+  font-size: 15px;
+  font-family:Helvetica, Arial;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 25px;
+}
+.errorh2 a{
+  color: #4285F4;
+  font-weight: normal;
+}
+.errorh2 a:hover{
+  text-decoration: underline;
+  color: #4285F4;
+}
+.buscarError{
+  margin-top: 50px;
+  width: 40%;
+  background-color: #f9f9f9;
+  padding: 10px 20px 10px 15px;
+  border-bottom: 2px solid #4285F4;
+  margin-bottom: 80px;
+}
+.buscarError i{
+  position: absolute;
+  font-size: 20px;
+  margin-top: -4px;
+  color: #4285F4;
+}
+.buscarError input{
+  width: 100%;
+  margin-left: 25px;
+  border: 0px;
+  background-color: transparent;
+}
+.buscarError input:focus{
+  outline: none;
 }
 a{
     color: #000;
@@ -2710,6 +2758,9 @@ iframe{
   display: none;
 }
 @media (max-width: 400px){
+    .buscarError{
+      width: 80%;
+    }
     .sc-search{
       display: none;
     }
