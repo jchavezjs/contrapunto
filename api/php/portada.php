@@ -8,6 +8,7 @@ date_default_timezone_set('America/El_Salvador');
 $colinfo = mysql_query("SELECT a.idColumna as id, CONCAT(c.nombres, ' ', c.apellidos) as NombreCompleto, c.rutaFoto, a.titulo, c.idPersonal
 						from personal as c, columna as a
 						where c.idPersonal = a.idPersonal and a.activo = 1
+						group by NombreCompleto
 						ORDER BY a.fecha desc, a.hora desc
 						limit 5");
 $triinfo = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal

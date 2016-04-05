@@ -1,0 +1,206 @@
+<!-- Ads Top | Portada -->
+<div class="container">
+  <div class="mainAds">
+          <div class="row">
+              <div class="col-md-7">
+              <div id="ads1" class="ads-border">
+                <uib-carousel interval="intervalo1">
+                  <uib-slide ng-repeat="banner in banner1">
+                    <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                  </uib-slide>
+                </uib-carousel>
+              </div>
+              </div>
+              <div class="col-md-5">
+                <div id="ads2" class="ads-border">
+                  <uib-carousel interval="intervalo2">
+                    <uib-slide ng-repeat="banner in banner2">
+                      <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                    </uib-slide>
+                  </uib-carousel>
+                </div>
+              </div>
+          </div>
+  </div>
+  <div class="mainAds-mobile">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="adsMobile" class="ads-border">
+              <uib-carousel interval="intervaloMovil">
+                <uib-slide ng-repeat="banner in bannerMovil">
+                  <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                </uib-slide>
+              </uib-carousel>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+<!-- Ads Top | Portada -->
+<!-- Header -->
+<div class="container">
+    <!-- Date/Search Section -->
+    <div data-ng-include data-src="'templates/socialsearch.html?i=1'"></div>
+    <!-- Date/Search Section -->
+    <!-- Logo Section -->
+    <div class="row">
+        <div class="logo-center">
+            <a href="#!/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" class="logo"></a></br>
+            <h4>{{fecha}}</h4>
+        </div>
+    </div>
+    <!-- Logo Section -->
+    <div class="top-line"></div>
+    <!-- Menu Section -->
+    <!-- Menu Responsive -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#!bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#!"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#!/">Portada</a></li>
+            <li><a href="#!/opinion">Opinión</a></li>
+            <li><a href="#!">Nacionales</a></li>
+            <li><a href="#!">Mundo</a></li>
+            <li><a href="#!">Sociedad</a></li>
+            <li><a href="#!">Economía</a></li>
+            <li><a href="#!">Cultura</a></li>
+            <li><a href="#!">Deportes</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Menu Responsive -->
+    <div data-ng-include data-src="'templates/menu.html?i=0'"></div>
+    <!-- Menu Section -->
+</div>
+<!-- Header -->
+<!-- Body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+          <div class="personal-qs">
+            <div ng-repeat="persona in personal">
+            <div ng-if="persona.nombre == 'Juan José Dalton'">
+              <div class="row">
+                <div class="autor-info-qs">
+                  <a href="#!/autor/{{persona.id}}"><div class="col-md-3">
+                    <div class="foto" style="background-image:url({{persona.rutaFoto}});"></div>
+                  </div></a>
+                  <div class="col-md-9">
+                  <a href="#!/autor/{{persona.id}}"><h1>{{persona.nombre}}</h1></a>
+                    <h3>Director</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <h2 style="margin-top:20px;margin-bottom:15px;">PERIODISTAS</h2>
+            <div ng-repeat="persona in personal">
+              <div ng-if="persona.cargo == 'periodista' && persona.nombre != 'Redacción Contrapunto'">
+                <div class="row" style="margin-bottom:20px;">
+                  <div class="autor-info-qs">
+                    <a href="#!/autor/{{persona.id}}"><div class="col-md-3">
+                      <div class="foto" style="background-image:url({{persona.rutaFoto}});"></div>
+                    </div></a>
+                    <div class="col-md-9">
+                      <a href="#!/autor/{{persona.id}}"><h1>{{persona.nombre}}</h1></a>
+                      <h3>{{persona.cargo}}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 style="margin-top:20px;margin-bottom:15px;">ADMINISTRACIÓN</h2>
+            <div ng-repeat="persona in personal">
+              <div ng-if="persona.cargo == 'admin' && persona.nombre != 'Margot Vieytez' && persona.nombre != 'Juan José Dalton'">
+                <div class="row" style="margin-bottom:20px;">
+                  <div class="autor-info-qs">
+                    <a href="#!/autor/{{persona.id}}"><div class="col-md-3">
+                      <div class="foto" style="background-image:url({{persona.rutaFoto}});"></div>
+                    </div></a>
+                    <div class="col-md-9">
+                      <a href="#!/autor/{{persona.id}}"><h1>{{persona.nombre}}</h1></a>
+                      <h3>Administrador</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 class="fotogaleriah2">FOTOGALERÍA</h2>
+            <a ng-href="{{fotogalerias[0].link}}" target="_blank" ng-click="vistoFoto(fotogalerias[0].id)"><div class="autor-fotogaleria" style="height:160px;background-image:url({{fotogalerias[0].foto}});">
+              <div class="trans" style="height:160px;">
+                <img class="foto-imagen-autor" src="http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2015/04/LOGO345X76.png" alt="cptv" />
+                <div class="text">
+                  <h3 style="font-size:16px;">{{fotogalerias[0].titulo}}</h3>
+                </div>
+              </div>
+            </div></a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="historia-qs">
+            <img class="img-responsive header" src="img/historia-q-s.png">
+            <p><b>ContraPunto</b> surge como una revista para tratar los fenómenos políticos y sociales latinoamericanos; el 1 de marzo de 2007 es fundada por el periodista salvadoreño Juan José Dalton y el abogado ecuatoriano Ramiro Aguilar Torres. El proyecto tenía base en Quito, Ecuador, y buscaba consolidarse como una publicación semanal.</p>
+            <p>En enero de 2008, el proyecto tuvo un viraje al convertirse en un medio salvadoreño. La idea de ser una revista latinoamericana no fructificaba, había sido un plan demasiado ambicioso. Desde 2008 el proyecto se encaminó hacia la transformación en una publicación diaria y empezó a incorporar redactores locales, todos jóvenes universitarios o recién graduados. También comenzamos a idear una plataforma de producción de videos. En 2010 se completa la transición a un medio de difusión diaria.</p>
+            <p>Desde sus inicios, ContraPunto nace como un espacio formado por periodistas. Es así que, a diferencia de otros medios, Diario Digital ContraPunto nunca ha tenido vínculos de propiedad con grupos empresariales, políticos o sociales.</p>
+            <p>En la actualidad Diario Digital ContraPunto se ha consolidado como uno de los principales medios digitales de El Salvador y cobra cada vez más importancia en la región centroamericana. Es un medio de prensa plural, independiente y crítico, con enorme vinculación con la sociedad civil organizada y en función de ésta.</p>
+            <p>Entre sus características fundamentales se destaca su apertura a todas las corrientes de pensamiento, con énfasis en los sectores democráticos y progresistas, pero sin exclusiones ni sesgos ideológicos. Están vetados, si, aquellos pensamientos generadores de violencia, de discriminaciones y racistas.</p>
+            <p>ContraPunto atiende en su cobertura periodística, temáticas de política, derechos humanos, ambiente, economía, seguridad ciudadana e igualdad de género. Además es uno de los pocos medios que brinda voz a las reivindicaciones de la comunidad LGBTI, así como de otros sectores excluídos.</p>
+            <p>A lo largo de los años, el proyecto ContraPunto ha dado vida a otros sitios: Revista ContraCultura, fundada en 2010, ContraPuntoTV lanzado en 2011 y el Archivo Digital Roque Dalton, el mayor compendio en internet de la vida y obra del asesinado escritor salvadoreño.</p>
+            <p>En el área comercial, en Diario Digital ContraPunto se promueve como un medio sólido para la promoción de importantes marcas y servicios de empresas, instituciones y organizaciones nacionales e internacionales, desde las más grandes hasta las pequeñas.</p>
+            <p>Diario Digital ContraPunto, es en resumidas cuentas, un medio de prensa de servicio a la sociedad y con la voluntad de consolidar y hacer crecer la democracia en El Salvador.</p>
+          </div>
+
+          <div class="lml-search">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h2>ACTUALIDAD</h2>
+                  </div>
+              </div>
+              <div class="item" ng-repeat="actualidad in actualidades | limitTo: 3">
+                  <div class="row">
+                      <div class="col-md-4">
+                      <a ng-href="#!/{{actualidad.urlSeccion}}/{{actualidad.urlSubseccion}}/{{actualidad.titulo | urlEncode}}/{{actualidad.id}}"><div class="imagen" style="background-image:url({{actualidad.foto}});"></div></a>
+                      </div></a>
+                      <div class="col-md-8 info-it">
+                          <a class="sub" ng-href="#!/{{actualidad.urlSeccion}}/{{actualidad.urlSubseccion}}"><span>{{actualidad.subseccion}}</span></a>
+                          <a ng-href="#!/{{actualidad.urlSeccion}}/{{actualidad.urlSubseccion}}/{{actualidad.titulo | urlEncode}}/{{actualidad.id}}"><h1>{{actualidad.titulo}}</h1></a>
+                          <a ng-href="#!/{{actualidad.urlSeccion}}/{{actualidad.urlSubseccion}}/{{actualidad.titulo | urlEncode}}/{{actualidad.id}}">Leer más »</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+            <div class="personal-qs">
+            <h2 style="margin-top:10px;margin-bottom:15px;">COLUMNISTAS</h2>
+            <div ng-repeat="persona in personal | limitTo: 29">
+              <div ng-if="persona.cargo == 'columnista'">
+                <div class="row" style="margin-bottom:20px;">
+                  <div class="autor-info-qs">
+                    <div class="col-md-12">
+                      <a href="#!/autor/{{persona.id}}"><h1>{{persona.nombre}}</h1></a>
+                      <h3>{{persona.cargo}}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+<div class="row"><div data-ng-include data-src="'templates/footer.html'"></div></div>
+</div>
+<!-- Body -->

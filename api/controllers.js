@@ -1196,4 +1196,46 @@ angular.module('contrapunto.controllers', [])
         $window.location.href = 'http://www.contrapunto.com.sv/archivo2016/index.php?option=com_rssearch&search='+ queryArchivo +'&view=results&layout=default&module_id=480&Itemid=486';
 
       };
+    })
+    .controller('QsController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual){
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        $scope.progressbar.setColor('#35A7FF');
+        $timeout(function(){
+            $scope.progressbar.complete();
+            $scope.show = true;
+        }, 300);
+        $scope.fecha = fechaActual;
+        var id = $routeParams.id;
+        $scope.currentPage = 1;
+        $scope.pageSize = 4;
+        $scope.maxSize = 4;
+
+               $http.get("api/php/quienes-somos.php").success(function(response){
+                   $scope.actualidades = response.actualidades;
+                   $scope.personal = response.personal;
+                   $scope.fotogalerias = response.fotogalerias;
+                   if(response.banner1){
+                   $scope.banner1 = response.banner1;
+                   $scope.intervalo1 = $scope.banner1[0].tiempo;
+                   }
+                   if(response.banner2){
+                   $scope.banner2 = response.banner2;
+                   $scope.intervalo2 = $scope.banner2[0].tiempo;
+                   }
+                   if(response.bannerMovil){
+                   $scope.bannerMovil = response.bannerMovil;
+                   $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                   }
+               });
+
+      $scope.vistoBanner = function(id){
+        $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
+      };
+      $scope.vistoFoto = function(id){
+        $http.post("api/php/vistofotogaleria.php",{'id':id}).success(function(response){});
+      };
     });

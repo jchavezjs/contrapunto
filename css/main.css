@@ -19,6 +19,50 @@ html {
 body{
     font-family:Roboto,Helvetica,Arial,sans-serif;
 }
+.mainAds .col-md-7{
+  padding-right: 0px !important;
+}
+/*Quienes Somos*/
+.historia-qs{
+  margin-top: 10px;
+}
+.historia-qs .header{
+  margin-bottom: 20px;
+}
+.personal-qs {
+  margin-top: 10px;
+}
+.personal-qs .autor-info-qs .foto{
+  width:50px;
+  height:50px;
+  border-radius: 100px;
+  background-size: cover;
+}
+.personal-qs .autor-info-qs h1{
+  font-size: 16px;
+  margin: 0px;
+}
+.personal-qs .autor-info-qs h3{
+  font-size: 12px;
+  margin: 0px;
+  color: #4285F4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family:Helvetica,Arial,sans-serif;
+  margin-top: 5px;
+}
+.personal-qs h2{
+    font-family: 'Roboto Slab';
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #000;
+    text-align: center;
+    margin-top: 0px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 5px 0px;
+}
+/*Quienes Somos*/
 .errorCon{
   text-align: center;
 }
@@ -2055,6 +2099,13 @@ background-color:#f1f1f1;
 }
 .post-body p{
   margin-bottom: 30px;
+}
+.post-body a{
+  color: #4285F4 !important;
+}
+.post-body a:hover{
+  color:#000;
+  text-decoration: underline;
 }
 .post-divisor{
     text-align: center;
