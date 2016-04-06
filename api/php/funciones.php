@@ -2,7 +2,7 @@
 
 function articulo($seccion){
 	$str = "SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal as idPersonal,
-			a.preview, i.rutaFoto as foto, a.fecha, f.nombre as fotografo
+			a.preview, i.rutaFoto as foto, a.fecha, f.nombre as fotografo, c.rutaFoto as fotoAutor
 			from articulo a, personal as c, imagenesarticulo as i, fotografo as f
 			where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo and a.activo = 1
 			and i.posicion='principal' and a.idSubseccion=$seccion
@@ -18,7 +18,8 @@ function articulo($seccion){
 					'autor' => $result['autor'],
 					'preview' => $result['preview'],
 					'fecha' => formatoFecha($result['fecha']),
-					'fotografo' => $result['fotografo'],);
+					'fotografo' => $result['fotografo'],
+					'fotoAutor' => $result['fotoAutor'],);
 	}
 	return $resultado;
 }

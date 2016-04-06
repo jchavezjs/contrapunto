@@ -35,6 +35,26 @@ if($secvalidate){
 			}else{
 				$contenido = opinion($subinfo['id']);
 			}
+		}elseif($subinfo['id'] == 49){
+			$str = "SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal as idPersonal,
+					a.preview, c.rutaFoto as foto, a.fecha
+					from articulo a, personal as c
+					where a.idPersonal = c.idPersonal
+					and a.idSubseccion = 49
+					ORDER BY a.fecha desc, a.hora desc";
+			$query = mysql_query($str);
+			while($result = mysql_fetch_array($query)){
+				$resultado[] = array(
+							'id' => $result['id'],
+							'idPersonal' => $result['idPersonal'],
+							'foto' => $result['foto'],
+							'titulo' => $result['titulo'],
+							'autor' => $result['autor'],
+							'preview' => $result['preview'],
+							'fecha' => formatoFecha($result['fecha']),
+							);
+			}
+			$contenido = $resultado;
 		}else{
 			$contenido = articulos($subinfo['id']);
 		}

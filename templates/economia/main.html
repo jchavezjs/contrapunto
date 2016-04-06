@@ -354,11 +354,11 @@
                                     <h1><a ng-href="#!/economia/analisiseconomico/{{analisiss[0].titulo | urlEncode}}/{{analisiss[0].id}}">{{analisiss[0].titulo}}</a></h1>
                                     <h4 class="info-autor-politica"><a ng-href="#!/autor/{{analisiss[0].idPersonal}}">{{analisiss[0].autor | uppercase}}</a> | {{analisiss[0].fecha}}</h4>
                                     <p>{{analisiss[0].preview}}</p>
-                                    <a ng-href="#!/economia/analisiseconomico/{{analisiss[0].titulo | urlEncode}}/{{analisiss[0].id}}"><div style="background-image: url({{analisiss[0].foto}});" class="img-articulo"></div></a>
-                                    <p class="foto-autor-main">Foto: {{analisiss[0].fotografo}}</p>
+                                    <a ng-href="#!/economia/analisiseconomico/{{analisiss[0].titulo | urlEncode}}/{{analisiss[0].id}}"><div style="background-image: url({{analisiss[0].fotoAutor}});" class="img-articulo"></div></a>
+
                                 </div>
                                 <div class="row item-politica" ng-repeat="analisis in analisiss | limitTo: 3" ng-if="analisis != analisiss[0]">
-                                    <a ng-href="#!/economia/analisiseconomico/{{analisis.titulo | urlEncode}}/{{analisis.id}}"><div style="background-image: url({{analisis.foto}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
+                                    <a ng-href="#!/economia/analisiseconomico/{{analisis.titulo | urlEncode}}/{{analisis.id}}"><div style="background-image: url({{analisis.fotoAutor}});" class="col-xs-4 col-md-5 img-item-politica"></div></a>
                                     <div class="col-xs-8 col-md-7 preview-texto-politica">
                                         <a ng-href="#!/economia/analisiseconomico/{{analisis.titulo | urlEncode}}/{{analisis.id}}"><h3>{{analisis.titulo}}</h3></a>
                                         <p><span class="info-autor-politica"><a ng-href="#!/autor/{{analisis.idPersonal}}">{{analisis.autor | uppercase}}</a> | {{analisis.fecha}}</span></p>

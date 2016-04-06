@@ -111,25 +111,24 @@
                                 <h1 class="post-title">{{contenido.titulo}}</h1>
                               </center>
                           <center><div class="post-divisor"></div></center>
-                          <span class="post-foto-autor" ng-if="subinfo.id == 6 || secinfo.id != 1">Foto: {{contenido.fotografo}}</span>
                         </div>
-                        <div ng-if="subseccion == 'columnistas' || subseccion == 'libertad'">
+                        <div ng-if="subseccion == 'columnistas' || subseccion == 'libertad' || subseccion == 'analisiseconomico'">
                               <center>
                                 <div style="background-image:url({{contenido.foto}}); margin-top:33px; width:70px; height:70px" class="autor-photo"></div>
                                 <h1 class="post-title">{{contenido.titulo}}</h1>
                                 <h3 class="post-author"><a ng-href="#!/autor/{{contenido.idPersonal}}"><span>{{contenido.autor}}</span></a> | {{contenido.fecha}}</h3>
                               </center>
                           <center><div class="post-divisor"></div></center>
-                          <span class="post-foto-autor" ng-if="subinfo.id == 6 || secinfo.id != 1">Foto: {{contenido.fotografo}}</span>
+                          <span class="post-foto-autor" ng-if="subseccion != 'analisiseconomico' || secinfo.url = 'opinion'">Foto: {{contenido.fotografo}}</span>
                         </div>
-                        <div ng-if="subseccion != 'editorial' && subseccion != 'columnistas' && subseccion != 'libertad'">
+                        <div ng-if="subseccion != 'editorial' && subseccion != 'columnistas' && subseccion != 'libertad' && subseccion != 'analisiseconomico'">
                           <h1 class="post-title">{{contenido.titulo}}</h1>
                           <h3 class="post-author"><a ng-href="#!/autor/{{contenido.idPersonal}}"><span>{{contenido.autor}}</span></a> | {{contenido.fecha}}</h3>
                           <center><div class="post-divisor"></div></center>
                           <div class="post-img" ng-if="subinfo.id != 3">
                               <img ng-src="{{contenido.foto}}" alt="foto de articulo" class="post-img">
                           </div>
-                          <span class="post-foto-autor" ng-if="subinfo.id == 6 || secinfo.id != 1">Foto: {{contenido.fotografo}}</span>
+                          <span class="post-foto-autor" ng-if="subinfo.id == 6 || subinfo.id == 49 || secinfo.id != 1">Foto: {{contenido.fotografo}}</span>
                           <center><div class="post-divisor" ng-if="subinfo.id != 3"></div></center>
                         </div>
                         <div class="post-body">
