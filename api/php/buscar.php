@@ -5,12 +5,13 @@
   date_default_timezone_set('America/El_Salvador');
   $editdata = json_decode(file_get_contents("php://input"));
   $busqueda = mysql_escape_string($_GET['query']);
-  // $busqueda = mysql_escape_string("reinserción");
+  // $busqueda ="reuniÃ³n";
   $infox = "SELECT a.idArticulo as id, a.titulo,a.preview, a.fecha, s.nombre, s.url, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal, se.url as urlSeccion
                       FROM articulo a, personal c, subseccion s, seccion se
                       where (LOWER(a.titulo) like '%$busqueda%' or  LOWER(CONCAT(c.nombres, ' ', c.apellidos)) like '%$busqueda%')
                       and a.idPersonal = c.idPersonal and a.idSubseccion = s.idSubseccion and s.idSeccion = se.idSeccion
                       ORDER BY a.fecha desc, a.hora desc";
+                      // echo $infox;
   $info = mysql_query($infox);
   while($result = mysql_fetch_array($info)){
     $resultado[] = array(
