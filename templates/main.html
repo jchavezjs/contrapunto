@@ -162,13 +162,23 @@
 
                         <!-- Articulo -->
                         <div class="articulo">
-                            <!-- <div><iframe class="img-articulo" src="https://www.youtube.com/embed/eH9gLvxin_4" frameborder="0" allowfullscreen></iframe></div> -->
-                            <a ng-href="#!/{{especiales[0].urlSeccion}}/{{especiales[0].urlSubseccion}}"><span class="h3">{{especiales[0].subseccion}}</span ></a>
-                            <h1><a ng-href="#!/{{especiales[0].urlSeccion}}/{{especiales[0].urlSubseccion}}/{{especiales[0].titulo | urlEncode}}/{{especiales[0].id}}">{{especiales[0].titulo}}</a></h1>
+                            <!--  -->
+                            <a href="#!/{{especial.urlSeccion}}/{{especial.urlSubseccion}}"><span class="h3">{{especiales[0].subseccion}}</span ></a>
+
+                            <h1 ng-if="especiales[0].autor != 'ContraPunto TV'"><a ng-href="#!/{{especiales[0].urlSeccion}}/{{especiales[0].urlSubseccion}}/{{especiales[0].titulo | urlEncode}}/{{especiales[0].id}}">{{especiales[0].titulo}}</a></h1>
+
+                            <h1 ng-if="especiales[0].autor == 'ContraPunto TV'"><a ng-href="http://www.contrapuntotv.net/video/hacia-donde-va-la-economia-salvadorena/">{{especiales[0].titulo}}</a></h1>
+
                             <h4><a ng-href="#!/autor/{{especiales[0].idPersonal}}">{{especiales[0].autor | uppercase}}</a> | Especiales Semanales</h4>
                             <p>{{especiales[0].preview}}</p>
-                            <a ng-href="#!/{{especiales[0].urlSeccion}}/{{especiales[0].urlSubseccion}}/{{especiales[0].titulo | urlEncode}}/{{especiales[0].id}}"><div style="background-image: url({{especiales[0].foto}});" class="img-articulo"></div></a>
-                            <p class="foto-autor">Foto: {{especiales[0].fotografo}}</p>
+
+
+                            <a ng-if="especiales[0].autor == 'ContraPunto TV'" href="http://www.contrapuntotv.net/video/hacia-donde-va-la-economia-salvadorena/"><div style="background-image: url({{especiales[0].foto}});" class="img-articulo"></div></a>
+
+                            <a ng-if="especiales[0].autor != 'ContraPunto TV'" ng-href="#!/{{especiales[0].urlSeccion}}/{{especiales[0].urlSubseccion}}/{{especiales[0].titulo | urlEncode}}/{{especiales[0].id}}"><div style="background-image: url({{especiales[0].foto}});" class="img-articulo"></div></a>
+
+                            <!-- <div><iframe class="img-articulo" src="https://www.youtube.com/embed/eH9gLvxin_4" frameborder="0" allowfullscreen></iframe></div>
+                            <p class="foto-autor">Foto: {{especiales[0].fotografo}}</p> -->
                         </div>
                         <!-- Articulo -->
                         <!-- Publicidad -->
@@ -186,10 +196,21 @@
                         <!-- Articulo -->
                         <div class="articulo" ng-repeat="especial in especiales | limitTo: 3" ng-if="especial != especiales[0]">
                             <a ng-href="#!/{{especial.urlSeccion}}/{{especial.urlSubseccion}}"><span class="h3">{{especial.subseccion}}</span ></a>
-                            <h1><a ng-href="#!/{{especial.urlSeccion}}/{{especial.urlSubseccion}}/{{especial.titulo | urlEncode}}/{{especial.id}}">{{especial.titulo}}</a></h1>
+
+
+                            <h1 ng-if="especial.autor == 'ContraPunto TV'"><a href="http://www.contrapuntotv.net/video/hacia-donde-va-la-economia-salvadorena/">{{especial.titulo}}</a></h1>
+
+                            <h1 ng-if="especial.autor != 'ContraPunto TV'"><a ng-href="#!/{{especial.urlSeccion}}/{{especial.urlSubseccion}}/{{especial.titulo | urlEncode}}/{{especial.id}}">{{especial.titulo}}</a></h1>
+
+
                             <h4><a ng-href="#!/autor/{{especial.idPersonal}}">{{especial.autor | uppercase}}</a> | Especiales Semanales</h4>
                             <p>{{especial.preview}}</p>
-                            <a ng-href="#!/{{especial.urlSeccion}}/{{especial.urlSubseccion}}/{{especial.titulo | urlEncode}}/{{especial.id}}"><div style="background-image: url({{especial.foto}});" class="img-articulo"></div></a>
+
+                            <a ng-if="especial.autor != 'ContraPunto TV'" ng-href="#!/{{especial.urlSeccion}}/{{especial.urlSubseccion}}/{{especial.titulo | urlEncode}}/{{especial.id}}"><div style="background-image: url({{especial.foto}});" class="img-articulo"></div></a>
+
+                            <a ng-if="especial.autor == 'ContraPunto TV'" href="http://www.contrapuntotv.net/video/hacia-donde-va-la-economia-salvadorena/"><div style="background-image: url({{especial.foto}});" class="img-articulo"></div></a>
+
+
                             <p class="foto-autor">Foto: {{especial.fotografo}}</p>
                         </div>
                         <!-- Articulo -->
@@ -209,7 +230,7 @@
                         <div class="caricatura">
                             <a href="#!/opinion/caricaturas"><div class="titulo-up">Caricaturas »<img class="line-titulo-up">
         </div></a>
-                            <a href="#!/opinion/caricaturas/{{caricaturas[0].idCaricatura}}"><div style="background-image: url({{caricaturas[0].foto}});" class="caricatura-imagen"></div></a>
+                            <a href="#!/opinion/caricaturas"><div style="background-image: url({{caricaturas[0].foto}});" class="caricatura-imagen"></div></a>
                         </div>
                         <!-- Ilustración -->
                         <!-- Sondeo -->
@@ -258,13 +279,6 @@
                             <p>{{editoriales[0].preview}}</p>
                         </div>
                         <!-- Editorial -->
-                        <!-- El clima -->
-                        <div class="el-clima">
-                            <h4>El Clima hoy</h4>
-                            <h6>y el resto de la semana</h6>
-                            <div data-ng-include data-src="'templates/widgets/clima_widget.html'"></div>
-                        </div>
-                        <!-- El clima -->
                         <!-- El País -->
                         <div class="ads">
                             <div class="elPais">
@@ -302,7 +316,7 @@
                             <!-- Columnista -->
                             <div class="columnista" ng-repeat="columnista in columnistas | limitTo: 5">
                                 <a ng-href="#!/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><div class="foto" style="background-image:url({{columnista.foto}});"></div></a>
-                                <a ng-href="#!/autor/{{columnista.idPersonal}}"><p>{{columnista.nombre}}</p></a>
+                                <a ng-href="#!/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><p>{{columnista.nombre}}</p></a>
                                 <a ng-href="#!/opinion/columnistas/{{columnista.titulo | urlEncode}}/{{columnista.id}}"><h4>{{columnista.titulo}}</h4></a>
                             </div>
                             <!-- Columnista -->
@@ -320,6 +334,14 @@
                             </div>
                         </div>
                         <!-- Publicidad -->
+                        <!-- El clima -->
+                        <div class="el-clima">
+                            <h4>El Clima</h4>
+                            <h5>en San Salvador</h5>
+                            <h6>Hoy y el resto de la semana</h6>
+                            <div data-ng-include data-src="'templates/widgets/clima_widget.html'"></div>
+                        </div>
+                        <!-- El clima -->
                     </div>
                 </div>
                 <!-- Columna 3 - 1 -->

@@ -572,7 +572,8 @@ angular.module('contrapunto.controllers', [])
         };
     })
 
-    .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll){
+    .controller('SubseccionController', function($scope, $http, $routeParams, $location, $timeout, ngProgressFactory, fechaActual, $anchorScroll, $templateCache){
+        $templateCache.removeAll();
         $scope.top = function(){
           $anchorScroll();
         };
@@ -600,8 +601,7 @@ angular.module('contrapunto.controllers', [])
                     $scope.subinfo = response.subinfo;
                     $scope.contenidos = response.contenidos;
                     if ($scope.contenidos == null) {
-                      alert("EL contenido solicitado no esta disponible");
-                      $location.path('/');
+                      console.log("EL contenido solicitado no esta disponible");
                     }else{
                       $http.post("api/php/vistosubseccion.php",{'id':$scope.subinfo.id}).success(function(response){});
                     }
@@ -757,7 +757,8 @@ angular.module('contrapunto.controllers', [])
         };
     })
 
-    .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
+    .controller('PostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll, $templateCache){
+      $templateCache.removeAll();
       $scope.search = function(query){
         $location.path('/buscar/' + query);
       };
@@ -824,6 +825,75 @@ angular.module('contrapunto.controllers', [])
          $http.post("api/php/vistofotogaleria.php",{'id':id}).success(function(data,status,headers,config,response){});
        };
     })
+
+    .controller('prController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll, $templateCache){
+      $templateCache.removeAll();
+      $scope.search = function(query){
+        $location.path('/buscar/' + query);
+      };
+        $scope.progressbar = ngProgressFactory.createInstance();
+        $scope.progressbar.start();
+        $scope.progressbar.setColor('#35A7FF');
+        $timeout(function(){
+            $scope.progressbar.complete();
+            $scope.show = true;
+        }, 300);
+      $scope.currentPage = 1;
+       $scope.pageSize = 5;
+       $scope.maxSize = 15;
+        var seccion = $routeParams.seccion;
+        var subseccion = $routeParams.subseccion;
+        $scope.subseccion = subseccion;
+        var titulo = $routeParams.titulo;
+        $scope.tituloUrl = titulo;
+        var id = $routeParams.id;
+        $scope.idart = $routeParams.id;
+        $anchorScroll();
+        $scope.fecha = fechaActual;
+
+
+                $http.get("api/php/post.php?seccion="+seccion+"&subseccion="+subseccion+"&pr=si").success(function(response){
+
+                    $scope.contenido = response.contenido;
+                    $scope.subinfo = response.subinfo;
+                    if ($scope.contenido == null) {
+                      console.log("EL contenido solicitado no esta disponible");
+                    }else{
+                      if($scope.subinfo.id != 2){
+                      $http.post("api/php/vistarticulo.php",{'id':id}).success(function(response){});
+                      }else{
+                        $http.post("api/php/vistoColumna.php",{'id':id}).success(function(response){});
+                      }
+                    }
+                    $scope.secinfo = response.secinfo;
+                    $scope.subsecciones = response.subsecciones;
+                    $scope.fotogaleria = response.fotogaleria;
+                    $scope.leidos = response.leidos;
+                    if(response.banner1){
+                    $scope.banner1 = response.banner1;
+                    $scope.intervalo1 = $scope.banner1[0].tiempo;
+                    }
+                    if(response.banner2){
+                    $scope.banner2 = response.banner2;
+                    $scope.intervalo2 = $scope.banner2[0].tiempo;
+                    }
+                    if(response.bannerPost){
+                    $scope.bannerPost = response.bannerPost;
+                    $scope.intervaloPost = $scope.bannerPost[0].tiempo;
+                    }
+                    if(response.bannerMovil){
+                    $scope.bannerMovil = response.bannerMovil;
+                    $scope.intervaloMovil = $scope.bannerMovil[0].tiempo;
+                    }
+                });
+       $scope.vistoBanner = function(id){
+         $http.post("api/php/vistobanner.php",{'id':id}).success(function(data,status,headers,config,response){});
+       };
+       $scope.vistoFoto = function(id){
+         $http.post("api/php/vistofotogaleria.php",{'id':id}).success(function(data,status,headers,config,response){});
+       };
+    })
+
     .controller('CPostController', function($scope, $http, $location, $timeout, ngProgressFactory, $routeParams, fechaActual, $anchorScroll){
       $scope.search = function(query){
         $location.path('/buscar/' + query);

@@ -1,8 +1,7 @@
 <?php
-
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 include('connection.php');
 include('funciones.php');
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $editdata = json_decode(file_get_contents("php://input"));
 date_default_timezone_set('America/El_Salvador');
 $seccion = $_GET['seccion'];
@@ -44,7 +43,7 @@ if($secvalidate){
 					'foto' => $result['foto'],
 					'titulo' => $result['titulo'],
 					'autor' => $result['autor'],
-					'contenido' => htmlspecialchars_decode(stripslashes($result['contenido'])),
+					'contenido' => $result['contenido'],
 					'fecha' => formatoFecha($result['fecha']),
 					);
 				}
@@ -101,23 +100,42 @@ if($secvalidate){
 					);
 				}
 			}
+		}elseif($subinfo['id'] == 49){
+			$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, c.idPersonal,
+								a.contenido, c.rutaFoto as foto, a.fecha
+								from articulo a, personal as c
+								where a.idPersonal = c.idPersonal and a.activo = 1
+								and a.idArticulo=$id");
+			while($result = mysql_fetch_array($cont)){
+				$contenido = array(
+				'id' => $result['id'],
+				'idPersonal' => $result['idPersonal'],
+				'foto' => $result['foto'],
+				'titulo' => $result['titulo'],
+				'autor' => $result['autor'],
+				'contenido' => $result['contenido'],
+				'fecha' => formatoFecha($result['fecha']),
+				);
+			}
 		}else{
 			$cont = mysql_query("SELECT a.idArticulo as id, a.titulo, CONCAT(c.nombres, ' ', c.apellidos) as autor, a.contenido, a.preview, c.idPersonal,
 								 i.rutaFoto as foto, a.fecha, f.nombre as fotografo
 									from articulo as a, personal as c, fotografo as f, imagenesarticulo as i
 									where a.idArticulo = i.idArticulo and a.idPersonal = c.idPersonal and i.idFotografo = f.idFotografo  and a.activo = 1
 									and i.posicion='principal' and a.idArticulo=$id");
-			while($result = mysql_fetch_array($cont)){
-				$contenido = array(
-					'id' => $result['id'],
-					'idPersonal' => $result['idPersonal'],
-					'foto' => $result['foto'],
-					'titulo' => $result['titulo'],
-					'autor' => $result['autor'],
-					'preview' => $result['preview'],
-					'contenido' => $result['contenido'],
-					'fecha' => formatoFecha($result['fecha']),
-					'fotografo' => $result['fotografo'],);
+			if($_GET['pr'] != 'si'){
+				while($result = mysql_fetch_array($cont)){
+					$contenido = array(
+						'id' => $result['id'],
+						'idPersonal' => $result['idPersonal'],
+						'foto' => $result['foto'],
+						'titulo' => $result['titulo'],
+						'autor' => $result['autor'],
+						'preview' => $result['preview'],
+						'contenido' => $result['contenido'],
+						'fecha' => formatoFecha($result['fecha']),
+						'fotografo' => $result['fotografo'],);
+				}
 			}
 		}
 	}else{

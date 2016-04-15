@@ -1,0 +1,201 @@
+<!-- Ads Top | Portada -->
+<div class="container">
+  <div class="mainAds">
+          <div class="row">
+              <div class="col-md-7">
+              <div id="ads1" class="ads-border">
+                <uib-carousel interval="intervalo1">
+                  <uib-slide ng-repeat="banner in banner1">
+                    <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                  </uib-slide>
+                </uib-carousel>
+              </div>
+              </div>
+              <div class="col-md-5">
+                <div id="ads2" class="ads-border">
+                  <uib-carousel interval="intervalo2">
+                    <uib-slide ng-repeat="banner in banner2">
+                      <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                    </uib-slide>
+                  </uib-carousel>
+                </div>
+              </div>
+          </div>
+  </div>
+  <div class="mainAds-mobile">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="adsMobile" class="ads-border">
+              <uib-carousel interval="intervaloMovil">
+                <uib-slide ng-repeat="banner in bannerMovil">
+                  <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                </uib-slide>
+              </uib-carousel>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Ads Top | Portada -->
+<!-- Header -->
+<div class="container">
+    <!-- Date/Search Section -->
+    <div data-ng-include data-src="'templates/socialsearch.html?i=1'"></div>
+    <!-- Date/Search Section -->
+    <!-- Menu -->
+    <div data-ng-include data-src="'templates/menu.html?i=2'"></div>
+    <!-- Menu -->
+    <!-- Logo Section -->
+    <div class="row">
+        <div class="logo-center">
+            <a href="#!/"><img src="http://contrapunto.com.sv/img/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+            <a class="politica-logo-title" alt="cambiar a 60px" ng-href="#!/{{secinfo.url}}">
+                {{secinfo.nombre}}
+            </a>
+            <h4>{{fecha}}</h4>
+        </div>
+    </div>
+    <!-- Logo Section -->
+    <div class="top-line"></div>
+    <!-- Menu Section -->
+    <!-- Menu Responsive -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#!bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#!"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="#!/">Portada</a></li>
+            <li><a href="#!/opinion">Opinión</a></li>
+            <li><a href="#!">Nacionales</a></li>
+            <li><a href="#!">Mundo</a></li>
+            <li><a href="#!">Sociedad</a></li>
+            <li><a href="#!">Economía</a></li>
+            <li><a href="#!">Cultura</a></li>
+            <li><a href="#!">Deportes</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Menu Responsive -->
+    <!-- Menu -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="menu">
+                <a ng-repeat="subseccion in subsecciones" ng-href="#!/{{secinfo.url}}/{{subseccion.url}}">{{subseccion.nombre}}</a>
+            </div>
+        </div>
+    </div>
+    <!-- Menu -->
+    <!-- Menu Section -->
+</div>
+<!-- Header -->
+<!-- Body -->
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div id="main" class="col-md-12">
+                    <div class="col-md-8">
+                      <!-- PR Newswire Widget Code Starts Here -->
+                        <div id="w4425_landing"></div>
+                        <script language="JavaScript" src="http://tools.prnewswire.com/es/live/4425/landing.js">
+                        </script>
+                      <!-- PR Newswire Widget Code Ends Here -->
+                    </div>
+                <!-- Columna 3 - 1 -->
+                <div class="col-md-4 m-politica-3">
+                      <!-- Publicidad -->
+                      <div class="ads">
+                          <span></span>
+                          <div id="ads3" class="ads-border">
+                            <uib-carousel interval="intervaloPost">
+                              <uib-slide ng-repeat="banner in bannerPost">
+                                <a ng-href="{{banner.link}}" ng-click="vistoBanner(banner.id)" target="_blank"><img class="img-responsive" ng-src="{{banner.foto}}"></a>
+                              </uib-slide>
+                            </uib-carousel>
+                          </div>
+                      </div>
+                      <!-- Publicidad -->
+                        <h2 class="fotogaleriah2">FOTOGALERÍA</h2>
+                        <a ng-href="{{fotogaleria[0].link}}" target="_blank" ng-click="vistoFoto(fotogaleria[0].id)"><div class="autor-fotogaleria" style="background-image:url({{fotogaleria[0].foto}});">
+                          <div class="trans">
+                            <img class="foto-imagen-autor" src="http://www.contrapuntotv.net/cptvesa/wp-content/uploads/2015/04/LOGO345X76.png" alt="cptv" />
+                            <div class="text">
+                              <h3>{{fotogaleria[0].titulo}}</h3>
+                            </div>
+                          </div>
+                        </div></a>
+                        <!--Lo mas leido-->
+                        <div class="columnistas-portada">
+                            <h3>LO MÁS LEÍDO</h3>
+                            <!--Lo mas leido-TABS-->
+                            <div role="tabpanel">
+                              <!-- Nav tabs -->
+                              <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active tb-leido"><a aria-controls="home" class="tab-leido" role="tab" data-toggle="tab" ng-href="value = #lmlportada2">Portada</a></li>
+                                <li role="presentation" class="tb-leido"><a aria-controls="profile" role="tab" class="tab-leido" data-toggle="tab" ng-href="value = #lmlpolitica2">{{secinfo.nombre}}</a></li>
+                              </ul>
+
+                              <!-- Tab panes -->
+                              <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="lmlportada2">
+                                    <ul class="leido leido-tab2">
+                                        <li ng-repeat="port in leidos.portada | orderBy:'-total'"><a ng-href="#!/{{port.urlSeccion}}/{{port.urlSubseccion}}/{{port.titulo | urlEncode}}/{{port.id}}">
+                                            <div class="row tab2-item">
+                                                <div style="background-image: url({{port.foto}});" class="col-xs-4 img-tab2"></div>
+                                                <div class=" col-xs-8 info-tab2">
+                                                    <h4>{{port.titulo}}</h4>
+                                                    <span class="fecha-tab2">{{port.fecha}}</span>
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="lmlpolitica2">
+                                    <ul class="leido leido-tab2">
+                                        <li ng-repeat="sec in leidos.seccion"><a ng-href="#!/{{sec.urlSeccion}}/{{sec.urlSubseccion}}/{{sec.titulo | urlEncode}}/{{sec.id}}">
+                                            <div class="row tab2-item">
+                                                <div style="background-image: url({{sec.foto}});" class="col-xs-4 img-tab2"></div>
+                                                <div class=" col-xs-8 info-tab2">
+                                                    <h4>{{sec.titulo}}</h4>
+                                                    <span class="fecha-tab2">{{sec.fecha}}</span>
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </li>
+                                        <li ng-repeat="sec2 in leidos.seccion2"><a ng-href="#!/{{sec2.urlSeccion}}/{{sec2.urlSubseccion}}/{{sec2.titulo | urlEncode}}/{{sec2.id}}">
+                                            <div class="row tab2-item">
+                                                <div style="background-image: url({{sec2.foto}});" class="col-xs-4 img-tab2"></div>
+                                                <div class=" col-xs-8 info-tab2">
+                                                    <h4>{{sec2.titulo}}</h4>
+                                                    <span class="fecha-tab2">{{sec2.fecha}}</span>
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                              </div>
+                            <!--Lo mas leido-TABS-->
+                            </div>
+                        </div>
+                        <!--Lo mas leido-->
+                    </div>
+
+            </div>
+        </div>
+        <div data-ng-include data-src="'templates/footer.html'"></div>
+        </div>
+    </div>
+</div>
+<!-- Body -->

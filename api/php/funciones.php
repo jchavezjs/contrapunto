@@ -59,7 +59,7 @@ function opinion($seccion){
 		$resultado[] = array(
 					'id' => $result['id'],
 					'idPersonal' => $result['idPersonal'],
-					'foto' => $result['foto'],
+					'fotoAutor' => $result['foto'],
 					'titulo' => $result['titulo'],
 					'autor' => $result['autor'],
 					'preview' => $result['preview'],

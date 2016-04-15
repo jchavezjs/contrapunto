@@ -63,7 +63,7 @@ echo json_encode(array(
 				'coyunturas' => articulo(46),
 				'mundos' => articulo(47),
 				'mercados' => articulo(48),
-				'analisiss' => articulo(49),
+				'analisiss' => opinion(49),
 				'bolsas' => $bolsa,
 				'intereses' => $interes,
 				'divisas' => $divisa,

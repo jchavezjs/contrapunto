@@ -1,6 +1,6 @@
 Options All -Indexes
 
-ErrorDocument 404 http://www.contrapunto.com.sv/contrapunto/api/php/error404.php?url=%{REQUEST_URI}
+ErrorDocument 404 http://www.contrapunto.com.sv/api/php/error404.php?url=%{REQUEST_URI}
 #ErrorDocument 404 http://localhost/contrapunto/api/php/error404.php?url=%{REQUEST_URI}
 
 #ErrorDocument 404 http://www.contrapunto.com.sv/#!/404

@@ -48,7 +48,7 @@
     <!-- Logo Section -->
     <div class="row">
         <div class="logo-center seccion-nombre">
-            <a href="#!/"><img src="http://www.contrapunto.com.sv/templates/contrapunto2014/images/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
+            <a href="#!/"><img src="http://contrapunto.com.sv/img/contrapunto-el-salvador.png" style="max-width:250px;"></a></br>
             <a ng-href="#!/{{secinfo.url}}"><h3>{{secinfo.nombre}}</h3></a>
             <a class="opinion-logo-title sub" ng-href="#!/{{secinfo.url}}/{{subinfo.url}}">
                 {{subinfo.nombre}}
@@ -103,7 +103,7 @@
 <!-- Body -->
 <div class="container">
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-10" ng-if="subinfo.url != 'negocios-internacionales'">
           <div ng-repeat="contenido in contenidos | startFrom:(currentPage - 1)*pageSize | limitTo:pageSize">
             <div class="preview-subseccion">
               <div class="row">
@@ -128,6 +128,15 @@
           </div>
           <div class="center"><uib-pagination ng-click="top()" total-items="contenidos.length" ng-model="currentPage" items-per-page="pageSize" previous-text="Anterior" next-text="Siguiente" max-size="maxSize" boundary-link-numbers="true" class="tab-subseccion"></uib-pagination></div>
       </div>
+      <!-- Condición para mostrar el widget de Negocios Internacionales -->
+      <div class="col-md-10" ng-if="subinfo.url == 'negocios-internacionales'">
+        <!-- PR Newswire Widget Code Starts Here -->
+        <div id="w4425_widget"></div>
+        <script language="JavaScript" src="http://tools.prnewswire.com/es/live/4425/widget.js">
+        </script>
+        <!-- PR Newswire Widget Code Ends Here -->
+      </div>
+      <!-- Negocios Internacionales -->
       <div class="col-md-2 m-politica-3">
            <!-- Publicidad -->
            <div class="ads">
