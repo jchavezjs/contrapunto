@@ -99,7 +99,6 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
     })
     .filter('urlEncode', function() {
         return function(input) {
-<<<<<<< Updated upstream
           var normalize = (function() {
           var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",
               to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
@@ -129,13 +128,6 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
             var z = y.replace("--","-");
             return z.toLowerCase();
 
-=======
-            var patron ="?";
-            var patron2 = "/";
-            var var_new = input.replace(patron,"-");
-            var var_new2 = var_new.replace(patron2,"-");
-            return var_new2.split(" ").join("-");
->>>>>>> Stashed changes
         }
     })
     .filter('iif', function(){
