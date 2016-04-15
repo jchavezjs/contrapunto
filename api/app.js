@@ -95,16 +95,35 @@ angular.module("contrapunto", ['contrapunto.controllers','contrapunto.services',
     })
     .filter('urlEncode', function() {
         return function(input) {
-            var patron ="?";
-            var patron2 = "/";
-            var patron3 = '\"';
-            var patron4 = ':';
-            var var_new = input.replace(patron,"-");
-            var var_new2 = var_new.replace(patron2,"-");
-            var var_new3 = var_new2.replace(patron3,"-");
-            var var_new4 = var_new3.replace(patron4,"-");
-            var var_new5 = var_new4.replace(patron3,"-");
-            return var_new5.split(" ").join("-");
+          var normalize = (function() {
+          var from = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç",
+              to   = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc",
+              mapping = {};
+
+          for(var i = 0, j = from.length; i < j; i++ )
+              mapping[ from.charAt( i ) ] = to.charAt( i );
+
+          return function( str ) {
+              var ret = [];
+              for( var i = 0, j = str.length; i < j; i++ ) {
+                  var c = str.charAt( i );
+                  if( mapping.hasOwnProperty( str.charAt( i ) ) )
+                      ret.push( mapping[ c ] );
+                  else
+                      ret.push( c );
+              }
+              return ret.join( '' );
+          }
+
+        })();
+
+
+            var var_new = normalize(input);
+            var x = var_new.replace(/[&\/\\#,+()$~%.'":*?¿<>{}]/g,"");
+            var y = x.replace(/[^a-zA-Z0-9]/g,"-");
+            var z = y.replace("--","-");
+            return z.toLowerCase();
+
         }
     })
     .filter('iif', function(){

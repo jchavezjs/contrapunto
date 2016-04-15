@@ -29,6 +29,15 @@ angular.module('contrapunto.controllers', [])
       }, 2000);
       $scope.fecha = fechaActual;
       $http.get("api/php/portada.php").success(function (response){
+        function noRepeat(control, articulos){
+
+          for (var articulo in articulos){
+            if(control.indexOf(articulos[articulo].id) <= -1){
+              return articulos[articulo];
+            }
+            // art += articulos[articulo].id + " ";
+          }
+        }
           $scope.columnistas = response.columnistas;
           $scope.actualidades = response.actualidades;
           $scope.tribunas = response.tribunas;
@@ -36,14 +45,14 @@ angular.module('contrapunto.controllers', [])
           $scope.coyunturas = response.coyunturas;
           $scope.analisiss = response.analisiss;
           $scope.libertades = response.libertades;
-          $scope.sociedades = response.sociedades;
+          $scope.sociedades = noRepeat(response.control,response.sociedades);
           $scope.academias = response.academias;
           $scope.resenas = response.resenas;
-          $scope.deportes = response.deportes;
-          $scope.periodismos = response.periodismos;
-          $scope.politicas = response.politicas;
-          $scope.internacionales = response.internacionales;
-          $scope.culturas = response.culturas;
+          $scope.deportes = noRepeat(response.control,response.deportes);
+          $scope.periodismos = noRepeat(response.control,response.periodismos);
+          $scope.politicas = noRepeat(response.control,response.politicas);
+          $scope.internacionales = noRepeat(response.control,response.internacionales);
+          $scope.culturas = noRepeat(response.control,response.culturas);
           $scope.anecdotas = response.anecdotas;
           $scope.entrevistas = response.entrevistas;
           $scope.rompiendos = response.rompiendos;
@@ -53,6 +62,7 @@ angular.module('contrapunto.controllers', [])
           $scope.fotogalerias = response.fotogalerias;
           $scope.caricaturas = response.caricaturas;
           $scope.sondeo = response.sondeo;
+          $scope.control = response.control;
           if(response.banner1){
           $scope.banner1 = response.banner1;
           $scope.intervalo1 = $scope.banner1[0].tiempo;
@@ -140,6 +150,7 @@ angular.module('contrapunto.controllers', [])
           $http.post("api/php/vistoseccion.php",{'id':8}).success(function(response){});
 
       });
+
       $scope.vistoBanner = function(id){
         $http.post("api/php/vistobanner.php",{'id':id}).success(function(response){});
       };
